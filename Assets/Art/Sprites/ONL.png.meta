@@ -1,0 +1,703 @@
+fileFormatVersion: 2
+guid: 056ca749109c2f248864c026497a0cb8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1536981310041915498
+    second: ONL_IDLE1,7
+  - first:
+      213: -8533275686086181705
+    second: ONL_IDLE2,6
+  - first:
+      213: -439143965078795423
+    second: ONL_IDLE3,5
+  - first:
+      213: -4730905695254689466
+    second: ONL_IDLE4
+  - first:
+      213: 626049394500589265
+    second: ONL_WALK1
+  - first:
+      213: 441995467115088437
+    second: ONL_WALK2
+  - first:
+      213: -2481599739444871402
+    second: ONL_WALK3
+  - first:
+      213: 9175070651230905296
+    second: ONL_WALK4
+  - first:
+      213: 3926689612047675983
+    second: ONL_WALK5
+  - first:
+      213: -5050861707784133039
+    second: ONL_WALK6
+  - first:
+      213: 6066034269295433628
+    second: ONL_RUSH1
+  - first:
+      213: 5543984182342484274
+    second: ONL_RUSH2
+  - first:
+      213: 5389153897918356560
+    second: ONL_ATK1_1
+  - first:
+      213: -6688645265850008145
+    second: ONL_ATK1_2
+  - first:
+      213: 266177617282241910
+    second: ONL_ATK1_3
+  - first:
+      213: -2776318650704425552
+    second: ONL_ATK2_1
+  - first:
+      213: 6403529830922392840
+    second: ONL_ATK2_2
+  - first:
+      213: 7755462631896107390
+    second: ONL_ATK2_3
+  - first:
+      213: 4302524586290038219
+    second: ONL_ATK3_1
+  - first:
+      213: 6184539618666220488
+    second: ONL_ATK3_2
+  - first:
+      213: -2777643744809997376
+    second: ONL_ATK3_3
+  - first:
+      213: 7493908050846670249
+    second: ONL_ATK3_4
+  - first:
+      213: 6523457571822935103
+    second: ONL_JUMP
+  - first:
+      213: 6182543392597873772
+    second: ONL_JUMPATK_1
+  - first:
+      213: 5895849680176771920
+    second: ONL_JUMPATK_2
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ONL_IDLE1,7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1638
+        width: 165
+        height: 315
+      alignment: 9
+      pivot: {x: 0.43878034, y: 0.0072381883}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89675105662efb4aa9dacda21f600ff
+      internalID: -1536981310041915498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_IDLE2,6
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1632
+        width: 165
+        height: 306
+      alignment: 9
+      pivot: {x: 0.41803497, y: 0.020199446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c92dda674040e94f964b804521ccdac
+      internalID: -8533275686086181705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_IDLE3,5
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 1626
+        width: 164
+        height: 305
+      alignment: 9
+      pivot: {x: 0.41660252, y: 0.018949715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d561ebada02830b4eb92d23082b70ea8
+      internalID: -439143965078795423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_IDLE4
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 1625
+        width: 161
+        height: 305
+      alignment: 9
+      pivot: {x: 0.421607, y: 0.018752402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954935e512f19154083331f598cf7634
+      internalID: -4730905695254689466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_WALK1
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 1614
+        width: 163
+        height: 308
+      alignment: 9
+      pivot: {x: 0.42830428, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec6ab8c9e98b3ab4b94f1b900ed4bfc7
+      internalID: 626049394500589265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_WALK2
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 1615
+        width: 162
+        height: 304
+      alignment: 9
+      pivot: {x: 0.41631928, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58e77c11df8ede4dbf4e2a3f1850f10
+      internalID: 441995467115088437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_WALK3
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 1610
+        width: 162
+        height: 306
+      alignment: 9
+      pivot: {x: 0.41343406, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873d4ec073ccf954eb340732487b3fee
+      internalID: -2481599739444871402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_WALK4
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 1611
+        width: 163
+        height: 304
+      alignment: 9
+      pivot: {x: 0.4168327, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5525e4437805a674fac1014d6ecb4279
+      internalID: 9175070651230905296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_WALK5
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 1604
+        width: 165
+        height: 306
+      alignment: 9
+      pivot: {x: 0.40367544, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2288890abf6e82945b0f14b87c6b83ea
+      internalID: 3926689612047675983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_WALK6
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 1600
+        width: 164
+        height: 311
+      alignment: 9
+      pivot: {x: 0.4030881, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e68208b3e07eec4387cf60b31e32a5b
+      internalID: -5050861707784133039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_RUSH1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 1295
+        width: 259
+        height: 301
+      alignment: 9
+      pivot: {x: 0.6346906, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de0ca899a4043444bead81d52b751a1
+      internalID: 6066034269295433628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_RUSH2
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 1280
+        width: 202
+        height: 298
+      alignment: 9
+      pivot: {x: 0.50677216, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb84addcfb8b5d4ebd7a7eed70175c1
+      internalID: 5543984182342484274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK1_1
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1263
+        width: 227
+        height: 309
+      alignment: 9
+      pivot: {x: 0.32522866, y: 0.011068104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40987c9be7a83e418c17262d0da5c29
+      internalID: 5389153897918356560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK1_2
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1265
+        width: 243
+        height: 304
+      alignment: 9
+      pivot: {x: 0.44651663, y: 0.04500098}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046cb23e3024df54b9b09eeda163fb9d
+      internalID: -6688645265850008145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK1_3
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1263
+        width: 227
+        height: 305
+      alignment: 9
+      pivot: {x: 0.4698669, y: 0.05146364}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6443e186b19b1c24b8298c7b018ebe8a
+      internalID: 266177617282241910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK2_1
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1266
+        width: 186
+        height: 304
+      alignment: 9
+      pivot: {x: 0.66548795, y: 0.04323819}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667a52d7472a20b4585fd3458099ef7f
+      internalID: -2776318650704425552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK2_2
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 1257
+        width: 230
+        height: 309
+      alignment: 9
+      pivot: {x: 0.6516729, y: 0.04398798}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458c6124a38f509489551511c4ea8a3b
+      internalID: 6403529830922392840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK2_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 942
+        width: 319
+        height: 341
+      alignment: 9
+      pivot: {x: 0.20813464, y: 0.043185823}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ff6434417bdbd4886e710d93702739
+      internalID: 7755462631896107390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK3_1
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 928
+        width: 215
+        height: 291
+      alignment: 9
+      pivot: {x: 0.3932935, y: 0.040682133}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750cd7a96a1652e4db41e4b1c6ca32cc
+      internalID: 4302524586290038219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK3_2
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 929
+        width: 173
+        height: 287
+      alignment: 9
+      pivot: {x: 0.39045072, y: 0.0238539}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f8bfc949e46bf4391060795caf2196
+      internalID: 6184539618666220488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK3_3
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 904
+        width: 275
+        height: 305
+      alignment: 9
+      pivot: {x: 0.19524702, y: 0.045474794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 251fecd64ff5266438184f3d5530b2dd
+      internalID: -2777643744809997376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_ATK3_4
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 907
+        width: 286
+        height: 309
+      alignment: 9
+      pivot: {x: 0.2051255, y: 0.048130862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d46aff340c8424948a29bdf5a6cc658d
+      internalID: 7493908050846670249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_JUMP
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 889
+        width: 181
+        height: 323
+      alignment: 9
+      pivot: {x: 0.37324852, y: 0.10190925}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b57171664b68d04e8eecc6348234ced
+      internalID: 6523457571822935103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_JUMPATK_1
+      rect:
+        serializedVersion: 2
+        x: 1789
+        y: 909
+        width: 171
+        height: 302
+      alignment: 9
+      pivot: {x: 0.42392805, y: 0.011581927}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b925de464ef1b844920da924a1b03cd
+      internalID: 6182543392597873772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_JUMPATK_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 541
+        width: 293
+        height: 285
+      alignment: 9
+      pivot: {x: 0.4406151, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbfba2c33efdd3478dcab5444c2eb6d
+      internalID: 5895849680176771920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 15cfaf3ff29bb554196412ce32a88f10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9085131634266013121
+    second: LASER
+  - first:
+      213: 6167614172324439547
+    second: XCHAIN1
+  - first:
+      213: 7928191463055998517
+    second: XCHAIN2
+  - first:
+      213: -4075713196061627296
+    second: XCHAIN3
+  - first:
+      213: -5551314009062525124
+    second: FIST
+  - first:
+      213: 8126632954070286174
+    second: CHAIR1
+  - first:
+      213: 3293958118075389353
+    second: WINDOW1
+  - first:
+      213: -8634623269809305101
+    second: LIGHT1
+  - first:
+      213: -7442224080378991920
+    second: BEAMP
+  - first:
+      213: -6791359949975598456
+    second: DOOR1
+  - first:
+      213: 2796360618757439542
+    second: DOOROPEN
+  - first:
+      213: -7368752566398097627
+    second: SPIKE
+  - first:
+      213: -4139635552601591053
+    second: USB
+  - first:
+      213: 7284226096894516383
+    second: MONITOR
+  - first:
+      213: -1946814147445242
+    second: PARTITION
+  - first:
+      213: 6079697138636613217
+    second: DESK
+  - first:
+      213: 8612914217935966282
+    second: PUNCHBAG
+  - first:
+      213: 1127453821346535603
+    second: CHECKPOINT
+  - first:
+      213: 7579335767279871641
+    second: DOOR2
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LASER
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 503
+        width: 302
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c411bc718a96e5a42805a4c4b31ab905
+      internalID: -9085131634266013121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XCHAIN1
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 424
+        width: 79
+        height: 44
+      alignment: 9
+      pivot: {x: 0.54909736, y: 0.53673}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e53581255755d42af607c7dfd507b6
+      internalID: 6167614172324439547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XCHAIN2
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 421
+        width: 61
+        height: 50
+      alignment: 9
+      pivot: {x: 0.48940238, y: 0.47414184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407740d4f49368349a57426dd3b6df69
+      internalID: 7928191463055998517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XCHAIN3
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 403
+        width: 45
+        height: 75
+      alignment: 9
+      pivot: {x: 0.4712694, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f250e94f75b91074ebb84805f54ad7b9
+      internalID: -4075713196061627296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FIST
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 342
+        width: 67
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc69bf3455f8f14f9ded35fca0f05c3
+      internalID: -5551314009062525124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHAIR1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 371
+        width: 109
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3172c964343a8ab4a8319c769d6059e2
+      internalID: 8126632954070286174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WINDOW1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 388
+        width: 91
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2c0fdbc5f5c9049b493a69050f9a0c
+      internalID: 3293958118075389353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LIGHT1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 498
+        width: 98
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f707241f56ab24caab16b3abcd0110
+      internalID: -8634623269809305101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEAMP
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 517
+        width: 51
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb7ec25266a27c44a5b22586836f3bf
+      internalID: -7442224080378991920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 660
+        width: 46
+        height: 90
+      alignment: 9
+      pivot: {x: 0.9043568, y: 0.038928222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ab75bf3091afa42af955c6263425b6
+      internalID: -6791359949975598456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOROPEN
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 659
+        width: 55
+        height: 92
+      alignment: 9
+      pivot: {x: 0.85471094, y: 0.04773679}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c4a56449a6b6a46b222976a7d901e6
+      internalID: 2796360618757439542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPIKE
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 672
+        width: 63
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbba144f0a2a9054e8a65c41066ece3a
+      internalID: -7368752566398097627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: USB
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 671
+        width: 70
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6537cc27ef09e4a9974edd20222c11
+      internalID: -4139635552601591053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MONITOR
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 576
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1928db8827b13049a4e6fa92d26ec7e
+      internalID: 7284226096894516383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PARTITION
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 566
+        width: 26
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4ede9dd38d0e143be23860901bf043
+      internalID: -1946814147445242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DESK
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 561
+        width: 91
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3826664e05dc0274380bb7ce93b3888e
+      internalID: 6079697138636613217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PUNCHBAG
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 542
+        width: 115
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cdb74a4e2a0b13479c431ae5b128cfb
+      internalID: 8612914217935966282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CHECKPOINT
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 594
+        width: 88
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682d14139e2fefd438f869c05183868f
+      internalID: 1127453821346535603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DOOR2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 562
+        width: 51
+        height: 88
+      alignment: 9
+      pivot: {x: 0.8759967, y: 0.040838066}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a78177c318f64240aad16e5f270026c
+      internalID: 7579335767279871641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

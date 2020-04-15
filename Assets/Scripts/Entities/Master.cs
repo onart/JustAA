@@ -33,6 +33,6 @@ public class Master : Entity
 
     public override void Up()
     {
-        if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] < 3) { gameObject.SetActive(false); }
+       if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] < 3) { gameObject.SetActive(false); }
     }
 }

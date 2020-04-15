@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class CorridorEv : MapEv         //Corridor 맵의 비사물 이벤트를 정의
 {
-    Door dr;    //이 맵에 딱 하나 있는 문
+    public Door dr;    //이 맵에 딱 하나 있는 문
     public GameObject mob;  //등장하는 적을 말하는 것이다.
     public override void St()   //St는 맵 입장과 동시에 발생시킬 이벤트를 정의함.
     {
-        var drs = FindObjectsOfType<Door>();
-        foreach(var d in drs)
-        {
-            if (d.name == "ToRoom")
-            {
-                dr = d;
-                break;
-            }
-        }
         if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 0)
         {
             mob = Resources.Load<GameObject>("Prefabs/DRONE1");

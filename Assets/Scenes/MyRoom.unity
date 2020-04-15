@@ -1851,6 +1851,11 @@ PrefabInstance:
       propertyPath: connectedScene
       value: Corridor
       objectReference: {fileID: 0}
+    - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
+        type: 3}
+      propertyPath: mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904939, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: m_LocalPosition.x

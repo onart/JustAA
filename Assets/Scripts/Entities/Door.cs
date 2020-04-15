@@ -35,7 +35,6 @@ public class Door : Entity
     }
     public override void St()
     {
-        mode = true;
         spacepos = new Vector3(-0.2f, 1.3f, 0);
         fio = FindObjectOfType<Fade2>();
         if (p.doorname == name) p.transform.position = transform.position;

@@ -28,7 +28,7 @@ public class OnOver : MonoBehaviour
         {
             //첫 씬으로 이동
             Destroy(df.gameObject);
-            Scenemover.MoveScene("Tutorial");
+            Scenemover.MoveScene("MyRoom");
         }
     }
 

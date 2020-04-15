@@ -103,7 +103,7 @@ public class ComQ : MonoBehaviour
         if (p.onground && (QRead(L_RUSH, 2) || QRead(R_RUSH, 2)))
         { anim.SetTrigger("RUSH"); rb2d.MovePosition(rb2d.position + Vector2.right * Input.GetAxisRaw("Horizontal")); q.Enqueue(Candid.NONE); q.Dequeue(); }
         else if (QRead(COMBO3, 3))
-        { anim.SetInteger("COMBO", 3); q.Enqueue(Candid.NONE); q.Dequeue(); }
+        { anim.SetInteger("COMBO", 3); /*q.Enqueue(Candid.NONE); q.Dequeue();*/ }
         else if (QRead(COMBO2, 2))
         { anim.SetInteger("COMBO", 2); }
         else if (QRead(COMBO1, 1))

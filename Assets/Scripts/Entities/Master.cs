@@ -25,7 +25,6 @@ public class Master : Entity
 
     public override void St()
     {
-        if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] < 3) { gameObject.SetActive(false); }    //관장 출현 조건 : 문 밖으로 나가서 몹을 잡고 들어옴
         spacepos = new Vector3(0, 1.3f, 0);
         rayorigin = new Vector3(-0.6f, 0.5f, 0);
         raydir = Vector2.right;
@@ -34,6 +33,6 @@ public class Master : Entity
 
     public override void Up()
     {
-        
+        if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] < 3) { gameObject.SetActive(false); }
     }
 }

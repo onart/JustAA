@@ -11,11 +11,12 @@ public class SysManager : MonoBehaviour
     public static bool menuon = false;          //메뉴가 열려있는가
     public static bool forbid = false;          //통상 조작을 봉인할까
     public static Dictionary<string, KeyCode> keymap = new Dictionary<string, KeyCode> { };
-    public readonly string[] keys = { "Jmp", "Atk", "Sit", "Obj" };
+    public readonly string[] keys = { "점프", "공격", "앉기", "상호작용" }; //좌우 키, 메뉴 키 변경은 금지.
 
     private void Start()
     {
         Application.targetFrameRate = 60;   //어차피 기본 60이다. 테스트 플레이에서 180fps길래 추가함+프레임드랍 상정        
+        KeyMapLoad();
     }
     void Update()
     {
@@ -62,12 +63,31 @@ public class SysManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void KeyMapLoad()
+    public void KeyMapLoad()                    //키맵 로드.
     {
+        SetDefaultKeyMap();                     //업데이트로 새로운 키가 추가될 수 있으므로
         foreach(var c in keys)
         {
-            keymap.Add(c, (KeyCode)PlayerPrefs.GetInt(c));
+            if(PlayerPrefs.HasKey(c)) DictUpdate(c, (KeyCode)PlayerPrefs.GetInt(c));    
+            //업데이트로 키 이름이 바뀌지 않아야 함. 하지만 혹시 모르니
         }
+    }
+
+    void SetDefaultKeyMap()
+    {
+        DictUpdate("점프", KeyCode.Z);
+        DictUpdate("공격", KeyCode.X);
+        DictUpdate("앉기", KeyCode.DownArrow);
+        DictUpdate("상호작용", KeyCode.Space);
+    }
+
+    void DictUpdate(string key, KeyCode value)
+    {
+        if (keymap.ContainsKey(key))
+        {
+            keymap.Remove(key);
+        }
+        keymap.Add(key, value);
     }
 
 }

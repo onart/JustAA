@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 //저장 위치는 레지스트리 편집기->HKEY_CURRENT_USER->SOFTWARE->UNITY->UNITYEDITOR->회사이름->게임이름
 public class Titlemanager : MonoBehaviour
 {
-    public Text counts, ertext, gogo;
+    public TextMeshProUGUI ertext, gogo, counts;
     public DataFiller df;
 
     private void Update()

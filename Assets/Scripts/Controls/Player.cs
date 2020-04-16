@@ -85,16 +85,16 @@ public class Player : MonoBehaviour
     {
         anim.SetBool("AIR", !onground);
         //점프부--------------------------------------
-        if (onground && Input.GetKeyDown(KeyCode.Z))
+        if (onground && Input.GetKeyDown(SysManager.keymap["점프"]))
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + 4.5f);
         }
-        else if (jumphold > 0 && Input.GetKey(KeyCode.Z)) 
+        else if (jumphold > 0 && Input.GetKey(SysManager.keymap["점프"])) 
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + Time.deltaTime * jumphold * 0.12f);
             jumphold -= (60 * Time.deltaTime);  //여긴 이렇게 하는 게 맞음. 매 순간마다 크게 바뀌는 경우를 상정하면 나머지와 달리 영향이 큼
         }
-        if (Input.GetKeyUp(KeyCode.Z) && !onground) 
+        if (Input.GetKeyUp(SysManager.keymap["점프"]) && !onground) 
         {
             jumphold = 0;
         }
@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
 
     void Sit()
     {
-        if (Input.GetKey(KeyCode.DownArrow) && onground && Time.timeScale > 0)
+        if (Input.GetKey(SysManager.keymap["앉기"]) && onground && Time.timeScale > 0) 
         {
             anim.SetBool("SIT", true);
         }

@@ -75,8 +75,8 @@ public class ComQ : MonoBehaviour
 
     void QIn()
     {
-        if (Input.GetKeyDown(KeyCode.X)) QUp(Candid.ATK);
-        if (Input.GetKeyDown(KeyCode.Z)) QUp(Candid.JUMP);
+        if (Input.GetKeyDown(SysManager.keymap["공격"])) QUp(Candid.ATK);
+        if (Input.GetKeyDown(SysManager.keymap["점프"])) QUp(Candid.JUMP);
         if (Input.GetKeyDown(KeyCode.LeftArrow)) QUp(Candid.LEFT);
         if (Input.GetKeyDown(KeyCode.RightArrow)) QUp(Candid.RIGHT);
     }

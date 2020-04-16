@@ -74,8 +74,7 @@ public static class BaseSet
     public static Options[] ops =
     {
         new Options(0,"",0),        //선택지 없음을 나타냄
-        new Options(2,"예\n아니요",1),
-        new Options(2,"그래요그래요\n아니요아니요",2),
+        new Options(2,"예\n아니요",1.1f),
     };
 
     public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.

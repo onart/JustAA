@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class HpBar : MonoBehaviour
 {
     public Player p;
     Image bar;
-    Text txt;
+    TextMeshProUGUI txt;
 
     void Start()
     {
@@ -15,7 +16,7 @@ public class HpBar : MonoBehaviour
                 break;
             }
         }
-        txt = GetComponentInChildren<Text>();
+        txt = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     // Update is called once per frame

@@ -1,5 +1,6 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class DialogBox : MonoBehaviour
 {
@@ -10,17 +11,16 @@ public class DialogBox : MonoBehaviour
     public Image face;
 
     AudioSource aus;
-    Text char_name, content;
+    TextMeshProUGUI char_name, content;
     char[] con;
     int txt, unitfrm;    //현재 몇번째 글자인지, 글자 출력 속도 조정용 변수
 
-    public Sprite[] face_list = new Sprite[(int)BaseSet.Chars.CHARCOUNT * (int)BaseSet.Exprs.FACECOUNT];
-
+    public Sprite[] face_list = new Sprite[(int)BaseSet.Chars.CHARCOUNT * (int)BaseSet.Exprs.FACECOUNT];    
     private void Awake()
     {
         aus = GetComponent<AudioSource>();
-        char_name = GetComponentsInChildren<Text>()[0];
-        content = GetComponentsInChildren<Text>()[1];
+        char_name = GetComponentsInChildren<TextMeshProUGUI>()[0];
+        content = GetComponentsInChildren<TextMeshProUGUI>()[1];
         ended = true;   //처음엔 대화 중이 아니니까
     }
     /*
@@ -65,4 +65,5 @@ public class DialogBox : MonoBehaviour
         ended = true;
         content.text = cont;
     }
+
 }

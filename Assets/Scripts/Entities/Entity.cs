@@ -31,9 +31,9 @@ public abstract class Entity : MonoBehaviour
         if (hit.collider != null && p.gameObject.GetComponent<Rigidbody2D>().velocity == Vector2.zero)
         {
             if (spc == null) { spc = Instantiate(space, this.transform.position + spacepos, Quaternion.identity); }
-            if (!SysManager.forbid && Input.GetKeyDown(KeyCode.Space)) 
+            if (!SysManager.forbid && Input.GetKeyDown(SysManager.keymap["상호작용"])) 
             {
-                if (cooltime > 0) cooltime--;
+                if (cooltime > 0) cooltime = 0;
                 else ObjAct();
             }
         }

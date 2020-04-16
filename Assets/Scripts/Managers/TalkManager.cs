@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TalkManager : MonoBehaviour
 {
     private int state, idx, wait;  //대화 진행 상태. 디폴트 -1 상태에서는 대화상자 OFF 상태. wait는 오류수정용 1프레임 대기. wait=2인 경우 선택지가 켜져 있음
     public int selection, opcount;
-    public Text notice;
-    public Text arrow; //선택지 전용 화살표
+    public TextMeshProUGUI notice, arrow;
 
     Entity ent; //선택지 답을 받을 개체. 이벤트는 개체별로 존재
-    Text options;
+    TextMeshProUGUI options;
     Image optBox;
     DialogBox dBox;
     public GameObject dBoxUI, optionUI;
@@ -20,7 +20,7 @@ public class TalkManager : MonoBehaviour
         state = -1;
         wait = 0;
         dBox = dBoxUI.GetComponent<DialogBox>();
-        options = optionUI.GetComponentInChildren<Text>();
+        options = optionUI.GetComponentInChildren<TextMeshProUGUI>();
         optBox = optionUI.GetComponentInChildren<Image>();
     }
 
@@ -28,7 +28,7 @@ public class TalkManager : MonoBehaviour
     {
         if (!SysManager.menuon)
         {
-            if (wait == 0 && Input.GetKeyDown(KeyCode.Space) && state > -1) //대화 넘기기 페이즈
+            if (wait == 0 && Input.GetKeyDown(SysManager.keymap["상호작용"]) && state > -1) //대화 넘기기 페이즈
             {
                 Dialog_Go();
             }
@@ -44,7 +44,7 @@ public class TalkManager : MonoBehaviour
                     if (++selection > opcount - 1) selection = opcount - 1;
                 }
                 RenderArrow();
-                if (Input.GetKeyDown(KeyCode.Space)) 
+                if (Input.GetKeyDown(SysManager.keymap["상호작용"])) 
                 {
                     SelectOff();
                 }
@@ -57,9 +57,10 @@ public class TalkManager : MonoBehaviour
         arrow.text = "";
         for (int i = 0; i < opcount; i++) 
         {
-            if (i == selection) arrow.text += " *";
+            if (i == selection) arrow.text += " >";
             else arrow.text += "\n";
         }
+        arrow.text += ' ';
     }
 
     void SelectON(Options op)

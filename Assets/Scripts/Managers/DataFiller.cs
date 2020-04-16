@@ -26,8 +26,8 @@ public class DataFiller : MonoBehaviour
             p.MHP = PlayerPrefs.GetInt("MHP");
             for (int i = 0; i < (int)BaseSet.Flags.FLAGCOUNT; i++)
             {
-                if (!PlayerPrefs.HasKey("Fl" + i)) { PlayerPrefs.SetInt("Fl" + i, 0); }    //업데이트를 하는 경우, 이는 오류가 아님
-                p.FLAGS[i] = PlayerPrefs.GetInt("Fl" + i);   //이벤트 플래그 불러오기
+                if (!PlayerPrefs.HasKey("Fl" + i)) { PlayerPrefs.SetInt("Fl" + i, 0); PlayerPrefs.Save(); }    //업데이트를 하는 경우, 이는 오류가 아님
+                p.FLAGS[i] = PlayerPrefs.GetInt("Fl" + i);      //이벤트 플래그 불러오기
             }
             Destroy(gameObject);
         }

@@ -30,6 +30,6 @@ public class USB : Entity
     }
     void Dialog1()  //동일 프레임에서 바로 처리하면 대화상자 꺼져서 인보크
     {
-        tm.Dialog_Start(1);
+        tm.Dialog_Start(1, this);
     }
 }

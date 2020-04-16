@@ -14,7 +14,7 @@ public class CorridorEv : MapEv         //Corridor 맵의 비사물 이벤트를
             mob = Instantiate(mob);
             p.FLAGS[(int)BaseSet.Flags.OUTEXP] = 1;
             dr.mode = false;
-            tm.Dialog_Start(5);
+            tm.Dialog_Start(5,this);
         }
     }
 
@@ -32,7 +32,7 @@ public class CorridorEv : MapEv         //Corridor 맵의 비사물 이벤트를
         {
             p.FLAGS[(int)BaseSet.Flags.OUTEXP] = 3;
             dr.mode = true;
-            tm.Dialog_Start(7);
+            tm.Dialog_Start(7, this);
         }
     }
 }

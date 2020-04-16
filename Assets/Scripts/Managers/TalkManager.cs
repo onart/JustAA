@@ -28,7 +28,7 @@ public class TalkManager : MonoBehaviour
     {
         if (!SysManager.menuon)
         {
-            if (wait == 0 && Input.GetKeyDown(KeyCode.C) && state > -1) //대화 넘기기 페이즈
+            if (wait == 0 && Input.GetKeyDown(KeyCode.Space) && state > -1) //대화 넘기기 페이즈
             {
                 Dialog_Go();
             }
@@ -44,7 +44,7 @@ public class TalkManager : MonoBehaviour
                     if (++selection > opcount - 1) selection = opcount - 1;
                 }
                 RenderArrow();
-                if (Input.GetKeyDown(KeyCode.C))
+                if (Input.GetKeyDown(KeyCode.Space)) 
                 {
                     SelectOff();
                 }
@@ -67,6 +67,7 @@ public class TalkManager : MonoBehaviour
         if (op.Number == 0)
         {
             BoxOFF();
+            return;
         }
         Vector2 v2;
         wait = 2;
@@ -83,7 +84,6 @@ public class TalkManager : MonoBehaviour
 
     void SelectOff()
     {
-        wait = 1;
         optionUI.SetActive(false);
         if (ent != null) ent.Recieve(selection);
         BoxOFF();
@@ -95,11 +95,13 @@ public class TalkManager : MonoBehaviour
     }
     void BoxOFF()
     {
+        wait = 1;
         state = -1;
         dBoxUI.SetActive(false);
+        ent.cooltime = 1;
         ent = null;
     }
-    public void Dialog_Start(int index, Entity en = null)
+    public void Dialog_Start(int index, Entity en)
     {
         if (state == -1)
         {
@@ -133,13 +135,13 @@ public class TalkManager : MonoBehaviour
 
     void Note()
     {
-        notice.text = "";
+        notice.text = "";        
     }
 
     public void NoteFor(string s, float time = 2.0f)
     {
         //텍스트 1 발동 후 텍스트 2 바로 발동 시 텍스트 2가 지워지는 시간이 텍스트 1 기준인 문제 수정
-        CancelInvoke();
+        CancelInvoke("Note");
         notice.text = s;
         Invoke("Note", time);
     }

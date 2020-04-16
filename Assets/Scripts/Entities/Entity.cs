@@ -13,6 +13,7 @@ public abstract class Entity : MonoBehaviour
     protected SpriteRenderer sr;
     protected int selection;
     protected static TalkManager tm;
+    public int cooltime;            //대화 끝나면 상호작용 쿨돌리려고..
 
     private void Start()
     {
@@ -32,7 +33,8 @@ public abstract class Entity : MonoBehaviour
             if (spc == null) { spc = Instantiate(space, this.transform.position + spacepos, Quaternion.identity); }
             if (!SysManager.forbid && Input.GetKeyDown(KeyCode.Space)) 
             {
-                ObjAct();
+                if (cooltime > 0) cooltime--;
+                else ObjAct();
             }
         }
         else { Destroy(spc); }

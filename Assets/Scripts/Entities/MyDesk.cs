@@ -7,13 +7,13 @@ public class MyDesk : Entity
 
     public override void ObjAct()
     {
-        if (p.FLAGS[(int)BaseSet.Flags.MYDESK] == 0) { 
-            tm.Dialog_Start(2);
+        if (p.FLAGS[(int)BaseSet.Flags.MYDESK] == 0) {
+            tm.Dialog_Start(2, this);
             p.FLAGS[(int)BaseSet.Flags.MYDESK] = 1;
         }
         else
         {
-            tm.Dialog_Start(3);
+            tm.Dialog_Start(3, this);
             p.HpChange(p.MHP);
         }
     }

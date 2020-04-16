@@ -20,7 +20,7 @@ public class Master : Entity
             transform.localScale = new Vector2(0.3f, 0.3f);
             p.transform.localScale = new Vector2(-0.3f, 0.3f);
         }
-        tm.Dialog_Start(4);
+        tm.Dialog_Start(4, this);
     }
 
     public override void St()

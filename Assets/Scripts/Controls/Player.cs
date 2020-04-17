@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
     Animator anim;
     SpriteRenderer sr;
 
+    private GameObject dmgTxt, dmgTxtInst;  //대미지 텍스트의 prefab이랑 인스턴스
+    private DmgOrHeal doH;
+
     public int[] FLAGS
     {
         get { return flags; }
@@ -39,6 +42,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        dmgTxt = Resources.Load<GameObject>("Prefabs/dmgTxt");
         attking = false;
         doorname = "";
         rb2d = GetComponent<Rigidbody2D>();
@@ -135,7 +139,21 @@ public class Player : MonoBehaviour
 
     public void HpChange(int delta)     //체력 회복 or 피해, ui부는 나중에 옮기는 게 나을 수도 있음
     {
+        if (delta == 0) return;
         hp += delta;
+        Instantiate(dmgTxt);
+        dmgTxtInst = Instantiate(dmgTxt);
+        dmgTxtInst.transform.position = transform.position;
+        doH = dmgTxtInst.GetComponent<DmgOrHeal>();
+        if (delta < 0)
+        {
+            doH.SetText(-delta, Color.red);
+        }
+        else
+        {
+            doH.SetText(delta, Color.green);
+        }
+
         if (hp > MAXHP) hp = MAXHP;
         else if (hp <= 0)
         {

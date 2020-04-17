@@ -15,10 +15,17 @@ public abstract class Enemy : MonoBehaviour
     public Collider2D detector;        //플레이어를 감지하면 이 트리거는 사라지면서 호전성을 띠게 됨
     private FoeHp fh;
 
+    private static GameObject dmgTxt;      //맞을 때 출력할 텍스트 prefab
+    private GameObject dmgTxtInst;        //dmgTxt의 인스턴스
+    public DmgOrHeal doH;                 //텍스트 내용 설정자
 
     // Start is called before the first frame update
     void Start()
     {
+        if (dmgTxt == null)
+        {
+            dmgTxt = Resources.Load<GameObject>("Prefabs/dmgTxt");
+        }
         sr = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -40,6 +47,19 @@ public abstract class Enemy : MonoBehaviour
     }
     protected void HPChange(int delta)
     {
+        if (delta == 0) return;
+        Instantiate(dmgTxt);
+        dmgTxtInst = Instantiate(dmgTxt);
+        dmgTxtInst.transform.position = transform.position;
+        doH = dmgTxtInst.GetComponent<DmgOrHeal>();
+        if (delta < 0)
+        {
+            doH.SetText(-delta, Color.white);
+        }
+        else
+        {
+            doH.SetText(delta, Color.cyan);
+        }
         hp += delta;
         if (hp > maxHp) hp = maxHp;
         else if (hp <= 0) { 

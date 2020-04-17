@@ -18,6 +18,7 @@ public class SaveLoad : MonoBehaviour
         {
             PlayerPrefs.SetInt("Fl"+j.ToString(), pl.FLAGS[j]); //이벤트 플래그 저장
         }
+        SysManager.KeyMapSave();
         PlayerPrefs.Save();
     }
     public void ToScene(string sc)

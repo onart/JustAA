@@ -11,7 +11,7 @@ public class SysManager : MonoBehaviour
     public static bool menuon = false;          //메뉴가 열려있는가
     public static bool forbid = false;          //통상 조작을 봉인할까
     public static Dictionary<string, KeyCode> keymap = new Dictionary<string, KeyCode> { };
-    public readonly string[] keys = { "점프", "공격", "앉기", "상호작용" }; //좌우 키, 메뉴 키 변경은 금지.
+    public static readonly string[] keys = { "점프", "공격", "앉기", "상호작용" }; //좌우 키, 메뉴 키 변경은 금지.
 
     private void Start()
     {
@@ -49,12 +49,7 @@ public class SysManager : MonoBehaviour
         Scenemover.MoveScene("Title");
     }
 
-    public void KeyMapUp(string s, KeyCode key)  //키맵 업데이트. 설정을 통해 바꾸거나, 처음 시작할 때 정해지거나.        
-    {
-        
-    }
-
-    public void KeyMapSave()                    //키맵 저장.
+    public static void KeyMapSave()                    //키맵 저장.
     {
         foreach(var c in keymap)
         {
@@ -79,10 +74,17 @@ public class SysManager : MonoBehaviour
         DictUpdate("공격", KeyCode.X);
         DictUpdate("앉기", KeyCode.DownArrow);
         DictUpdate("상호작용", KeyCode.Space);
+        DictUpdate("왼쪽", KeyCode.LeftArrow);        //여기부터는 유저에게 보여줘서는 안 되며, 내가 수정해서도 안 되는 매핑
+        DictUpdate("오른쪽", KeyCode.RightArrow);
+        DictUpdate("메뉴", KeyCode.Escape);
     }
 
-    void DictUpdate(string key, KeyCode value)
+    public static void DictUpdate(string key, KeyCode value)
     {
+        foreach (var v in keymap.Values)    //키 겹침 허용 x
+        {
+            if (value == v) return;
+        }
         if (keymap.ContainsKey(key))
         {
             keymap.Remove(key);

@@ -9,6 +9,7 @@ public class DialogBox : MonoBehaviour
 
     public bool ended; //대화 출력이 끝났는지
     public Image face;
+    public TextMeshProUGUI contin;  //"계속하려면 ~를 누르세요"
 
     AudioSource aus;
     TextMeshProUGUI char_name, content;
@@ -57,11 +58,12 @@ public class DialogBox : MonoBehaviour
         unitfrm = 0;
         ended = false;
         con = cont.ToCharArray();
+        contin.SetText("(" + SysManager.keymap["상호작용"] + "키로 계속)");
     }
 
     public void InstantInitBox(string cont)
     {
-        //출력 중 c를 한 번 더 누르면 동시출력
+        //출력 중 한 번 더 누르면 동시출력
         ended = true;
         content.text = cont;
     }

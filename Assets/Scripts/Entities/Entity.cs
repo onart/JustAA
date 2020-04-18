@@ -30,7 +30,10 @@ public abstract class Entity : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position + rayorigin, raydir, raydistance, LayerMask.GetMask("Player"));
         if (hit.collider != null && p.gameObject.GetComponent<Rigidbody2D>().velocity == Vector2.zero)
         {
-            if (spc == null) { spc = Instantiate(space, this.transform.position + spacepos, Quaternion.identity); }
+            if (spc == null) { 
+                spc = Instantiate(space);
+                spc.transform.position = this.transform.position + spacepos;                
+            }
             if (!SysManager.forbid && Input.GetKeyDown(SysManager.keymap["상호작용"])) 
             {
                 if (cooltime > 0) cooltime = 0;

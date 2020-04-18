@@ -11,9 +11,9 @@ public abstract class Entity : MonoBehaviour
     protected float raydistance;
     protected static Player p;
     protected SpriteRenderer sr;
-    protected int selection;
+    protected int selection, dialog;    //selection은 받은 선택지고, dialog는 최근 진행한 dialog
     protected static TalkManager tm;
-    public int cooltime;            //대화 끝나면 상호작용 쿨돌리려고..
+    public int cooltime;            //대화 끝나면 상호작용 쿨돌리려고..    
 
     private void Start()
     {
@@ -41,6 +41,11 @@ public abstract class Entity : MonoBehaviour
             }
         }
         else { Destroy(spc); }
+    }
+    protected void D_Start(int idx)
+    {
+        dialog = idx;
+        tm.Dialog_Start(idx, this);
     }
 
     public void Recieve(int i)

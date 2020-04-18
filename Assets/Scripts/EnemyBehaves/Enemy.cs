@@ -3,13 +3,13 @@
 public abstract class Enemy : MonoBehaviour
 {
 
-    protected int maxHp, hp;            //적의 체력. 적 역시 언젠가는 회복하지 않을까?라는 생각에 maxHp도 추가
+    protected int maxHp, hp, exp;            //적의 체력. 적 역시 언젠가는 회복하지 않을까?라는 생각에 maxHp도 추가, exp는 쓰러뜨리면 주는 경험치(재화)
     protected bool detected;            //플레이어 포착 시 행동 양식 달라짐
     protected Transform p;                 //플레이어 포착 시 그 위치를 파악하게 됨
     protected Rigidbody2D rb2d;
     protected Animator anim;
     public string toDo;              //Invoke를 이용하기 위한 것? 아직은 잘 모르겠음
-    protected SpriteRenderer sr;
+    protected SpriteRenderer sr;    
 
     public Attacker at;              //힘을 조절하기 위한 것
     public Collider2D detector;        //플레이어를 감지하면 이 트리거는 사라지면서 호전성을 띠게 됨
@@ -54,11 +54,11 @@ public abstract class Enemy : MonoBehaviour
         doH = dmgTxtInst.GetComponent<DmgOrHeal>();
         if (delta < 0)
         {
-            doH.SetText(-delta, Color.white);
+            doH.SetText((-delta).ToString(), Color.white);
         }
         else
         {
-            doH.SetText(delta, Color.cyan);
+            doH.SetText(delta.ToString(), Color.cyan);
         }
         hp += delta;
         if (hp > maxHp) hp = maxHp;
@@ -66,6 +66,7 @@ public abstract class Enemy : MonoBehaviour
             hp = 0;
             toDo = "NIL";
             GetComponent<Collider2D>().enabled = false;
+            p.gameObject.GetComponent<Player>().GainExp(exp);
             OnZero();
         }
     }

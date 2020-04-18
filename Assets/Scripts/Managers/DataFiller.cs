@@ -24,6 +24,7 @@ public class DataFiller : MonoBehaviour
         else {
             p.HP = PlayerPrefs.GetInt("CurrentHp");
             p.MHP = PlayerPrefs.GetInt("MHP");
+            p.exp = PlayerPrefs.GetInt("EXP", 0);
             for (int i = 0; i < (int)BaseSet.Flags.FLAGCOUNT; i++)
             {
                 if (!PlayerPrefs.HasKey("Fl" + i)) { PlayerPrefs.SetInt("Fl" + i, 0); PlayerPrefs.Save(); }    //업데이트를 하는 경우, 이는 오류가 아님

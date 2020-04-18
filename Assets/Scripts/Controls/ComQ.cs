@@ -100,7 +100,7 @@ public class ComQ : MonoBehaviour
     
     void QAct()
     {
-        if (p.onground && (QRead(L_RUSH, 2) || QRead(R_RUSH, 2)))
+        if (p.onground && !anim.GetBool("SIT") && (QRead(L_RUSH, 2) || QRead(R_RUSH, 2)))
         { anim.SetTrigger("RUSH"); rb2d.MovePosition(rb2d.position + Vector2.right * Input.GetAxisRaw("Horizontal")); q.Enqueue(Candid.NONE); q.Dequeue(); }
         else if (QRead(COMBO3, 3))
         { anim.SetInteger("COMBO", 3); /*q.Enqueue(Candid.NONE); q.Dequeue();*/ }

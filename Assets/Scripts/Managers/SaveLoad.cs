@@ -14,6 +14,7 @@ public class SaveLoad : MonoBehaviour
         PlayerPrefs.SetInt("CurrentHp", pl.HP);
         PlayerPrefs.SetInt("Exist", 1);
         PlayerPrefs.SetInt("Caller",i);
+        PlayerPrefs.SetInt("EXP", pl.exp);
         for (int j = 0; j < (int)BaseSet.Flags.FLAGCOUNT; j++) 
         {
             PlayerPrefs.SetInt("Fl"+j.ToString(), pl.FLAGS[j]); //이벤트 플래그 저장

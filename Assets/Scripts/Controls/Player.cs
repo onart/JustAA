@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     bool frz;       //맞은 뒤 경직은 이걸로(아마 이걸 푸는 스킬도 만들수도)
     int hp;
     int MAXHP = 100;
+    public int expe;
     Animator anim;
     SpriteRenderer sr;
 
@@ -40,8 +41,15 @@ public class Player : MonoBehaviour
         set { MAXHP = value; }
     }
 
+    public int exp
+    {
+        get { return expe; }
+        set { expe = value; }
+    }
+
     void Start()
     {
+        expe = 0;
         dmgTxt = Resources.Load<GameObject>("Prefabs/dmgTxt");
         attking = false;
         doorname = "";
@@ -141,17 +149,16 @@ public class Player : MonoBehaviour
     {
         if (delta == 0) return;
         hp += delta;
-        Instantiate(dmgTxt);
         dmgTxtInst = Instantiate(dmgTxt);
         dmgTxtInst.transform.position = transform.position;
         doH = dmgTxtInst.GetComponent<DmgOrHeal>();
         if (delta < 0)
         {
-            doH.SetText(-delta, Color.red);
+            doH.SetText((-delta).ToString(), Color.red);
         }
         else
         {
-            doH.SetText(delta, Color.green);
+            doH.SetText(delta.ToString(), Color.green);
         }
 
         if (hp > MAXHP) hp = MAXHP;
@@ -186,4 +193,17 @@ public class Player : MonoBehaviour
             frz = false;
         }
     }
+
+    public void GainExp(int delta)
+    {
+        expe += delta;
+        if (delta > 0)
+        {
+            dmgTxtInst = Instantiate(dmgTxt);
+            dmgTxtInst.transform.position = transform.position;
+            doH = dmgTxtInst.GetComponent<DmgOrHeal>();
+            doH.SetText("+" + delta.ToString(), Color.yellow, 2);
+        }
+    }
+
 }

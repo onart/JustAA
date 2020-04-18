@@ -3265,9 +3265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ad21139086ddd4397b1d144ceaf8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooltime: 0
   dr: {fileID: 1529748155}
-  mob1: {fileID: 0}
-  mob2: {fileID: 0}
+  mob: {fileID: 0}
 --- !u!4 &1330446068
 Transform:
   m_ObjectHideFlags: 0
@@ -3776,7 +3776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d84795d84a29c948b8548d159771341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapName: "\uBCF5\uB3C4"
+  mapName: "12\uCE35 \uBCF5\uB3C4"
 --- !u!4 &2115952124
 Transform:
   m_ObjectHideFlags: 0

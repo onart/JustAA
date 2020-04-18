@@ -40,11 +40,10 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //4번 대화 : 사범 처음 만남
             (Chars.ONL, Exprs.SURPRISED, "어? 누구세요?"),
-            (Chars.MASTER, Exprs.SMILE, "커맨드 기술을 배우고 싶은 건가? 잘 찾아왔네!"),
+            (Chars.MASTER, Exprs.SMILE, "싸움의 기술을 배우고 싶은 건가? 잘 찾아왔네!"),
             (Chars.ONL, Exprs.SURPRISED, "아니, 누구신데 제 방에 계시냐고요!"),
-            (Chars.MASTER, Exprs.NORM, "자네는 재능이 있어 보이는군... 하지만 배우고 싶다면 돈을 내야 한다네."),
+            (Chars.MASTER, Exprs.NORM, "자네는 재능이 있어 보이는군... 하지만 아직 경험이 부족한 것 같네."),
             (Chars.ONL, Exprs.ANGRY, "말이 안 통하는데.."),
-            (Chars.ONL, Exprs.CRY, "아, 참고로 여기까지야. 기본 기능들만 딱 모아 놓은 정도라고. 이 테스트가 끝나면 분량 늘리는 것만 남았으니까, 좋은 리포트 기대할게."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //5번 대화 : 방 밖으로 처음 나감
@@ -58,7 +57,42 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //7번 대화 : 괴물을 처치한 직후
             (Chars.ONL, Exprs.SURPRISED, "복도에 왜 저런 게 있어?"),
-            (Chars.ONL,Exprs.NORM, "무서우니까 일단 나가지 말고 들어가자.. 어차피 아직은 나가는 문도 없지만."),
+            (Chars.ONL,Exprs.NORM, "무서우니까 일단 나가지 말고 들어가자.. 무슨 일이 있는 것 같으니 인터넷에 검색해 보자고."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //8번 대화 : 관장에게 기술을 배우기 전 랜덤 대사 1
+            (Chars.MASTER, Exprs.SMILE, "혹시 나에게 무기를 휘두르고 있는 건 아니지? 어차피 그래도 아무 일도 없을 걸세."),
+            (Chars.ONL, Exprs.SURPRISED, "...!"),
+            (Chars.MASTER, Exprs.SMILE, "자, 배우겠는가?"),
+            (Chars.END, Exprs.NORM, "")
+        },2),
+        (new List<(Chars, Exprs, string)>{   //9번 대화 : 관장에게 기술을 배우기 전 랜덤 대사 2
+            (Chars.MASTER, Exprs.SMILE, "나는 수상한 사람이 아닐세. 참고로 자네가 이곳을 떠나도 자네가 가는 곳에 내가 있을 게야. 기술은 배워야지."),
+            (Chars.ONL, Exprs.NORM, "...."),
+            (Chars.MASTER, Exprs.SMILE, "자, 배우겠는가?"),
+            (Chars.END, Exprs.NORM, "")
+        },2),
+        (new List<(Chars, Exprs, string)>{   //10번 대화 : 관장에게 기술을 배우기 전 랜덤 대사 3
+            (Chars.MASTER, Exprs.NORM, "...."),
+            (Chars.ONL, Exprs.NORM, "????"),
+            (Chars.MASTER, Exprs.SMILE, "자, 배우겠는가?"),
+            (Chars.END, Exprs.NORM, "")
+        },2),
+        (new List<(Chars, Exprs, string)>{   //11번 대화 : 정말로 배울거냐
+            (Chars.MASTER, Exprs.NORM, "정말로 배울 건가?"),
+            (Chars.END, Exprs.NORM, "")
+        },1),
+        (new List<(Chars, Exprs, string)>{   //12번 대화 : 경험 부족
+            (Chars.MASTER, Exprs.NORM, "아직은 소화하기 어려운 기술이네. 경험을 더 쌓도록."),
+            (Chars.ONL, Exprs.CRY, "귀찮아..."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //13번 대화 : 배운 기술
+            (Chars.MASTER, Exprs.NORM, "이미 배운 기술이군. 메뉴를 열면 사용 방법을 확인할 수 있네."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //14번 대화 : 기술 배우기 성공
+            (Chars.MASTER, Exprs.NORM, "대단하군. 기술을 배웠으니 메뉴를 열면 사용 방법을 확인할 수 있네."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };
@@ -75,22 +109,18 @@ public static class BaseSet
     {
         new Options(0,"",0),        //선택지 없음을 나타냄
         new Options(2,"예\n아니요",1.1f),
+        new Options(4,"대시 공격(40)\n풀 스윙(1000)\n됐고 나가, 이 대머리 아저씨야.\n필요 없다",3.5f),
     };
 
     public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.
-        MYDESK=0,                     //0번. 책상에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
-        OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감(완)
+        MYDESK=0,                   //0번. 책상에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
+        OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감 / 4: 관장과 첫 대화를 마침(완)
+        SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 풀스윙 / 2^2자리: DNEDA, 추가될 수 있음
         FLAGCOUNT                   //플래그 수. 이건 플래그가 아니다.
     };
 
-    public enum Items            //아마 플래그와 같은 식으로 다뤄질 듯함. 아이템은 정렬이 필요한데 세이브에 문제가 없게 저장하는 방법 모색 필요
-    {
-        MONEY=0,
-        ITEMCOUNT
-    }
-
     public static Dictionary<string, string> Maps = new Dictionary<string, string>{
         { "MyRoom","강오늘의 방" },
-        { "Corridor","복도" },
+        { "Corridor","12층 복도" },
     };
 }

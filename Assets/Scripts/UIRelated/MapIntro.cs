@@ -6,7 +6,7 @@ public class MapIntro : MonoBehaviour
 {
     public string mapName;
     TalkManager tm;
-    // Start is called before the first frame update
+
     void Start()
     {
         tm = FindObjectOfType<TalkManager>();
@@ -14,6 +14,6 @@ public class MapIntro : MonoBehaviour
     private void Update()
     {
         tm.NoteFor(mapName);
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

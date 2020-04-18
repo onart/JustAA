@@ -24,9 +24,10 @@ public class DmgOrHeal : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    public void SetText(int delta, Color c)
+    public void SetText(string delta, Color c, int size = 5)
     {
-        dmgTxt.text = delta.ToString();
+        dmgTxt.text = delta;
         dmgTxt.faceColor = c;
+        dmgTxt.fontSize = size;
     }
 }

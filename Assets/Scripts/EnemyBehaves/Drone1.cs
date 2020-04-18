@@ -50,6 +50,7 @@ public class Drone1 : Enemy
 
     protected override void St()
     {
+        exp = 40;
         y0 = transform.position.y;
         maxHp = 20;
         hp = maxHp;

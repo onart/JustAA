@@ -5,7 +5,7 @@ public class HpBar : MonoBehaviour
 {
     public Player p;
     Image bar;
-    TextMeshProUGUI txt;
+    TextMeshProUGUI txt, exptxt;
 
     void Start()
     {
@@ -16,7 +16,8 @@ public class HpBar : MonoBehaviour
                 break;
             }
         }
-        txt = GetComponentInChildren<TextMeshProUGUI>();
+        txt = GetComponentsInChildren<TextMeshProUGUI>()[0];
+        exptxt = GetComponentsInChildren<TextMeshProUGUI>()[1];
     }
 
     // Update is called once per frame
@@ -24,5 +25,6 @@ public class HpBar : MonoBehaviour
     {
         bar.transform.localScale = new Vector2((float)p.HP / p.MHP, 1);
         txt.text = "HP " + p.HP + "/" + p.MHP;
+        exptxt.text = p.exp + " EXP";
     }
 }

@@ -95,6 +95,15 @@ public static class BaseSet
             (Chars.MASTER, Exprs.NORM, "대단하군. 기술을 배웠으니 메뉴를 열면 사용 방법을 확인할 수 있네."),
             (Chars.END, Exprs.NORM, "")
         },0),
+        (new List<(Chars, Exprs, string)>{   //15번 대화 : 나가 대머리야
+            (Chars.MASTER, Exprs.CRY, "........................................자네"),
+            (Chars.ONL, Exprs.SURPRISED, "'내가 너무 심했나.. 그래도 처음으로 말을 알아들은 것 같아서 기분이 묘하네.'"),
+            (Chars.MASTER, Exprs.NORM, "....그건 배우기도 어렵지만 쓰기도 까다로운 기술일세. 2000 경험치가 필요하지."),
+            (Chars.ONL, Exprs.ANGRY, "기술은 무슨! 내 방에서 나가세요!!!"),
+            (Chars.MASTER, Exprs.NORM, "정말로 배울 건가?"),
+            (Chars.ONL, Exprs.CRY, "'속 터져'"),
+            (Chars.END, Exprs.NORM, "")
+        },1),
     };
 
     //화면 중앙에 띄우는 글씨 리스트.
@@ -109,7 +118,7 @@ public static class BaseSet
     {
         new Options(0,"",0),        //선택지 없음을 나타냄
         new Options(2,"예\n아니요",1.1f),
-        new Options(4,"대시 공격(40)\n풀 스윙(1000)\n됐고 나가, 이 대머리 아저씨야.\n필요 없다",3.5f),
+        new Options(4,"대시 공격(40)\n풀 스윙(1000)\n됐고 나가요, 이 대머리 아저씨야.\n필요 없다",3.5f),
     };
 
     public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.

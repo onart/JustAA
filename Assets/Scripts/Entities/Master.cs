@@ -22,8 +22,18 @@ public class Master : Entity
                         Invoke("LearnGeneral", 0.02f);
                     }
                 }
+                else if (selection == 2)
+                {
+                    if (LearnCheck(selection)) Invoke("AlreadyLearned", 0.02f);
+                    else
+                    {
+                        learnskill = selection;
+                        Invoke("Demeori", 0.02f);
+                    }
+                }
                 return;
             case 11:
+            case 15:
                 if (selection == 0)
                 {
                     switch (learnskill)
@@ -59,6 +69,10 @@ public class Master : Entity
     void LearnSucc()
     {
         D_Start(14);
+    }
+    void Demeori()
+    {
+        D_Start(15);
     }
     //여기까지 Invoke 대화ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 

@@ -45,7 +45,7 @@ public abstract class Entity : MonoBehaviour
 
     protected IEnumerator D_Start(int i)    //보통 대화 시작은 이놈이다.
     {
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.03f);
         dialog = i;
         tm.Dialog_Start(i, this);
     }

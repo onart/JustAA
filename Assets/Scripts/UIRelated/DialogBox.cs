@@ -30,7 +30,7 @@ public class DialogBox : MonoBehaviour
 
     private void Update()       //글자마다 따로 출력
     {
-        if (!ended && unitfrm % 2 == 0)     // % 오른쪽 숫자만큼 느려짐.
+        if (!ended && !SysManager.menuon && unitfrm % 2 == 0)     // % 오른쪽 숫자만큼 느려짐.
         {
             content.text += con[txt];
             if (!con[txt].Equals(" ")) aus.Play();      //공백에선 타이핑 소리 출력 안 함

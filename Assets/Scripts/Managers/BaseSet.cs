@@ -97,7 +97,7 @@ public static class BaseSet
         (new List<(Chars, Exprs, string)>{   //15번 대화 : 나가 대머리야
             (Chars.MASTER, Exprs.CRY, "........................................자네"),
             (Chars.ONL, Exprs.SURPRISED, "'내가 너무 심했나.. 그래도 처음으로 말을 알아들은 것 같아서 기분이 묘하네.'"),
-            (Chars.MASTER, Exprs.NORM, "....그건 배우기도 어렵지만 쓰기도 까다로운 기술일세. 2000 경험치가 필요하지."),
+            (Chars.MASTER, Exprs.NORM, "....그건 배우기도 어렵지만 쓰기도 까다로운 기술일세. 2000xp가 필요하지. 배우면 이름이 기니까 DNEDA로 줄여서 메뉴에 들어갈 걸세. "),
             (Chars.ONL, Exprs.ANGRY, "기술은 무슨! 내 방에서 나가세요!!!"),
             (Chars.MASTER, Exprs.NORM, "정말로 배울 건가?"),
             (Chars.ONL, Exprs.CRY, "'속 터져'"),
@@ -113,7 +113,14 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //18번 대화 : 맨 처음에 컴퓨터에 말을 걸었다
-            (Chars.CHARCOUNT, Exprs.NORM, "안녕하세요! Esc로 메뉴를 열어 조작법을 확인해 보아요! 메뉴 안의 버튼을 클릭해서 조작설정을 바꿀 수 있습니다!"),
+            (Chars.ONL, Exprs.NORM, "지금은 딱히 컴퓨터로 볼 일이 없다."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //19번 대화 : 그냥 맨~처음(맵이벤트)
+            (Chars.ONL, Exprs.NORM, "배가 고픈데."),
+            (Chars.ONL, Exprs.NORM, "집에 뭐가 없으니까 밖에 나가 보자."),
+            (Chars.ONL, Exprs.NORM, "아, 참고로 조작은 Esc로 메뉴를 열면 확인할 수 있어."),
+            (Chars.ONL, Exprs.SMILE, "Esc를 누르자! 누르자!"),
             (Chars.END, Exprs.NORM, "")
         },0),
     };
@@ -130,14 +137,15 @@ public static class BaseSet
     {
         new Options(0,"",0),        //선택지 없음을 나타냄
         new Options(2,"예\n아니요",1.1f),
-        new Options(5,"대시 공격(40)\n풀 스윙(1000)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다\n필요 없다",3.5f),
+        new Options(5,"대시 공격(40xp)\n풀 스윙(1000xp)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다\n필요 없다",3.5f),
     };
 
-    public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.
+    public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 배포 후에는 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.
         MYBED=0,                    //0번. 침대에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
         OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감 / 4: 관장과 첫 대화를 마침(완)
         SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 풀스윙 / 2^2자리: DNEDA, 추가될 수 있음
         STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 
+        TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
         FLAGCOUNT                   //플래그 수. 이건 플래그가 아니다.
     };
 

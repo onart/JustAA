@@ -14,6 +14,6 @@ public class MapIntro : MonoBehaviour
     private void Update()
     {
         tm.NoteFor(mapName);
-        Destroy(gameObject);
+        enabled = false;
     }
 }

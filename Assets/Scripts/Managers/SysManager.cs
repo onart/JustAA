@@ -12,6 +12,7 @@ public class SysManager : MonoBehaviour
     public static bool forbid = false;          //통상 조작을 봉인할까
     public static Dictionary<string, KeyCode> keymap = new Dictionary<string, KeyCode> { };
     public static readonly string[] keys = { "점프", "공격", "앉기", "상호작용" }; //좌우 키, 메뉴 키 변경은 금지.
+    public static int difficulty;
 
     private void Start()
     {

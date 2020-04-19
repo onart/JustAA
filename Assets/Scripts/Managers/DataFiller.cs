@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DataFiller : MonoBehaviour
 {
+    public int nando;
+
     void Start()
     {
         DontDestroyOnLoad(this);
@@ -14,6 +16,11 @@ public class DataFiller : MonoBehaviour
         Invoke("Datafill", 0.02f);        
     }
 
+    public void NewFill()
+    {
+        Invoke("Sys", 0.02f);
+    }
+
     void Datafill()
     {
         var p = FindObjectOfType<Player>();
@@ -22,14 +29,28 @@ public class DataFiller : MonoBehaviour
             Invoke("Datafill", 0.02f);
         }
         else {
+            SysManager.difficulty = nando;
             p.HP = PlayerPrefs.GetInt("CurrentHp");
             p.MHP = PlayerPrefs.GetInt("MHP");
             p.exp = PlayerPrefs.GetInt("EXP", 0);
             for (int i = 0; i < (int)BaseSet.Flags.FLAGCOUNT; i++)
             {
-                if (!PlayerPrefs.HasKey("Fl" + i)) { PlayerPrefs.SetInt("Fl" + i, 0); PlayerPrefs.Save(); }    //업데이트를 하는 경우, 이는 오류가 아님
-                p.FLAGS[i] = PlayerPrefs.GetInt("Fl" + i);      //이벤트 플래그 불러오기
-            }
+                p.FLAGS[i] = PlayerPrefs.GetInt("Fl" + i, 0);      //이벤트 플래그 불러오기                            
+            }            
+            Destroy(gameObject);
+        }
+    }
+
+    private void Sys()
+    {
+        var s = FindObjectOfType<SysManager>();
+        if (s == null)
+        {
+            Invoke("Sys", 0.02f);
+        }
+        else
+        {
+            SysManager.difficulty = nando;
             Destroy(gameObject);
         }
     }

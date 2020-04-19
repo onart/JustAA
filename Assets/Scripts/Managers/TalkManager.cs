@@ -37,11 +37,11 @@ public class TalkManager : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    if (--selection < 0) selection = 0;
+                    if (--selection < 0) selection = opcount - 1;
                 }
                 if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
-                    if (++selection > opcount - 1) selection = opcount - 1;
+                    if (++selection > opcount - 1) selection = 0;
                 }
                 RenderArrow();
                 if (Input.GetKeyDown(SysManager.keymap["상호작용"])) 

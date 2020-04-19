@@ -7,20 +7,29 @@ public class MyDesk : Entity
 
     public override void ObjAct()
     {
-        if (p.FLAGS[(int)BaseSet.Flags.MYDESK] == 0) {
-            tm.Dialog_Start(2, this);
-            p.FLAGS[(int)BaseSet.Flags.MYDESK] = 1;
-        }
-        else
+        switch (p.FLAGS[(int)BaseSet.Flags.OUTEXP])
         {
-            tm.Dialog_Start(3, this);
-            p.HpChange(p.MHP);
+            case 0:
+                tm.Dialog_Start(18, this);
+                return;
+            case 3:
+                tm.Dialog_Start(16, this);
+                return;
+            case 4:
+                switch (p.FLAGS[(int)BaseSet.Flags.STAGE1])
+                {
+                    case 0:
+                        tm.Dialog_Start(17, this);
+                        return;
+                    case 1:
+                        return;
+                }
+                return;
         }
     }
 
     public override void Up()   //업데이트 함수.
     {
-
     }
 
     public override void St()

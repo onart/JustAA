@@ -15,20 +15,22 @@ public class Master : Entity
             case 10:    //8,9,10번은 배울 기술의 선택
                 if (selection < 2)
                 {
-                    if (LearnCheck(selection)) Invoke("AlreadyLearned", 0.02f);
+                    if (LearnCheck(selection)) {
+                        StartCoroutine(D_Start(13));
+                    }
                     else
                     {
                         learnskill = selection;
-                        Invoke("LearnGeneral", 0.02f);
+                        StartCoroutine(D_Start(11));
                     }
                 }
                 else if (selection == 2)
                 {
-                    if (LearnCheck(selection)) Invoke("AlreadyLearned", 0.02f);
+                    if (LearnCheck(selection)) StartCoroutine(D_Start(13));
                     else
                     {
                         learnskill = selection;
-                        Invoke("Demeori", 0.02f);
+                        StartCoroutine(D_Start(15));
                     }
                 }
                 return;
@@ -53,29 +55,6 @@ public class Master : Entity
         }
     }
 
-    //여기부터 invoke 대화ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-    void LearnGeneral() 
-    {
-        D_Start(11);
-    }
-    void YouCant()
-    {
-        D_Start(12);
-    }
-    void AlreadyLearned()
-    {
-        D_Start(13);
-    }
-    void LearnSucc()
-    {
-        D_Start(14);
-    }
-    void Demeori()
-    {
-        D_Start(15);
-    }
-    //여기까지 Invoke 대화ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-
     bool LearnCheck(int skill)   //이미 배운 기술인지 체크
     {
         return (p.FLAGS[(int)BaseSet.Flags.SKILLS] >> skill) % 2 == 1;
@@ -85,13 +64,13 @@ public class Master : Entity
     {
         if (p.exp < cost)
         {
-            Invoke("YouCant", 0.02f);
+            StartCoroutine(D_Start(12));
         }
         else
         {
             p.exp -= cost;
             p.FLAGS[(int)BaseSet.Flags.SKILLS] += (1 << skill);
-            Invoke("LearnSucc", 0.02f);
+            StartCoroutine(D_Start(14));
         }
     }
 
@@ -106,11 +85,11 @@ public class Master : Entity
             p.transform.localScale = new Vector2(-0.3f, 0.3f);
         }
         if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 4) {
-            D_Start(Random.Range(8, 11));
+            StartCoroutine(D_Start(Random.Range(8, 11)));
         }
         else if(p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 3)
         {
-            D_Start(4);
+            StartCoroutine(D_Start(4));
             p.FLAGS[(int)BaseSet.Flags.OUTEXP] = 4;
         }
     }

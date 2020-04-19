@@ -28,7 +28,8 @@ public abstract class Entity : MonoBehaviour
     {
         Up();
         RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position + rayorigin, raydir, raydistance, LayerMask.GetMask("Player"));
-        if (hit.collider != null && p.gameObject.GetComponent<Rigidbody2D>().velocity == Vector2.zero)
+        if (cooltime > 0) { cooltime = 0; }
+        else if (hit.collider != null && p.gameObject.GetComponent<Rigidbody2D>().velocity == Vector2.zero)
         {
             if (spc == null) { 
                 spc = Instantiate(space);
@@ -36,16 +37,17 @@ public abstract class Entity : MonoBehaviour
             }
             if (!SysManager.forbid && Input.GetKeyDown(SysManager.keymap["상호작용"])) 
             {
-                if (cooltime > 0) cooltime = 0;
-                else ObjAct();
+                ObjAct();
             }
         }
         else { Destroy(spc); }
     }
-    protected void D_Start(int idx)
+
+    protected IEnumerator D_Start(int i)    //보통 대화 시작은 이놈이다.
     {
-        dialog = idx;
-        tm.Dialog_Start(idx, this);
+        yield return new WaitForSeconds(0.02f);
+        dialog = i;
+        tm.Dialog_Start(i, this);
     }
 
     public void Recieve(int i)

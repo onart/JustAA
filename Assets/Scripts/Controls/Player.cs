@@ -100,6 +100,7 @@ public class Player : MonoBehaviour
         if (onground && Input.GetKeyDown(SysManager.keymap["점프"]))
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + 4.5f);
+            jumphold = 62;  //최대 높이에 도달 못한 상태로 키다운하면서 떨어진 후 점프할 때 최대 높이에 도달 못하는 문제 수정
         }
         else if (jumphold > 0 && Input.GetKey(SysManager.keymap["점프"])) 
         {

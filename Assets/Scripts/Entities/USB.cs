@@ -25,11 +25,8 @@ public class USB : Entity
     {
         if (selection == 0) {
             sl.Save(gameObject.scene, GetComponent<Helper>().caller);
-            Invoke("Dialog1", 0.01f);
+            StartCoroutine("D_Start", 1);
         }
     }
-    void Dialog1()  //동일 프레임에서 바로 처리하면 대화상자 꺼져서 인보크
-    {
-        tm.Dialog_Start(1, this);
-    }
+
 }

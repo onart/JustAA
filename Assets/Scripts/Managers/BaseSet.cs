@@ -11,7 +11,7 @@ public static class BaseSet
      END는 대화의 끝을 나타낼 때 쓰이며
      CHARCOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
     */
-    public enum Chars { END = -1, ONL, MASTER, CHARCOUNT };
+    public enum Chars { END = -1, ONL, MASTER, NOL, CHARCOUNT };
     public static string[] names = { "오늘", "사범" };
     /*Exprs: 대화상자에서 표정을 지칭하는 데에 쓰임
      FACECOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
@@ -29,9 +29,8 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "저장되었습니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
-        (new List<(Chars, Exprs, string)>{   //2번 대화 : 자기 책상 상호작용
-            (Chars.ONL, Exprs.NORM, "내 책상에서 잠깐 쉬면서 회복을 할 수 있지."),
-            (Chars.ONL, Exprs.CRY, "그런데 왜 침대가 아닌 거지..."),
+        (new List<(Chars, Exprs, string)>{   //2번 대화 : 자기 침대 상호작용
+            (Chars.ONL, Exprs.NORM, "침대에서 잠깐 쉬면서 회복을 할 수 있지."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //3번 대화 : 회복
@@ -57,7 +56,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //7번 대화 : 괴물을 처치한 직후
             (Chars.ONL, Exprs.SURPRISED, "복도에 왜 저런 게 있어?"),
-            (Chars.ONL,Exprs.NORM, "무서우니까 일단 나가지 말고 들어가자.. 무슨 일이 있는 것 같으니 인터넷에 검색해 보자고."),
+            (Chars.ONL,Exprs.NORM, "무서우니까 일단 나가지 말고 들어가자.. 무슨 일이 있는 것 같으니 1층 친구한테 연락해 보자고."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //8번 대화 : 관장에게 기술을 배우기 전 랜덤 대사 1
@@ -104,6 +103,19 @@ public static class BaseSet
             (Chars.ONL, Exprs.CRY, "'속 터져'"),
             (Chars.END, Exprs.NORM, "")
         },1),
+        (new List<(Chars, Exprs, string)>{   //16번 대화 : 관장을 안 보고 컴퓨터에 말을 건 경우
+            (Chars.ONL, Exprs.ANGRY, "잠깐만. 머리 위가 느낌이 이상한데.. 위쪽부터 확인해 보자."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //17번 대화 : 컴퓨터로 친구와 대화하며 문제를 파악
+            (Chars.CHARCOUNT, Exprs.NORM, "101호 인터폰으로 연결합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM,".........\n..........\n...........\n............"),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //18번 대화 : 맨 처음에 컴퓨터에 말을 걸었다
+            (Chars.CHARCOUNT, Exprs.NORM, "안녕하세요! Esc로 메뉴를 열어 조작법을 확인해 보아요! 메뉴 안의 버튼을 클릭해서 조작설정을 바꿀 수 있습니다!"),
+            (Chars.END, Exprs.NORM, "")
+        },0),
     };
 
     //화면 중앙에 띄우는 글씨 리스트.
@@ -118,13 +130,14 @@ public static class BaseSet
     {
         new Options(0,"",0),        //선택지 없음을 나타냄
         new Options(2,"예\n아니요",1.1f),
-        new Options(4,"대시 공격(40)\n풀 스윙(1000)\n됐고 나가요, 이 대머리 아저씨야.\n필요 없다",3.5f),
+        new Options(5,"대시 공격(40)\n풀 스윙(1000)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다\n필요 없다",3.5f),
     };
 
     public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.
-        MYDESK=0,                   //0번. 책상에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
+        MYBED=0,                    //0번. 침대에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
         OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감 / 4: 관장과 첫 대화를 마침(완)
         SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 풀스윙 / 2^2자리: DNEDA, 추가될 수 있음
+        STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 
         FLAGCOUNT                   //플래그 수. 이건 플래그가 아니다.
     };
 

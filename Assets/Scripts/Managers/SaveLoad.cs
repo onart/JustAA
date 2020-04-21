@@ -1,48 +1,122 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using System.Collections.Generic;
 using System.IO;
 
 public class SaveLoad : MonoBehaviour
 {
     //저장 위치는 레지스트리 편집기->HKEY_CURRENT_USER->SOFTWARE->UNITY->UNITYEDITOR->회사이름->게임이름
     //암호화 등 치트방지는 나중에 추가
-    public Player pl;    
-    public void Save(Scene s, int i)
+    
+    public Player pl;
+    string mapName;
+
+    BinaryWriter writer;
+
+    public void Save(Scene s, int caller)
     {
-        float pt = Time.time;
-        float tpt = PlayerPrefs.GetFloat("PlayTime", 0) + pt;
-        PlayerPrefs.SetString("Scene", s.name);
-        PlayerPrefs.SetInt("MHP", pl.MHP);
-        PlayerPrefs.SetInt("CurrentHp", pl.HP);
-        PlayerPrefs.SetInt("Exist", 1);
-        PlayerPrefs.SetInt("Caller",i);
-        PlayerPrefs.SetInt("EXP", pl.exp);
-        PlayerPrefs.SetInt("PlayTime", (int)tpt);
-        PlayerPrefs.SetInt("매직넘버", Mathf.CeilToInt(pt)); //이건 난이도 변경 못하게 걸어잠그는 데 쓸 거다.
-        int diff = 0;   //난이도 관련 저장
-        for (int j = 0; j < (int)BaseSet.Flags.FLAGCOUNT; j++) 
+        mapName = s.name;
+
+        List<char> c = new List<char> { 'ㄴ', 'ㅁ', 'ㅊ', 'ㅎ', 'ㅇ', 'ㄱ', 'ㅈ', 'ㅍ' };
+        //ㄴ(난이도), ㅁ(맵) ㅊ(최대HP), ㅎ(현재HP), ㅇ(저장장치 위치), ㄱ(경험치), ㅈ(매직넘버), ㅍ(플래그)
+        writer = new BinaryWriter(File.Open("onladv.sav", FileMode.Create));
+        while (c.Count != 0)
         {
-            diff += pl.FLAGS[j];
-            PlayerPrefs.SetInt("Fl"+j.ToString(), pl.FLAGS[j]); //이벤트 플래그 저장
+            int rd = Random.Range(0, c.Count);
+            PartSave(c[rd], caller);
+            c.RemoveAt(rd);
         }
-        PlayerPrefs.SetFloat("난이도", Mathf.Pow(diff + 2, 1 + SysManager.difficulty / Mathf.CeilToInt(pt)));   //이건 암호화된 난이도 변수다.        
+        writer.Close();
+
         SysManager.KeyMapSave();
         PlayerPrefs.Save();
-        //실험용 따로 저장
-        BinaryWriter writer = new BinaryWriter(File.Open("onladv.sav", FileMode.Create));
-        writer.Write(s.name);
-        writer.Write(pl.MHP);
-        writer.Write(pl.HP);
-        writer.Write(i);
-        writer.Write(pl.exp);
-        writer.Write(SysManager.difficulty);
-        writer.Close();
     }
     public void ToScene(string sc)
     {
         SceneManager.LoadScene(sc);
         SysManager.menuon = false;
     }
+
+    void PartSave(char c, int caller)
+    {
+        writer.Write(c);
+        switch (c)
+        {
+            case 'ㅁ':
+                writer.Write(mapName);
+                Debug.Log("맵: " + mapName);
+                return;
+            case 'ㄱ':
+                writer.Write(pl.exp);
+                Debug.Log("경험치: " + pl.exp);
+                return;
+            case 'ㅊ':
+                writer.Write(pl.MHP);
+                Debug.Log("풀피: " + pl.MHP);
+                return;
+            case 'ㅍ':
+                foreach(int flag in pl.FLAGS)
+                {
+                    writer.Write(flag);
+                }
+                writer.Write(-1);   //플래그 수는 업데이트 때문에 유동적이므로 종결에 표시가 필요함
+                return;
+            case 'ㅇ':
+                writer.Write(caller);
+                return;
+            case 'ㄴ':
+                int pt = Mathf.CeilToInt(Time.unscaledTime);
+                int dff = 2;
+                foreach (int flag in pl.FLAGS)
+                {
+                    dff += flag;
+                }
+                double diff = Mathf.Pow(dff, 1 + (float)SysManager.difficulty / pt);
+                writer.Write(diff);
+                return;
+            case 'ㅈ':
+                int mgn = Mathf.CeilToInt(Time.unscaledTime);
+                mgn += (mapName[0] - 'A');
+                writer.Write(mgn);
+                return;
+            case 'ㅎ':
+                writer.Write(pl.HP);
+                return;
+        }
+    }
+    
+    public static (char,string) PartRead(BinaryReader reader) //현재 8회 부르면 EOF
+    {
+        if (!(reader.PeekChar() > 0)) return (' ', null);   
+        //비어 있는 경우 뭐 비어 있는 거지(이건 세이브 파일이 없거나/저장 요소가 새로 추가되었을 때를 위한 처리)
+        char c = reader.ReadChar();
+        switch (c)
+        {
+            case 'ㅁ':
+                string map = reader.ReadString();
+                return (c, map);
+            case 'ㄱ':
+            case 'ㅊ':
+            case 'ㅇ':
+            case 'ㅈ':
+            case 'ㅎ':
+                int ival = reader.ReadInt32();
+                return (c, ival.ToString());
+            case 'ㄴ':
+                double pt = reader.ReadDouble();
+                return (c, pt.ToString());
+            case 'ㅍ':
+                string ev = "";
+                int tempFlag = 0;
+                while (tempFlag != -1) {
+                    ev += tempFlag + ",";
+                    tempFlag = reader.ReadInt32();
+                }
+                return (c, ev);
+            default:
+                return (c, "error");
+        }
+    }
+
 
 }

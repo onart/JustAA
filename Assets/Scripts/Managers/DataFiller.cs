@@ -1,10 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
-public class DataFiller : MonoBehaviour
+public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠깐 이동하여 데이터를 불어넣음
 {
-    public int nando;
+    //로드변수
+    public int diff, mhp, hp, caller = -1, exp;
+    public string map;
+    int[] pFlag = new int[(int)BaseSet.Flags.FLAGCOUNT];
+    public int[] PF
+    {
+        get { return pFlag; }
+    }
+    //----------------
+
 
     void Start()
     {
@@ -29,13 +39,13 @@ public class DataFiller : MonoBehaviour
             Invoke("Datafill", 0.02f);
         }
         else {
-            SysManager.difficulty = nando;
-            p.HP = PlayerPrefs.GetInt("CurrentHp");
-            p.MHP = PlayerPrefs.GetInt("MHP");
-            p.exp = PlayerPrefs.GetInt("EXP", 0);
+            SysManager.difficulty = diff;
+            p.HP = hp;
+            p.MHP = mhp;
+            p.exp = exp;            
             for (int i = 0; i < (int)BaseSet.Flags.FLAGCOUNT; i++)
             {
-                p.FLAGS[i] = PlayerPrefs.GetInt("Fl" + i, 0);      //이벤트 플래그 불러오기                            
+                p.FLAGS[i] = pFlag[i];      //이벤트 플래그 불러오기
             }            
             Destroy(gameObject);
         }
@@ -50,8 +60,9 @@ public class DataFiller : MonoBehaviour
         }
         else
         {
-            SysManager.difficulty = nando;
+            SysManager.difficulty = diff;
             Destroy(gameObject);
         }
-    }
+    }    
+
 }

@@ -44,15 +44,12 @@ public class SaveLoad : MonoBehaviour
         {
             case 'ㅁ':
                 writer.Write(mapName);
-                Debug.Log("맵: " + mapName);
                 return;
             case 'ㄱ':
                 writer.Write(pl.exp);
-                Debug.Log("경험치: " + pl.exp);
                 return;
             case 'ㅊ':
                 writer.Write(pl.MHP);
-                Debug.Log("풀피: " + pl.MHP);
                 return;
             case 'ㅍ':
                 foreach(int flag in pl.FLAGS)

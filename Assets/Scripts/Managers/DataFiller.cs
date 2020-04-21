@@ -5,7 +5,7 @@ using System.IO;
 
 public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠깐 이동하여 데이터를 불어넣음
 {
-    //로드변수
+    //로드변수. 배포가 이루어진 상태에서 새로운 세이브/로드변수가 추가되는 경우, 반드시 디폴트값을 추가하여 새로 생긴 요소에 대하여는 디폴트값으로 초기화하자.
     public int diff, mhp, hp, caller = -1, exp;
     public string map;
     int[] pFlag = new int[(int)BaseSet.Flags.FLAGCOUNT];

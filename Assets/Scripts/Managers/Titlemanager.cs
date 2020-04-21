@@ -22,7 +22,7 @@ public class Titlemanager : MonoBehaviour
             dataDisp.SetText("데이터가 손상되었습니다. 데이터를 삭제해 주세요.");
             return;
         }
-        string hps = df.hp + "/" + df.mhp;
+        string hps = "HP " + df.hp + "/" + df.mhp;
         dataDisp.SetText(BaseSet.Maps[df.map] + ' ' + '\n' + hps + ", " + df.exp + "xp\n" + difficulty[df.diff - 1]);
     }
 
@@ -68,7 +68,6 @@ public class Titlemanager : MonoBehaviour
                     break;
                 case 'ㄴ':
                     nanido = double.Parse(ch.Item2);
-                    Debug.Log("난이도 상수: " + nanido);
                     break;
                 case 'ㅈ':
                     mgn = int.Parse(ch.Item2);

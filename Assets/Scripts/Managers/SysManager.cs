@@ -67,23 +67,23 @@ public class SysManager : MonoBehaviour
 
     public void KeyMapLoad()                    //키맵 로드.
     {
-        SetDefaultKeyMap();                     //업데이트로 새로운 키가 추가될 수 있으므로
-        foreach(var c in keys)
+        DictUpdate("왼쪽", KeyCode.LeftArrow);        //여기는 유저에게 보여줘서는 안 되며, 내가 수정해서도 안 되는 매핑
+        DictUpdate("오른쪽", KeyCode.RightArrow);
+        DictUpdate("메뉴", KeyCode.Escape);
+        foreach (var c in keys)
         {
-            if(PlayerPrefs.HasKey(c)) DictUpdate(c, (KeyCode)PlayerPrefs.GetInt(c));    
+            if(PlayerPrefs.HasKey(c)) DictUpdate(c, (KeyCode)PlayerPrefs.GetInt(c));
             //업데이트로 키 이름이 바뀌지 않아야 함. 하지만 혹시 모르니
         }
+        SetDefaultKeyMap();                     //업데이트로 새로운 키가 추가될 수 있으므로
     }
 
     void SetDefaultKeyMap()
     {
-        DictUpdate("점프", KeyCode.Z);
-        DictUpdate("공격", KeyCode.X);
-        DictUpdate("앉기", KeyCode.DownArrow);
-        DictUpdate("상호작용", KeyCode.Space);
-        DictUpdate("왼쪽", KeyCode.LeftArrow);        //여기부터는 유저에게 보여줘서는 안 되며, 내가 수정해서도 안 되는 매핑
-        DictUpdate("오른쪽", KeyCode.RightArrow);
-        DictUpdate("메뉴", KeyCode.Escape);
+        DictUpdate2("점프", KeyCode.Z);
+        DictUpdate2("공격", KeyCode.X);
+        DictUpdate2("앉기", KeyCode.DownArrow);
+        DictUpdate2("상호작용", KeyCode.Space);        
     }
 
     public static void DictUpdate(string key, KeyCode value)
@@ -95,6 +95,22 @@ public class SysManager : MonoBehaviour
         if (keymap.ContainsKey(key))
         {
             keymap.Remove(key);
+        }
+        keymap.Add(key, value);
+    }
+
+    void DictUpdate2(string key, KeyCode value) //순서에 따라 디폴트키로 되돌아오는 경우가 생겨서 디폴트키 방식 변경(키 있음->취소, 키 없는데 값 겹침->NONE추가) 
+    {
+        if (keymap.ContainsKey(key))
+        {
+            return;
+        }
+        foreach (var v in keymap.Values)    //(누르는)키 겹침 허용 x
+        {
+            if (value == v) {
+                keymap.Add(key, KeyCode.None);
+                return;
+            }
         }
         keymap.Add(key, value);
     }

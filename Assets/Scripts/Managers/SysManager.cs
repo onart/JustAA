@@ -8,6 +8,7 @@ public class SysManager : MonoBehaviour
 {
     Canvas cv;
     public GameObject menu, dialogUI;
+    public KeyConfig kc;                        //키설정용
     public static bool menuon = false;          //메뉴가 열려있는가
     public static bool forbid = false;          //통상 조작을 봉인할까
     public static Dictionary<string, KeyCode> keymap = new Dictionary<string, KeyCode> { };
@@ -32,6 +33,11 @@ public class SysManager : MonoBehaviour
     {
         menu.SetActive(!menu.activeSelf);
         menuon = menu.activeSelf;
+        if (menuon)
+        {
+            kc.CancelSelect();
+            kc.SkillIntroduce();
+        }
     }
 
     public void Quit()

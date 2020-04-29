@@ -73,6 +73,7 @@ public class KeyConfig : MonoBehaviour
 
     public void SkillIntroduce()
     {
+        skillIntro = "<특수기술 목록>\n<<,>> (대시)\n공격x3(연속 공격)\n";
         skills.SetText(skillIntro);
         var p = FindObjectOfType<Player>();
         int i = p.FLAGS[(int)BaseSet.Flags.SKILLS];

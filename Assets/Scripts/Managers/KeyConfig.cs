@@ -6,8 +6,8 @@ using TMPro;
 
 public class KeyConfig : MonoBehaviour
 {
-    string skillIntro = "<특수기술 목록>\n<<,>> (대시)\n공격x3(연속 공격)\n";
-    string[] skillNames = { "대시+-+공격(대시공격)", "공격 키다운 후 놓기(풀 스윙)", "특수1 키다운 후 놓기(DNEDA)" };  //BaseSet 플래그 정의와 동일한 순서로.
+    const string skillIntro = "<특수기술 목록>\n<<,>> (대시)\n공격x3(연속 공격)\n";
+    readonly string[] skillNames = { "대시 - 공격(대시공격)\n", "공격 키다운 후 놓기(풀 스윙)\n", "특수1 키다운 후 놓기(DNEDA)\n" };  //BaseSet 플래그 정의와 동일한 순서로.
 
     //SysManager에서 정의된 키 순서 : public readonly string[] keys = { "점프", "공격", "앉기", "상호작용" };
     //이 순서대로 수동으로 끌어다 놓을 것
@@ -73,8 +73,7 @@ public class KeyConfig : MonoBehaviour
 
     public void SkillIntroduce()
     {
-        skillIntro = "<특수기술 목록>\n<<,>> (대시)\n공격x3(연속 공격)\n";
-        skills.SetText(skillIntro);
+        skills.text = skillIntro;
         var p = FindObjectOfType<Player>();
         int i = p.FLAGS[(int)BaseSet.Flags.SKILLS];
         int j = 0;

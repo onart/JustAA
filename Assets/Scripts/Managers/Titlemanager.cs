@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using TMPro;
 using System.IO;
 
-//저장 위치는 레지스트리 편집기->HKEY_CURRENT_USER->SOFTWARE->UNITY->UNITYEDITOR->회사이름->게임이름
 public class Titlemanager : MonoBehaviour
 {
     readonly string[] difficulty = { "쉬움", "보통", "어려움" };
@@ -29,6 +28,7 @@ public class Titlemanager : MonoBehaviour
     int Validity()  //난이도 숫자의 저장 데이터의 유효성 판단. 역연산 후 절대오차가 작으면 통과한다.
     {
         mgn -= (df.map[0] - 'A');
+        mgn -= df.mhp;
         int down = 2;
         foreach (int flag in df.PF) {
             down += flag;
@@ -36,9 +36,10 @@ public class Titlemanager : MonoBehaviour
         float candid = Mathf.Log((float)nanido, down);
         candid--;
         candid *= mgn;
-        if (Mathf.Abs(candid - 1) < 0.001f) return 1;             //난이도 쉬움
-        else if (Mathf.Abs(candid - 2) < 0.001f) return 2;        //난이도 보통
-        else if (Mathf.Abs(candid - 3) < 0.001f) return 3;        //난이도 어려움
+        Debug.Log(candid);
+        if (Mathf.Abs(candid - 1) < 0.0001f) return 1;             //난이도 쉬움
+        else if (Mathf.Abs(candid - 2) < 0.0001f) return 2;        //난이도 보통
+        else if (Mathf.Abs(candid - 3) < 0.0001f) return 3;        //난이도 어려움
         else return 0;
     }
 

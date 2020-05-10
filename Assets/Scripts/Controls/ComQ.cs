@@ -23,6 +23,8 @@ public class ComQ : MonoBehaviour
     static readonly Candid[] COMBO1 = { Candid.ATK };
     static readonly Candid[] COMBO2 = { Candid.ATK, Candid.ATK };
     static readonly Candid[] COMBO3 = { Candid.ATK, Candid.ATK, Candid.ATK };
+    static readonly Candid[] L_DAT = { Candid.LEFT, Candid.LEFT, Candid.NONE, Candid.ATK };
+    static readonly Candid[] R_DAT = { Candid.RIGHT, Candid.RIGHT, Candid.NONE, Candid.ATK };
     //커맨드 리스트
     void Start()
     {
@@ -100,7 +102,9 @@ public class ComQ : MonoBehaviour
     
     void QAct()
     {
-        if (p.onground && !anim.GetBool("SIT") && (QRead(L_RUSH, 2) || QRead(R_RUSH, 2)))
+        if(SkillKnow(0) && p.onground && !anim.GetBool("SIT") && (QRead(L_DAT,4) || QRead(R_DAT, 4)))
+        { anim.SetInteger("COMBO", 11); }
+        else if (p.onground && !anim.GetBool("SIT") && (QRead(L_RUSH, 2) || QRead(R_RUSH, 2)))
         { anim.SetTrigger("RUSH"); rb2d.MovePosition(rb2d.position + Vector2.right * Input.GetAxisRaw("Horizontal")); q.Enqueue(Candid.NONE); q.Dequeue(); }
         else if (QRead(COMBO3, 3))
         { anim.SetInteger("COMBO", 3); /*q.Enqueue(Candid.NONE); q.Dequeue();*/ }
@@ -109,5 +113,10 @@ public class ComQ : MonoBehaviour
         else if (QRead(COMBO1, 1))
         { anim.SetInteger("COMBO", 1); }
         else anim.SetInteger("COMBO", 0);
+    }
+
+    bool SkillKnow(int skill)   //고급 스킬을 배웠는지
+    {
+        return (p.FLAGS[(int)BaseSet.Flags.SKILLS] >> skill % 2 == 1);        
     }
 }

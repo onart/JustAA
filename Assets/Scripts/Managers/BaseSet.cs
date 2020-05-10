@@ -12,7 +12,7 @@ public static class BaseSet
      CHARCOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
     */
     public enum Chars { END = -1, ONL, MASTER, NOL, CHARCOUNT };
-    public static string[] names = { "오늘", "사범" };
+    public static string[] names = { "오늘", "사범", "노을" };
     /*Exprs: 대화상자에서 표정을 지칭하는 데에 쓰임
      FACECOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
     */
@@ -56,7 +56,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //7번 대화 : 괴물을 처치한 직후
             (Chars.ONL, Exprs.SURPRISED, "복도에 왜 저런 게 있어?"),
-            (Chars.ONL,Exprs.NORM, "무서우니까 일단 나가지 말고 들어가자.. 무슨 일이 있는 것 같으니 1층 친구한테 연락해 보자고."),
+            (Chars.ONL,Exprs.NORM, "무서우니까 일단 나가지 말고 들어가자.. 무슨 일이 있는 것 같으니 1층에 CCTV 친구한테 연락해 보자고."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //8번 대화 : 관장에게 기술을 배우기 전 랜덤 대사 1
@@ -110,6 +110,22 @@ public static class BaseSet
         (new List<(Chars, Exprs, string)>{   //17번 대화 : 컴퓨터로 친구와 대화하며 문제를 파악
             (Chars.CHARCOUNT, Exprs.NORM, "101호 인터폰으로 연결합니다."),
             (Chars.CHARCOUNT, Exprs.NORM,".........\n..........\n...........\n............"),
+            (Chars.NOL, Exprs.SMILE, "이제야 연락하는구나. 별로 안 다쳤니?"),
+            (Chars.ONL, Exprs.NORM, "'이야기를 참 빠르게도 진행하네'"),
+            (Chars.ONL, Exprs.NORM, "CC야, 넌 잘 알고 있나 보네. 이게 무슨 일이야?"),
+            (Chars.NOL, Exprs.SMILE, "난 CC가 아니라 노을이야."),
+            (Chars.ONL, Exprs.ANGRY, "CC야,\n넌 잘 알고 있나 보네.\n이게 무슨 일이야?"),
+            (Chars.NOL, Exprs.ANGRY, "거 참...\n어떤 이상한 사람이 지하로 들어가더니 한 30분 전부터 로봇이 막 올라가더라. 덕분에 엘리베이터도 고장나고 건물 상태가 말이 아니야."),
+            (Chars.ONL, Exprs.SURPRISED, "조치는 취했어? 언제쯤 밖으로 나가도 될까?"),
+            (Chars.NOL, Exprs.NORM, "무슨 말이야, 당연히 네가 해결해야지."),
+            (Chars.ONL, Exprs.SURPRISED, "왜?"),
+            (Chars.NOL, Exprs.NORM, "그걸 왜 몰라?             \n...지금은 모른대도 결국 자연히 알게 될 거야. 아무튼 해결을 위해 줄 게 있으니 일단 내 방으로 와 줘."),
+            (Chars.ONL, Exprs.ANGRY, "후..."),
+            (Chars.NOL, Exprs.CRY, "지금 나도 할 일이 많아. 그럼 오는 걸로 알고 있을게. 더 할 말 없지?"),
+            (Chars.ONL, Exprs.NORM, "아, 잠깐. 한 가지 물어볼 게 더 있어. 방에 본 적 없는 사람이 들어왔는데 말이 안 통하거든. 네가 문 열어줬지?"),
+            (Chars.NOL, Exprs.NORM, "어제랑 오늘은 외부인 출입이 없어.\n아 미안, 진짜 급하다. 이 이상은 만나면 얘기하자. 끊는다?"),
+            (Chars.CHARCOUNT, Exprs.NORM,"통화가 종료되었습니다."),
+            (Chars.ONL, Exprs.ANGRY, "이런, 일단 가 봐야겠다."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //18번 대화 : 맨 처음에 컴퓨터에 말을 걸었다
@@ -121,6 +137,10 @@ public static class BaseSet
             (Chars.ONL, Exprs.NORM, "집에 뭐가 없으니까 밖에 나가 보자."),
             (Chars.ONL, Exprs.NORM, "아, 참고로 조작은 Esc로 메뉴를 열면 확인할 수 있어."),
             (Chars.ONL, Exprs.SMILE, "Esc를 누르자! 누르자!"),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //20번 대화 : 노을과의 통화를 마친 이후 컴퓨터
+            (Chars.ONL, Exprs.NORM, "어서 101호로 가자."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };

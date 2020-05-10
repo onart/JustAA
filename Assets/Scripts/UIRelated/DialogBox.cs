@@ -33,7 +33,7 @@ public class DialogBox : MonoBehaviour
         if (!ended && !SysManager.menuon && unitfrm % 2 == 0)     // % 오른쪽 숫자만큼 느려짐.
         {
             content.text += con[txt];
-            if (!con[txt].Equals(" ")) aus.Play();      //공백에선 타이핑 소리 출력 안 함
+            if (!con[txt].Equals(' ')) aus.Play();       //공백에선 타이핑 소리 출력 안 함
             txt++;
             if (txt == con.Length) ended = true;
         }

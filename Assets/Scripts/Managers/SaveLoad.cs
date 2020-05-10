@@ -67,13 +67,14 @@ public class SaveLoad : MonoBehaviour
                 foreach (int flag in pl.FLAGS)
                 {
                     dff += flag;
-                }
+                }                
                 double diff = Mathf.Pow(dff, 1 + (float)SysManager.difficulty / pt);
                 writer.Write(diff);
                 return;
             case 'ㅈ':
                 int mgn = Mathf.CeilToInt(Time.unscaledTime);
                 mgn += (mapName[0] - 'A');
+                mgn += pl.MHP;
                 writer.Write(mgn);
                 return;
             case 'ㅎ':

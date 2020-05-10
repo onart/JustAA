@@ -1,0 +1,247 @@
+fileFormatVersion: 2
+guid: 1be71ce161f79734e937e5387a16712c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4825082993425699239
+    second: ONL_TURN1
+  - first:
+      213: -534821700651475370
+    second: ONL_TURN2
+  - first:
+      213: 4920861702543076426
+    second: ONL_TURN3
+  - first:
+      213: 8455891959664005145
+    second: ONL_TURN4
+  - first:
+      213: 4265260996099268187
+    second: ONL_CH2
+  - first:
+      213: 4430041389180195506
+    second: ONL_CH1
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ONL_TURN1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 445
+        width: 218
+        height: 299
+      alignment: 9
+      pivot: {x: 0.50191224, y: 0.03547337}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef00d3070876e64ca90a58bcf9cd92f
+      internalID: 4825082993425699239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_TURN2
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 432
+        width: 237
+        height: 314
+      alignment: 9
+      pivot: {x: 0.565638, y: 0.033854783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c8a0b38297a534b85339d449db8af5
+      internalID: -534821700651475370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_TURN3
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 442
+        width: 282
+        height: 306
+      alignment: 9
+      pivot: {x: 0.40221, y: 0.035532832}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac963e22b170f945bc6b3503bdde039
+      internalID: 4920861702543076426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_TURN4
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 460
+        width: 229
+        height: 299
+      alignment: 9
+      pivot: {x: 0.5123515, y: 0.017564245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70adc58407d01104f9fb2d26acfa7e2f
+      internalID: 8455891959664005145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_CH2
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 80
+        width: 206
+        height: 317
+      alignment: 9
+      pivot: {x: 0.41613904, y: 0.027178166}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75fb6748dd3dd754795d06a204821788
+      internalID: 4265260996099268187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_CH1
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 76
+        width: 177
+        height: 311
+      alignment: 9
+      pivot: {x: 0.3972413, y: 0.023085542}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7c1442c1f062f4f8381340ef0e5e87
+      internalID: 4430041389180195506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

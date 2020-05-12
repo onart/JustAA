@@ -44,7 +44,7 @@ public class ComQ : MonoBehaviour
     {
         if (!SysManager.forbid)
         {
-            if (p.kdown) { QUp(Candid.NONE); return; }
+            if (p.kdown == 2) { QUp(Candid.NONE); return; }
             inputime--;
             QIn();
             if (inputime == 0)

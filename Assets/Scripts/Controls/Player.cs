@@ -9,7 +9,8 @@ public class Player : MonoBehaviour
     const float downlim = -10;
 
     public string doorname;
-    public bool onground, kdown, attking;    //onground : 땅에 있는지. kdown : 강공격에 맞은 경우, attking : 공격중인가?
+    public bool onground, attking;    //onground : 땅에 있는지. kdown : 강공격에 맞은 경우, attking : 공격중인가?
+    public int kdown;
     public float jumphold;
     int[] flags = new int[(int)BaseSet.Flags.FLAGCOUNT];     //BaseSet.cs에 명시된 플래그 기반. 데이터필러에서 이것도 채워야 한다. 꼭 0과 1로 구분할 필요는 없음
 
@@ -58,7 +59,7 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         jumphold = 0;
         hp = MAXHP;
-        kdown = false;
+        kdown = 0;
         HpChange(0);
     }
 
@@ -136,7 +137,7 @@ public class Player : MonoBehaviour
 
     void StandUp()
     {
-        kdown = false;
+        kdown = 0;
         frz = false;
         anim.SetInteger("OVR", 0);
     }
@@ -166,25 +167,30 @@ public class Player : MonoBehaviour
         else if (hp <= 0)
         {
             hp = 0;
+            anim.SetTrigger("HIT");
             anim.SetInteger("OVR", 2);
             Invoke("Hp0", 1);
         }
     }
 
-    public void GetHit(int dmg, bool down) //적의 공격은 적 충돌에서 이 함수를 불러서 사용, down이 있는 공격을 받을 시 누움. 누운 상태에서는 콜라이더 숨김
+    public void GetHit(int dmg, int down) 
     {
-        anim.SetTrigger("HIT");
-        anim.SetInteger("OVR", 0);
+        //적의 공격은 적 충돌에서 이 함수를 불러서 사용, 
+        //down 0은 피격 모션 없음, down 1은 피격모션만 있음, down 2는 누움.누운 상태에서는 콜라이더 숨김
         HpChange(-dmg);
-        kdown = down;
-        frz = true;
-        Invoke("Hold", 0.3f);
+        if (down != 0) {
+            anim.SetTrigger("HIT");
+            anim.SetInteger("OVR", 0);
+            kdown = down;
+            frz = true;
+            Invoke("Hold", 0.3f);
+        }
     }
 
     public void Hold()                 //맞은 후 경직.
     {
         if (!onground) return;
-        if (kdown) {
+        if (kdown == 2)  {            
             anim.SetInteger("OVR", 2);
             if (hp > 0) Invoke("StandUp", 0.5f);
         }

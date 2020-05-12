@@ -66,6 +66,6 @@ sysinfo.txt
 crashlytics-build.properties
 
 # save file
-onladv.sav
+save.onladv
 
 # End of https://www.gitignore.io/api/unity

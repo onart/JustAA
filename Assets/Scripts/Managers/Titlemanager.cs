@@ -135,7 +135,7 @@ public class Titlemanager : MonoBehaviour
         else {
             counts.text = "5";
             counts.GetComponentInParent<Button>().gameObject.SetActive(false);
-            BinaryWriter eraser = new BinaryWriter(File.Open("onladv.sav", FileMode.Create));
+            BinaryWriter eraser = new BinaryWriter(File.Open("save.onladv", FileMode.Create));
             eraser.Close();
             ertext.text = "플레이 데이터가 삭제되었습니다.";
             nanido = -1;

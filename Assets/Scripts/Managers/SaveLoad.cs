@@ -19,7 +19,7 @@ public class SaveLoad : MonoBehaviour
 
         List<char> c = new List<char> { 'ㄴ', 'ㅁ', 'ㅊ', 'ㅎ', 'ㅇ', 'ㄱ', 'ㅈ', 'ㅍ' };
         //ㄴ(난이도), ㅁ(맵) ㅊ(최대HP), ㅎ(현재HP), ㅇ(저장장치 위치), ㄱ(경험치), ㅈ(매직넘버), ㅍ(플래그)
-        writer = new BinaryWriter(File.Open("onladv.sav", FileMode.Create));
+        writer = new BinaryWriter(File.Open("save.onladv", FileMode.Create));
         while (c.Count != 0)
         {
             int rd = Random.Range(0, c.Count);

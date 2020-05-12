@@ -792,7 +792,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92f4d15357b5fb43bbcd7fd55977a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nando: 0
+  diff: 0
+  mhp: 0
+  hp: 0
+  caller: -1
+  exp: 0
+  map: 
 --- !u!4 &696518215
 Transform:
   m_ObjectHideFlags: 0

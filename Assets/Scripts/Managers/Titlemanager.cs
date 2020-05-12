@@ -36,7 +36,7 @@ public class Titlemanager : MonoBehaviour
         float candid = Mathf.Log((float)nanido, down);
         candid--;
         candid *= mgn;
-        Debug.Log(candid);
+        //Debug.Log(candid);
         if (Mathf.Abs(candid - 1) < 0.0001f) return 1;             //난이도 쉬움
         else if (Mathf.Abs(candid - 2) < 0.0001f) return 2;        //난이도 보통
         else if (Mathf.Abs(candid - 3) < 0.0001f) return 3;        //난이도 어려움
@@ -45,7 +45,7 @@ public class Titlemanager : MonoBehaviour
 
     private void LoadBin()
     {
-        BinaryReader reader = new BinaryReader(File.Open("onladv.sav", FileMode.OpenOrCreate));
+        BinaryReader reader = new BinaryReader(File.Open("save.onladv", FileMode.OpenOrCreate));
         (char, string) ch;
         do
         {

@@ -16,10 +16,14 @@ public abstract class MapEv : Entity
 
     public override void St()
     {
+        tm.NoteFor(BaseSet.Maps[gameObject.scene.name]);
+        Stt();
     }
 
     public override void Up()   //이거 안 쓰고 Update 오버라이드하자.
     {
     }
+
+    public abstract void Stt();
 
 }

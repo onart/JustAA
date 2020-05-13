@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MyRoomEv : MapEv
 {
-    public override void St()
+    public override void Stt()
     {
         Invoke("HowTo", 0.05f);
     }

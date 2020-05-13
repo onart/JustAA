@@ -143,6 +143,19 @@ public static class BaseSet
             (Chars.ONL, Exprs.NORM, "어서 101호로 가자."),
             (Chars.END, Exprs.NORM, "")
         },0),
+        (new List<(Chars, Exprs, string)>{   //21번 대화 : 아직 아래층으로 내려가면 안 될 때
+            (Chars.ONL, Exprs.NORM, "일단 집으로 돌아가는 게 좋을 것 같은데.."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //22번 대화 : 계단이 끊어짐을 발견
+            (Chars.ONL, Exprs.SURPRISED, "엘리베이터만 망가진 게 아니라 계단도 못 쓰게 됐네?"),
+            (Chars.ONL, Exprs.SURPRISED, "여기서 뛰어내릴 수는 없어. 11층으로 가서 다른 방법을 찾아야겠군."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //23번 대화 : 계단맵 첫 진입
+            (Chars.ONL, Exprs.NORM, "여긴 적이 없네. 어서 움직이자."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
     };
 
     //화면 중앙에 띄우는 글씨 리스트.
@@ -164,7 +177,7 @@ public static class BaseSet
         MYBED=0,                    //0번. 침대에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
         OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감 / 4: 관장과 첫 대화를 마침(완)
         SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 풀스윙 / 2^2자리: DNEDA, 추가될 수 있음
-        STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 
+        STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 11층에서 매트리스를 얻음. / 4: 
         TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
         FLAGCOUNT                   //플래그 수. 이건 플래그가 아니다.
     };
@@ -172,5 +185,6 @@ public static class BaseSet
     public static Dictionary<string, string> Maps = new Dictionary<string, string>{
         { "MyRoom","강오늘의 방" },
         { "Corridor","12층 복도" },
+        { "Stairs","층계" },
     };
 }

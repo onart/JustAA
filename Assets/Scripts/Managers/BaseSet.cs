@@ -153,7 +153,7 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //23번 대화 : 계단맵 첫 진입
-            (Chars.ONL, Exprs.NORM, "여긴 적이 없네. 어서 움직이자."),
+            (Chars.ONL, Exprs.NORM, "빗면을 타면서 점프를 하면 훨씬 높이 점프되는데, 버그가 맞지만 게임에 이 계단 외에 경사가 큰 빗면은 없을 거라서 고치진 않을거야."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };
@@ -184,7 +184,10 @@ public static class BaseSet
 
     public static Dictionary<string, string> Maps = new Dictionary<string, string>{
         { "MyRoom","강오늘의 방" },
-        { "Corridor","12층 복도" },
+        { "12Corridor","12층 복도" },
         { "Stairs","층계" },
+        { "11Corridor","11층 복도" },
+        { "Gym","검도관" },
+        { "Church","교회" },
     };
 }

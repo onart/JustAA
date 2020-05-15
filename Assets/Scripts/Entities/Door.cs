@@ -6,7 +6,7 @@ public class Door : Entity
 {
     public string connectedDoor, connectedScene;        //문은 연결된 씬과 문을 가리킨다. string은 상대 게임오브젝트 이름과 비교하기 위함
     public Sprite sp;
-    bool mode;                                   //이벤트의 편의를 위해 대화 모드와 이동 모드를 따로 다루자. 이를 테면, 문이 잠긴 경우 대화모드여야 한다. true: 이동 모드, false : 대화 모드
+    bool mode = true;                                   //이벤트의 편의를 위해 대화 모드와 이동 모드를 따로 다루자. 이를 테면, 문이 잠긴 경우 대화모드여야 한다. true: 이동 모드, false : 대화 모드
 
     int response;                                
     //대화 모드일 때 불러낼 대사로, MapEv에서 정하면 된다. 아마 리시브가 있을 수도 있는데 response에 따른 분기로 하면 하나로 된다.
@@ -35,7 +35,6 @@ public class Door : Entity
     }
     public override void St()
     {
-        mode = true;
         spacepos = new Vector3(-0.2f, 1.3f, 0);
         fio = FindObjectOfType<Fade2>();
         if (p.doorname == name) p.transform.position = transform.position;
@@ -56,7 +55,7 @@ public class Door : Entity
     {
         if (chat < 0)
         {
-            mode = true;            
+            mode = true;
         }
         else
         {

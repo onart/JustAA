@@ -8,6 +8,14 @@ public class TargetMe : MonoBehaviour
     void Start()
     {
         vc = GetComponent<Cinemachine.CinemachineVirtualCamera>();
-        vc.Follow = FindObjectOfType<Player>().transform;
+        Find();
+    }
+    void Find()
+    {
+        if (!vc.Follow) { 
+            vc.Follow = FindObjectOfType<Player>().transform;
+            Invoke("Find", 0.02f);
+        }
+        else return;
     }
 }

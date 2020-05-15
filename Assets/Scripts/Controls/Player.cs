@@ -72,6 +72,12 @@ public class Player : MonoBehaviour
                 //일단 조작만 봉인
             }
             else {
+                //테스트 코드
+                if (Input.GetKeyDown(KeyCode.Backslash))
+                {
+                    HpChange(100);
+                }
+                //
                 Sit();
                 LRmove();
                 Air();

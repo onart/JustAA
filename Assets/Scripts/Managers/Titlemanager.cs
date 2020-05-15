@@ -163,6 +163,7 @@ public class Titlemanager : MonoBehaviour
     public void DfSelect(int level)
     {
         df.diff = level;
+        df.caller = -1;
         df.NewFill();
         Scenemover.MoveScene("MyRoom");
     }

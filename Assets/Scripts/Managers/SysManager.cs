@@ -14,6 +14,7 @@ public class SysManager : MonoBehaviour
     public static Dictionary<string, KeyCode> keymap = new Dictionary<string, KeyCode> { };
     public static readonly string[] keys = { "점프", "공격", "앉기", "상호작용" }; //좌우 키, 메뉴 키 변경은 금지.
     public static int difficulty;               //1: 쉬움, 2: 보통, 3: 어려움
+    public static int cbr;    //치트 블로커
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class SysManager : MonoBehaviour
     }
     void Update()
     {
+        Checker();  //치트체커
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             MenuFlip();
@@ -113,6 +115,11 @@ public class SysManager : MonoBehaviour
             }
         }
         keymap.Add(key, value);
+    }
+
+    void Checker()
+    {
+        if (cbr != 24 - difficulty) Scenemover.MoveScene("GameOver");
     }
 
 }

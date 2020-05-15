@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
                 //테스트 코드
                 if (Input.GetKeyDown(KeyCode.Backslash))
                 {
-                    HpChange(100);
+                    HpChange(-20);
                 }
                 //
                 Sit();

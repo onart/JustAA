@@ -40,6 +40,7 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
         }
         else {
             SysManager.difficulty = diff;
+            SysManager.cbr = 24 - diff;
             p.HP = hp;
             p.MHP = mhp;
             p.exp = exp;            
@@ -61,6 +62,7 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
         else
         {
             SysManager.difficulty = diff;
+            SysManager.cbr = 24 - diff;
             Destroy(gameObject);
         }
     }    

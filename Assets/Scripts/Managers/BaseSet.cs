@@ -156,6 +156,16 @@ public static class BaseSet
             (Chars.ONL, Exprs.NORM, "빗면을 타면서 점프를 하면 훨씬 높이 점프되는데, 버그가 맞지만 게임에 이 계단 외에 경사가 큰 빗면은 없을 거라서 고치진 않을거야."),
             (Chars.END, Exprs.NORM, "")
         },0),
+        (new List<(Chars, Exprs, string)>{   //24번 대화 : 체력을 강화한다
+            (Chars.MASTER, Exprs.NORM, "상황이 많이 어려운 모양이군. 500XP로 체력 1을 올릴 수 있네."),
+            (Chars.MASTER, Exprs.NORM, "기술적으로 한 번에 많은 양을 강화하게 하는 건 쉽지만, 굳이 지원하지는 않겠네. 적은 체력으로 클리어를 노려보게나."),
+            (Chars.MASTER, Exprs.NORM, "체력을 강화하겠는가?"),
+            (Chars.END, Exprs.NORM, "")
+        },1),
+        (new List<(Chars, Exprs, string)>{   //25번 대화 : 체력 강화 경험치 모자람
+            (Chars.MASTER, Exprs.NORM, "XP가 부족하군. 조금만 진행하다 보면 기술을 다 배우고도 남아돌 걸세."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
     };
 
     //화면 중앙에 띄우는 글씨 리스트.
@@ -170,7 +180,7 @@ public static class BaseSet
     {
         new Options(0,"",0),        //선택지 없음을 나타냄
         new Options(2,"예\n아니요",1.1f),
-        new Options(5,"대시 공격(40xp)\n풀 스윙(1000xp)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다\n필요 없다",3.5f),
+        new Options(5,"대시 공격(40xp)\n풀 스윙(1000xp)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다(500xp)\n필요 없다",3.5f),
     };
 
     public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 배포 후에는 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.

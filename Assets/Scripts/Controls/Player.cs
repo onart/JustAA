@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     bool frz;       //맞은 뒤 경직은 이걸로(아마 이걸 푸는 스킬도 만들수도)
     int hp;
     int MAXHP = 100;
+    public int mhpCheck;
     public int expe;
     Animator anim;
     SpriteRenderer sr;
@@ -59,12 +60,14 @@ public class Player : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         jumphold = 0;
         hp = MAXHP;
+        mhpCheck = 24 - MAXHP;
         kdown = 0;
         HpChange(0);
     }
 
     void Update()
     {
+        Checker();
         if (!SysManager.forbid && hp > 0) 
         {
             if (frz)
@@ -75,7 +78,7 @@ public class Player : MonoBehaviour
                 //테스트 코드
                 if (Input.GetKeyDown(KeyCode.Backslash))
                 {
-                    HpChange(-20);
+                    HpChange(100);
                 }
                 //
                 Sit();
@@ -219,4 +222,8 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Checker()
+    {
+        if (MHP != 24 - mhpCheck) Scenemover.MoveScene("GameOver");
+    }
 }

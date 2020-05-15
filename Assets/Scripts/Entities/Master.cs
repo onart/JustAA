@@ -33,6 +33,10 @@ public class Master : Entity
                         StartCoroutine(D_Start(15));
                     }
                 }
+                else if (selection == 3)
+                {
+                    StartCoroutine(D_Start(24));
+                }
                 return;
             case 11:
             case 15:
@@ -51,6 +55,9 @@ public class Master : Entity
                             return;
                     }
                 }
+                return;
+            case 24:
+                if (selection == 0) CostCheck2();
                 return;
         }
     }
@@ -71,6 +78,19 @@ public class Master : Entity
             p.exp -= cost;
             p.FLAGS[(int)BaseSet.Flags.SKILLS] += (1 << skill);
             StartCoroutine(D_Start(14));
+        }
+    }
+
+    void CostCheck2()    //체력을 위한 경험치
+    {
+        if (p.exp < 500)
+        {
+            StartCoroutine(D_Start(25));
+        }
+        else
+        {
+            p.exp -= 500;
+            HpStr();
         }
     }
 
@@ -110,5 +130,11 @@ public class Master : Entity
     void Disappear()    //이벤트를 갖추지 않으면 관장이 나타나지 않음
     {
         if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] < 3) { gameObject.SetActive(false); }
+    }
+
+    void HpStr()        //캐릭터 체력 강화
+    {
+        p.MHP++;
+        p.mhpCheck--;
     }
 }

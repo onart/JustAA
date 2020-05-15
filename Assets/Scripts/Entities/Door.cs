@@ -40,7 +40,8 @@ public class Door : Entity
         if (p.doorname == name) p.transform.position = transform.position;
         rayorigin = Vector2.zero;
         raydir = Vector2.up + Vector2.left * 0.5f;
-        raydistance = 1;
+        if (name.Equals("virtual")) { raydistance = 0; rayorigin = new Vector2(-10, -10); }
+        else raydistance = 1;
     }
     
     protected override void OnRecieve() //공함수
@@ -62,6 +63,16 @@ public class Door : Entity
             response = chat;
             mode = false;
         }
+    }
+
+    public void dynamicUse(string loc, string reciever)    //근처에 있는 아무 문이나 가지고 다른 곳으로 이동하는 것. loc는 맵이름, reciever는 받아줄 문 이름
+    {
+        Debug.Log(loc);
+        connectedDoor = reciever;
+        connectedScene = loc;
+        p.doorname = connectedDoor;
+        fio.gameObject.SetActive(true);
+        fio.DOOR = this;
     }
 
 }

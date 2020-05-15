@@ -108,6 +108,7 @@ public class TalkManager : MonoBehaviour
         {
             BoxON();
             ent = en;
+            en.dialog = index;
             idx = index;
             wait = 1;
             Dialog_Go();

@@ -226,4 +226,9 @@ public class Player : MonoBehaviour
     {
         if (MHP != 24 - mhpCheck) Scenemover.MoveScene("GameOver");
     }
+
+    public bool HasItem(int i)
+    {
+        return (flags[(int)BaseSet.Flags.KEYS] >> i % 2 == 1);
+    }
 }

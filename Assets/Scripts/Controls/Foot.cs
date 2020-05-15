@@ -5,14 +5,15 @@ using UnityEngine;
 public class Foot : MonoBehaviour
 {
     Player p;
+
     void Start()
     {
         p = gameObject.GetComponentInParent<Player>();
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionStay2D(Collision2D col)
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Map")) { 
+        if (!p.onground && col.gameObject.layer == LayerMask.NameToLayer("Map")) {
             p.onground = true;
             p.jumphold = 62;
             p.Hold();
@@ -21,7 +22,8 @@ public class Foot : MonoBehaviour
     private void OnCollisionExit2D(Collision2D col)
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Map")) { 
-            p.onground = false; 
+            p.onground = false;            
         }
     }
+
 }

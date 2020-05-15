@@ -11,10 +11,10 @@ public abstract class Entity : MonoBehaviour
     protected float raydistance;
     protected static Player p;
     protected SpriteRenderer sr;
-    protected int selection, dialog;    //selection은 받은 선택지고, dialog는 최근 진행한 dialog
+    protected int selection;    //selection은 받은 선택지
     protected static TalkManager tm;
     public int cooltime;            //대화 끝나면 상호작용 쿨돌리려고..    
-
+    public int dialog;         //dialog는 최근 진행한 대화
     private void Start()
     {
         space = Resources.Load<GameObject>("Prefabs/space");
@@ -46,7 +46,6 @@ public abstract class Entity : MonoBehaviour
     protected IEnumerator D_Start(int i)    //보통 대화 시작은 이놈이다.
     {
         yield return new WaitForSeconds(0.03f);
-        dialog = i;
         tm.Dialog_Start(i, this);
     }
 
@@ -60,4 +59,9 @@ public abstract class Entity : MonoBehaviour
     public abstract void Up();  //추가 업데이트
     public abstract void St();  //추가 스타트
     protected abstract void OnRecieve();   //선택지를 받았을 때의 행동
+
+    private void OnDestroy()
+    {
+        if (spc) Destroy(spc);
+    }
 }

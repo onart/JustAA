@@ -2,22 +2,31 @@
 
 public abstract class Enemy : MonoBehaviour
 {
+    protected enum state {SLEEP, FREE, HOST};
+    /*
+     * 휴면 : update을 포함하여 아무것도 하지 않음. 카메라 안에 들어오면 자유 모드로
+     * 자유 : 자연스러운 움직임을 하도록 노력함. 카메라 밖으로 나가면 휴면 모드로, 트리거를 건드리면 적대 모드로(cancelInvoke)
+     * 적대 : 플레이어를 공격하도록 노력함. 트리거 밖으로 나가서 rage 시간이 지나면 자유 모드로(Invoke)
+    */
+    protected state st = state.SLEEP;
+    protected float rage;               //파생 클래스에서 반드시 지정하도록 하자
 
-    protected int maxHp, hp, exp;            //적의 체력. 적 역시 언젠가는 회복하지 않을까?라는 생각에 maxHp도 추가, exp는 쓰러뜨리면 주는 경험치(재화)
-    protected bool detected;            //플레이어 포착 시 행동 양식 달라짐
-    protected Transform p;                 //플레이어 포착 시 그 위치를 파악하게 됨
+    protected int maxHp, hp, exp;       //적의 체력. 적 역시 언젠가는 회복하지 않을까?라는 생각에 maxHp도 추가, exp는 쓰러뜨리면 주는 경험치(재화)
+    protected Transform p;              //플레이어 포착 시 그 위치를 파악하게 됨
     protected Rigidbody2D rb2d;
     protected Animator anim;
-    public string toDo;              //Invoke를 이용하기 위한 것? 아직은 잘 모르겠음
-    protected SpriteRenderer sr;    
+    protected SpriteRenderer sr;
 
-    public Attacker at;              //힘을 조절하기 위한 것
-    public Collider2D detector;        //플레이어를 감지하면 이 트리거는 사라지면서 호전성을 띠게 됨
+    public Attacker at;                 //힘을 조절하기 위한 것
+    public Collider2D detector;         //플레이어를 감지하면 이 트리거는 사라지면서 호전성을 띠게 됨
     private FoeHp fh;
+    protected float actTime;
 
-    private static GameObject dmgTxt;      //맞을 때 출력할 텍스트 prefab
+    private static GameObject dmgTxt;     //맞을 때 출력할 텍스트 prefab
     private GameObject dmgTxtInst;        //dmgTxt의 인스턴스
     public DmgOrHeal doH;                 //텍스트 내용 설정자
+
+    public int sw;                        //유사인터럽트용 스위치. 0인 경우 이동 중이거나 가만히 있는 중, 애니메이터에서 값 전달받음
 
     // Start is called before the first frame update
     void Start()
@@ -30,19 +39,38 @@ public abstract class Enemy : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         fh = GetComponentInChildren<FoeHp>();
-        detected = false;
-        Sleep();        //기본이 자는 상태, 원하지 않는 경우는 St()에서 풀어라.
-        St();
+        St();        
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    void Act()
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+        Behave();
+        Invoke("Act", actTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)       //상태머신 전이기
+    {
+        if (st == state.SLEEP && col.gameObject.layer == LayerMask.NameToLayer("EnemyWake"))
         {
-            detector.enabled = false;
-            detected = true;
-            toDo = "Idle";
-            p = col.gameObject.GetComponent<Player>().transform;
+            st = state.FREE;
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            CancelInvoke("setFree");
+            st = state.HOST;
+            if (p == null) p = col.gameObject.GetComponent<Player>().transform;            
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)        //상태머신 전이기
+    {
+        if (st == state.FREE && col.gameObject.layer == LayerMask.NameToLayer("EnemyWake"))
+        {
+            st = state.SLEEP;
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            Invoke("setFree", rage);
         }
     }
     protected void HPChange(int delta)
@@ -64,7 +92,6 @@ public abstract class Enemy : MonoBehaviour
         if (hp > maxHp) hp = maxHp;
         else if (hp <= 0) { 
             hp = 0;
-            toDo = "NIL";
             GetComponent<Collider2D>().enabled = false;
             p.gameObject.GetComponent<Player>().GainExp(exp);
             OnZero();
@@ -78,13 +105,12 @@ public abstract class Enemy : MonoBehaviour
         fh.gameObject.SetActive(true);
         fh.transform.localScale = new Vector2((float)hp / maxHp / 2, 0.5f);
         fh.alphaTime = 60;
-        anim.SetTrigger("HIT");
+        if (sw == 0) anim.SetTrigger("HIT");
     }
 
-    protected void Sleep()         //예를 들어 아주 멀리에 적이 있으면 일일이 행동할 게 아니라 재우는 게 이득
+    private void setFree()
     {
-        detector.enabled = true;
-        toDo = "NIL";
+        st = state.FREE;
     }
 
     protected void FaceBack()     //뒤를 돎.
@@ -99,7 +125,6 @@ public abstract class Enemy : MonoBehaviour
             at.face = -1;
         }
     }
-
     protected abstract void OnZero();       //체력 0일 때의 동작을 정의
     protected abstract void St();           //파생 클래스에서 Start에 더 들어갈 것을 정의
     protected abstract void Behave();       //파생 클래스의 행동 양식

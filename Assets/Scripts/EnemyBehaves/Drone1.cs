@@ -2,11 +2,9 @@
 
 public class Drone1 : Enemy
 {
-    public int sw;              //애니메이터에서 전달받을 현재 상태.
     int formerSw;               
     float alpha;                //체력이 0이 되면 점점 투명해지라고
     float y1, y2, y0;           //가만히 있을 때 자연스럽게 위아래로 움직임
-    const float delayer = 0.5f;
     bool inRange;               //플레이어가 사정권에 있나?
     void Update()       //애니메이터 머신과의 연계(sw) 위주
     {
@@ -16,7 +14,7 @@ public class Drone1 : Enemy
             y2 += 0.01f;
             y1 = Mathf.Sin(Mathf.PI * y2) / 20;
             transform.position = new Vector2(transform.position.x, y0 + y1);
-            if (detected)
+            if (st == state.HOST) 
             {
                 if (p.position.x - transform.position.x < 1)
                 {
@@ -58,22 +56,12 @@ public class Drone1 : Enemy
         Behave();
         inRange = false;
         at.face = 1;
+        actTime = 0.5f / SysManager.difficulty;
     }
 
     protected override void Behave()
     {
-        if (!toDo.Equals("NIL"))
-        {
-            if (sw == 0 && inRange) 
-            {
-                int i = Random.Range(1, 5);
-                if (i <= 2) anim.SetTrigger("PUNCH" + i);
-            }
-        }
-        else { 
-
-        }
-        Invoke("Behave", delayer);
+    
     }
 
     void Rush()

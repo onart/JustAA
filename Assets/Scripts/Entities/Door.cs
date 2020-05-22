@@ -40,7 +40,7 @@ public class Door : Entity
         if (p.doorname == name) p.transform.position = transform.position;
         rayorigin = Vector2.zero;
         raydir = Vector2.up + Vector2.left * 0.5f;
-        if (name.Equals("virtual")) { raydistance = 0; rayorigin = new Vector2(-10, -10); }
+        if (name.Equals("virtual")) { raydistance = 0; rayorigin = new Vector2(-100, -100); }
         else raydistance = 1;
     }
     

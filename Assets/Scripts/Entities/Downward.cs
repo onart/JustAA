@@ -8,9 +8,10 @@ public class Downward : Entity
 
     protected override void OnRecieve()
     {
-        if (dialog == 28 && selection == 0)
+        if ((dialog == 28 || dialog == 29) && selection == 0) 
         {
             //10층 복도로 이동
+            p.FLAGS[(int)BaseSet.Flags.STAGE1] = 4;
             dr.dynamicUse("10Corridor","virtual");
         }
     }
@@ -30,7 +31,11 @@ public class Downward : Entity
 
     public override void ObjAct()
     {
-        if (p.HasItem(0))   //매트리스가 있음
+        if (p.FLAGS[(int)BaseSet.Flags.STAGE1] >= 4)
+        {
+            tm.Dialog_Start(29, this);
+        }
+        else if (p.HasItem(0))   //매트리스가 있음
         {
             tm.Dialog_Start(28, this);
         }

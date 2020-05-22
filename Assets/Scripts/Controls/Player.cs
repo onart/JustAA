@@ -224,7 +224,10 @@ public class Player : MonoBehaviour
 
     void Checker()
     {
-        if (MHP != 24 - mhpCheck) Scenemover.MoveScene("GameOver");
+        if (MAXHP != 24 - mhpCheck) { 
+            MAXHP = 10;
+            mhpCheck = 24 - MAXHP;
+        }
     }
 
     public bool HasItem(int i)

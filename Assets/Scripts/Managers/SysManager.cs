@@ -13,7 +13,7 @@ public class SysManager : MonoBehaviour
     public static bool forbid = false;          //통상 조작을 봉인할까
     public static Dictionary<string, KeyCode> keymap = new Dictionary<string, KeyCode> { };
     public static readonly string[] keys = { "점프", "공격", "앉기", "상호작용" }; //좌우 키, 메뉴 키 변경은 금지.
-    public static int difficulty;               //1: 쉬움, 2: 보통, 3: 어려움
+    public static int difficulty = 10;               //1: 쉬움, 2: 보통, 3: 어려움, -1: 단순 초기값. 치트엔진이 이걸 알아내서 체크를 피하려 해봤자 -1이 유지되면 3으로 간주
     public static int cbr;    //치트 블로커
 
     private void Start()
@@ -119,7 +119,9 @@ public class SysManager : MonoBehaviour
 
     void Checker()
     {
-        if (cbr != 24 - difficulty) Scenemover.MoveScene("GameOver");
+        if (difficulty != -1) { 
+            if (cbr != 24 - difficulty) Scenemover.MoveScene("GameOver"); 
+        }
     }
 
 }

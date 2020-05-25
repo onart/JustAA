@@ -6,32 +6,38 @@ public class Drone1 : Enemy
     float alpha;                //체력이 0이 되면 점점 투명해지라고
     float y1, y2, y0;           //가만히 있을 때 자연스럽게 위아래로 움직임
     bool inRange;               //플레이어가 사정권에 있나?
+
     void Update()       //애니메이터 머신과의 연계(sw) 위주
     {
-        
-        if (sw == 0)    //이동 or 가만히 있을 때.
+        if (st == state.SLEEP)
         {
-            y2 += 0.01f;
-            y1 = Mathf.Sin(Mathf.PI * y2) / 20;
-            transform.position = new Vector2(transform.position.x, y0 + y1);
-            if (st == state.HOST) 
+
+        }
+        else {            
+            if (sw == 0)    //이동 or 가만히 있을 때.
             {
-                if (p.position.x - transform.position.x < 1)
+                y2 += 0.01f;
+                y1 = Mathf.Sin(Mathf.PI * y2) / 20;
+                transform.position = new Vector2(transform.position.x, y0 + y1);
+                if (st == state.HOST)
                 {
-                    inRange = true;
+                    if (p.position.x - transform.position.x < 1)
+                    {
+                        inRange = true;
+                    }
+                    else
+                    {
+                        inRange = false;
+                    }
+                    MoveTo();
                 }
-                else
-                {
-                    inRange = false;
-                }
-                MoveTo();
             }
-        }
-        if (sw - formerSw == 1) 
-        {
-            Invoke("Rush", 0.5f);
-        }
-        formerSw = sw;
+            if (sw - formerSw == 1)
+            {
+                Invoke("Rush", 0.5f);
+            }
+            formerSw = sw;
+        }        
     }
 
     void Facing()
@@ -53,15 +59,9 @@ public class Drone1 : Enemy
         maxHp = 20;
         hp = maxHp;
         alpha = 1;
-        Behave();
         inRange = false;
         at.face = 1;
         actTime = 0.5f / SysManager.difficulty;
-    }
-
-    protected override void Behave()
-    {
-    
     }
 
     void Rush()
@@ -92,5 +92,10 @@ public class Drone1 : Enemy
         {            
             Facing();
         }
+    }
+
+    protected override void Move()
+    {
+        
     }
 }

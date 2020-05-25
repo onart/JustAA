@@ -18,7 +18,7 @@ public abstract class Enemy : MonoBehaviour
     protected SpriteRenderer sr;
 
     public Attacker at;                 //힘을 조절하기 위한 것
-    public Collider2D detector;         //플레이어를 감지하면 이 트리거는 사라지면서 호전성을 띠게 됨
+    public Collider2D detector;         //상태 변화의 기준 범위 2
     private FoeHp fh;
     protected float actTime;
 
@@ -26,7 +26,7 @@ public abstract class Enemy : MonoBehaviour
     private GameObject dmgTxtInst;        //dmgTxt의 인스턴스
     public DmgOrHeal doH;                 //텍스트 내용 설정자
 
-    public int sw;                        //유사인터럽트용 스위치. 0인 경우 이동 중이거나 가만히 있는 중, 애니메이터에서 값 전달받음
+    public int sw;                        //유사인터럽트용 스위치. 0인 경우 파생 클래스에 관계 없이 이동 중이거나 가만히 있는 중, 애니메이터에서 값 전달받음.
 
     // Start is called before the first frame update
     void Start()
@@ -44,35 +44,38 @@ public abstract class Enemy : MonoBehaviour
 
     void Act()
     {
-        Behave();
+        Move();
         Invoke("Act", actTime);
     }
 
     private void OnTriggerEnter2D(Collider2D col)       //상태머신 전이기
     {
-        if (st == state.SLEEP && col.gameObject.layer == LayerMask.NameToLayer("EnemyWake"))
-        {
-            st = state.FREE;
-        }
-        else if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             CancelInvoke("setFree");
             st = state.HOST;
-            if (p == null) p = col.gameObject.GetComponent<Player>().transform;            
+            if (p == null) p = col.gameObject.GetComponent<Player>().transform;
         }
     }
 
     private void OnTriggerExit2D(Collider2D col)        //상태머신 전이기
     {
-        if (st == state.FREE && col.gameObject.layer == LayerMask.NameToLayer("EnemyWake"))
-        {
-            st = state.SLEEP;
-        }
-        else if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Invoke("setFree", rage);
         }
     }
+
+    private void OnBecameVisible()                      //상태머신 전이기
+    {
+        if (st == state.SLEEP) st = state.FREE;        
+    }
+
+    private void OnBecameInvisible()                    //상태머신 전이기
+    {
+        if (st == state.FREE) st = state.SLEEP;
+    }
+
     protected void HPChange(int delta)
     {
         if (delta == 0) return;
@@ -111,6 +114,7 @@ public abstract class Enemy : MonoBehaviour
     private void setFree()
     {
         st = state.FREE;
+        if (sr.isVisible) st = state.SLEEP;
     }
 
     protected void FaceBack()     //뒤를 돎.
@@ -127,5 +131,5 @@ public abstract class Enemy : MonoBehaviour
     }
     protected abstract void OnZero();       //체력 0일 때의 동작을 정의
     protected abstract void St();           //파생 클래스에서 Start에 더 들어갈 것을 정의
-    protected abstract void Behave();       //파생 클래스의 행동 양식
+    protected abstract void Move();         //파생 클래스에서 이동 판단에 대한 정의
 }

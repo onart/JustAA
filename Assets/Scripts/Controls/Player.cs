@@ -234,4 +234,9 @@ public class Player : MonoBehaviour
     {
         return (flags[(int)BaseSet.Flags.KEYS] >> i % 2 == 1);
     }
+
+    private void OnMouseDown()  //테스트용 코드
+    {
+        Debug.Log("click");
+    }
 }

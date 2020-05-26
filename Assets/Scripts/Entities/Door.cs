@@ -67,7 +67,6 @@ public class Door : Entity
 
     public void dynamicUse(string loc, string reciever)    //근처에 있는 아무 문이나 가지고 다른 곳으로 이동하는 것. loc는 맵이름, reciever는 받아줄 문 이름
     {
-        Debug.Log(loc);
         connectedDoor = reciever;
         connectedScene = loc;
         p.doorname = connectedDoor;

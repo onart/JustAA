@@ -6,6 +6,7 @@ public class Drone1 : Enemy
     float alpha;                //체력이 0이 되면 점점 투명해지라고
     float y1, y2, y0;           //가만히 있을 때 자연스럽게 위아래로 움직임
     bool inRange;               //플레이어가 사정권에 있나?
+    bool cool;                  //쿨타임.
 
     void Update()       //애니메이터 머신과의 연계(sw) 위주
     {
@@ -21,15 +22,20 @@ public class Drone1 : Enemy
                 transform.position = new Vector2(transform.position.x, y0 + y1);
                 if (st == state.HOST)
                 {
-                    if (p.position.x - transform.position.x < 1)
+                    if (cool && Mathf.Abs(p.position.x - transform.position.x) < 1)
                     {
                         inRange = true;
+                        CancelInvoke("Act");
+                        anim.SetTrigger("PUNCH" + Random.Range(1, 3));
+                        cool = false;
+                        Invoke("coolDown", 2.0f / SysManager.difficulty);
+                        setVX(0);
                     }
-                    else
+                    else if (cool)
                     {
                         inRange = false;
+                        Act();
                     }
-                    MoveTo();
                 }
             }
             if (sw - formerSw == 1)
@@ -38,6 +44,11 @@ public class Drone1 : Enemy
             }
             formerSw = sw;
         }        
+    }
+
+    void coolDown()
+    {
+        cool = true;
     }
 
     void Facing()
@@ -56,12 +67,14 @@ public class Drone1 : Enemy
     {
         exp = 40;
         y0 = transform.position.y;
-        maxHp = 20;
+        maxHp = (int)(40 * (SysManager.difficulty / 2.0f));
         hp = maxHp;
         alpha = 1;
         inRange = false;
         at.face = 1;
         actTime = 0.5f / SysManager.difficulty;
+        rage = 1000;
+        cool = true;
     }
 
     void Rush()
@@ -81,21 +94,53 @@ public class Drone1 : Enemy
         Invoke("OnZero", 0.02f);
     }
 
-    void MoveTo()
-    {
-        if (!inRange)
-        {
-            rb2d.AddForce((p.position - transform.position) * Time.deltaTime * 60);
-            Facing();
-        }
-        else
-        {            
-            Facing();
-        }
-    }
-
     protected override void Move()
     {
-        
+        if (st == state.FREE)
+        {
+            int dir = Random.Range(0, 3);
+            switch (dir)
+            {
+                case 0:
+                    setVX(-1);
+                    if (transform.localScale.x > 0)
+                    {
+                        FaceBack();
+                    }
+                    break;
+                case 1:
+                    setVX(0);
+                    break;
+                case 2:
+                    setVX(1);
+                    if (transform.localScale.x < 0)
+                    {
+                        FaceBack();
+                    }
+                    break;
+                default:
+                    return;
+            }
+        }
+        else if (st == state.HOST)
+        {
+            if (p.position.x < transform.position.x)
+            {
+                setVX(-1);
+                if (transform.localScale.x > 0)
+                {
+                    FaceBack();
+                }
+            }
+            else
+            {
+                setVX(1);
+                if (transform.localScale.x < 0)
+                {
+                    FaceBack();
+                }
+            }
+        }
     }
+    
 }

@@ -26,7 +26,7 @@ public abstract class Enemy : MonoBehaviour
     private GameObject dmgTxtInst;        //dmgTxt의 인스턴스
     public DmgOrHeal doH;                 //텍스트 내용 설정자
 
-    public int sw;                        //유사인터럽트용 스위치. 0인 경우 파생 클래스에 관계 없이 이동 중이거나 가만히 있는 중, 애니메이터에서 값 전달받음.
+    public int sw;                        //유사인터럽트용 스위치. 0인 경우 파생 클래스에 관계 없이 이동 중이거나 가만히 있는 중, 애니메이터에서 값 전달받음. 그 외에는 파생별로 다름
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,7 @@ public abstract class Enemy : MonoBehaviour
         St();        
     }
 
-    void Act()
+    protected void Act()
     {
         Move();
         Invoke("Act", actTime);
@@ -52,7 +52,7 @@ public abstract class Enemy : MonoBehaviour
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            CancelInvoke("setFree");
+            CancelInvoke("setFree");            
             st = state.HOST;
             if (p == null) p = col.gameObject.GetComponent<Player>().transform;
         }
@@ -68,12 +68,18 @@ public abstract class Enemy : MonoBehaviour
 
     private void OnBecameVisible()                      //상태머신 전이기
     {
-        if (st == state.SLEEP) st = state.FREE;        
+        if (st == state.SLEEP) { 
+            st = state.FREE;
+            Act();
+        }
     }
 
     private void OnBecameInvisible()                    //상태머신 전이기
     {
-        if (st == state.FREE) st = state.SLEEP;
+        if (st == state.FREE) { 
+            st = state.SLEEP;
+            CancelInvoke("Act");
+        }
     }
 
     protected void HPChange(int delta)
@@ -115,6 +121,21 @@ public abstract class Enemy : MonoBehaviour
     {
         st = state.FREE;
         if (sr.isVisible) st = state.SLEEP;
+    }
+
+    protected void setVX(float x)
+    {
+        rb2d.velocity = new Vector2(x, rb2d.velocity.y);
+    }
+
+    protected void setVY(float y)
+    {
+        rb2d.velocity = new Vector2(rb2d.velocity.x, y);
+    }
+
+    protected void setV(float x, float y)
+    {
+        rb2d.velocity = new Vector2(x, y);
     }
 
     protected void FaceBack()     //뒤를 돎.

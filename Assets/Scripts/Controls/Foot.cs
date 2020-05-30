@@ -13,7 +13,7 @@ public class Foot : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D col)
     {
-        if (!p.onground && col.gameObject.layer == LayerMask.NameToLayer("Map")) {
+        if (!p.onground && (col.gameObject.layer == LayerMask.NameToLayer("Map"))) {
             p.onground = true;
             p.jumphold = 62;
             p.Hold();

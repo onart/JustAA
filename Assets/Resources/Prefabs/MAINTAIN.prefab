@@ -6564,6 +6564,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPrefab: {fileID: 3718013537599983620, guid: 5e126a47d516dcd47970fc6ef736dc13,
     type: 3}
+  pt: {fileID: 7371982951891465811}
+  cl: {fileID: 7371982952625232685}
 --- !u!114 &7848336359377523946
 MonoBehaviour:
   m_ObjectHideFlags: 0

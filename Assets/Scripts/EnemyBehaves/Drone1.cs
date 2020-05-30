@@ -5,7 +5,6 @@ public class Drone1 : Enemy
     int formerSw;               
     float alpha;                //체력이 0이 되면 점점 투명해지라고
     float y1, y2, y0;           //가만히 있을 때 자연스럽게 위아래로 움직임
-    bool inRange;               //플레이어가 사정권에 있나?
     bool cool;                  //쿨타임.
 
     void Update()       //애니메이터 머신과의 연계(sw) 위주
@@ -24,7 +23,6 @@ public class Drone1 : Enemy
                 {
                     if (cool && Mathf.Abs(p.position.x - transform.position.x) < 1)
                     {
-                        inRange = true;
                         CancelInvoke("Act");
                         anim.SetTrigger("PUNCH" + Random.Range(1, 3));
                         cool = false;
@@ -33,7 +31,6 @@ public class Drone1 : Enemy
                     }
                     else if (cool)
                     {
-                        inRange = false;
                         Act();
                     }
                 }
@@ -70,7 +67,6 @@ public class Drone1 : Enemy
         maxHp = (int)(40 * (SysManager.difficulty / 2.0f));
         hp = maxHp;
         alpha = 1;
-        inRange = false;
         at.face = 1;
         actTime = 0.5f / SysManager.difficulty;
         rage = 1000;

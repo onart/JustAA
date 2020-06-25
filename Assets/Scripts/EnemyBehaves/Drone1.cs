@@ -62,7 +62,7 @@ public class Drone1 : Enemy
 
     protected override void St()
     {
-        exp = 40;
+        exp = 4000;
         y0 = transform.position.y;
         maxHp = (int)(40 * (SysManager.difficulty / 2.0f));
         hp = maxHp;

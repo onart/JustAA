@@ -55,7 +55,7 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //7번 대화 : 괴물을 처치한 직후
-            (Chars.ONL, Exprs.SURPRISED, "복도에 왜 저런 게 있어?"),
+            (Chars.ONL, Exprs.SURPRISED, "복도에 왜 저런 게 있을까?"),
             (Chars.ONL,Exprs.NORM, "무서우니까 일단 나가지 말고 들어가자.. 무슨 일이 있는 것 같으니 1층에 CCTV 친구한테 연락해 보자고."),
             (Chars.END, Exprs.NORM, "")
         },0),
@@ -134,7 +134,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //19번 대화 : 그냥 맨~처음(맵이벤트)
             (Chars.ONL, Exprs.NORM, "배가 고픈데."),
-            (Chars.ONL, Exprs.NORM, "집에 뭐가 없으니까 밖에 나가 보자."),
+            (Chars.ONL, Exprs.NORM, "집에 밥은 없으니까 밖에 나가 보자."),
             (Chars.ONL, Exprs.NORM, "아, 참고로 조작은 Esc로 메뉴를 열면 확인할 수 있어."),
             (Chars.ONL, Exprs.SMILE, "Esc를 누르자! 누르자!"),
             (Chars.END, Exprs.NORM, "")
@@ -209,14 +209,14 @@ public static class BaseSet
     {
         new Options(0,"",0),        //선택지 없음을 나타냄
         new Options(2,"예\n아니요",1.1f),
-        new Options(5,"대시 공격(40xp)\n비보이(1000xp)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다(500xp)\n필요 없다",3.5f),
+        new Options(5,"대시 공격(40xp)\n박치기(1000xp)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다(500xp)\n필요 없다",3.5f),
         new Options(2,"간다\n아직 안 간다",2),
     };
 
     public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 배포 후에는 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.
         MYBED=0,                    //0번. 침대에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
         OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감 / 4: 관장과 첫 대화를 마침(완)
-        SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 비보이 / 2^2자리: DNEDA, 추가될 수 있음
+        SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 박치기 / 2^2자리: DNEDA, 추가될 수 있음
         STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 11층에서 교회에 들어가봄. / 4: 매트리스 갖고 10층으로 내려가봄
         TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
         KEYS,                       //5번. 아이템을 말한다.            2^0자리: 매트리스

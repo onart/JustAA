@@ -12,7 +12,7 @@ public class SysManager : MonoBehaviour
     public static bool menuon = false;          //메뉴가 열려있는가
     public static bool forbid = false;          //통상 조작을 봉인할까
     public static Dictionary<string, KeyCode> keymap = new Dictionary<string, KeyCode> { };
-    public static readonly string[] keys = { "점프", "공격", "앉기", "상호작용" }; //좌우 키, 메뉴 키 변경은 금지.
+    public static readonly string[] keys = { "점프", "공격", "앉기", "상호작용", "특수1" }; //좌우 키, 메뉴 키 변경은 금지.
     public static int difficulty = 0;               //1: 쉬움, 2: 보통, 3: 어려움
     public static int cbr = 24;    //치트 블로커
 
@@ -85,7 +85,8 @@ public class SysManager : MonoBehaviour
         DictUpdate2("점프", KeyCode.Z);
         DictUpdate2("공격", KeyCode.X);
         DictUpdate2("앉기", KeyCode.DownArrow);
-        DictUpdate2("상호작용", KeyCode.Space);        
+        DictUpdate2("상호작용", KeyCode.Space);
+        DictUpdate2("특수1", KeyCode.LeftShift);
     }
 
     public static void DictUpdate(string key, KeyCode value)

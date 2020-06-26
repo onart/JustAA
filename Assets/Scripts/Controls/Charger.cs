@@ -40,21 +40,7 @@ public class Charger : MonoBehaviour
             return;
         }
         string key = keys[k];
-        if (Input.GetKeyDown(SysManager.keymap[key]))
-        {
-            hold[k] += Time.deltaTime;
-        }
-        else if (Input.GetKeyUp(SysManager.keymap[key]))
-        {
-            if (hold[k] >= 1)
-            {
-                if (k == 0) anim.SetInteger("COMBO", 21);
-                else if (k == 1) { anim.SetTrigger("RUSH"); rb2d.MovePosition(rb2d.position + Vector2.right * Input.GetAxisRaw("Horizontal"));}
-            }
-            hold[k] = 0;
-            sr.color = Color.white;
-        }
-        else if (hold[k] > 0)
+        if (Input.GetKey(SysManager.keymap[key]))
         {
             if (hold[k] < 1)
             {
@@ -65,6 +51,16 @@ public class Charger : MonoBehaviour
                 if (k == 0) sr.color = new Color(1, 0.8f, 0.8f);
                 else if (k == 1) sr.color = new Color(0.8f, 0.8f, 1);
             }
+        }
+        else if (Input.GetKeyUp(SysManager.keymap[key]))
+        {
+            if (hold[k] >= 1)
+            {
+                if (k == 0) anim.SetInteger("COMBO", 21);
+                else if (k == 1) { anim.SetTrigger("RUSH"); rb2d.MovePosition(rb2d.position + Vector2.right * Input.GetAxisRaw("Horizontal"));}
+            }
+            hold[k] = 0;
+            sr.color = Color.white;
         }
     }
 

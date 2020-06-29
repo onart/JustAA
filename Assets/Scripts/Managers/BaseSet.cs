@@ -56,7 +56,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //7번 대화 : 괴물을 처치한 직후
             (Chars.ONL, Exprs.SURPRISED, "복도에 왜 저런 게 있을까?"),
-            (Chars.ONL,Exprs.NORM, "무서우니까 일단 나가지 말고 들어가자.. 무슨 일이 있는 것 같으니 1층에 CCTV 친구한테 연락해 보자고."),
+            (Chars.ONL,Exprs.NORM, "무서우니까 일단 나가지 말고 들어가자.. 무슨 일이 있는 것 같으니 1층에 CCTV 친구한테 연락해 봐야지."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //8번 대화 : 관장에게 기술을 배우기 전 랜덤 대사 1
@@ -225,11 +225,11 @@ public static class BaseSet
 
     public static Dictionary<string, string> Maps = new Dictionary<string, string>{
         { "MyRoom","강오늘의 방" },
-        { "12Corridor","12층 복도" },
+        { "12Corridor","7층 복도" },
         { "Stairs","층계" },
-        { "11Corridor","11층 복도" },
+        { "11Corridor","6층 복도" },
         { "Gym","검도관" },
         { "Church","교회" },
-        { "10Corridor","10층 복도" },
+        { "10Corridor","5층 복도" },
     };
 }

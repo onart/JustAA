@@ -135,7 +135,7 @@ public static class BaseSet
         (new List<(Chars, Exprs, string)>{   //19번 대화 : 그냥 맨~처음(맵이벤트)
             (Chars.ONL, Exprs.NORM, "배가 고픈데."),
             (Chars.ONL, Exprs.NORM, "집에 밥은 없으니까 밖에 나가 보자."),
-            (Chars.ONL, Exprs.NORM, "아, 참고로 조작은 Esc로 메뉴를 열면 확인할 수 있어."),
+            (Chars.ONL, Exprs.NORM, "아, 조작법은 Esc로 메뉴를 열어서 확인할 수 있어."),
             (Chars.ONL, Exprs.SMILE, "Esc를 누르자! 누르자!"),
             (Chars.END, Exprs.NORM, "")
         },0),
@@ -180,7 +180,7 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },3),
         (new List<(Chars, Exprs, string)>{   //29번 대화 : 매트리스를 가져감
-            (Chars.ONL, Exprs.NORM, "푹신한 매트리스다. 가지고 있으면 안전에 도움이 될지도?"),
+            (Chars.ONL, Exprs.NORM, "푹신한 매트리스다. 가지고 있으면 신변에 도움이 될지도?"),
             (Chars.CHARCOUNT, Exprs.NORM, "매트리스를 챙겼습니다."),
             (Chars.ONL, Exprs.CRY, "아으.. 너무 무겁다."),
             (Chars.END, Exprs.NORM, "")

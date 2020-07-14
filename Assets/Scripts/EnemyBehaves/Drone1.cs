@@ -11,7 +11,7 @@ public class Drone1 : Enemy
     {
         if (st == state.SLEEP)
         {
-
+            
         }
         else {            
             if (sw == 0)    //이동 or 가만히 있을 때.
@@ -23,6 +23,7 @@ public class Drone1 : Enemy
                 {
                     if (cool && Mathf.Abs(p.position.x - transform.position.x) < 1)
                     {
+                        Facing();
                         CancelInvoke("Act");
                         anim.SetTrigger("PUNCH" + Random.Range(1, 3));
                         cool = false;
@@ -34,10 +35,6 @@ public class Drone1 : Enemy
                         Act();
                     }
                 }
-            }
-            if (sw - formerSw == 1)
-            {
-                Invoke("Rush", 0.5f);
             }
             formerSw = sw;
         }        
@@ -73,14 +70,14 @@ public class Drone1 : Enemy
         cool = true;
     }
 
-    void Rush()
-    {        
-        CancelInvoke("Rush");
+    public void Rush()
+    {
         rb2d.velocity = new Vector2(transform.localScale.x * 10, 0);       
     }
 
     protected override void OnZero()
     {
+        Destroy(at);
         alpha -= 0.02f;
         sr.color = new Color(1, 1, 1, alpha);
         if (alpha <= 0)

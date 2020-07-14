@@ -85,7 +85,6 @@ public abstract class Enemy : MonoBehaviour
     protected void HPChange(int delta)
     {
         if (delta == 0) return;
-        Instantiate(dmgTxt);
         dmgTxtInst = Instantiate(dmgTxt);
         dmgTxtInst.transform.position = transform.position;
         doH = dmgTxtInst.GetComponent<DmgOrHeal>();
@@ -103,6 +102,7 @@ public abstract class Enemy : MonoBehaviour
             hp = 0;
             GetComponent<Collider2D>().enabled = false;
             p.gameObject.GetComponent<Player>().GainExp(exp);
+            at.enabled = false;
             OnZero();
         }
     }

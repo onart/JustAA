@@ -1,0 +1,631 @@
+fileFormatVersion: 2
+guid: df64306797daf534cb6d9c25bf0d0ced
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1115888500455358522
+    second: TOC
+  - first:
+      213: 8974417784998581457
+    second: TOC_HIT
+  - first:
+      213: 8654217395295240575
+    second: GUN1
+  - first:
+      213: 9064459138207804970
+    second: GUN_GUN
+  - first:
+      213: -7083027353708345405
+    second: GUN2
+  - first:
+      213: -2200597378510266072
+    second: GUN_HIT
+  - first:
+      213: 7071994356390747126
+    second: GUN_PROJ
+  - first:
+      213: 5366362135490564578
+    second: BEE
+  - first:
+      213: 6925866696127990723
+    second: BEE_FL1
+  - first:
+      213: 4312310736826623710
+    second: BEE_FL2
+  - first:
+      213: 4036299477233575392
+    second: BEE_FL3
+  - first:
+      213: 6069272525577757670
+    second: BEE_SW
+  - first:
+      213: 4668003921019496121
+    second: BEE_HIT
+  - first:
+      213: 1945094324103132216
+    second: SPRING2
+  - first:
+      213: 849733800845315321
+    second: SPRING1
+  - first:
+      213: 7484591826581037824
+    second: SPR1
+  - first:
+      213: -3301901334785955793
+    second: SPR2
+  - first:
+      213: 8475878768717617258
+    second: SPR3
+  - first:
+      213: -230758435737468838
+    second: CUT
+  - first:
+      213: 4571214660211329529
+    second: TOC_SP1
+  - first:
+      213: 2775972845612922160
+    second: TOC_SP2
+  - first:
+      213: -84158343498321400
+    second: voidd
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TOC
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 619
+        width: 119
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b8ea709254c4340b9f5a4cd327d065
+      internalID: -1115888500455358522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOC_HIT
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 624
+        width: 130
+        height: 96
+      alignment: 9
+      pivot: {x: 0.45418233, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc94be2cb38f0d2419bfcf7326bc2a84
+      internalID: 8974417784998581457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUN1
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 468
+        width: 95
+        height: 97
+      alignment: 9
+      pivot: {x: 0.36712855, y: 0.027565239}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1238a0322b0a8a845aff285a9b87c554
+      internalID: 8654217395295240575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUN_GUN
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 494
+        width: 37
+        height: 36
+      alignment: 9
+      pivot: {x: 0.8664089, y: 0.8124864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1688135b556c02942a790dd747fccae8
+      internalID: 9064459138207804970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUN2
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 474
+        width: 88
+        height: 82
+      alignment: 9
+      pivot: {x: 0.33673304, y: 0.04427691}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d532eea4a0ebc34478c49259a26c15cd
+      internalID: -7083027353708345405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUN_HIT
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 478
+        width: 92
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fad243c7393d73488aee4b8019ab5a1
+      internalID: -2200597378510266072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUN_PROJ
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 511
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4006d1dc116f1428512987ff8c97ab
+      internalID: 7071994356390747126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEE
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 360
+        width: 57
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7ae22cbcbd92e543a0480c75639edd0
+      internalID: 5366362135490564578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEE_FL1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 374
+        width: 22
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5154093, y: 0.69684035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e061f6f4dc4eea44bc8c123684accd0
+      internalID: 6925866696127990723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEE_FL2
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 367
+        width: 26
+        height: 39
+      alignment: 9
+      pivot: {x: 0.44784606, y: 0.8216177}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a45f011f898074b84cc530eb777f74
+      internalID: 4312310736826623710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEE_FL3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 365
+        width: 22
+        height: 48
+      alignment: 9
+      pivot: {x: 0.4229542, y: 0.8178151}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c50405b6f79dd4d9cd9c397d03cc8c
+      internalID: 4036299477233575392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEE_SW
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 367
+        width: 124
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c47ff63df09da8478a282dfb2c88c34
+      internalID: 6069272525577757670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BEE_HIT
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 368
+        width: 67
+        height: 85
+      alignment: 9
+      pivot: {x: 0.46827266, y: 0.5593973}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e095e11fe376944ab98a37d3e7d527
+      internalID: 4668003921019496121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRING2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 255
+        width: 79
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917d1059fa26a124aa22766a34619045
+      internalID: 1945094324103132216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPRING1
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 268
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5786c1526d1c14d8edf023f49d84cc
+      internalID: 849733800845315321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR1
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 258
+        width: 84
+        height: 77
+      alignment: 9
+      pivot: {x: 0.55687207, y: 0.42417017}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7da8c6369fe0be48a5c47e4912b0834
+      internalID: 7484591826581037824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 264
+        width: 80
+        height: 76
+      alignment: 9
+      pivot: {x: 0.55308074, y: 0.43015692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aaf882aba43d444bb03947d2310e33e
+      internalID: -3301901334785955793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR3
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 273
+        width: 79
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5335952, y: 0.44485077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6cf66e590968c488ff82b398515790
+      internalID: 8475878768717617258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CUT
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 141
+        width: 92
+        height: 90
+      alignment: 9
+      pivot: {x: 0.46266302, y: 0.4829217}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb41e5c403d8c434ab03c5a15737b002
+      internalID: -230758435737468838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOC_SP1
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 621
+        width: 134
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0dea9e7b500784d86458406c7a854d
+      internalID: 4571214660211329529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TOC_SP2
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 622
+        width: 135
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb19697b9038b04409e10149eb5bce0c
+      internalID: 2775972845612922160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voidd
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 486
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7909973fd199e34f88a41be0f53cab4
+      internalID: -84158343498321400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2256140008814015316}
   - component: {fileID: 2256140008814015317}
   - component: {fileID: 8286886150041830310}
+  - component: {fileID: 2618141541874553957}
   m_Layer: 12
   m_Name: LAUNCHER
   m_TagString: Untagged
@@ -147,6 +148,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2618141541874553957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2256140008814015318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2496a41d21ed94f85e987bb418c7cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2541526928323177182
 GameObject:
   m_ObjectHideFlags: 0

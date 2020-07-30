@@ -161,8 +161,9 @@ GameObject:
   - component: {fileID: 5959776573443760587}
   - component: {fileID: 5959776573443760586}
   - component: {fileID: 4538191749229678905}
+  - component: {fileID: 3752431573933061196}
   m_Layer: 12
-  m_Name: STING 1
+  m_Name: STING
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,6 +295,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &3752431573933061196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959776573443760585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f8e0a84b03a8b4e968f40746a294f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6996928080745027210
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,8 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0c0c6b4ac20a0448328f42423a2b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delta: 10
-  force: {x: 0, y: 0}
+  delta: 15
+  force: {x: 0, y: 50}
   face: 0
   down: 1
 --- !u!1 &7749309075986289869

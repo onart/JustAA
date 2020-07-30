@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SPARK_HIT
+  m_Name: STING_HIT
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 8974417784998581457, guid: df64306797daf534cb6d9c25bf0d0ced,
+      value: {fileID: 4668003921019496121, guid: df64306797daf534cb6d9c25bf0d0ced,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -41,7 +41,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 8974417784998581457, guid: df64306797daf534cb6d9c25bf0d0ced, type: 3}
+    - {fileID: 4668003921019496121, guid: df64306797daf534cb6d9c25bf0d0ced, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

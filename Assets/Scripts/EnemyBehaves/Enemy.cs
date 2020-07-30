@@ -25,6 +25,7 @@ public abstract class Enemy : MonoBehaviour
     private static GameObject dmgTxt;     //맞을 때 출력할 텍스트 prefab
     private GameObject dmgTxtInst;        //dmgTxt의 인스턴스
     public DmgOrHeal doH;                 //텍스트 내용 설정자
+    float alpha;                          //자신의 투명도
 
     public int sw;                        //유사인터럽트용 스위치. 0인 경우 파생 클래스에 관계 없이 이동 중이거나 가만히 있는 중, 애니메이터에서 값 전달받음. 그 외에는 파생별로 다름
 
@@ -39,6 +40,7 @@ public abstract class Enemy : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         fh = GetComponentInChildren<FoeHp>();
+        alpha = 1;
         St();        
     }
 
@@ -150,7 +152,18 @@ public abstract class Enemy : MonoBehaviour
             at.face = -1;
         }
     }
-    protected abstract void OnZero();       //체력 0일 때의 동작을 정의
+
+    protected virtual void OnZero() {    //체력 0일 때의 동작을 정의
+        Destroy(at);
+        alpha -= 0.02f;
+        sr.color = new Color(1, 1, 1, alpha);
+        if (alpha <= 0)
+        {
+            Destroy(gameObject);
+        }
+        Invoke("OnZero", 0.02f);
+    }
+
     protected abstract void St();           //파생 클래스에서 Start에 더 들어갈 것을 정의
     protected abstract void Move();         //파생 클래스에서 이동 판단에 대한 정의
 }

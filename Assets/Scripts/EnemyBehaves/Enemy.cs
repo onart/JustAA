@@ -70,7 +70,7 @@ public abstract class Enemy : MonoBehaviour
 
     private void OnBecameVisible()                      //상태머신 전이기
     {
-        if (st == state.SLEEP) { 
+        if (st == state.SLEEP) {
             st = state.FREE;
             Act();
         }
@@ -78,7 +78,7 @@ public abstract class Enemy : MonoBehaviour
 
     private void OnBecameInvisible()                    //상태머신 전이기
     {
-        if (st == state.FREE) { 
+        if (st == state.FREE) {
             st = state.SLEEP;
             CancelInvoke("Act");
         }
@@ -154,6 +154,7 @@ public abstract class Enemy : MonoBehaviour
     }
 
     protected virtual void OnZero() {    //체력 0일 때의 동작을 정의
+        st = state.SLEEP;
         Destroy(at);
         alpha -= 0.02f;
         sr.color = new Color(1, 1, 1, alpha);

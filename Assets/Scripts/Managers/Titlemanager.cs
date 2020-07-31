@@ -150,7 +150,7 @@ public class Titlemanager : MonoBehaviour
                 return;
             }
             //데이터를 가지고, 나는 사라지고 누군가한테는 전달해야 함. 세이브포인트 씬으로 이동
-            df.Fill();           
+            df.Fill();
             Scenemover.MoveScene(df.map);
         }
         else

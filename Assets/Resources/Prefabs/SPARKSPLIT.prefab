@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: -5706947221167819806}
   - component: {fileID: 3626137231571827183}
   m_Layer: 12
-  m_Name: SPARK
+  m_Name: SPARKSPLIT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   doH: {fileID: 0}
   sw: 0
   blast: {fileID: 3718013537599983620, guid: 5e126a47d516dcd47970fc6ef736dc13, type: 3}
-  split: {fileID: 3606420438716869845, guid: 678d63395a1bbc748aad7f9af9829603, type: 3}
+  split: {fileID: 3606420438716869845, guid: a22dc3531502ea24e86122bffdd76e17, type: 3}
 --- !u!61 &3626137231571827183
 BoxCollider2D:
   m_ObjectHideFlags: 0

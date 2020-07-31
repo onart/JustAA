@@ -20,7 +20,7 @@ public class OnOver : MonoBehaviour
     {
         DontDestroyOnLoad(this);
         Scenemover.MoveScene("Title");
-        Invoke("TitleManipulate", 0.03f);
+        Invoke("TitleManipulate", 0.1f);
     }
 
     private void TitleManipulate()
@@ -29,7 +29,7 @@ public class OnOver : MonoBehaviour
         if (tm)
         {
             tm.Load();
-            if (tm)      //저장 데이터가 없는 경우. 그 외에 그새 데이터가 손상된 경우에도 이렇게 오는데 그건 버그 아니다. 애초에 조작 시도한 놈이 잘못이다.
+            if (tm.gogo.text.Equals("새로하기"))      //저장 데이터가 없는 경우.
             {
                 tm.DfSelect(SysManager.difficulty);
             }

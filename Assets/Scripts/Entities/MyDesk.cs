@@ -22,11 +22,11 @@ public class MyDesk : Entity
                         tm.Dialog_Start(17, this);
                         p.FLAGS[(int)BaseSet.Flags.STAGE1] = 1;
                         return;
-                    case 1:
+                    default:
                         tm.Dialog_Start(20, this);
                         return;
                 }
-                return;
+
         }
     }
 

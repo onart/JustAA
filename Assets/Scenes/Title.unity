@@ -749,6 +749,7 @@ MonoBehaviour:
   dataDisp: {fileID: 627131201}
   df: {fileID: 696518214}
   nanedo: {fileID: 1982213692}
+  nanido: -1
 --- !u!4 &667299497
 Transform:
   m_ObjectHideFlags: 0

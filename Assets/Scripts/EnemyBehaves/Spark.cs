@@ -7,16 +7,18 @@ using UnityEngine;
 // 현재 주인공 접촉에 의한 피격모션이 너무 짧음
 public class Spark : Enemy
 {
-    public GameObject blast;    //폭발효과 프리팹
-    public GameObject split;    //자신의 프리팹     
+    public GameObject blast;    //폭발효과 프리팹 
 
     bool cool;                  //하드 전용 돌진 쿨타임
-    bool after = false;                 //분열 이후 폭발하지 않는 시간
     float red;
+    bool youpok = false;        //유폭 모드
 
     void Update()       //애니메이터 머신과의 연계(sw) 위주
     {
-
+        if (youpok)
+        {
+            rb2d.velocity = new Vector2(p.position.x - transform.position.x, 0) * (1 << SysManager.difficulty);
+        }
     }
 
     protected override void Move()
@@ -27,7 +29,7 @@ public class Spark : Enemy
             switch (dir)
             {
                 case 0:
-                    setVX(-1);
+                    setVX(-2);
                     if (transform.localScale.x < 0)
                     {
                         FaceBack();
@@ -37,7 +39,7 @@ public class Spark : Enemy
                     setVX(0);
                     break;
                 case 2:
-                    setVX(1);
+                    setVX(2);
                     if (transform.localScale.x > 0)
                     {
                         FaceBack();
@@ -51,7 +53,7 @@ public class Spark : Enemy
         {
             if (p.position.x < transform.position.x)
             {
-                setVX(-2);
+                setVX(-3);
                 if (transform.localScale.x < 0)
                 {
                     FaceBack();
@@ -59,7 +61,7 @@ public class Spark : Enemy
             }
             else
             {
-                setVX(2);
+                setVX(3);
                 if (transform.localScale.x > 0)
                 {
                     FaceBack();
@@ -70,13 +72,14 @@ public class Spark : Enemy
 
     protected override void OnZero()
     {
-        st = state.SLEEP;        
-        //1초 후 나머지 모두 비활성화하고 유폭
+        youpok = true;
+        st = state.SLEEP;
+        //2초 후 나머지 모두 비활성화하고 유폭
         sr.color = new Color(1, 1 - red, 1 - red);
         if (red < 1)
         {
             red += 0.1f;
-            Invoke("OnZero", 0.1f);
+            Invoke("OnZero", 0.2f);
             return;
         }
         var bls = Instantiate(blast);
@@ -88,9 +91,6 @@ public class Spark : Enemy
     {
         red = 0;
         cool = true;
-        after = false;
-        at.gameObject.SetActive(false);
-        Invoke("prepare", 1.2f);
         if (exp == 0)
         {
             exp = 40;
@@ -99,30 +99,7 @@ public class Spark : Enemy
         }
         at.face = 1;
         actTime = 0.5f / SysManager.difficulty;
-        rage = 1000;
-    }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        if (after && SysManager.difficulty == 2 && hp > 1)  //하드에 한해 플레이어에 닿는 즉시 폭발+분열, 분열 후 1.2초 내에는 닿아도 폭발하지 않음. 그 외에는 항상 몸 콜라이더를 공격으로 유지
-        {
-            if (col.gameObject.layer.Equals(LayerMask.NameToLayer("Player")))
-            {
-                after = false;
-                var bls = Instantiate(blast);
-                bls.transform.position = transform.position;
-                var sp1 = Instantiate(split);
-                var sp2 = Instantiate(split);
-                var ls = transform.localScale;
-                sp1.transform.position = transform.position;
-                sp1.transform.localScale = ls * 0.9f;
-                sp2.transform.localScale = ls * 0.9f;
-                sp1.GetComponent<Spark>().setSplit(exp / 2, hp / 2);
-                sp2.GetComponent<Spark>().setSplit(exp / 2, hp / 2);
-
-                Destroy(gameObject);
-            }
-        }
+        rage = 10;
     }
 
     public void setSplit(int xp, int mHp) //right가 1이면 오른쪽, -1이면 왼쪽
@@ -130,11 +107,5 @@ public class Spark : Enemy
         exp = xp;
         maxHp = mHp;
         hp = mHp;
-    }
-
-    void prepare()
-    {
-        after = true;
-        at.gameObject.SetActive(true);
     }
 }

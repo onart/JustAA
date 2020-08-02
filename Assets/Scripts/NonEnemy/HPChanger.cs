@@ -4,7 +4,7 @@ public abstract class HPChanger : MonoBehaviour  //체력을 회복시키거나 
 {
     public int delta;  //변화량
 
-    private void OnTriggerEnter2D(Collider2D col)
+    protected void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {

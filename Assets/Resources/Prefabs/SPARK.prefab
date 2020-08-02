@@ -47,7 +47,7 @@ MonoBehaviour:
   delta: 5
   force: {x: 100, y: 30}
   face: 0
-  down: 0
+  down: 1
 --- !u!61 &1253103895611710744
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sting : Enemy
 {
-    // Update is called once per frame
+    //날아다니는 적, 하드 : 지형을 무시함
     void Update()
     {
         
@@ -13,7 +13,7 @@ public class Sting : Enemy
     protected override void St()
     {
         exp = 40;
-        maxHp = (int)(40 * (SysManager.difficulty / 2.0f));
+        maxHp = (int)(15 * (SysManager.difficulty / 2.0f));
         hp = maxHp;
         at.face = 1;
         actTime = 0.5f / SysManager.difficulty;

@@ -158,7 +158,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //24번 대화 : 체력을 강화한다
             (Chars.MASTER, Exprs.NORM, "상황이 많이 어려운 모양이군. 500XP로 체력 1을 올릴 수 있네."),
-            (Chars.MASTER, Exprs.NORM, "기술적으로 한 번에 많은 양을 강화하게 하는 건 쉽지만, 굳이 지원하지는 않겠네. 적은 체력으로 클리어를 노려보게나."),
+            (Chars.MASTER, Exprs.NORM, "기술적으로 한꺼번에 여러 번 강화하게 하는 건 쉽지만, 굳이 지원하지는 않겠네. 적은 체력으로 클리어를 노려보게나."),
             (Chars.MASTER, Exprs.NORM, "체력을 강화하겠는가?"),
             (Chars.END, Exprs.NORM, "")
         },1),

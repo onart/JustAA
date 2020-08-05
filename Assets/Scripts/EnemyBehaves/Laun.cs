@@ -7,8 +7,9 @@ public class Laun : Enemy
     public GameObject arm1, arm2;
     public GameObject bullet;
     float ang1, ang2;   //총알 발사각. 하드에 한해 2번 팔이 예측샷을 날림. 그 외의 경우 항상 실시간 정조준
+                        //아종을 만들어 벽 타기 가능하게?
 
-    public static readonly float bulletSpeed = 4.0f;
+    public static readonly float bulletSpeed = 6.0f;
 
     void Update()
     {
@@ -67,12 +68,27 @@ public class Laun : Enemy
                     FaceBack();
                 }
             }
+            if (sw == 0)
+            {
+                int dir = Random.Range(0, 7 - SysManager.difficulty);
+                switch (dir)
+                {
+                    case 0:
+                        snipe1();
+                        if (SysManager.difficulty == 3) pred_shoot2();
+                        else snipe2();
+                        fire();
+                        break;
+                    default:
+                        return;
+                }
+            }
         }
     }
 
     protected override void St()
     {
-        exp = 40;
+        exp = 60;
         maxHp = (int)(10 * (SysManager.difficulty / 2.0f)) + 20;
         hp = maxHp;
         at.face = 1;
@@ -81,14 +97,31 @@ public class Laun : Enemy
     }
 
     void setAngle1(float ang)   //팔 하나 각도
-    {        
-        arm1.transform.localRotation = Quaternion.AngleAxis(-ang - 34.5f, Vector3.forward);
+    {
+        ang += 5;
+        if (transform.localScale.x > 0) { 
+            ang += 170;
+            arm1.transform.localRotation = Quaternion.AngleAxis(180 + ang - 34.5f, Vector3.forward);
+        }
+        else
+        {
+            arm1.transform.localRotation = Quaternion.AngleAxis(-ang - 34.5f, Vector3.forward);
+        }
         ang1 = ang;
     }
 
     void setAngle2(float ang)   //팔 둘 각도
     {
-        arm2.transform.localRotation = Quaternion.AngleAxis(-ang - 34.5f, Vector3.forward);
+        ang += 5;
+        if (transform.localScale.x > 0)
+        {
+            ang += 170;
+            arm2.transform.localRotation = Quaternion.AngleAxis(180 + ang - 34.5f, Vector3.forward);
+        }
+        else
+        {
+            arm2.transform.localRotation = Quaternion.AngleAxis(-ang - 34.5f, Vector3.forward);
+        }
         ang2 = ang;
     }
 
@@ -120,12 +153,7 @@ public class Laun : Enemy
 
     private void fire()
     {
-        var b1 = Instantiate(bullet, transform.position, Quaternion.AngleAxis(ang1, Vector3.forward));
-        var b2 = Instantiate(bullet, transform.position, Quaternion.AngleAxis(ang2, Vector3.forward));
-        if (transform.localScale.x < 0)
-        {
-            b1.transform.localScale = new Vector3(-1, 1);
-            b2.transform.localScale = new Vector3(-1, 1);
-        }
+        Instantiate(bullet, transform.position + Vector3.left * 0.1f, Quaternion.AngleAxis(ang1, Vector3.forward));
+        Instantiate(bullet, transform.position, Quaternion.AngleAxis(ang2, Vector3.forward));
     }
 }

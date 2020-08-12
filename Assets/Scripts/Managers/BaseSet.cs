@@ -148,12 +148,12 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //22번 대화 : 계단이 끊어짐을 발견
-            (Chars.ONL, Exprs.SURPRISED, "엘리베이터만 망가진 게 아니라 계단도 못 쓰게 됐네?"),
-            (Chars.ONL, Exprs.SURPRISED, "여기서 뛰어내릴 수는 없어. 11층으로 가서 다른 방법을 찾아야겠군."),
+            (Chars.ONL, Exprs.SURPRISED, "엘리베이터만 망가진 게 아니라 계단도 못 쓰게 됐잖아?"),
+            (Chars.ONL, Exprs.SURPRISED, "여기서 뛰어내릴 수는 없어. 6층으로 가서 다른 방법을 찾아야겠군."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //23번 대화 : 계단맵 첫 진입
-            (Chars.ONL, Exprs.NORM, "빗면을 타면서 점프를 하면 훨씬 높이 점프되는데, 버그가 맞지만 게임에 이 계단 외에 경사가 큰 빗면은 없을 거라서 고치진 않을거야."),
+            (Chars.ONL, Exprs.NORM, "굳이 다른 데를 들를 시간은 없겠지?"),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //24번 대화 : 체력을 강화한다

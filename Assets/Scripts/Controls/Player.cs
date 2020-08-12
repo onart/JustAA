@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
         //점프부--------------------------------------
         if (onground && Input.GetKeyDown(SysManager.keymap["점프"]))
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + 4.5f);
+            rb2d.velocity = new Vector2(rb2d.velocity.x, /*rb2d.velocity.y + */4.5f);   //빗면점프는 4.5f로 고정하는 게 옳고 움직이는 발판 점프는 거기에 초속도를 더하는 것이 옳음
             jumphold = 62;  //최대 높이에 도달 못한 상태로 키다운하면서 떨어진 후 점프할 때 최대 높이에 도달 못하는 문제 수정
         }
         else if (jumphold > 0 && Input.GetKey(SysManager.keymap["점프"])) 
@@ -198,7 +198,7 @@ public class Player : MonoBehaviour
 
     public void Hold()                 //맞은 후 경직.
     {
-        if (!onground) return;
+        //if (!onground) return;
         if (kdown == 2)  {            
             anim.SetInteger("OVR", 2);
             if (hp > 0) Invoke("StandUp", 0.5f);

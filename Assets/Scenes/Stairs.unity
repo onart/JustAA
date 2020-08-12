@@ -356,12 +356,12 @@ PrefabInstance:
     - target: {fileID: 8492335163294127374, guid: 6427250137a9f9841bf91caf8193a121,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9759011
+      value: -0.9333105
       objectReference: {fileID: 0}
     - target: {fileID: 8492335163294127374, guid: 6427250137a9f9841bf91caf8193a121,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.0722384
+      value: -4.0721207
       objectReference: {fileID: 0}
     - target: {fileID: 8492335163294127374, guid: 6427250137a9f9841bf91caf8193a121,
         type: 3}
@@ -407,6 +407,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492335163294127601, guid: 6427250137a9f9841bf91caf8193a121,
+        type: 3}
+      propertyPath: orthographic size
+      value: 2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492335163294127601, guid: 6427250137a9f9841bf91caf8193a121,
+        type: 3}
+      propertyPath: far clip plane
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8492335163294127602, guid: 6427250137a9f9841bf91caf8193a121,
         type: 3}
@@ -610,6 +620,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7878278265115140495, guid: 122e4f0a32e9e114f9eb310838d5fa62,
+        type: 3}
+      propertyPath: m_Lens.OrthographicSize
+      value: 2.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 122e4f0a32e9e114f9eb310838d5fa62, type: 3}
 --- !u!1 &1387294953
@@ -670,7 +685,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -8.2, y: 1.5}
       - {x: -8.2, y: -19.366875}
-      - {x: 3.5579462, y: -19.193035}
+      - {x: 3.5579462, y: -19.397974}
       - {x: 3.5, y: 1.5}
 --- !u!1 &1622899958
 GameObject:

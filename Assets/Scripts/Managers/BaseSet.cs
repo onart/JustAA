@@ -166,35 +166,18 @@ public static class BaseSet
             (Chars.MASTER, Exprs.NORM, "XP가 부족하군. 조금만 진행하다 보면 기술을 다 배우고도 남아돌 걸세."),
             (Chars.END, Exprs.NORM, "")
         },0),
-        (new List<(Chars, Exprs, string)>{   //26번 대화 : 교회 첫 입장
-            (Chars.ONL, Exprs.NORM, "교회 바닥은 다음 층까지 뚫려 있는 모양이야."),
-            (Chars.ONL, Exprs.NORM, "한 층이라도 그냥 뛰어내리면 크게 다칠 것 같은데 어떡하지?"),
+        (new List<(Chars, Exprs, string)>{   //26번 대화 : 점프대 설명문
+            (Chars.CHARCOUNT, Exprs.NORM, "이것에 닿으면 주먹이 바라보는 방향으로 튀어나갑니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "튀어나가는 속도는 점프대마다 다르며, 주인공 캐릭터뿐 아니라 모든 움직이는 물체가 영향을 받습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "닿은 후 0.3초 동안 조작이 불가능하니 유의해서 조작합시다."),
             (Chars.END, Exprs.NORM, "")
         },0),
-        (new List<(Chars, Exprs, string)>{   //27번 대화 : 매트리스 없이 내려갈 수 없음
-            (Chars.ONL, Exprs.NORM, "옆에 방이 하나 더 있는데, 거기 뭔가 도움이 될 만한 게 있을지도 몰라."),
+        (new List<(Chars, Exprs, string)>{   //27번 대화 : 6-1구역 첫 입장
+            (Chars.ONL, Exprs.NORM, "여긴 처음 와 보네."),
+            (Chars.ONL, Exprs.NORM, "보통 상가 시설은 아닌가? 생각보다 깊게 펼쳐져 있네."),
+            (Chars.ONL, Exprs.NORM, "내려가는 곳은 아니지만 당장에 갈 수 있는 곳이 저기뿐이니 갈 수밖에 없군."),
             (Chars.END, Exprs.NORM, "")
         },0),
-        (new List<(Chars, Exprs, string)>{   //28번 대화 : 매트리스를 던지고 내려갈까?
-            (Chars.ONL, Exprs.NORM, "좋아, 매트리스를 던져 놓고 그 위에 떨어지면 덜 다칠 거야."),
-            (Chars.END, Exprs.NORM, "")
-        },3),
-        (new List<(Chars, Exprs, string)>{   //29번 대화 : 매트리스를 가져감
-            (Chars.ONL, Exprs.NORM, "푹신한 매트리스다. 가지고 있으면 신변에 도움이 될지도?"),
-            (Chars.CHARCOUNT, Exprs.NORM, "매트리스를 챙겼습니다."),
-            (Chars.ONL, Exprs.CRY, "아으.. 너무 무겁다."),
-            (Chars.END, Exprs.NORM, "")
-        },0),
-        (new List<(Chars, Exprs, string)>{   //30번 대화 : 매트리스를 가져감(사용처를 앎)
-            (Chars.ONL, Exprs.NORM, "푹신한 매트리스다. 이걸 이용하면 교회의 그 뚫린 바닥으로 지나갈 수 있겠군."),
-            (Chars.CHARCOUNT, Exprs.NORM, "매트리스를 챙겼습니다."),
-            (Chars.ONL, Exprs.CRY, "아으.. 너무 무겁다."),
-            (Chars.END, Exprs.NORM, "")
-        },0),
-        (new List<(Chars, Exprs, string)>{   //31번 대화 : 10층으로 다시 내려감
-            (Chars.ONL, Exprs.NORM, "10층으로 갈까?"),
-            (Chars.END, Exprs.NORM, "")
-        },3),
     };
 
     //화면 중앙에 띄우는 글씨 리스트.
@@ -217,7 +200,7 @@ public static class BaseSet
         MYBED=0,                    //0번. 침대에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
         OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감 / 4: 관장과 첫 대화를 마침(완)
         SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 박치기 / 2^2자리: DNEDA, 추가될 수 있음
-        STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 11층에서 교회에 들어가봄. / 4: 매트리스 갖고 10층으로 내려가봄
+        STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 6-1구역 입장해봄
         TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
         KEYS,                       //5번. 아이템을 말한다.            2^0자리: 매트리스
         FLAGCOUNT                   //플래그 수. 이건 플래그가 아니다.
@@ -228,8 +211,7 @@ public static class BaseSet
         { "12Corridor","7층 복도" },
         { "Stairs","층계" },
         { "11Corridor","6층 복도" },
-        { "Gym","검도관" },
-        { "Church","교회" },
-        { "10Corridor","5층 복도" },
+        { "Six_1","6층" },
+        { "Six1","6층-1구역" },
     };
 }

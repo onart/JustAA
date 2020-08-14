@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Downward : Entity
+public class Downward : Entity  //버리는 스크립트, 하지만 문의 다용 예시로 잠시 남겨둘 예정
 {
     Door dr;
 

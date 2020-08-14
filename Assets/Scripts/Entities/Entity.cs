@@ -13,7 +13,7 @@ public abstract class Entity : MonoBehaviour
     protected SpriteRenderer sr;
     protected int selection;    //selection은 받은 선택지
     protected static TalkManager tm;
-    public int cooltime;            //대화 끝나면 상호작용 쿨돌리려고..    
+    public static int cooltime;            //대화 끝나면 상호작용 쿨돌리려고..
     public int dialog;         //dialog는 최근 진행한 대화
     private void Start()
     {
@@ -38,6 +38,7 @@ public abstract class Entity : MonoBehaviour
             if (!SysManager.forbid && Input.GetKeyDown(SysManager.keymap["상호작용"])) 
             {
                 ObjAct();
+                cooltime = 1;
             }
         }
         else { Destroy(spc); }

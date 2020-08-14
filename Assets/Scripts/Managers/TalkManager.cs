@@ -99,7 +99,7 @@ public class TalkManager : MonoBehaviour
         wait = 1;
         state = -1;
         dBoxUI.SetActive(false);
-        ent.cooltime = 1;
+        Entity.cooltime = 1;
         ent = null;
     }
     public void Dialog_Start(int index, Entity en)

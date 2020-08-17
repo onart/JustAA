@@ -356,4 +356,4 @@ MonoBehaviour:
   delta: 0
   force: {x: 0, y: 0}
   face: 1
-  down: 1
+  down: 0

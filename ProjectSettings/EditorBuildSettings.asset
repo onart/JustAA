@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Six1.unity
     guid: 4a167370814fbdb4c8145572e73bf67b
+  - enabled: 1
+    path: Assets/Scenes/Six2.unity
+    guid: 8017e858556c0c3468b18479dabb3937
   m_configObjects: {}

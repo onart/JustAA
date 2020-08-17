@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     const float speed = 4;
     const float downlim = -10;
 
+    float reserved_vx;      //좌우 이동 속도 버퍼
+
     public string doorname;
     public bool onground, attking;    //onground : 땅에 있는지. kdown : 강공격에 맞은 경우, attking : 공격중인가?
     public int kdown;
@@ -94,7 +96,17 @@ public class Player : MonoBehaviour
         anim.SetFloat("LR", Fabs(lr));
         if (!attking && !anim.GetBool("SIT")) 
         {
-            rb2d.velocity = new Vector2(lr * speed, rb2d.velocity.y);
+            if (reserved_vx > 4 || reserved_vx < -4)
+            {
+                if (lr * reserved_vx < 0) rb2d.velocity = new Vector2(rb2d.velocity.x * 0.95f, rb2d.velocity.y);
+                reserved_vx = rb2d.velocity.x;
+            }
+            else
+            {
+                rb2d.velocity = new Vector2(lr * speed + reserved_vx, rb2d.velocity.y);
+                reserved_vx /= 2;
+                if (Mathf.Abs(reserved_vx) < 1) reserved_vx = 0;
+            }
             //공격중 방향전환 가능?불가능? 아직 미정
             if (lr < 0) transform.localScale = new Vector2(-0.3f, 0.3f);
             else if (lr > 0) transform.localScale = new Vector2(0.3f, 0.3f);
@@ -192,6 +204,7 @@ public class Player : MonoBehaviour
             anim.SetInteger("OVR", 0);
             kdown = down;
             frz = true;
+            CancelInvoke("Hold");
             Invoke("Hold", 0.3f);
         }
     }
@@ -238,6 +251,11 @@ public class Player : MonoBehaviour
     private void OnMouseDown()  //테스트용 코드
     {
         Debug.Log("click");
+    }
+
+    public void reserveVx(float vx)
+    {
+        reserved_vx = vx;
     }
 
 }

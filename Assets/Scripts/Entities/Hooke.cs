@@ -17,10 +17,13 @@ public class Hooke : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         anim.SetTrigger("Str");
+        var p = col.gameObject.GetComponentInParent<Player>();
         var rb = col.gameObject.GetComponentInParent<Rigidbody2D>();
         if (rb)
         {
-            rb.velocity = new Vector2(biggerMag(rb.velocity.x, dir.x * mag), dir.y * mag);
+            float vx = biggerMag(rb.velocity.x / 2, dir.x * mag);
+            rb.velocity = new Vector2(vx, dir.y * mag);
+            if (p) p.reserveVx(vx);
         }
     }
 

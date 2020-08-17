@@ -2092,7 +2092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65809e7b8b594bd4098d29a784198a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooltime: 0
+  dialog: 0
 --- !u!1 &1464746350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,7 +2102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1464746352}
-  - component: {fileID: 1464746353}
+  - component: {fileID: 1464746351}
   m_Layer: 0
   m_Name: MapEv
   m_TagString: Untagged
@@ -2110,6 +2110,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1464746351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464746350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad0b7e9e54e9754aa5fb7ef876083aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: 0
+  flag: 4
+  flag_to: 1
+  dial_no: 19
 --- !u!4 &1464746352
 Transform:
   m_ObjectHideFlags: 0
@@ -2124,19 +2140,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1464746353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464746350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1238cf1cb8bc3b44db439a1ae4445d29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooltime: 0
 --- !u!1 &1801124115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2376,7 +2379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c40b8079b99374ab5b4b56b57247b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooltime: 0
+  dialog: 0
 --- !u!1 &2044204748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2471,7 +2474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c23da73d14e2c4cb43343cc8fdcd38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooltime: 0
+  dialog: 0
 --- !u!1001 &2109003742
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -26,6 +26,7 @@ public class TalkManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.I)) print(Entity.cooltime);
         if (!SysManager.menuon)
         {
             if (wait == 0 && Input.GetKeyDown(SysManager.keymap["상호작용"]) && state > -1) //대화 넘기기 페이즈
@@ -98,13 +99,13 @@ public class TalkManager : MonoBehaviour
     {
         wait = 1;
         state = -1;
+        Entity.cooltime = 10;
         dBoxUI.SetActive(false);
-        Entity.cooltime = 1;
         ent = null;
     }
     public void Dialog_Start(int index, Entity en)
     {
-        if (state == -1)
+        if (state == -1 && Entity.cooltime == 0)
         {
             BoxON();
             ent = en;

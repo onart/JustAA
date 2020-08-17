@@ -8,7 +8,7 @@ public class Parrot : Entity
     public int d_no;
     public override void ObjAct()
     {
-        tm.Dialog_Start(d_no, this);
+        StartCoroutine(D_Start(d_no));
     }
 
     public override void St()

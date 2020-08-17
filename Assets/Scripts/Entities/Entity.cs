@@ -28,7 +28,7 @@ public abstract class Entity : MonoBehaviour
     {
         Up();
         RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position + rayorigin, raydir, raydistance, LayerMask.GetMask("Player"));
-        if (cooltime > 0) { cooltime = 0; }
+        if (cooltime > 0) { cooltime--; }
         else if (hit.collider != null && p.gameObject.GetComponent<Rigidbody2D>().velocity == Vector2.zero)
         {
             if (spc == null) { 
@@ -38,7 +38,6 @@ public abstract class Entity : MonoBehaviour
             if (!SysManager.forbid && Input.GetKeyDown(SysManager.keymap["상호작용"])) 
             {
                 ObjAct();
-                cooltime = 1;
             }
         }
         else { Destroy(spc); }

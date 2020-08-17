@@ -11,7 +11,9 @@ public class Portals : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             col.gameObject.transform.position = targetPos.position;
-            var p = col.gameObject.GetComponent<Player>();
+            var g = col.gameObject.GetComponent<Rigidbody2D>();
+            g.velocity = new Vector2();
+            var p = col.gameObject.GetComponent<Player>();            
             p.HpChange(-1 * (10 << SysManager.difficulty));
         }
     }

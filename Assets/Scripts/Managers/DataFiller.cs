@@ -9,6 +9,7 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
     public int diff, mhp, hp, caller = -1, exp;
     public string map;
     int[] pFlag = new int[(int)BaseSet.Flags.FLAGCOUNT];
+    public static bool load_complete;
     public int[] PF
     {
         get { return pFlag; }
@@ -19,6 +20,7 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
     void Start()
     {
         DontDestroyOnLoad(this);
+        load_complete = false;
     }
 
     public void Fill()
@@ -48,7 +50,8 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
             for (int i = 0; i < (int)BaseSet.Flags.FLAGCOUNT; i++)
             {
                 p.FLAGS[i] = pFlag[i];      //이벤트 플래그 불러오기
-            }            
+            }
+            load_complete = true;
             Destroy(gameObject);
         }
     }

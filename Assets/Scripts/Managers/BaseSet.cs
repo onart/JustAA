@@ -149,7 +149,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //22번 대화 : 계단이 끊어짐을 발견
             (Chars.ONL, Exprs.SURPRISED, "엘리베이터만 망가진 게 아니라 계단도 못 쓰게 됐잖아?"),
-            (Chars.ONL, Exprs.SURPRISED, "여기서 뛰어내릴 수는 없어. 6층으로 가서 다른 방법을 찾아야겠군."),
+            (Chars.ONL, Exprs.SURPRISED, "여기서 뛰어내릴 수는 없어. 11층으로 가서 다른 방법을 찾아야겠군."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //23번 대화 : 계단맵 첫 진입
@@ -167,9 +167,8 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //26번 대화 : 점프대 설명문
-            (Chars.CHARCOUNT, Exprs.NORM, "이것에 닿으면 주먹이 바라보는 방향으로 튀어나갑니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "튀어나가는 속도는 점프대마다 다르며, 주인공 캐릭터뿐 아니라 모든 움직이는 물체가 영향을 받습니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "닿은 후 0.3초 동안 조작이 불가능하니 유의해서 조작합시다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "이것에 닿으면 주먹이 바라보는 방향으로 날아갑니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "힘은 주먹마다 다르며, 주인공 캐릭터뿐 아니라 모든 움직이는 물체가 영향을 받습니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //27번 대화 : 6-1구역 첫 입장
@@ -187,6 +186,12 @@ public static class BaseSet
         (new List<(Chars, Exprs, string)>{   //29번 대화 : 6-2구역 가시 설명문
             (Chars.CHARCOUNT, Exprs.NORM, "가시에 닿으면 난이도에 관계 없이 게임 오버입니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "검정색 움직이는 발판은 벽에 닿을 때까지 나아갑니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "미끄러질 수 있으니 균형은 직접 잡으셔야 합니다."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //30번 대화 : 6-3구역 대시 설명문
+            (Chars.CHARCOUNT, Exprs.NORM, "이 앞의 가시는 대시로 지나갈 수 있습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "일부 공격을 통과하는 데 쓸 수도 있으니 익숙해져 보아요."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };
@@ -225,5 +230,6 @@ public static class BaseSet
         { "Six_1","11층 방" },
         { "Six1","11층-1구역" },
         { "Six2","11층-2구역" },
+        { "Six3","11층-3구역" },
     };
 }

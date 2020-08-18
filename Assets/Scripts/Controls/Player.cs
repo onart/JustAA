@@ -98,21 +98,21 @@ public class Player : MonoBehaviour
         {
             if (reserved_vx > 4 || reserved_vx < -4)
             {
-                if (lr * reserved_vx < 0) rb2d.velocity = new Vector2(rb2d.velocity.x * 0.95f, rb2d.velocity.y);
+                if (lr * reserved_vx < 0) rb2d.velocity = new Vector2(rb2d.velocity.x * Mathf.Pow(0.95f, Time.deltaTime * 60), rb2d.velocity.y);
                 reserved_vx = rb2d.velocity.x;
             }
             else
             {
                 rb2d.velocity = new Vector2(lr * speed + reserved_vx, rb2d.velocity.y);
-                reserved_vx /= 2;
-                if (Mathf.Abs(reserved_vx) < 1) reserved_vx = 0;
+                reserved_vx *= Mathf.Pow(0.7f, Time.deltaTime * 60);
+                if (Mathf.Abs(reserved_vx) < 0.2f) reserved_vx = 0;
             }
             //공격중 방향전환 가능?불가능? 아직 미정
             if (lr < 0) transform.localScale = new Vector2(-0.3f, 0.3f);
             else if (lr > 0) transform.localScale = new Vector2(0.3f, 0.3f);
             //--------------------------------------
         }
-        else if (onground) rb2d.velocity = new Vector2(0, rb2d.velocity.y);  //
+        else if (onground) rb2d.velocity = new Vector2(reserved_vx, rb2d.velocity.y);
     }
 
     void Air()

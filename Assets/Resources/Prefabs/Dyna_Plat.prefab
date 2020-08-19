@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2509900200362586222}
   - component: {fileID: 2509900200362586216}
   - component: {fileID: 2509900200362586217}
-  m_Layer: 9
+  m_Layer: 17
   m_Name: Dyna_Plat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

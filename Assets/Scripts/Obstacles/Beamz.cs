@@ -17,6 +17,7 @@ public class Beamz : MonoBehaviour
         angle2vector();
         mask += (1 << LayerMask.NameToLayer("Map"));
         mask += (1 << LayerMask.NameToLayer("Player"));
+        mask += (1 << LayerMask.NameToLayer("Foreground"));
     }
 
     // Update is called once per frame

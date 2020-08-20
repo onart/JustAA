@@ -194,6 +194,11 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "일부 공격을 통과하는 데 쓸 수도 있으니 익숙해져 보아요."),
             (Chars.END, Exprs.NORM, "")
         },0),
+        (new List<(Chars, Exprs, string)>{   //31번 대화 : 6-4구역 레이저 설명문
+            (Chars.CHARCOUNT, Exprs.NORM, "레이저에 닿으면 빠르게 체력이 깎입니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "적들은 레이저에 피해를 입지 않지만 레이저를 가릴 수 있습니다."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
     };
 
     //화면 중앙에 띄우는 글씨 리스트.
@@ -231,5 +236,6 @@ public static class BaseSet
         { "Six1","11층-1구역" },
         { "Six2","11층-2구역" },
         { "Six3","11층-3구역" },
+        { "Six4","11층-4구역" },
     };
 }

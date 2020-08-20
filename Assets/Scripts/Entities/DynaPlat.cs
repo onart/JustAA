@@ -24,7 +24,7 @@ public class DynaPlat : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Map"))
+        if (col.gameObject.layer == LayerMask.NameToLayer("Map") || col.gameObject.layer == LayerMask.NameToLayer("Foreground")) 
         {
             min = -min;
             rb2d.velocity = min * v0;

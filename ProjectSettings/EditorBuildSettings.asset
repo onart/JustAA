@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Six3.unity
     guid: 3b3406c0d864d014ea1dc4d0c9be25fc
+  - enabled: 1
+    path: Assets/Scenes/Six4.unity
+    guid: 073c850797fbe114a9e25e2d0b789a9b
   m_configObjects: {}

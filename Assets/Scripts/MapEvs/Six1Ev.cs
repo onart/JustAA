@@ -10,7 +10,16 @@ public class Six1Ev : MapEv
 
     public override void Stt()
     {
-        if (DataFiller.load_complete && p.FLAGS[(int)flag] < flag_to) 
+        Re();
+    }
+
+    private void Re()
+    {
+        if (!DataFiller.load_complete)
+        {
+            Invoke("Re", 0.1f);
+        }
+        else if (p.FLAGS[(int)flag] < flag_to)
         {
             StartCoroutine(D_Start(dial_no));
             p.FLAGS[(int)flag] = flag_to;

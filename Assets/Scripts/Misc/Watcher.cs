@@ -15,7 +15,7 @@ public class Watcher : MonoBehaviour    //플레이어를 해바라기처럼 봄
 
     void Update()
     {
-        Vector2 p = follow.position - transform.position;
+        Vector2 p = follow.position - transform.position + Vector3.up * 0.1f;
         float ang = Mathf.Atan(p.y / p.x) - d0;
         transform.eulerAngles = Vector3.forward * ang * Mathf.Rad2Deg;
         if (p.x < 0) transform.eulerAngles += Vector3.forward * 180;

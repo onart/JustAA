@@ -199,6 +199,11 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "적들은 레이저에 피해를 입지 않지만 레이저를 가릴 수 있습니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
+        (new List<(Chars, Exprs, string)>{   //32번 대화 : 도움말
+            (Chars.CHARCOUNT, Exprs.NORM, "이것은 도움말입니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "이렇게 생긴 것을 보면 조사해 보세요."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
     };
 
     //화면 중앙에 띄우는 글씨 리스트.

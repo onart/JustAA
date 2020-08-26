@@ -112,7 +112,7 @@ public class TalkManager : MonoBehaviour
             en.dialog = index;
             idx = index;
             wait = 1;
-            Dialog_Go();
+            Dialog_Go();            
         }
     }
     public void Dialog_Go() //인자 : 위의 talkData의 리스트.

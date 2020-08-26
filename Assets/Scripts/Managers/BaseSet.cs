@@ -204,6 +204,17 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "이렇게 생긴 것을 보면 조사해 보세요."),
             (Chars.END, Exprs.NORM, "")
         },0),
+        (new List<(Chars, Exprs, string)>{   //33번 대화 : 6-5구역 입장 대사
+            (Chars.ONL, Exprs.SURPRISED, "이쪽으로 와도 결국 믿음의 도약이라니.."),
+            (Chars.ONL, Exprs.NORM, "라고 생각했는데 생각보다 높진 않네."),
+            (Chars.ONL, Exprs.NORM, "가시가 많으니 조심!"),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //34번 대화 : 보스 안내판
+            (Chars.CHARCOUNT, Exprs.NORM, "이것은 보스 도움말입니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "다음은 이 문 뒤의 중간보스의 패턴입니다."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
     };
 
     //화면 중앙에 띄우는 글씨 리스트.
@@ -226,7 +237,7 @@ public static class BaseSet
         MYBED=0,                    //0번. 침대에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
         OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감 / 4: 관장과 첫 대화를 마침(완)
         SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 박치기 / 2^2자리: DNEDA, 추가될 수 있음
-        STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 6-1구역 입장해봄 / 4: 6-2구역 입장해봄
+        STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 6-1구역 입장해봄 / 4: 6-2구역 입장해봄 / 5: 6-5구역 입장해봄
         TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
         KEYS,                       //5번. 아이템을 말한다.            2^0자리: 매트리스
         FLAGCOUNT                   //플래그 수. 이건 플래그가 아니다.
@@ -242,5 +253,6 @@ public static class BaseSet
         { "Six2","11층-2구역" },
         { "Six3","11층-3구역" },
         { "Six4","11층-4구역" },
+        { "Six5","11층-5구역" },
     };
 }

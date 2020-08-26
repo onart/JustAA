@@ -12,13 +12,24 @@ public class DiffRes : MonoBehaviour
 
     void Start()
     {
-        if (un == UnD.이상)
+        Re();
+    }
+
+    private void Re()
+    {
+        if (!DataFiller.load_complete)
         {
-            if (SysManager.difficulty < (int)diff) Destroy(gameObject);
+            Invoke("Re", 0.1f);
         }
-        else
-        {
-            if (SysManager.difficulty > (int)diff) Destroy(gameObject);
+        else {
+            if (un == UnD.이상)
+            {
+                if (SysManager.difficulty < (int)diff) Destroy(gameObject);
+            }
+            else
+            {
+                if (SysManager.difficulty > (int)diff) Destroy(gameObject);
+            }
         }
     }
 

@@ -18,7 +18,7 @@ public class SysManager : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 60;   //어차피 기본 60이다. 테스트 플레이에서 180fps길래 추가함+프레임드랍 상정        
+        Application.targetFrameRate = 60;   //어차피 기본 60이다. 테스트 플레이에서 180fps길래 추가함+프레임드랍 상정
         KeyMapLoad();
     }
     void Update()

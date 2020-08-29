@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 8c61beaa0579da347999c905d2ad66d6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3953275546094235206
+    second: J1_IDLE1
+  - first:
+      213: 1635820047966447958
+    second: J1_IDLE2
+  - first:
+      213: -425944734870003757
+    second: J1_WALK1
+  - first:
+      213: 4784219907993442784
+    second: J1_WALK2
+  - first:
+      213: -5363949532556499669
+    second: J1_WALK3
+  - first:
+      213: -1575502997454834974
+    second: J1_WALK4
+  - first:
+      213: 4746656193348525519
+    second: J1_WALK5
+  - first:
+      213: -2861099190886925074
+    second: J1_WALK6
+  - first:
+      213: -441113950060425316
+    second: J1_WALK7
+  - first:
+      213: 550986331619542363
+    second: J1_WALK8
+  - first:
+      213: -878491187241435024
+    second: J1_SHR
+  - first:
+      213: -8894246506010501289
+    second: J1_AIR
+  - first:
+      213: 368213588175254444
+    second: J1_SHOOT
+  - first:
+      213: -8085630181264288435
+    second: J1_AIR2
+  - first:
+      213: 2074037352083629215
+    second: J1_HIT
+  - first:
+      213: 3445658412380773425
+    second: J1_DASH
+  - first:
+      213: -6541486274235100885
+    second: J1_THROW1
+  - first:
+      213: -2717422616361716839
+    second: J1_THROW2
+  - first:
+      213: 2270726868398044023
+    second: J1_PROJ
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: J1_IDLE1
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1043
+        width: 147
+        height: 294
+      alignment: 9
+      pivot: {x: 0.46961984, y: 0.03670123}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fab4c7e8ab31f43b3df9790a735e1b
+      internalID: -3953275546094235206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_IDLE2
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1055
+        width: 150
+        height: 283
+      alignment: 9
+      pivot: {x: 0.5188888, y: 0.02800802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057513c0a677d6844a1a8d1cab8b2592
+      internalID: 1635820047966447958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_WALK1
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1055
+        width: 194
+        height: 289
+      alignment: 9
+      pivot: {x: 0.6429591, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f61780d585a78a468c3f134d78ea371
+      internalID: -425944734870003757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_WALK2
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 1054
+        width: 192
+        height: 290
+      alignment: 9
+      pivot: {x: 0.6388925, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e75ce85fef513f4eb5cd4360e739876
+      internalID: 4784219907993442784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_WALK3
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1049
+        width: 201
+        height: 293
+      alignment: 9
+      pivot: {x: 0.6379255, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e3620a728a60b4d86870eefc964eea
+      internalID: -5363949532556499669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_WALK4
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 1055
+        width: 198
+        height: 286
+      alignment: 9
+      pivot: {x: 0.6289765, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e26fa58f1faaa4c9cdfa6593350aad
+      internalID: -1575502997454834974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_WALK5
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 1057
+        width: 198
+        height: 283
+      alignment: 9
+      pivot: {x: 0.6573745, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 745edf0b551bacc4dae5266265788024
+      internalID: 4746656193348525519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_WALK6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 727
+        width: 198
+        height: 286
+      alignment: 9
+      pivot: {x: 0.6577428, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493c21239e1c0364f95e1e3230e1fea5
+      internalID: -2861099190886925074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_WALK7
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 727
+        width: 207
+        height: 280
+      alignment: 9
+      pivot: {x: 0.65067357, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87208d3df053d0547b99239db805fbd5
+      internalID: -441113950060425316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_WALK8
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 726
+        width: 205
+        height: 283
+      alignment: 9
+      pivot: {x: 0.6424838, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2257af4a1fdfb4b9cbea436e425c93
+      internalID: 550986331619542363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_SHR
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 728
+        width: 132
+        height: 244
+      alignment: 9
+      pivot: {x: 0.5862621, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1010491e87a104cbbc7fc9d42c14b7
+      internalID: -878491187241435024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_AIR
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 732
+        width: 201
+        height: 276
+      alignment: 9
+      pivot: {x: 0.5960584, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eed259f95467134fa02d7a5b6b2082a
+      internalID: -8894246506010501289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_SHOOT
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 735
+        width: 142
+        height: 297
+      alignment: 9
+      pivot: {x: 0.6429426, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb37e0fd3911094e83aed0e1f4d5b33
+      internalID: 368213588175254444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_AIR2
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 724
+        width: 156
+        height: 292
+      alignment: 9
+      pivot: {x: 0.5464955, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5675c2d6c4cdd46844c8fa824e1528
+      internalID: -8085630181264288435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_HIT
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 400
+        width: 196
+        height: 304
+      alignment: 9
+      pivot: {x: 0.53135526, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e234309a6d8c6844c82bd475eb791c0a
+      internalID: 2074037352083629215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_DASH
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 67
+        width: 194
+        height: 296
+      alignment: 9
+      pivot: {x: 0.6409418, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769105ef06267ac48bfb492192e117f5
+      internalID: 3445658412380773425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_THROW1
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 75
+        width: 187
+        height: 269
+      alignment: 9
+      pivot: {x: 0.65746516, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d579bf61c63ac314bb96b6ea3c5654da
+      internalID: -6541486274235100885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_THROW2
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 73
+        width: 169
+        height: 300
+      alignment: 9
+      pivot: {x: 0.55014634, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aad808dc4363e24095ed6fc6c1bf953
+      internalID: -2717422616361716839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: J1_PROJ
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 236
+        width: 88
+        height: 45
+      alignment: 9
+      pivot: {x: 0.94817007, y: 0.74917877}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09db1dcb7839e094cacdd7cbf311b3cd
+      internalID: 2270726868398044023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

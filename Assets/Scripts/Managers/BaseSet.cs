@@ -212,6 +212,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //34번 대화 : 보스 안내판
             (Chars.CHARCOUNT, Exprs.NORM, "이것은 보스 도움말입니다.\n보스를 언제 때리는 게 좋을지 모르겠을 때 보면 좋아요."),
+            (Chars.CHARCOUNT, Exprs.NORM, "지금은 그냥 나왔지만 나중에 가면 이것 또한 닿기 어려운 곳에 위치할 겁니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "다음 중간보스 설명입니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "거리를 두면 무기 2개를 던지고 돌진하여,\n 던진 순서대로 무기를 회수하면서 공격합니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "무기 없이 돌진할 때가 유일한 허점이니, 막아세우고 공격합시다."),
@@ -219,19 +220,12 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //35번 대화 : 마지막방 중간보스 전 대사
-            (Chars.ONL, Exprs.NORM, "건물에서 약간 튀어나온 부분이 여기구나. 언제 꺾어질지 불안한 구조였는데 여길 와 보네."),
+            (Chars.ONL, Exprs.NORM, "건물에서 약간 튀어나온 부분이 여기구나. 언제 꺾어질지 불안해 보이는 구조였는데 여길 와 보네. 경치는 참 좋다."),
             (Chars.ONL, Exprs.NORM, "그나저나 내려가는 데 도움이 되는 물건이.."),
             (Chars.ONL, Exprs.SURPRISED, "...??!!"),
             (Chars.ONL, Exprs.SURPRISED, "또 무섭게 생긴 걸 만났네.."),
             (Chars.END, Exprs.NORM, "")
         },0),
-    };
-
-    //화면 중앙에 띄우는 글씨 리스트.
-    public static string[] Notes =
-    {
-        //0번대
-        "중앙 알림",    //형식용
     };
 
     //선택지 리스트. 필요시 텍스트 크기도 지정해 주자..
@@ -246,10 +240,10 @@ public static class BaseSet
     public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 배포 후에는 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.
         MYBED=0,                    //0번. 침대에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
         OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감 / 4: 관장과 첫 대화를 마침(완)
-        SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 박치기 / 2^2자리: DNEDA, 추가될 수 있음
+        SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 박치기 / 2^2자리: 공중대시 / 2^3자리: 공중회전공격, 추가 가능
         STAGE1,                     //3번. 1스테이지와 관련된 플래그   0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 6-1구역 입장해봄 / 4: 6-2구역 입장해봄 / 5: 6-5구역 입장해봄 / 6: 0.5스테이지 클리어
         TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
-        KEYS,                       //5번. 아이템을 말한다.            2^0자리: 매트리스
+        KEYS,                       //5번. 아이템을 말한다.            2^0자리: 
         FLAGCOUNT                   //플래그 수. 이건 플래그가 아니다.
     };
 

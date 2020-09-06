@@ -138,7 +138,7 @@ public class TalkManager : MonoBehaviour
 
     void Note()
     {
-        notice.text = "";        
+        notice.text = "";
     }
 
     public void NoteFor(string s, float time = 2.0f)

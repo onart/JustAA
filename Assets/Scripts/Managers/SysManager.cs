@@ -12,7 +12,7 @@ public class SysManager : MonoBehaviour
     public static bool menuon = false;          //메뉴가 열려있는가
     public static bool forbid = false;          //통상 조작을 봉인할까
     public static Dictionary<string, KeyCode> keymap = new Dictionary<string, KeyCode> { };
-    public static readonly string[] keys = { "점프", "공격", "앉기", "상호작용", "특수1" }; //좌우 키, 메뉴 키 변경은 금지.
+    public static readonly string[] keys = { "점프", "공격", "앉기", "상호작용", "특수1", "상향" }; //좌우 키, 메뉴 키 변경은 금지.
     public static int difficulty = 0;               //1: 쉬움, 2: 보통, 3: 어려움
     public static int cbr = 24;    //치트 블로커
 
@@ -87,6 +87,7 @@ public class SysManager : MonoBehaviour
         DictUpdate2("앉기", KeyCode.DownArrow);
         DictUpdate2("상호작용", KeyCode.Space);
         DictUpdate2("특수1", KeyCode.LeftShift);
+        DictUpdate2("상향", KeyCode.UpArrow);
     }
 
     public static void DictUpdate(string key, KeyCode value)
@@ -122,7 +123,7 @@ public class SysManager : MonoBehaviour
     {
         if (cbr != 24 - difficulty)
         {
-            Debug.Log("조작 발생!!");
+            print("조작 발생!!");
             //Scenemover.MoveScene("GameOver"); 이유 없이 떠서 테스트에 방해되기도 하니 보류
         }
     }

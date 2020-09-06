@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므로 상태머신 전이기 없음
+public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므로 상태머신 전이기 없음. 고정적으로 패턴을 반복하는 애니메이션형과, 일반 적과 같은 형식이나 더 화려한 형태로 나뉨
 {
     protected int maxHp, hp, exp;       //적의 체력. 적 역시 언젠가는 회복하지 않을까?라는 생각에 maxHp도 추가, exp는 쓰러뜨리면 주는 경험치(재화)
     protected Transform p;              //플레이어 포착 시 그 위치를 파악하게 됨
@@ -18,7 +18,7 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
     public DmgOrHeal doH;                 //텍스트 내용 설정자
     float alpha;                          //자신의 투명도
 
-    public int sw;                        //유사인터럽트용 스위치. 0인 경우 파생 클래스에 관계 없이 이동 중이거나 가만히 있는 중, 애니메이터에서 값 전달받음. 그 외에는 파생별로 다름
+    protected int tick, lr, attk;              //fixedupdate 틱수,, 좌우 이동 스위치. -1은 좌, 1은 우, 0은 없음,, 공격 관련 스위치. 역할은 파생 클래스마다 다르지만 0은 입력없음으로 통일
 
     void Start()
     {
@@ -31,14 +31,8 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
         anim = GetComponent<Animator>();
         p = FindObjectOfType<Player>().transform;
         alpha = 1;
-        bossBar.SetMax(maxHp);
         St();
-    }
-
-    protected void Act()
-    {
-        Move();
-        Invoke("Act", actTime);
+        bossBar.SetMax(maxHp);
     }
 
     protected void HPChange(int delta)
@@ -69,11 +63,9 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
         }
     }
 
-    public void GetHit(int delta, Vector2 force)
+    public virtual void GetHit(int delta, Vector2 force)
     {
         HPChange(-delta);
-        rb2d.AddForce(force);
-        if (sw == 0) anim.SetTrigger("HIT");
     }
 
     protected void setVX(float x)
@@ -117,5 +109,5 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
     }
 
     protected abstract void St();           //파생 클래스에서 Start에 더 들어갈 것을 정의
-    protected abstract void Move();         //파생 클래스에서 이동 판단에 대한 정의
+
 }

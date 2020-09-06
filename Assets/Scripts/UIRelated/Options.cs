@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Options
+﻿public class Options
 {
     int number;         //선택지 수(세로로 선택상자를 늘임)
     string body;

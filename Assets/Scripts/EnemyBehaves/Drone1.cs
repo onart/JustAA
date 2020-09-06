@@ -58,7 +58,7 @@ public class Drone1 : Enemy
     {
         exp = 40;
         y0 = transform.position.y;
-        maxHp = (int)(40 * (SysManager.difficulty / 2.0f));
+        maxHp = 10 + 10 * SysManager.difficulty;
         hp = maxHp;
         at.face = 1;
         actTime = 0.5f / SysManager.difficulty;

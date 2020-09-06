@@ -1,0 +1,631 @@
+fileFormatVersion: 2
+guid: f4afae43592bc9b41a627390126e777c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6864691208142922173
+    second: BLAST_1
+  - first:
+      213: 8433759329498783831
+    second: BLAST_2
+  - first:
+      213: -2420847201402604090
+    second: BLAST_3
+  - first:
+      213: -3765695108805929154
+    second: BLAST_4
+  - first:
+      213: -3470499128854518868
+    second: IMPALE_1
+  - first:
+      213: -5899257040467555240
+    second: IMPALE_2
+  - first:
+      213: 1475451374574981288
+    second: IMPALE_3
+  - first:
+      213: 2540250677818248641
+    second: SLASH_11
+  - first:
+      213: -5650115148914549809
+    second: SLASH_12
+  - first:
+      213: -5181765087572023135
+    second: SLASH_13
+  - first:
+      213: -4694379274566834532
+    second: SLASH_21
+  - first:
+      213: -4750816310994344223
+    second: SLASH_22
+  - first:
+      213: -9173225802140424943
+    second: SLASH_23
+  - first:
+      213: 4022673490091792379
+    second: ONL_UP
+  - first:
+      213: -673422233149737855
+    second: ONL_UP2
+  - first:
+      213: -9126852080380798229
+    second: ONL_UP3
+  - first:
+      213: -1235742141342812135
+    second: ONL_UP4
+  - first:
+      213: -2948182701681688183
+    second: ONL_SPIN1
+  - first:
+      213: -7581986565325742080
+    second: ONL_SPIN2
+  - first:
+      213: -8453730241965613913
+    second: ONL_SPIN3
+  - first:
+      213: 5047415619642373463
+    second: ONL_COM2_0
+  - first:
+      213: -7116177523573863242
+    second: ONL_COM2_1
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BLAST_1
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1719
+        width: 234
+        height: 236
+      alignment: 9
+      pivot: {x: 0.5233115, y: 0.5077039}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab8c5a055b20954682e6f82cc13f3ad
+      internalID: -6864691208142922173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BLAST_2
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1720
+        width: 222
+        height: 229
+      alignment: 9
+      pivot: {x: 0.47133273, y: 0.49999946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e7208c84a602641b9de50fc4b1dffd
+      internalID: 8433759329498783831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BLAST_3
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1698
+        width: 259
+        height: 275
+      alignment: 9
+      pivot: {x: 0.48635828, y: 0.5165292}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7866d3e541cdc448b7c9fe4f4c0904d
+      internalID: -2420847201402604090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BLAST_4
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 1680
+        width: 300
+        height: 320
+      alignment: 9
+      pivot: {x: 0.484847, y: 0.47158852}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382b3364b05ae0d46ae34bbc66b8875b
+      internalID: -3765695108805929154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMPALE_1
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1540
+        width: 336
+        height: 125
+      alignment: 9
+      pivot: {x: 0.15095066, y: 0.21634375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab0583f071907d4ebd8e6c4f04208d5
+      internalID: -3470499128854518868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMPALE_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1561
+        width: 275
+        height: 106
+      alignment: 9
+      pivot: {x: 0.06691317, y: 0.17407687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fc66e71ae2c4524e961abdea41b61e6
+      internalID: -5899257040467555240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMPALE_3
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 1560
+        width: 300
+        height: 99
+      alignment: 9
+      pivot: {x: 0.0393632, y: 0.2612317}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6bac9ecc32aca241826545884939aef
+      internalID: 1475451374574981288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLASH_11
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1194
+        width: 226
+        height: 341
+      alignment: 9
+      pivot: {x: 0.60221905, y: 0.90647805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ea80051e50807429a11b5fcf887400
+      internalID: 2540250677818248641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLASH_12
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 1238
+        width: 161
+        height: 284
+      alignment: 9
+      pivot: {x: 0.67672217, y: 0.9249276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ccbd7867d4772946b451db7894322eb
+      internalID: -5650115148914549809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLASH_13
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1239
+        width: 139
+        height: 287
+      alignment: 9
+      pivot: {x: 0.75647146, y: 0.93652767}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ff2accb6af2cd40870dcc9ed0b6f49
+      internalID: -5181765087572023135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLASH_21
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 1222
+        width: 271
+        height: 312
+      alignment: 9
+      pivot: {x: 0.85013187, y: 0.90491503}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebfdc16b8eddaab47b6562aa2381372e
+      internalID: -4694379274566834532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLASH_22
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1232
+        width: 266
+        height: 309
+      alignment: 9
+      pivot: {x: 0.76294816, y: 0.89129937}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3b92780025f414cafb0814920fc854
+      internalID: -4750816310994344223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SLASH_23
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 1231
+        width: 188
+        height: 287
+      alignment: 9
+      pivot: {x: 0.8057108, y: 0.8532826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f93dd1d54c4408449eb9c5552f4a4f3
+      internalID: -9173225802140424943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_UP
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 718
+        width: 184
+        height: 312
+      alignment: 9
+      pivot: {x: 0.43953463, y: 0.0118862055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6fe14b3715fa8a40bfeafa2a21bb18c
+      internalID: 4022673490091792379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_UP2
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 713
+        width: 214
+        height: 318
+      alignment: 9
+      pivot: {x: 0.31185, y: 0.019992085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6fd78bae645ecb4385b752c79d9a6d4
+      internalID: -673422233149737855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_UP3
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 719
+        width: 304
+        height: 360
+      alignment: 9
+      pivot: {x: 0.4128635, y: 0.0073581273}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e615d3c1cf346294da0608e9a42886b1
+      internalID: -9126852080380798229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_UP4
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 708
+        width: 232
+        height: 336
+      alignment: 9
+      pivot: {x: 0.5761758, y: 0.012417748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fbe343023d4d444f82d6f2197a9b930
+      internalID: -1235742141342812135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_SPIN1
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 726
+        width: 320
+        height: 370
+      alignment: 9
+      pivot: {x: 0.46875, y: 0.027027028}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68151966773081439611d38757aa1db
+      internalID: -2948182701681688183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_SPIN2
+      rect:
+        serializedVersion: 2
+        x: 1489
+        y: 707
+        width: 356
+        height: 370
+      alignment: 9
+      pivot: {x: 0.28648874, y: 0.31633514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf69a5a4625a3249a077a3cbf9fe44c
+      internalID: -7581986565325742080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_SPIN3
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 311
+        width: 365
+        height: 320
+      alignment: 9
+      pivot: {x: 0.73871905, y: 0.36632562}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e6c0991edc26a4fb641eeb41a0a0fc
+      internalID: -8453730241965613913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_COM2_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 355
+        width: 190
+        height: 270
+      alignment: 9
+      pivot: {x: 0.44300464, y: 0.021828432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdc2dbc914aedc4b8ef413e9f5a9c13
+      internalID: 5047415619642373463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ONL_COM2_1
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 353
+        width: 303
+        height: 315
+      alignment: 9
+      pivot: {x: 0.30755615, y: 0.02521401}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0156914146dc0e4b850acd8069a8f9c
+      internalID: -7116177523573863242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

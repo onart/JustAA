@@ -142,6 +142,7 @@ public class Player : MonoBehaviour
 
     void Sit()
     {
+        //앉기       
         if (Input.GetKey(SysManager.keymap["앉기"]) && onground && Time.timeScale > 0) 
         {
             anim.SetBool("SIT", true);
@@ -149,6 +150,15 @@ public class Player : MonoBehaviour
         else
         {
             anim.SetBool("SIT", false);
+        }
+        //상향
+        if (Input.GetKey(SysManager.keymap["상향"]) && onground && Time.timeScale > 0)
+        {
+            anim.SetBool("UP", true);
+        }
+        else
+        {
+            anim.SetBool("UP", false);
         }
     }
     float Fabs(float f)

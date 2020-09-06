@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ONL_AIR
+  m_Name: ONL_UP
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 6523457571822935103, guid: 056ca749109c2f248864c026497a0cb8,
+      value: {fileID: 4022673490091792379, guid: f4afae43592bc9b41a627390126e777c,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -41,7 +41,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 6523457571822935103, guid: 056ca749109c2f248864c026497a0cb8, type: 3}
+    - {fileID: 4022673490091792379, guid: f4afae43592bc9b41a627390126e777c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

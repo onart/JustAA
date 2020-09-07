@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     const float speed = 4;
     const float downlim = -10;
 
-    float reserved_vx;      //좌우 이동 속도 버퍼
+    float reserved_vx, reserved_vy;      //좌우 이동 속도 및 점프 초속도 버퍼
 
     public string doorname;
     public bool onground, attking;    //onground : 땅에 있는지. kdown : 강공격에 맞은 경우, attking : 공격중인가?
@@ -121,7 +121,8 @@ public class Player : MonoBehaviour
         //점프부--------------------------------------
         if (onground && Input.GetKeyDown(SysManager.keymap["점프"]))
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, /*rb2d.velocity.y + */4.5f);   //빗면점프는 4.5f로 고정하는 게 옳고 움직이는 발판 점프는 거기에 초속도를 더하는 것이 옳음
+            rb2d.velocity = new Vector2(rb2d.velocity.x, reserved_vy + 4.5f);   //빗면점프는 4.5f로 고정하는 게 옳고 움직이는 발판 점프는 거기에 초속도를 더하는 것이 옳음
+            reserved_vy = 0;
             jumphold = 62;  //최대 높이에 도달 못한 상태로 키다운하면서 떨어진 후 점프할 때 최대 높이에 도달 못하는 문제 수정
         }
         else if (jumphold > 0 && Input.GetKey(SysManager.keymap["점프"])) 
@@ -268,4 +269,8 @@ public class Player : MonoBehaviour
         reserved_vx = vx;
     }
 
+    public void reserveVy(float vy) //dynaplat에서 기본적으로 이것을 사용하지 않는 것으로 결정. 이유는 직관성으로, 차이가 너무 눈에 띔
+    {
+        reserved_vy = vy;
+    }
 }

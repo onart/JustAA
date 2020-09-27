@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class InstantKill : MonoBehaviour
 {
-    public int killframe;
-    int state = 0;
-
-    // Update is called once per frame
-    void Update()
+    public void killEv()
     {
-        state++;
-        if (state >= killframe) Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

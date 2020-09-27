@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 
+/*
+ 보스 스크립트 특성
+1. 보스는 상시 적대적
+2. 애니메이션 패러미터를 사용할 것
+3. public 애니메이션 이벤트를 활용할 것
+ */
 public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므로 상태머신 전이기 없음. 고정적으로 패턴을 반복하는 애니메이션형과, 일반 적과 같은 형식이나 더 화려한 형태로 나뉨
-{
-    protected int maxHp, hp, exp;       //적의 체력. 적 역시 언젠가는 회복하지 않을까?라는 생각에 maxHp도 추가, exp는 쓰러뜨리면 주는 경험치(재화)
+{    
+    protected int maxHp, hp, exp;
     protected Transform p;              //플레이어 포착 시 그 위치를 파악하게 됨
     protected Rigidbody2D rb2d;
-    protected Rigidbody2D prb2d;        //플레이어의 2d강체
+    protected Rigidbody2D prb2d;        //플레이어의 2d강체, 이것은 '속도'를 파악하기 위해 존재
     protected Animator anim;
     protected SpriteRenderer sr;
 
@@ -18,10 +24,8 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
     public DmgOrHeal doH;                 //텍스트 내용 설정자
     float alpha;                          //자신의 투명도
 
-    protected int tick, lr, attk;              //fixedupdate 틱수,, 좌우 이동 스위치. -1은 좌, 1은 우, 0은 없음,, 공격 관련 스위치. 역할은 파생 클래스마다 다르지만 0은 입력없음으로 통일
-
     void Start()
-    {
+    {        
         if (dmgTxt == null)
         {
             dmgTxt = Resources.Load<GameObject>("Prefabs/dmgTxt");
@@ -30,6 +34,7 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         p = FindObjectOfType<Player>().transform;
+        prb2d = p.GetComponent<Rigidbody2D>();
         alpha = 1;
         St();
         bossBar.SetMax(maxHp);
@@ -98,7 +103,7 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
 
     protected virtual void OnZero()
     {    //체력 0일 때의 동작을 정의
-        Destroy(at);        
+        Destroy(at);
         alpha -= 0.02f;
         sr.color = new Color(1, 1, 1, alpha);
         if (alpha <= 0)

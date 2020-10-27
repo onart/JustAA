@@ -148,7 +148,7 @@ MonoBehaviour:
   delta: 0
   force: {x: 0, y: 0}
   face: 1
-  down: 0
+  down: 2
 --- !u!114 &7445917155034400729
 MonoBehaviour:
   m_ObjectHideFlags: 0

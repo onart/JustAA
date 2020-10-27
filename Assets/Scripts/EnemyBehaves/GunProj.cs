@@ -13,8 +13,9 @@ public class GunProj : Attacker // 적측 발사체
         GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * Laun.bulletSpeed;
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private new void OnTriggerEnter2D(Collider2D col)
     {
+        base.OnTriggerEnter2D(col);
         Invoke("ProjHit", 0.05f);
     }
 

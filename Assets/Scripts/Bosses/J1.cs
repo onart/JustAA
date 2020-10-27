@@ -13,6 +13,7 @@ public class J1 : Boss
     public GameObject cutFX, imFX;  // 베기, 찌르기 프리팹   
     Vector2 dxy;       //플레이어와의 위치 차이
     Vector2 basic, basic_x;      //기본 스케일, x반전
+    int hand;           //손에 든 무기의 수
 
     protected override void St()
     {
@@ -22,13 +23,14 @@ public class J1 : Boss
         hp = maxHp;
         body = GetComponent<Collider2D>();
         mapMask = 1 << LayerMask.NameToLayer("Map");
+        hand = 2;
     }
 
     void Update()
     {
         if (!busy)
         {
-            
+            //캐릭터와의 x,y좌표 차이에 따라 판단이 진행. 기준: 0~1: 근접공격, 1~3: 걸어서 접근하거나 백점프로 떨어짐, 3~5: 백점프로 떨어지거나 돌진으로 접근, 5~: 무기를 던지고 회수함
         }
     }
 
@@ -37,6 +39,10 @@ public class J1 : Boss
         if (col.gameObject.layer == LayerMask.NameToLayer("Map"))
         {
             anim.SetBool("GROUND", true);
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            if (hand == 0) anim.SetTrigger("DOWN");
         }
     }
 
@@ -63,7 +69,7 @@ public class J1 : Boss
             else transform.localScale = basic_x;
             if (d > 2)
             {
-                rb2d.velocity += new Vector2(transform.localScale.x * 15, 0);
+                rb2d.velocity += new Vector2(dxy.x * 15, 0);    // 하다 밋밋하면 y좌표까지 움직일지도 모름
             }
         }
     }
@@ -80,5 +86,10 @@ public class J1 : Boss
         else at.face = -1;
         fx.GetComponent<CircleCollider2D>().enabled = true;
     }
-    
+
+    public override void GetHit(int delta, Vector2 force)
+    {
+        base.GetHit(delta, force);
+        if (!busy) anim.SetTrigger("HIT");
+    }
 }

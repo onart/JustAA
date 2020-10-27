@@ -19,3 +19,6 @@
 ->일반 효과음 및 BGM 직접 
 
 ### 추가 예정: fps 30, 60 중 하나 선택
+
+
+![image](https://user-images.githubusercontent.com/43103079/84587370-94cce600-ae59-11ea-9e19-2d06421d1d4c.png)

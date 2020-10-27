@@ -1,3 +1,5 @@
+![image](https://github.com/onart/JustAA/blob/master/%EA%B3%BC%EC%A0%951.png?raw=true)
+
 # 다음 과제.
 
 ### 난이도 시스템(3단계 정도, 잡몹은 반응속도 차이(체력차이 없음), 보스는 체력과 패턴 차이 정도로)
@@ -21,4 +23,3 @@
 ### 추가 예정: fps 30, 60 중 하나 선택
 
 
-![image](https://github.com/onart/JustAA/blob/master/%EA%B3%BC%EC%A0%951.png?raw=true)

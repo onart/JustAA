@@ -199,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3606420438716869845}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.66, y: -6.288, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 6453269263863063760}
@@ -318,7 +318,6 @@ MonoBehaviour:
   doH: {fileID: 0}
   sw: 0
   blast: {fileID: 3718013537599983620, guid: 5e126a47d516dcd47970fc6ef736dc13, type: 3}
-  split: {fileID: 3606420438716869845, guid: 678d63395a1bbc748aad7f9af9829603, type: 3}
 --- !u!61 &3626137231571827183
 BoxCollider2D:
   m_ObjectHideFlags: 0

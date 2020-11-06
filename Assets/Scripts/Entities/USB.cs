@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 public class USB : Entity
 {
-    SaveLoad sl;
+    static SaveLoad sl;
 
     public override void ObjAct()
     {
@@ -16,7 +16,7 @@ public class USB : Entity
     public override void St()
     {
         spacepos = Vector3.up;
-        sl = FindObjectOfType<SaveLoad>();
+        if (!sl) sl = FindObjectOfType<SaveLoad>();
         rayorigin = Vector2.zero;
         raydir = Vector2.down;
         raydistance = 0.5f;

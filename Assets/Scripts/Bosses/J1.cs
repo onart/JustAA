@@ -30,6 +30,25 @@ public class J1 : Boss
     {
         if (!busy)
         {
+            getDist();
+            switch (Mathf.Floor(Mathf.Abs(dxy.x)))
+            {
+                case 0:
+                    anim.SetTrigger("ATK");
+                    break;
+                case 1:
+                case 2:
+                    //일정 시간 걸어서 접근하는 코드
+                    break;
+                case 3:
+                case 4:
+                    //백점프, 돌진 중 랜덤 하나
+                    break;
+                default:
+                    anim.SetTrigger("THROW");
+                    break;
+            }
+            busy = true;
             //캐릭터와의 x,y좌표 차이에 따라 판단이 진행. 기준: 0~1: 근접공격, 1~3: 걸어서 접근하거나 백점프로 떨어짐, 3~5: 백점프로 떨어지거나 돌진으로 접근, 5~: 무기를 던지고 회수함
         }
     }
@@ -81,7 +100,7 @@ public class J1 : Boss
         fx.transform.position = transform.position + new Vector3(transform.localScale.x * 2, transform.localScale.y);
         var at = fx.GetComponent<Attacker>();
         at.delta = delta;
-        at.force *= new Vector2(200, 70);
+        at.force *= new Vector2(80, 100);
         if (transform.localScale.x > 0) at.face = 1;
         else at.face = -1;
         fx.GetComponent<CircleCollider2D>().enabled = true;

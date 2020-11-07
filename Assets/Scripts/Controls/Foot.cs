@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,15 +21,16 @@ public class Foot : MonoBehaviour
     private void OnCollisionStay2D(Collision2D col)
     {
         //if (!p.onground && (col.gameObject.layer == LayerMask.NameToLayer("Map") || col.gameObject.layer == LayerMask.NameToLayer("EnemyBody"))) {
-        if (!p.onground && Physics2D.IsTouchingLayers(foot, footMask)) {                        
+        if (!p.onground && foot.IsTouchingLayers(footMask)) {
             p.onground = true;
             p.jumphold = 62;
-            p.Hold();
+            p.Hold();            
         }
     }
     private void OnCollisionExit2D(Collision2D col)
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Map") || col.gameObject.layer == LayerMask.NameToLayer("Foreground")) { 
+        if (col.gameObject.layer == LayerMask.NameToLayer("Map") || col.gameObject.layer == LayerMask.NameToLayer("Foreground") || col.gameObject.layer == LayerMask.NameToLayer("EnemyBody"))
+        {
             p.onground = false;            
         }
     }

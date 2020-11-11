@@ -327,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296873873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27, y: -24.985, z: 0}
+  m_LocalPosition: {x: 0.88, y: -24.985, z: 0}
   m_LocalScale: {x: -0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -351,6 +351,7 @@ MonoBehaviour:
   busy: 0
   cutFX: {fileID: 5775907304594688381, guid: 99bb00b428625be439c8f4695f28458f, type: 3}
   imFX: {fileID: 5775907304594688381, guid: 3f827eea602fe3242a7b568b03db6d42, type: 3}
+  thr: {fileID: 2656199489414895296, guid: b990712e181bb7149a9aec36f8b7a5b0, type: 3}
 --- !u!1 &346005413
 GameObject:
   m_ObjectHideFlags: 0

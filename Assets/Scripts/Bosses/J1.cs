@@ -10,7 +10,8 @@ public class J1 : Boss
     Collider2D body;
     int mapMask;
     public bool busy;  //행동 중임을 나타냄. busy==true인 경우는 판단 과정을 거치지 않음
-    public GameObject cutFX, imFX;  // 베기, 찌르기 프리팹   
+    public GameObject cutFX, imFX;  // 베기, 찌르기 프리팹
+    public GameObject thr;          // 나이프 프리팹
     Vector2 dxy;       //플레이어와의 위치 차이
     Vector2 basic, basic_x;      //기본 스케일, x반전
     int hand;           //손에 든 무기의 수
@@ -105,6 +106,27 @@ public class J1 : Boss
         else at.face = -1;
         fx.GetComponent<CircleCollider2D>().enabled = true;
     }
+
+    Quaternion float2Q(float ang)
+    {
+        if (transform.localScale.x > 0)
+        {
+            return Quaternion.AngleAxis(ang - 25, Vector3.forward);
+        }
+        else
+        {
+            return Quaternion.AngleAxis(180 + ang - 25, Vector3.forward);
+        }
+    }
+
+    void thrower()
+    {
+        var angle1 = float2Q(Mathf.Atan(dxy.y / dxy.x) * Mathf.Rad2Deg + 20);
+        var angle2 = float2Q(Mathf.Atan(dxy.y / dxy.x) * Mathf.Rad2Deg);
+        Instantiate(thr, transform.position + new Vector3(0, 0.4f), angle1);
+        Instantiate(thr, transform.position + new Vector3(0, 0.4f), angle2);
+    }
+
 
     public override void GetHit(int delta, Vector2 force)
     {

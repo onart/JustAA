@@ -16,6 +16,8 @@ public class J1 : Boss
     Vector2 basic, basic_x;      //기본 스케일, x반전
     int hand;           //손에 든 무기의 수
 
+    public Transform knv1, knv2;
+
     protected override void St()
     {
         basic = new Vector2(0.3f, 0.3f);
@@ -29,7 +31,7 @@ public class J1 : Boss
 
     void Update()
     {
-        if (!busy)
+        if (!busy && anim.GetBool("GROUND"))
         {
             getDist();
             switch (Mathf.Floor(Mathf.Abs(dxy.x)))
@@ -39,14 +41,34 @@ public class J1 : Boss
                     break;
                 case 1:
                 case 2:
-                    //일정 시간 걸어서 접근하는 코드
+                    if (Random.Range(0, 2) == 0)
+                    {
+                        //걸어서 접근
+                    }
+                    else
+                    {
+                        backJump();
+                        //백점프
+                    }
                     break;
                 case 3:
                 case 4:
-                    //백점프, 돌진 중 랜덤 하나
+                    if (Random.Range(0, 2) == 0)
+                    {
+                        anim.SetTrigger("CHARGE");
+                        //돌진
+                    }
+                    else
+                    {
+                        backJump();
+                        //백점프
+                    }
                     break;
                 default:
-                    anim.SetTrigger("THROW");
+                    if (knv1 == null)
+                    {
+                        anim.SetTrigger("THROW");
+                    }
                     break;
             }
             busy = true;
@@ -77,6 +99,7 @@ public class J1 : Boss
     void getDist()
     {
         dxy = p.position - transform.position;
+        if (dxy.x * transform.localScale.x < 0) FaceBack();
     }
 
     void combo() //한 번 휘두를 때마다 호출(즉 애니메이션 1루프에서 2회 호출됨)
@@ -123,14 +146,58 @@ public class J1 : Boss
     {
         var angle1 = float2Q(Mathf.Atan(dxy.y / dxy.x) * Mathf.Rad2Deg + 20);
         var angle2 = float2Q(Mathf.Atan(dxy.y / dxy.x) * Mathf.Rad2Deg);
-        Instantiate(thr, transform.position + new Vector3(0, 0.4f), angle1);
-        Instantiate(thr, transform.position + new Vector3(0, 0.4f), angle2);
+        knv1 = Instantiate(thr, transform.position + new Vector3(0, 0.4f), angle1).transform;
+        knv2 = Instantiate(thr, transform.position + new Vector3(0, 0.4f), angle2).transform;
     }
 
+
+    void charge1()
+    {
+        busy = true;
+        if (transform.localScale.x < 0)
+        {
+            setV(-10, 1.0f);
+        }
+        else
+        {
+            setV(10, 1.0f);
+        }
+    }
+
+    void charge2()
+    {
+        var fx = Instantiate(imFX);
+        fx.transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        fx.transform.position = transform.position + new Vector3(transform.localScale.x * 2, transform.localScale.y);
+        var at = fx.GetComponent<Attacker>();
+        at.delta = 10;
+        at.force *= new Vector2(200, 100);
+        if (transform.localScale.x > 0) at.face = 1;
+        else at.face = -1;
+        setVX(0);
+    }
 
     public override void GetHit(int delta, Vector2 force)
     {
         base.GetHit(delta, force);
         if (!busy) anim.SetTrigger("HIT");
+    }
+
+    void backJump()
+    {
+        if (transform.localScale.x < 0)
+        {
+            if (Physics2D.Raycast((Vector2)transform.position, Vector2.right, 1.5f, LayerMask.GetMask("Map")).collider == null)
+            {
+                setV(3, 1.5f);
+            }
+        }
+        else
+        {
+            if (Physics2D.Raycast((Vector2)transform.position, Vector2.left, 1.5f, LayerMask.GetMask("Map")).collider == null)
+            {
+                setV(-3, 1.5f);
+            }
+        }
     }
 }

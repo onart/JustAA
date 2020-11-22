@@ -91,13 +91,16 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
     protected void FaceBack()     //뒤를 돎.
     {
         transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-        if (transform.localScale.x > 0)
+        if (at)
         {
-            at.face = 1;
-        }
-        else
-        {
-            at.face = -1;
+            if (transform.localScale.x > 0)
+            {
+                at.face = 1;
+            }
+            else
+            {
+                at.face = -1;
+            }
         }
     }
 

@@ -12,11 +12,13 @@ public class MyAttacker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (col.gameObject.layer == LayerMask.NameToLayer("Enemy") || col.gameObject.layer == LayerMask.NameToLayer("EnemyBody"))
         {
-            var en = col.gameObject.GetComponent<Enemy>();
+            print(col);
             if (p.localScale.x < 0) force.x = -force.x;
-            en.GetHit(delta, force*100);
+            var en = col.gameObject.GetComponent<Enemy>();
+            if (en) en.GetHit(delta, force * 100);
+            else col.gameObject.GetComponent<Boss>().GetHit(delta, force * 100);
         }
         else if (col.gameObject.tag == "plat")
         {

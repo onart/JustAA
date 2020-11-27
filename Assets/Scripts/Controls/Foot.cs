@@ -14,7 +14,7 @@ public class Foot : MonoBehaviour
         p = GetComponentInParent<Player>();
         foot = GetComponent<CircleCollider2D>();
         footMask += 1 << LayerMask.NameToLayer("Map");
-        footMask += 1 << LayerMask.NameToLayer("EnemyBody");
+        footMask += 1 << LayerMask.NameToLayer("Enemy");
         footMask += 1 << LayerMask.NameToLayer("Foreground");
     }
 
@@ -29,7 +29,7 @@ public class Foot : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D col)
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Map") || col.gameObject.layer == LayerMask.NameToLayer("Foreground") || col.gameObject.layer == LayerMask.NameToLayer("EnemyBody"))
+        if (col.gameObject.layer == LayerMask.NameToLayer("Map") || col.gameObject.layer == LayerMask.NameToLayer("Foreground") || col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             p.onground = false;            
         }

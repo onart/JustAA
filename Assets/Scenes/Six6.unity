@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 296873874}
   - component: {fileID: 296873878}
   - component: {fileID: 296873879}
-  m_Layer: 15
+  m_Layer: 12
   m_Name: J1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,8 +266,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06604398, y: 1.3620985}
-  m_Size: {x: 0.86113423, y: 2.9399998}
+  m_Offset: {x: -0.06604398, y: 1.4107658}
+  m_Size: {x: 0.86113423, y: 2.842665}
   m_Direction: 0
 --- !u!212 &296873876
 SpriteRenderer:
@@ -353,6 +353,8 @@ MonoBehaviour:
   cutFX: {fileID: 5775907304594688381, guid: 99bb00b428625be439c8f4695f28458f, type: 3}
   imFX: {fileID: 5775907304594688381, guid: 3f827eea602fe3242a7b568b03db6d42, type: 3}
   thr: {fileID: 2656199489414895296, guid: b990712e181bb7149a9aec36f8b7a5b0, type: 3}
+  knv1: {fileID: 0}
+  knv2: {fileID: 0}
 --- !u!50 &296873879
 Rigidbody2D:
   serializedVersion: 4

@@ -62,7 +62,7 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
             hp = 0;
             GetComponent<Collider2D>().enabled = false;
             p.gameObject.GetComponent<Player>().GainExp(exp);
-            at.enabled = false;
+            if (at) at.enabled = false;
             CancelInvoke();
             OnZero();
         }

@@ -23,6 +23,7 @@ public class BossHp : MonoBehaviour
     {
         if (max == 0) Destroy(gameObject);
         this.max = max;
-        cur = max;      
+        cur = max;
+        txt.text = max.ToString() + '/' + max.ToString();
     }
 }

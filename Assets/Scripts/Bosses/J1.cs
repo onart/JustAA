@@ -31,6 +31,9 @@ public class J1 : Boss
 
     void Update()
     {
+        //1. 얌전히 안 걷는 문제
+        //2. 무적자리 문제
+        anim.SetFloat("SPD", Mathf.Abs(rb2d.velocity.x));
         if (!busy && anim.GetBool("GROUND"))
         {
             getDist();
@@ -43,6 +46,10 @@ public class J1 : Boss
                 case 2:
                     if (Random.Range(0, 2) == 0)
                     {
+                        setVX(dxy.x);
+                        anim.SetFloat("SPD", Mathf.Abs(dxy.x));
+                        busy = true;
+                        Invoke(nameof(unlock), 1);
                         //걸어서 접근
                     }
                     else
@@ -65,9 +72,16 @@ public class J1 : Boss
                     }
                     break;
                 default:
-                    if (knv1 == null)
+                    if (SysManager.difficulty == 3 && knv1 == null)
                     {
                         anim.SetTrigger("THROW");
+                    }
+                    else {
+                        setVX(dxy.x);
+                        busy = true;
+                        anim.SetFloat("SPD", Mathf.Abs(dxy.x));
+                        Invoke(nameof(unlock), 1);
+                        //걸어서 접근
                     }
                     break;
             }
@@ -123,7 +137,7 @@ public class J1 : Boss
         fx.transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         fx.transform.position = transform.position + new Vector3(transform.localScale.x * 2, transform.localScale.y);
         var at = fx.GetComponent<Attacker>();
-        at.delta = delta;
+        at.delta = delta / 3 * SysManager.difficulty + 1;
         at.force *= new Vector2(80, 100);
         if (transform.localScale.x > 0) at.face = 1;
         else at.face = -1;
@@ -153,6 +167,19 @@ public class J1 : Boss
 
     void charge1()
     {
+        var fx = Instantiate(imFX, transform);
+        fx.transform.position = transform.position + new Vector3(transform.localScale.x * 2, transform.localScale.y);
+        var at = fx.GetComponent<Attacker>();
+        at.delta = 10;
+        at.force *= new Vector2(200, 100);
+        fx.transform.localScale = new Vector2(-1, 1);
+        if (transform.localScale.x > 0) { 
+            at.face = 1;
+        }
+        else
+        {
+            at.face = -1;
+        }
         busy = true;
         if (transform.localScale.x < 0)
         {
@@ -166,15 +193,14 @@ public class J1 : Boss
 
     void charge2()
     {
-        var fx = Instantiate(imFX);
-        fx.transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-        fx.transform.position = transform.position + new Vector3(transform.localScale.x * 2, transform.localScale.y);
-        var at = fx.GetComponent<Attacker>();
-        at.delta = 10;
-        at.force *= new Vector2(200, 100);
-        if (transform.localScale.x > 0) at.face = 1;
-        else at.face = -1;
-        setVX(0);
+        if (transform.localScale.x < 0)
+        {
+            setVX(-2);
+        }
+        else
+        {
+            setVX(2);
+        }
     }
 
     public override void GetHit(int delta, Vector2 force)
@@ -199,5 +225,10 @@ public class J1 : Boss
                 setV(-3, 1.5f);
             }
         }
+    }
+
+    void unlock()
+    {
+        busy = false;
     }
 }

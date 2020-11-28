@@ -31,8 +31,6 @@ public class J1 : Boss
 
     void Update()
     {
-        //1. 얌전히 안 걷는 문제
-        //2. 무적자리 문제
         anim.SetFloat("SPD", Mathf.Abs(rb2d.velocity.x));
         if (!busy && anim.GetBool("GROUND"))
         {
@@ -40,15 +38,17 @@ public class J1 : Boss
             switch (Mathf.Floor(Mathf.Abs(dxy.x)))
             {
                 case 0:
-                    anim.SetTrigger("ATK");
+                    if (Mathf.Abs(dxy.x) <= 0.7f) anim.SetTrigger("ATK");
+                    else goto case 1;
                     break;
                 case 1:
                 case 2:
-                    if (Random.Range(0, 2) == 0)
+                    if (Random.Range(0, 4) != 0)
                     {
-                        setVX(dxy.x);
+                        setVX(dxy.x * 2);
                         anim.SetFloat("SPD", Mathf.Abs(dxy.x));
                         busy = true;
+                        CancelInvoke(nameof(unlock));
                         Invoke(nameof(unlock), 1);
                         //걸어서 접근
                     }
@@ -60,7 +60,7 @@ public class J1 : Boss
                     break;
                 case 3:
                 case 4:
-                    if (Random.Range(0, 2) == 0)
+                    if (Random.Range(0, 3) != 0)
                     {
                         anim.SetTrigger("CHARGE");
                         //돌진
@@ -80,13 +80,14 @@ public class J1 : Boss
                         setVX(dxy.x);
                         busy = true;
                         anim.SetFloat("SPD", Mathf.Abs(dxy.x));
+                        CancelInvoke(nameof(unlock));
                         Invoke(nameof(unlock), 1);
                         //걸어서 접근
                     }
                     break;
             }
             busy = true;
-            //캐릭터와의 x,y좌표 차이에 따라 판단이 진행. 기준: 0~1: 근접공격, 1~3: 걸어서 접근하거나 백점프로 떨어짐, 3~5: 백점프로 떨어지거나 돌진으로 접근, 5~: 무기를 던지고 회수함
+            //캐릭터와의 x,y좌표 차이에 따라 판단이 진행. 기준: 0~1: 근접공격, 1~3: 걸어서 접근하거나 백점프로 떨어짐, 3~5: 백점프로 떨어지거나 돌진으로 접근, 5~: 무기를 던지기만 함(최대 4개??)
         }
     }
 

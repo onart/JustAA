@@ -64,4 +64,7 @@ public abstract class Entity : MonoBehaviour
     {
         if (spc) Destroy(spc);
     }
+
+    public virtual void afterDialog() { }   //대화가 종료되면 호출
+    public virtual void afterSth(int flag) { }  //다용도 호출
 }

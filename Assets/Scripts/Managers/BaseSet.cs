@@ -210,20 +210,31 @@ public static class BaseSet
             (Chars.ONL, Exprs.NORM, "가시가 많으니 조심하자."),
             (Chars.END, Exprs.NORM, "")
         },0),
-        (new List<(Chars, Exprs, string)>{   //34번 대화 : 보스 안내판
+        (new List<(Chars, Exprs, string)>{   //34번 대화 : 보스 안내판 1
             (Chars.CHARCOUNT, Exprs.NORM, "이것은 보스 도움말입니다.\n보스를 언제 때리는 게 좋을지 모르겠을 때 보면 좋아요."),
             (Chars.CHARCOUNT, Exprs.NORM, "지금은 그냥 나왔지만 나중에 가면 이것 또한 닿기 어려운 곳에 위치할 겁니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "다음 중간보스 설명입니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "거리를 두면 무기 2개를 던지고 돌진하여,\n 던진 순서대로 무기를 회수하면서 공격합니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "무기 없이 돌진할 때가 유일한 허점이니, 막아세우고 공격합시다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "이외의 경우도 공격은 가능하지만, 쉽게 반격당할 겁니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "다음 첫 중간보스 설명입니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "이 보스는 하이퍼아머인 데다가 특별히 공격 타이밍을 주지 않습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "조금이라도 허점이 보일 때 치고 빠집시다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "어려움 모드를 플레이하고 계신다면, 초장에 던지는 나이프는 사라지지 않으니 주의하세요."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //35번 대화 : 마지막방 중간보스 전 대사
+            (Chars.ONL, Exprs.ANGRY, "아니, 문이 왜 저 위에 달렸냐?"),
             (Chars.ONL, Exprs.NORM, "건물에서 약간 튀어나온 부분이 여기구나. 언제 꺾어질지 불안해 보이는 구조였는데 여길 와 보네. 경치는 참 좋다."),
             (Chars.ONL, Exprs.NORM, "그나저나 내려가는 데 도움이 되는 물건이.."),
             (Chars.ONL, Exprs.SURPRISED, "...??!!"),
             (Chars.ONL, Exprs.SURPRISED, "또 무섭게 생긴 걸 만났네.."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //36번 대화 : 중간보스 클리어 후 대사
+            (Chars.CHARCOUNT, Exprs.NORM, "수고하셨어요."),
+            (Chars.ONL, Exprs.ANGRY, "뭐라고, 이 자식아?"),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //37번 대화 : 중간보스 클리어 후 대사 2
+            (Chars.ONL, Exprs.CRY, "......"),
+            (Chars.ONL, Exprs.CRY, "집에 돌아가서 자고 싶다."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };

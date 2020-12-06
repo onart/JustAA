@@ -15,6 +15,7 @@ public class J1 : Boss
     Vector2 dxy;       //플레이어와의 위치 차이
     Vector2 basic, basic_x;      //기본 스케일, x반전
     int hand;           //손에 든 무기의 수
+    public MapEv ev;
 
     public Transform knv1, knv2;
 
@@ -138,7 +139,7 @@ public class J1 : Boss
         fx.transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         fx.transform.position = transform.position + new Vector3(transform.localScale.x * 2, transform.localScale.y);
         var at = fx.GetComponent<Attacker>();
-        at.delta = delta / 3 * SysManager.difficulty + 1;
+        at.delta = delta * SysManager.difficulty / 3 + 1;
         at.force *= new Vector2(80, 100);
         if (transform.localScale.x > 0) at.face = 1;
         else at.face = -1;
@@ -171,7 +172,7 @@ public class J1 : Boss
         var fx = Instantiate(imFX, transform);
         fx.transform.position = transform.position + new Vector3(transform.localScale.x * 2, transform.localScale.y);
         var at = fx.GetComponent<Attacker>();
-        at.delta = 10;
+        at.delta = 10 * SysManager.difficulty;
         at.force *= new Vector2(200, 100);
         fx.transform.localScale = new Vector2(-1, 1);
         if (transform.localScale.x > 0) { 
@@ -231,5 +232,14 @@ public class J1 : Boss
     void unlock()
     {
         busy = false;
+    }
+
+    protected override void OnZero()
+    {
+        base.OnZero();
+        if (ev) { 
+            ev.afterSth(0);
+            ev = null;
+        }
     }
 }

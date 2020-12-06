@@ -353,6 +353,7 @@ MonoBehaviour:
   cutFX: {fileID: 5775907304594688381, guid: 99bb00b428625be439c8f4695f28458f, type: 3}
   imFX: {fileID: 5775907304594688381, guid: 3f827eea602fe3242a7b568b03db6d42, type: 3}
   thr: {fileID: 2656199489414895296, guid: b990712e181bb7149a9aec36f8b7a5b0, type: 3}
+  ev: {fileID: 1147932185}
   knv1: {fileID: 0}
   knv2: {fileID: 0}
 --- !u!50 &296873879
@@ -1157,6 +1158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: 0
   anim: {fileID: 1545293179}
+  j1: {fileID: 296873878}
+  bigBar: {fileID: 266697098}
 --- !u!4 &1147932186
 Transform:
   m_ObjectHideFlags: 0
@@ -3328,6 +3331,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3769143328551563115, guid: fd7c17a9db19be84d9aa6bfe03706ea0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5087805840244424043, guid: fd7c17a9db19be84d9aa6bfe03706ea0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7371982951891465811, guid: fd7c17a9db19be84d9aa6bfe03706ea0,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -3397,6 +3410,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MAINTAIN
+      objectReference: {fileID: 0}
+    - target: {fileID: 7371982952958829271, guid: fd7c17a9db19be84d9aa6bfe03706ea0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7666431229598313239, guid: fd7c17a9db19be84d9aa6bfe03706ea0,
         type: 3}

@@ -101,6 +101,7 @@ public class TalkManager : MonoBehaviour
         state = -1;
         Entity.cooltime = 10;
         dBoxUI.SetActive(false);
+        if (ent) ent.afterDialog();
         ent = null;
     }
     public void Dialog_Start(int index, Entity en)

@@ -12,6 +12,7 @@ public class CorridorEv : MapEv         //Corridor 맵의 비사물 이벤트를
         {
             mob = Resources.Load<GameObject>("Prefabs/DRONE1");
             mob = Instantiate(mob);
+            mob.transform.position = new Vector2(13.34f, -4.6f);
             p.FLAGS[(int)BaseSet.Flags.OUTEXP] = 1;
             dr1.setResponse(6);
             dr2.setResponse(6);

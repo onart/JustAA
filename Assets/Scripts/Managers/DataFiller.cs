@@ -67,6 +67,7 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
         {
             SysManager.difficulty = diff;
             SysManager.cbr = 24 - diff;
+            load_complete = true;
             Destroy(gameObject);
         }
     }    

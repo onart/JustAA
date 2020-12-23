@@ -8647,6 +8647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 2325686850925645734}
   dialogUI: {fileID: 5455776476678345336}
+  fade: {fileID: 5079833901757432082}
   kc: {fileID: 7951379233596195818}
 --- !u!1 &7371982952084379003
 GameObject:

@@ -185,11 +185,11 @@ public class J1 : Boss
         busy = true;
         if (transform.localScale.x < 0)
         {
-            setV(-10, 1.0f);
+            setV(-7, 1.0f);
         }
         else
         {
-            setV(10, 1.0f);
+            setV(7, 1.0f);
         }
     }
 

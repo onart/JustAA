@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SysManager : MonoBehaviour
 {
     Canvas cv;
-    public GameObject menu, dialogUI;
+    public GameObject menu, dialogUI, fade;
     public KeyConfig kc;                        //키설정용
     public static bool menuon = false;          //메뉴가 열려있는가
     public static bool forbid = false;          //통상 조작을 봉인할까
@@ -26,7 +26,7 @@ public class SysManager : MonoBehaviour
         Checker();  //치트체커
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            MenuFlip();
+            if (!fade.activeSelf) MenuFlip();
         }
         SettimeScale();
     }

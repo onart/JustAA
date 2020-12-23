@@ -10,11 +10,13 @@ public class DynaPlat : MonoBehaviour
     public Vector2 v0;
     Player p;
     CapsuleCollider2D cc2d;
-    int mapMask; 
+    int mapMask;
+    bool cools;
 
     // Start is called before the first frame update
     void Start()
     {
+        cools = true;
         rb2d = GetComponent<Rigidbody2D>();
         c2 = GetComponent<BoxCollider2D>();
         rb2d.velocity = v0;
@@ -38,17 +40,22 @@ public class DynaPlat : MonoBehaviour
             if (!p) p = col.gameObject.GetComponent<Player>();
             if (!cc2d) cc2d = col.gameObject.GetComponent<CapsuleCollider2D>();
             p.reserveVx(min * v0.x);
-            if (Physics2D.IsTouchingLayers(cc2d, mapMask))    //이쪽 코드 : 끼임 및 벽뚫기 방지
+            if (cools && Physics2D.IsTouchingLayers(cc2d, mapMask))    //이쪽 코드 : 끼임 및 벽뚫기 방지
             {
-                c2.enabled = false;
-                CancelInvoke();
-                Invoke("regen", 0.3f);
+                if (v0.y != 0)
+                {
+                    min = -min;
+                    rb2d.velocity = min * v0;
+                    cools = false;
+                    CancelInvoke();
+                    Invoke("regen", 0.3f);
+                }
             }
         }
     }
 
     void regen()
     {
-        c2.enabled = true;
+        cools = true;
     }
 }

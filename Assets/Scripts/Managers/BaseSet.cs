@@ -216,6 +216,7 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "다음 첫 중간보스 설명입니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "이 보스는 하이퍼아머인 데다가 특별히 공격 타이밍을 주지 않습니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "조금이라도 허점이 보일 때 치고 빠집시다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "사범에게서 대시 공격을 배웠다면 조금 편할 겁니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "어려움 모드를 플레이하고 계신다면, 초장에 던지는 나이프는 사라지지 않으니 주의하세요."),
             (Chars.END, Exprs.NORM, "")
         },0),

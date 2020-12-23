@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2343a0447d4c444a96f9ebc1af50464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delta: 25
+  delta: 15
   force: {x: 0, y: 0}
   face: 1
   down: 0

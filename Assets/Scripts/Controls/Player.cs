@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     float reserved_vx, reserved_vy;      //좌우 이동 속도 및 점프 초속도 버퍼
 
     public string doorname;
-    public bool onground, attking;    //onground : 땅에 있는지. kdown : 강공격에 맞은 경우, attking : 공격중인가?
+    public bool onground, attking;    //onground : 땅에 있는지. kdown : 강공격에 맞은 경우, attking : 공격중이거나 앉아 있거나 서 있는가?
     public int kdown;
     public float jumphold;
     int[] flags = new int[(int)BaseSet.Flags.FLAGCOUNT];     //BaseSet.cs에 명시된 플래그 기반. 데이터필러에서 이것도 채워야 한다. 꼭 0과 1로 구분할 필요는 없음

@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class J1 : Boss
 {
@@ -21,6 +19,7 @@ public class J1 : Boss
 
     protected override void St()
     {
+        busy = false;
         basic = new Vector2(0.3f, 0.3f);
         basic_x = new Vector2(-0.3f, 0.3f);
         maxHp = 60 + 20 * SysManager.difficulty;
@@ -35,11 +34,14 @@ public class J1 : Boss
         anim.SetFloat("SPD", Mathf.Abs(rb2d.velocity.x));
         if (!busy && anim.GetBool("GROUND"))
         {
+            busy = true;
             getDist();
             switch (Mathf.Floor(Mathf.Abs(dxy.x)))
             {
                 case 0:
-                    if (Mathf.Abs(dxy.x) <= 0.7f) anim.SetTrigger("ATK");
+                    if (Mathf.Abs(dxy.x) <= 0.7f) { 
+                        anim.SetTrigger("ATK");
+                    }
                     else goto case 1;
                     break;
                 case 1:
@@ -48,7 +50,6 @@ public class J1 : Boss
                     {
                         setVX(dxy.x * 2);
                         anim.SetFloat("SPD", Mathf.Abs(dxy.x));
-                        busy = true;
                         CancelInvoke(nameof(unlock));
                         Invoke(nameof(unlock), 1);
                         //걸어서 접근
@@ -79,7 +80,6 @@ public class J1 : Boss
                     }
                     else {
                         setVX(dxy.x);
-                        busy = true;
                         anim.SetFloat("SPD", Mathf.Abs(dxy.x));
                         CancelInvoke(nameof(unlock));
                         Invoke(nameof(unlock), 1);
@@ -87,8 +87,11 @@ public class J1 : Boss
                     }
                     break;
             }
-            busy = true;
             //캐릭터와의 x,y좌표 차이에 따라 판단이 진행. 기준: 0~1: 근접공격, 1~3: 걸어서 접근하거나 백점프로 떨어짐, 3~5: 백점프로 떨어지거나 돌진으로 접근, 5~: 무기를 던지기만 함(최대 4개??)
+        }
+        else
+        {
+            
         }
     }
 
@@ -128,7 +131,7 @@ public class J1 : Boss
             else transform.localScale = basic_x;
             if (d > 2)
             {
-                rb2d.velocity += new Vector2(dxy.x * 15, 0);    // 하다 밋밋하면 y좌표까지 움직일지도 모름
+                rb2d.velocity += new Vector2(dxy.x, 0);    // 하다 밋밋하면 y좌표까지 움직일지도 모름
             }
         }
     }
@@ -185,11 +188,11 @@ public class J1 : Boss
         busy = true;
         if (transform.localScale.x < 0)
         {
-            setV(-7, 1.0f);
+            setV(-10, 1.0f);
         }
         else
         {
-            setV(7, 1.0f);
+            setV(10, 1.0f);
         }
     }
 

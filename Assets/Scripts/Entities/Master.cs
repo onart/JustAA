@@ -5,7 +5,7 @@ using UnityEngine;
 public class Master : Entity
 {
     int learnskill;     //선택된 기술
-
+    const int DNEDA = 3;
     protected override void OnRecieve()
     {
         switch (dialog)
@@ -13,9 +13,10 @@ public class Master : Entity
             case 8:
             case 9:
             case 10:    //8,9,10번은 배울 기술의 선택
-                if (selection < 2)
+                if (selection < DNEDA)
                 {
-                    if (LearnCheck(selection)) {
+                    if (LearnCheck(selection))
+                    {
                         StartCoroutine(D_Start(13));
                     }
                     else
@@ -24,7 +25,7 @@ public class Master : Entity
                         StartCoroutine(D_Start(11));
                     }
                 }
-                else if (selection == 2)
+                else if (selection == DNEDA)
                 {
                     if (LearnCheck(selection)) StartCoroutine(D_Start(13));
                     else
@@ -33,7 +34,7 @@ public class Master : Entity
                         StartCoroutine(D_Start(15));
                     }
                 }
-                else if (selection == 3)
+                else if (selection == DNEDA + 1)
                 {
                     StartCoroutine(D_Start(24));
                 }
@@ -51,6 +52,9 @@ public class Master : Entity
                             CostCheck(1, 1000);
                             return;
                         case 2:
+                            CostCheck(3, 2000);
+                            return;
+                        case DNEDA:
                             CostCheck(2, 2000);
                             return;
                     }

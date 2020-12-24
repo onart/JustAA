@@ -97,7 +97,7 @@ public static class BaseSet
         (new List<(Chars, Exprs, string)>{   //15번 대화 : 나가 대머리야
             (Chars.MASTER, Exprs.CRY, "........................................자네"),
             (Chars.ONL, Exprs.SURPRISED, "'내가 너무 심했나.. 그래도 처음으로 말을 알아들은 것 같아서 기분이 묘하네.'"),
-            (Chars.MASTER, Exprs.NORM, "....그건 배우기도 어렵지만 쓰기도 까다로운 기술일세. 2000xp가 필요하지. 배우면 이름이 기니까 DNEDA로 줄여서 메뉴에 들어갈 걸세. "),
+            (Chars.MASTER, Exprs.NORM, "....그건 배우기도 어렵지만 쓰기도 까다로운 기술일세. 2000xp가 필요하지. 배우면 이름이 기니까 '공중 대시'로 줄여서 메뉴에 들어갈 걸세. "),
             (Chars.ONL, Exprs.ANGRY, "기술은 무슨! 내 방에서 나가세요!!!"),
             (Chars.MASTER, Exprs.NORM, "정말로 배울 건가?"),
             (Chars.ONL, Exprs.CRY, "'속 터져'"),
@@ -240,7 +240,7 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //38번 대화 : 중간보스 클리어 후 컷씬
-            (Chars.CHARCOUNT, Exprs.NORM, "(흔들면서 천지를 뒤엎는 듯한 폭음이 들어갈 예정)"),
+            (Chars.CHARCOUNT, Exprs.NORM, "(흔들면서 천지를 뒤엎는 듯한 폭음 및 이미지 들어갈 예정)"),
             (Chars.NOL, Exprs.SMILE, "일단 튜토리얼, 즉 v0.1은 여기서 끝이고..."),
             (Chars.ONL, Exprs.SMILE, "임시 맵으로 보내 줄 테니까 아까 받은 경험치로 기술이랑 체력 상승 잘 되나 테스트해 보자!"),
             (Chars.END, Exprs.NORM, "")
@@ -256,7 +256,7 @@ public static class BaseSet
     {
         new Options(0,"",0),        //선택지 없음을 나타냄
         new Options(2,"예\n아니요",1.1f),
-        new Options(5,"대시 공격(40xp)\n박치기(1000xp)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다(500xp)\n필요 없다",3.5f),
+        new Options(6,"대시 공격(40xp)\n박치기(1000xp)\n붕붕이(2000xp)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다(500xp)\n필요 없다",3.5f),
         new Options(2,"간다\n아직 안 간다",2),
     };
 

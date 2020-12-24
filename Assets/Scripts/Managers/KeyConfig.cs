@@ -7,7 +7,7 @@ using TMPro;
 public class KeyConfig : MonoBehaviour
 {
     const string skillIntro = "<<,>> (대시)\n공격x3\t(연속 공격)\n";
-    readonly string[] skillNames = { "대시 - 공격\t(대시공격)\n", "공격 키다운\t(박치기)\n", "특수1 키다운 -> 좌/우 방향키와 함께 놓기\t(공중 대시)\n" };  //BaseSet 플래그 정의와 동일한 순서로.
+    readonly string[] skillNames = { "대시 - 공격\t(대시공격)\n", "공격 키다운\t(박치기)\n", "특수1 키다운 -> 좌/우 방향키와 함께 놓기\t(공중 대시)\n", "공중에서 좌상우하/우상좌하+공격\t(붕붕이)" };  //BaseSet 플래그 정의와 동일한 순서로.
 
     //SysManager에서 정의된 키 순서 : public readonly string[] keys = { "점프", "공격", "앉기", "상호작용", "특수1", "상향" };
     //이 순서대로 수동으로 끌어다 놓을 것

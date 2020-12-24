@@ -36,7 +36,7 @@ public class Door : Entity
     public override void St()
     {
         spacepos = new Vector3(-0.2f, 1.3f, 0);
-        fio = FindObjectOfType<Fade2>();
+        if (!fio) fio = FindObjectOfType<Fade2>();
         if (p.doorname == name || name.Equals("Cut")) p.transform.position = transform.position;
         rayorigin = Vector2.zero;
         raydir = Vector2.up + Vector2.left * 0.5f;

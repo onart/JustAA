@@ -11,8 +11,8 @@ public static class BaseSet
      END는 대화의 끝을 나타낼 때 쓰이며
      CHARCOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
     */
-    public enum Chars { END = -1, ONL, MASTER, NOL, CHARCOUNT };
-    public static string[] names = { "오늘", "사범", "노을" };
+    public enum Chars { END = -1, ONL, MASTER, NOL, CHARCOUNT, J1 };
+    public static string[] names = { "오늘", "사범", "노을", "", "J1" };  //빈 문자열 기준으로 왼쪽은 얼굴 있음, 오른쪽은 얼굴 없음
     /*Exprs: 대화상자에서 표정을 지칭하는 데에 쓰임
      FACECOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
     */
@@ -134,7 +134,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //19번 대화 : 그냥 맨~처음(맵이벤트)
             (Chars.ONL, Exprs.NORM, "배가 고픈데."),
-            (Chars.ONL, Exprs.NORM, "집에 밥은 없으니까 밖에 나가 보자."),
+            (Chars.ONL, Exprs.NORM, "밥 없으니까 밖에 나가 보자."),
             (Chars.ONL, Exprs.NORM, "아, 조작법은 Esc로 메뉴를 열어서 확인할 수 있어."),
             (Chars.ONL, Exprs.SMILE, "Esc를 누르자! 누르자!"),
             (Chars.END, Exprs.NORM, "")
@@ -221,7 +221,8 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //35번 대화 : 마지막방 중간보스 전 대사
-            (Chars.ONL, Exprs.ANGRY, "아니, 문이 왜 저 위에 달렸냐?"),
+            (Chars.ONL, Exprs.ANGRY, "아니, 문이 왜 저 위에 달려 있지?"),
+            (Chars.ONL, Exprs.ANGRY, "그나저나...."),
             (Chars.ONL, Exprs.NORM, "건물에서 약간 튀어나온 부분이 여기구나. 언제 꺾어질지 불안해 보이는 구조였는데 여길 와 보네. 경치는 참 좋다."),
             (Chars.ONL, Exprs.NORM, "그나저나 내려가는 데 도움이 되는 물건이.."),
             (Chars.ONL, Exprs.SURPRISED, "...??!!"),
@@ -229,13 +230,23 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //36번 대화 : 중간보스 클리어 후 대사
-            (Chars.CHARCOUNT, Exprs.NORM, "수고하셨어요."),
-            (Chars.ONL, Exprs.ANGRY, "뭐라고, 이 자식아?"),
+            (Chars.J1, Exprs.NORM, "수고하셨어요."),
+            (Chars.ONL, Exprs.ANGRY, "뭐 이 자식아?"),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //37번 대화 : 중간보스 클리어 후 대사 2
             (Chars.ONL, Exprs.CRY, "......"),
-            (Chars.ONL, Exprs.CRY, "집에 돌아가서 자고 싶다."),
+            (Chars.ONL, Exprs.CRY, "집에서 잠이나 잘걸..."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //38번 대화 : 중간보스 클리어 후 컷씬
+            (Chars.CHARCOUNT, Exprs.NORM, "(흔들면서 천지를 뒤엎는 듯한 폭음이 들어갈 예정)"),
+            (Chars.NOL, Exprs.SMILE, "일단 튜토리얼, 즉 v0.1은 여기서 끝이고..."),
+            (Chars.ONL, Exprs.SMILE, "임시 맵으로 보내 줄 테니까 아까 받은 경험치로 기술이랑 체력 상승 잘 되나 테스트해 보자!"),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //39번 대화 : 임시
+            (Chars.CHARCOUNT, Exprs.NORM, "이 맵에서는 나갈 수 없습니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };
@@ -271,5 +282,7 @@ public static class BaseSet
         { "Six4","11층-4구역" },
         { "Six5","11층-5구역" },
         { "Six6","11층-끝방" },
+        { "CutScene","" },
+        { "Nowhere","테스트 방" },
     };
 }

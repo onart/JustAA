@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class Entity : MonoBehaviour
 {
-    private GameObject space, spc;   //이건 상호작용 가능 시 'space'를 띄우기 위함임
+    static private GameObject space;
+    private GameObject spc;   //이건 상호작용 가능 시 'space'를 띄우기 위함임
     protected Vector3 spacepos;      //'space'를 띄우는 위치
 
     protected Vector2 rayorigin, raydir;
@@ -17,7 +18,7 @@ public abstract class Entity : MonoBehaviour
     public int dialog;         //dialog는 최근 진행한 대화
     private void Start()
     {
-        space = Resources.Load<GameObject>("Prefabs/space");
+        if (!space) space = Resources.Load<GameObject>("Prefabs/space");
         if (tm == null) tm = FindObjectOfType<TalkManager>();
         if (p == null) p = FindObjectOfType<Player>();
         sr = GetComponent<SpriteRenderer>();

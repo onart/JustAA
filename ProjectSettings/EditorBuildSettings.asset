@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: 7e4609f464a94aa4587556064744be77
   - enabled: 1
-    path: Assets/Scenes/12Corridor.unity
-    guid: 1494268892d75ce4ca6363c6044e5140
+    path: Assets/Scenes/CutScene.unity
+    guid: 051e102ad55c7c542b89ac708179738f
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 4a5b70c6c71adac44b2415ecdf59a59e
+  - enabled: 1
+    path: Assets/Scenes/12Corridor.unity
+    guid: 1494268892d75ce4ca6363c6044e5140
   - enabled: 1
     path: Assets/Scenes/MyRoom.unity
     guid: 38754880ec33c98458d63e00cd7e8eb8

@@ -6,7 +6,7 @@ public class CorridorEv : MapEv         //Corridor 맵의 비사물 이벤트를
 {
     public Door dr1, dr2;
     public GameObject mob;  //등장하는 적을 말하는 것이다.
-    public override void Stt()   //St는 맵 입장과 동시에 발생시킬 이벤트를 정의함.
+    protected override void Stt()   //St는 맵 입장과 동시에 발생시킬 이벤트를 정의함.
     {
         if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 0)
         {

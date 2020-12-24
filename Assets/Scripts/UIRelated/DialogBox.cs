@@ -42,9 +42,10 @@ public class DialogBox : MonoBehaviour
 
     public void InitBox(BaseSet.Chars c, BaseSet.Exprs e, string cont)
     {
-        if (c == BaseSet.Chars.CHARCOUNT) {     //포트레이트와 이름이 필요 없는 경우.
+        if ((int)c >= (int)BaseSet.Chars.CHARCOUNT)     //포트레이트가 없는 경우.
+        {
             face.color = Color.clear;
-            char_name.text = "";
+            char_name.text = BaseSet.names[(int)c];
         }
         else {                                  //포트레이트와 이름이 존재하는 경우.
             int ch = (int)c;

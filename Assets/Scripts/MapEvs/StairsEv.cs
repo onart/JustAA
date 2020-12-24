@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StairsEv : MapEv
 {
-    public override void Stt()
+    protected override void Stt()
     {
         if (p.FLAGS[(int)BaseSet.Flags.STAGE1] == 1)
         {

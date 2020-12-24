@@ -8,7 +8,7 @@ public class Six1Ev : MapEv
     public BaseSet.Flags flag;      //건드릴 플래그
     public int flag_to, dial_no;    //플래그 기준 수, 나오는 대사
 
-    public override void Stt()
+    protected override void Stt()
     {
         Re();
     }

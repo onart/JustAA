@@ -1,18 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class Six6Ev : MapEv
 {
     public Animator anim;
     public J1 j1;
     public BossHp bigBar;
+    public Camera cv;
+    public Cinemachine.CinemachineVirtualCamera cc;
 
-    private void Start()
+    int sh;
+
+    protected override void Stt()
     {
         j1.enabled = false;
         bigBar.gameObject.SetActive(false);
+        sh = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -34,12 +36,13 @@ public class Six6Ev : MapEv
                 j1.enabled = true;
                 break;
             case 36:
-                //카메라 흔들
-                cooltime = 0;
-                tm.Dialog_Start(37, this);
+                getFollow();
                 break;
             case 37:
-                //똑 부러지는 이벤트
+                //똑 부러지는 컷신(이미지만 달리 하는 전용 씬)
+                cooltime = 0;
+                p.FLAGS[(int)BaseSet.Flags.STAGE1] = 6;
+                toCut(0);
                 break;
         }
     }
@@ -48,5 +51,27 @@ public class Six6Ev : MapEv
     {
         tm.Dialog_Start(36, this);
         p.FLAGS[(int)BaseSet.Flags.STAGE1] = 6;
+    }
+
+    void getFollow()
+    {
+        Destroy(cc.gameObject);
+        shake();
+    }
+
+    void shake()
+    {
+        if (sh < 10)
+        {
+            sh++;
+            cv.transform.position += Mathf.Pow(-1, sh) * Vector3.left / 2;
+            Invoke(nameof(shake), 0.03f);
+        }
+        else
+        {
+            cooltime = 0;
+            tm.Dialog_Start(37, this);
+            return;
+        }
     }
 }

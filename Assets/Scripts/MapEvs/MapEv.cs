@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapEv : Entity
 {
+    protected static int cut;
     //맵에 형체 없이 배치되어 플레이어를 인식하고 오브젝트 접촉 없이도 행동에 따라 이벤트를 발생시키는 것을 위한 클래스다.
     //사물과의 상호작용 이외의 이벤트를 다룬다.
     //(수정)맵 이름 표시만 할 거라면 이 부모 객체를 그대로 사용한다.
@@ -25,8 +26,21 @@ public class MapEv : Entity
     {
     }
 
-    public virtual void Stt()
+    protected virtual void Stt()
     {
     }
 
+    private void Update()
+    {
+        
+    }
+
+    protected void toCut(int img)
+    {
+        cut = img;
+        var dr = FindObjectOfType<Door>();
+        dr.connectedDoor = "Cut";
+        dr.connectedScene = "CutScene";
+        dr.DoorOpen();
+    }
 }

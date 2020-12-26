@@ -2,6 +2,7 @@
 public class USB : Entity
 {
     static SaveLoad sl;
+    int call;
 
     public override void ObjAct()
     {
@@ -20,11 +21,12 @@ public class USB : Entity
         rayorigin = Vector2.zero;
         raydir = Vector2.down;
         raydistance = 0.5f;
+        call = GetComponent<Helper>().caller;
     }
     protected override void OnRecieve()
     {
         if (selection == 0) {
-            sl.Save(gameObject.scene, GetComponent<Helper>().caller);
+            sl.Save(gameObject.scene, call);
             cooltime = 0;       //직후 대사가 있는 경우 쿨타임을 0으로 줄임
             StartCoroutine(D_Start(1));
         }

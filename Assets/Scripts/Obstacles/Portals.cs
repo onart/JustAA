@@ -12,9 +12,11 @@ public class Portals : MonoBehaviour
         {
             col.gameObject.transform.position = targetPos.position;
             var g = col.gameObject.GetComponent<Rigidbody2D>();
-            g.velocity = new Vector2();
+            g.velocity = Vector2.zero;
             var p = col.gameObject.GetComponent<Player>();            
             p.HpChange(-1 * (10 << SysManager.difficulty));
+            p.reserveVx(0);
+            p.reserveVy(0);
         }
     }
 }

@@ -202,20 +202,23 @@ public static class BaseSet
         (new List<(Chars, Exprs, string)>{   //32번 대화 : 도움말
             (Chars.CHARCOUNT, Exprs.NORM, "이것은 도움말입니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "이렇게 생긴 것을 보면 조사해 보세요."),
+            (Chars.CHARCOUNT, Exprs.NORM, "상호작용은 정지 상태에서만 가능합니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //33번 대화 : 6-5구역 입장 대사
             (Chars.ONL, Exprs.SURPRISED, "이쪽으로 와도 결국 믿음의 도약이라니.."),
             (Chars.ONL, Exprs.NORM, "라고 생각했는데 생각보다 높진 않네."),
             (Chars.ONL, Exprs.NORM, "가시가 많으니 조심하자."),
+            (Chars.ONL, Exprs.NORM, "이 앞에 튀어나온 벽 쪽이 왠지 안전할 것 같은데?"),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //34번 대화 : 보스 안내판 1
             (Chars.CHARCOUNT, Exprs.NORM, "이것은 보스 도움말입니다.\n보스를 언제 때리는 게 좋을지 모르겠을 때 보면 좋아요."),
             (Chars.CHARCOUNT, Exprs.NORM, "지금은 그냥 나왔지만 나중에 가면 이것 또한 닿기 어려운 곳에 위치할 겁니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "다음 첫 중간보스 설명입니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "다음은 첫 중간보스 설명입니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "이 보스는 하이퍼아머인 데다가 특별히 공격 타이밍을 주지 않습니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "조금이라도 허점이 보일 때 치고 빠집시다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "단, 멀어지면 다른 패턴을 사용하니 가까이 있는 게 좋습니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "사범에게서 대시 공격을 배웠다면 조금 편할 겁니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "어려움 모드를 플레이하고 계신다면, 초장에 던지는 나이프는 사라지지 않으니 주의하세요."),
             (Chars.END, Exprs.NORM, "")
@@ -241,8 +244,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //38번 대화 : 중간보스 클리어 후 컷씬
             (Chars.CHARCOUNT, Exprs.NORM, "(흔들면서 천지를 뒤엎는 듯한 폭음 및 이미지 들어갈 예정)"),
-            (Chars.NOL, Exprs.SMILE, "일단 튜토리얼, 즉 v0.1은 여기서 끝이고..."),
-            (Chars.ONL, Exprs.SMILE, "임시 맵으로 보내 줄 테니까 아까 받은 경험치로 기술이랑 체력 상승 잘 되나 테스트해 보자!"),
+            (Chars.ONL, Exprs.SURPRISED, "어어!! 기울어진다!!"),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //39번 대화 : 임시

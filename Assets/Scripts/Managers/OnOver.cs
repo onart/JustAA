@@ -15,6 +15,7 @@ public class OnOver : MonoBehaviour
     private void Update()
     {
         if (mt) mt.Explode();
+        if (Input.GetKeyDown(KeyCode.R)) Load();
     }
     public void Load()
     {

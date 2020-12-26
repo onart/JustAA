@@ -36,10 +36,10 @@ public class Titlemanager : MonoBehaviour
         float candid = Mathf.Log((float)nanido, down);
         candid--;
         candid *= mgn;
-        //Debug.Log(candid);
-        if (Mathf.Abs(candid - 1) < 0.0001f) return 1;             //난이도 쉬움
-        else if (Mathf.Abs(candid - 2) < 0.0001f) return 2;        //난이도 보통
-        else if (Mathf.Abs(candid - 3) < 0.0001f) return 3;        //난이도 어려움
+        Debug.Log(candid);
+        if (Mathf.Abs(candid - 1) < 0.0003f) return 1;             //난이도 쉬움
+        else if (Mathf.Abs(candid - 2) < 0.0003f) return 2;        //난이도 보통
+        else if (Mathf.Abs(candid - 3) < 0.0003f) return 3;        //난이도 어려움
         else return 0;
     }
 

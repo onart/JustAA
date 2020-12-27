@@ -12,10 +12,12 @@ public class Cutscenes : MapEv
         im = GetComponent<Image>();
         switch (cut)
         {
-            case 0:
-                im.sprite = Resources.Load<Sprite>("CutImages/LOGO");
-                tm.Dialog_Start(38, this);
+            default:
+                setCut();
                 break;
+        }
+        switch (cut)    //음향 효과 등
+        {
             default:
                 break;
         }
@@ -38,6 +40,14 @@ public class Cutscenes : MapEv
 
     void backToMap()
     {
+        
+    }
 
+    void setCut()
+    {
+        im.sprite = Resources.Load<Sprite>("CutImages/" + BaseSet.cutImages[cut]);
+        int di = BaseSet.cutTexts[cut];
+        if (di < 0) return;
+        tm.Dialog_Start(BaseSet.cutTexts[cut], this);
     }
 }

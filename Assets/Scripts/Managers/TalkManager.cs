@@ -89,6 +89,7 @@ public class TalkManager : MonoBehaviour
         optionUI.SetActive(false);
         if (ent != null) ent.Recieve(selection);
         BoxOFF();
+        Entity.cooltime = 100;
     }
 
     void BoxON()

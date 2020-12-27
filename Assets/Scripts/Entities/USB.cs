@@ -27,7 +27,6 @@ public class USB : Entity
     {
         if (selection == 0) {
             sl.Save(gameObject.scene, call);
-            cooltime = 0;       //직후 대사가 있는 경우 쿨타임을 0으로 줄임
             StartCoroutine(D_Start(1));
         }
     }

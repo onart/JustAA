@@ -30,7 +30,7 @@ public class Cutscenes : MapEv
             case 38:
                 var dr = FindObjectOfType<Door>();
                 dr.connectedDoor = "Cut";
-                dr.connectedScene = "Nowhere";
+                dr.connectedScene = "Container";
                 dr.ObjAct();
                 break;
             default:

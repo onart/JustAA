@@ -11,8 +11,8 @@ public static class BaseSet
      END는 대화의 끝을 나타낼 때 쓰이며
      CHARCOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
     */
-    public enum Chars { END = -1, ONL, MASTER, NOL, CHARCOUNT, J1 };
-    public static string[] names = { "오늘", "사범", "노을", "", "J1" };  //빈 문자열 기준으로 왼쪽은 얼굴 있음, 오른쪽은 얼굴 없음
+    public enum Chars { END = -1, ONL, MASTER, NOL, EUN, CHARCOUNT, J1 };
+    public static string[] names = { "오늘", "사범", "노을", "은이", "", "J1" };  //빈 문자열 기준으로 왼쪽은 얼굴 있음, 오른쪽은 얼굴 없음
     /*Exprs: 대화상자에서 표정을 지칭하는 데에 쓰임
      FACECOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
     */
@@ -253,10 +253,29 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //40번 대화 : 테마1 시작
-            (Chars.ONL, Exprs.NORM, "으..."),
-            (Chars.ONL, Exprs.CRY, "어떻게든 살아남았네."),
-            (Chars.ONL, Exprs.ANGRY, "관리실 이놈.. 이름은 기억 안 나지만 아무튼 다 그놈이 꾸민 짓이 틀림 없어."),
-            (Chars.ONL, Exprs.ANGRY, "일단 주변을 조사해서 여기가 어딘지 알아보고 돌아갈 방법을 찾자!"),
+            (Chars.ONL, Exprs.CRY, "으..."),
+            (Chars.EUN, Exprs.SMILE, "일어났구나!"),
+            (Chars.ONL, Exprs.CRY, "여기가.. 어디죠?"),
+            (Chars.EUN, Exprs.SMILE, "내 집이야. 저어기 상가 건물 위쪽이 터져서 여기까지 날아왔길래 조사해 보니 네가 있더라고."),
+            (Chars.ONL, Exprs.NORM, "후.. 아무튼 감사합니다."),
+            (Chars.EUN, Exprs.NORM, "그쪽에 살고 있었다면 당장 돌아갈 곳이 없을 텐데, 날 도와주기로 하면 여기를 마음대로 쓰게 해 줄게."),
+            (Chars.ONL, Exprs.SMILE, "(오! 이렇게 잘 생긴 사람이랑 같이 사는 건가? 내 인생에도 드디어 봄날이..)"),
+            (Chars.EUN, Exprs.NORM, "유감이지만 내 애가 둘이야. 기러기 아빠라서 딱히 다른 사람이 올 일은 없을 거지만."),
+            (Chars.ONL, Exprs.ANGRY, "멋대로 생각을 읽지 말아줄래요?"),
+            (Chars.ONL, Exprs.NORM, "아무튼, 도움이 필요한 게 있다고요?"),
+            (Chars.EUN, Exprs.NORM, "그래. 이 앞 바다동굴에 거대한 뱀이 살고 있는데, 날아온 건물 때문에 먹이 유입이 줄어든 모양이야."),
+            (Chars.EUN, Exprs.NORM, "그래서 가끔씩 슬금슬금 기어나오고 있어. 지금 겨울이라 사람이 거의 없어서 다행인데 날이 풀리기 전에 대책이 필요하거든."),
+            (Chars.ONL, Exprs.SURPRISED, "설마 그걸 퇴치하라는?"),
+            (Chars.EUN, Exprs.NORM, "그건 안 돼. 국가에서 보호되고 있거든. 그래도 밖에 나와서 사람을 발견하는 일만 없으면 온순한 편이야."),
+            (Chars.ONL, Exprs.SURPRISED, "그럼 밥이라도 주러 가나요?"),
+            (Chars.EUN, Exprs.NORM, "결론부터 말하면.. 그게 떨어진 부분 근처가 얼어 있단다. 그걸 깨고 원인을 찾아 없애야 해."),
+            (Chars.ONL, Exprs.NORM, "그리 어렵게 들리지는 않네요."),
+            (Chars.EUN, Exprs.CRY, "그것이.. 얼음이 상당히 두꺼운데 깨는 동안에 뱀한테 발견되면 위험해. 뱀 주제에 겨울잠은 왜 안 자나.."),
+            (Chars.ONL, Exprs.NORM, "음.."),
+            (Chars.EUN, Exprs.NORM, "자세한 설명은 현장에서 해 줄게. 오른쪽으로 쭉 가면 바다동굴이 나오거든. 천천히 쉬다 와. 나는 가서 기다리고 있을게."),
+            (Chars.EUN, Exprs.NORM, "어차피 여기는 절벽 아래라서 나가려면 동굴을 지나가야 해."),
+            (Chars.ONL, Exprs.NORM, "알았어요. 조금만 쉬었다가 갈게요."),
+            (Chars.EUN, Exprs.NORM, "그래. 이따 보자."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };
@@ -276,7 +295,7 @@ public static class BaseSet
         STAGE1,                     //3번. 0.5테마와 관련된 플래그     0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 6-1구역 입장해봄 / 4: 6-2구역 입장해봄 / 5: 6-5구역 입장해봄 / 6: 0.5스테이지 클리어
         TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
         KEYS,                       //5번. 아이템을 말한다.            2^0자리: 
-        STAGE2,                     //6번. 1테마와 관련된 플래그       0: 처음
+        STAGE2,                     //6번. 1테마와 관련된 플래그       0: 처음 / 1: 첫 대화를 종료함
         FLAGCOUNT                   //플래그 수. 이건 플래그가 아니다.
     };
 

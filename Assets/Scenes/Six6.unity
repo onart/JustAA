@@ -709,12 +709,12 @@ PrefabInstance:
     - target: {fileID: 8492335163294127374, guid: 6427250137a9f9841bf91caf8193a121,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.875811
+      value: -0.95104504
       objectReference: {fileID: 0}
     - target: {fileID: 8492335163294127374, guid: 6427250137a9f9841bf91caf8193a121,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.074919
+      value: -22.074282
       objectReference: {fileID: 0}
     - target: {fileID: 8492335163294127374, guid: 6427250137a9f9841bf91caf8193a121,
         type: 3}
@@ -783,7 +783,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904725, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: m_Name
-      value: S5
+      value: 66-65
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
@@ -793,7 +793,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: connectedDoor
-      value: S5
+      value: 65-66
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904939, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}

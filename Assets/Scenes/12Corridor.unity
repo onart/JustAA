@@ -273,7 +273,7 @@ PrefabInstance:
     - target: {fileID: 8492335163294127374, guid: 6427250137a9f9841bf91caf8193a121,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.178944
+      value: 8.131415
       objectReference: {fileID: 0}
     - target: {fileID: 8492335163294127374, guid: 6427250137a9f9841bf91caf8193a121,
         type: 3}
@@ -2025,12 +2025,12 @@ PrefabInstance:
     - target: {fileID: 3103799863720904725, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: m_Name
-      value: ToStairs12
+      value: 12C-St
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: connectedDoor
-      value: To12th
+      value: St-12C
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
@@ -2126,7 +2126,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904725, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: m_Name
-      value: ToRoom
+      value: 12C-R
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
@@ -2136,7 +2136,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: connectedDoor
-      value: ToCorridor12
+      value: R-12C
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}

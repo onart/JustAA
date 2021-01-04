@@ -275,7 +275,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904725, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: m_Name
-      value: S2
+      value: 63-62
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
@@ -285,7 +285,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: connectedDoor
-      value: Conted
+      value: 62-63
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904939, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
@@ -1374,7 +1374,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904725, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: m_Name
-      value: Conted
+      value: 63-64
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
@@ -1384,7 +1384,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: connectedDoor
-      value: S3
+      value: 64-63
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904939, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}

@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904725, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: m_Name
-      value: ContDoor
+      value: Bc-Cn
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 3103799863720904936, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
       propertyPath: connectedDoor
-      value: GetOut
+      value: Cn-Bc
       objectReference: {fileID: 0}
     - target: {fileID: 3103799863720904938, guid: a8f1ec75a0706054887895fe20102e67,
         type: 3}
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 773563188}
   - component: {fileID: 773563191}
   m_Layer: 0
-  m_Name: ToCave
+  m_Name: Bc-Cv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog: 0
-  connectedDoor: ToBeach
+  connectedDoor: Cv-Bc
   connectedScene: CaveFront
   sp: {fileID: 0}
 --- !u!212 &773563189

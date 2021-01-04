@@ -292,6 +292,9 @@ public static class BaseSet
         { "Six4","11층-4구역" },
         { "Six5","11층-5구역" },
         { "Six6","11층-끝방" },
+        { "Beach","해변" },
+        { "CaveFront","바다동굴 앞" },
+        { "Container","바다동굴 근처 컨테이너" },
         { "CutScene","" },
         { "Nowhere","테스트 방" },
     };

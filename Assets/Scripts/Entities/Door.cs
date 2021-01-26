@@ -37,10 +37,10 @@ public class Door : Entity
     {
         spacepos = new Vector3(-0.2f, 1.3f, 0);
         if (!fio) fio = FindObjectOfType<Fade2>();
-        if (p.doorname == name || name == "Cut") p.transform.position = transform.position;
+        if (p.doorname == name) p.transform.position = transform.position;
         rayorigin = Vector2.zero;
         raydir = Vector2.up + Vector2.left * 0.5f;
-        if (name == "virtual" || name == "Cut") { raydistance = 0; rayorigin = new Vector2(-100, -100); }
+        if (name == "virtual" || name == "Cut") { Destroy(gameObject); }
         else raydistance = 1;
     }
     

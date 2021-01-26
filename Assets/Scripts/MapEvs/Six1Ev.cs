@@ -22,7 +22,11 @@ public class Six1Ev : MapEv
         else if (p.FLAGS[(int)flag] < flag_to)
         {
             StartCoroutine(D_Start(dial_no));
-            p.FLAGS[(int)flag] = flag_to;
         }
+    }
+
+    public override void afterDialog()
+    {
+        p.FLAGS[(int)flag] = flag_to;
     }
 }

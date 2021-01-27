@@ -24,8 +24,8 @@ public class ComQ : MonoBehaviour
     static readonly Candid[] COMBO3 = { Candid.ATK, Candid.ATK, Candid.ATK };
     static readonly Candid[] L_DAT = { Candid.LEFT, Candid.LEFT, Candid.NONE, Candid.ATK };
     static readonly Candid[] R_DAT = { Candid.RIGHT, Candid.RIGHT, Candid.NONE, Candid.ATK };
-    static readonly Candid[] AIRSP_L = { Candid.RIGHT, Candid.UP, Candid.LEFT, Candid.DOWN, Candid.ATK };
-    static readonly Candid[] AIRSP_R = { Candid.LEFT, Candid.UP, Candid.RIGHT, Candid.DOWN, Candid.ATK };
+    static readonly Candid[] AIRSP_L = { Candid.RIGHT, Candid.UP, Candid.LEFT, Candid.ATK };
+    static readonly Candid[] AIRSP_R = { Candid.LEFT, Candid.UP, Candid.RIGHT, Candid.ATK };
     //커맨드 리스트
     void Start()
     {
@@ -105,7 +105,7 @@ public class ComQ : MonoBehaviour
     
     void QAct()
     {
-        if (SkillKnow(3) && !p.onground && (QRead(AIRSP_R, 5) || QRead(AIRSP_L, 5))) 
+        if (SkillKnow(3) && !p.onground && (QRead(AIRSP_R, 4) || QRead(AIRSP_L, 4))) 
         { anim.SetInteger("COMBO", 11); }   //회전 중 위치를 고정할지 아닐지는 미정
         else if(SkillKnow(0) && p.onground && !anim.GetBool("SIT") && (QRead(L_DAT,4) || QRead(R_DAT, 4)))
         { anim.SetInteger("COMBO", 11); }

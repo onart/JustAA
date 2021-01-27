@@ -899,6 +899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1909619152}
   - component: {fileID: 1909619151}
+  - component: {fileID: 1909619153}
   m_Layer: 0
   m_Name: Sea
   m_TagString: Untagged
@@ -971,6 +972,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1909619153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909619150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad0b7e9e54e9754aa5fb7ef876083aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialog: 0
+  flag: 6
+  flag_to: 2
+  dial_no: 41
 --- !u!4 &2118663425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3103799863720904939, guid: a8f1ec75a0706054887895fe20102e67,

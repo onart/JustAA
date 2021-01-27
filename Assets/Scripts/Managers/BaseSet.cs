@@ -261,12 +261,12 @@ public static class BaseSet
             (Chars.EUN, Exprs.NORM, "그쪽에 살고 있었다면 당장 돌아갈 곳이 없을 텐데, 날 도와주기로 하면 여기를 마음대로 쓰게 해 줄게."),
             (Chars.ONL, Exprs.SMILE, "(오! 이렇게 잘 생긴 사람이랑 같이 사는 건가? 내 인생에도 드디어 봄날이..)"),
             (Chars.EUN, Exprs.NORM, "유감이지만 내 애가 둘이야. 기러기 아빠라서 딱히 다른 사람이 올 일은 없을 거지만."),
-            (Chars.ONL, Exprs.ANGRY, "멋대로 생각을 읽지 말아줄래요?"),
+            (Chars.ONL, Exprs.ANGRY, "..멋대로 생각을 읽지 말아줄래요?"),
             (Chars.ONL, Exprs.NORM, "아무튼, 도움이 필요한 게 있다고요?"),
             (Chars.EUN, Exprs.NORM, "그래. 이 앞 바다동굴에 거대한 뱀이 살고 있는데, 날아온 건물 때문에 먹이 유입이 줄어든 모양이야."),
             (Chars.EUN, Exprs.NORM, "그래서 가끔씩 슬금슬금 기어나오고 있어. 지금 겨울이라 사람이 거의 없어서 다행인데 날이 풀리기 전에 대책이 필요하거든."),
             (Chars.ONL, Exprs.SURPRISED, "설마 그걸 퇴치하라는?"),
-            (Chars.EUN, Exprs.NORM, "그건 안 돼. 국가에서 보호되고 있거든. 그래도 밖에 나와서 사람을 발견하는 일만 없으면 온순한 편이야."),
+            (Chars.EUN, Exprs.NORM, "그건 안 돼. 국가에서 보호되고 있거든. 다행히 밖에 나와서 사람을 발견하는 일만 없으면 온순한 편이야."),
             (Chars.ONL, Exprs.SURPRISED, "그럼 밥이라도 주러 가나요?"),
             (Chars.EUN, Exprs.NORM, "결론부터 말하면.. 그게 떨어진 부분 근처가 얼어 있단다. 그걸 깨고 원인을 찾아 없애야 해."),
             (Chars.ONL, Exprs.NORM, "그리 어렵게 들리지는 않네요."),
@@ -275,7 +275,31 @@ public static class BaseSet
             (Chars.EUN, Exprs.NORM, "자세한 설명은 현장에서 해 줄게. 오른쪽으로 쭉 가면 바다동굴이 나오거든. 천천히 쉬다 와. 나는 가서 기다리고 있을게."),
             (Chars.EUN, Exprs.NORM, "어차피 여기는 절벽 아래라서 나가려면 동굴을 지나가야 해."),
             (Chars.ONL, Exprs.NORM, "알았어요. 조금만 쉬었다가 갈게요."),
-            (Chars.EUN, Exprs.NORM, "그래. 이따 보자."),
+            (Chars.EUN, Exprs.NORM, "그래, 이따 보자."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //41번 대화 : 컨테이너 밖에서
+            (Chars.ONL, Exprs.NORM, "가만 생각해 보면 이 일을 꾸민 범인은 관리실 그놈 같아.. 가만 안 두겠어."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //42번 대화 : 동굴 첫 입장
+            (Chars.EUN, Exprs.NORM, "왔구나. 준비는 된 거겠지?"),
+            (Chars.ONL, Exprs.NORM, "네."),
+            (Chars.EUN, Exprs.NORM, "이 동굴은 꽤 크지만 외길이야. 오른쪽으로 쭉 가다 보면 막힌 곳이 있는데, 거기에 뱀이 있지."),
+            (Chars.EUN, Exprs.NORM, "그리고 그쪽도 물가야. 얼어 있지만.. 그걸 깨면 문제가 해결될 거야."),
+            (Chars.ONL, Exprs.NORM, "달리 조심할 건 뱀 말고는 없는 건가요?"),
+            (Chars.EUN, Exprs.NORM, "아, 말이 나와서 기억났는데, 여기 사는 게랑 소라게가 사람보다 커."),
+            (Chars.EUN, Exprs.NORM, "그리고 골짜기가 깊으니 발조심하고."),
+            (Chars.ONL, Exprs.CRY, "네."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //43번 대화 : 동굴에서 은이한테 말 걸 때
+            (Chars.ONL, Exprs.SMILE, "같이 가실래요?"),
+            (Chars.EUN, Exprs.CRY, "가정이 있는 몸이라서.."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //44번 대화 : 어려움 한정 동굴 도움말
+            (Chars.CHARCOUNT, Exprs.NORM, "어려움을 플레이 중이라면, 5초에 한 번 진동이 있을 겁니다. 그 때 지상에 붙어 있다면 살짝 중심을 잃으니 주의하세요."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };
@@ -295,7 +319,7 @@ public static class BaseSet
         STAGE1,                     //3번. 0.5테마와 관련된 플래그     0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 6-1구역 입장해봄 / 4: 6-2구역 입장해봄 / 5: 6-5구역 입장해봄 / 6: 0.5스테이지 클리어
         TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
         KEYS,                       //5번. 아이템을 말한다.            2^0자리: 
-        STAGE2,                     //6번. 1테마와 관련된 플래그       0: 처음 / 1: 첫 대화를 종료함
+        STAGE2,                     //6번. 1테마와 관련된 플래그       0: 처음 / 1: 첫 대화를 종료함 / 2: 집 밖으로 나가 봄 / 
         STAGE3,                     //7번. 2테마와 관련된 플래그       0: 처음
         STAGE4,                     //8번. 3테마와 관련된 플래그       0: 처음
         STAGE5,                     //9번. 4테마와 관련된 플래그       0: 처음
@@ -317,6 +341,7 @@ public static class BaseSet
         { "Beach","해변" },
         { "CaveFront","바다동굴 앞" },
         { "Container","바다동굴 근처 컨테이너" },
+        { "Cave1","바다동굴1" },
         { "CutScene","" },
         { "Nowhere","테스트 방" },
     };

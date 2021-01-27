@@ -23,7 +23,7 @@ public class Door : Entity
     {
         if (mode)
         {
-            sr.sprite = sp;
+            if (sp) sr.sprite = sp;
             p.doorname = connectedDoor;
             fio.gameObject.SetActive(true);
             fio.DOOR = this;

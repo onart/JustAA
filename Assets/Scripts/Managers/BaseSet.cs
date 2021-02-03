@@ -340,8 +340,8 @@ public static class BaseSet
         { "Beach","해변" },
         { "CaveFront","바다동굴 앞" },
         { "Container","바다동굴 근처 컨테이너" },
-        { "Cave1","바다동굴1" },
-        { "Cave2","바다동굴2" },
+        { "Cave1","<color=white>바다동굴1</color>" },
+        { "Cave2","<color=white>바다동굴2</color>" },
         { "CutScene","" },
         { "Nowhere","테스트 방" },
     };

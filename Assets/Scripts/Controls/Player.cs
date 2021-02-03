@@ -199,7 +199,7 @@ public class Player : MonoBehaviour
             hp = 0;
             anim.SetTrigger("HIT");
             anim.SetInteger("OVR", 2);
-            Invoke("Hp0", 1);
+            Invoke(nameof(Hp0), 1);
         }
     }
 
@@ -215,7 +215,7 @@ public class Player : MonoBehaviour
             kdown = down;
             frz = true;
             CancelInvoke("Hold");
-            Invoke("Hold", 0.3f);
+            Invoke(nameof(Hold), 0.3f);
         }
     }
 
@@ -225,7 +225,9 @@ public class Player : MonoBehaviour
         if (kdown == 2)
         {
             anim.SetInteger("OVR", 2);
-            if (hp > 0) Invoke("StandUp", 0.5f);
+            if (hp > 0 && onground) {
+                Invoke(nameof(StandUp), 0.5f);
+            }
         }
         else
         {

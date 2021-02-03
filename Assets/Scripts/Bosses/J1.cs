@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class J1 : Boss
 {
@@ -40,7 +39,8 @@ public class J1 : Boss
             switch (Mathf.Floor(Mathf.Abs(dxy.x)))
             {
                 case 0:
-                    if (Mathf.Abs(dxy.x) <= 0.7f) { 
+                    if (Mathf.Abs(dxy.x) <= 0.7f)
+                    {
                         anim.SetTrigger("ATK");
                     }
                     else goto case 1;
@@ -79,7 +79,8 @@ public class J1 : Boss
                     {
                         anim.SetTrigger("THROW");
                     }
-                    else {
+                    else
+                    {
                         setVX(dxy.x);
                         anim.SetFloat("SPD", Mathf.Abs(dxy.x));
                         CancelInvoke(nameof(unlock));
@@ -92,7 +93,7 @@ public class J1 : Boss
         }
         else
         {
-            
+
         }
     }
 
@@ -138,7 +139,7 @@ public class J1 : Boss
     }
 
     void slash(int delta)
-    {         
+    {
         var fx = Instantiate(cutFX);
         fx.transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         fx.transform.position = transform.position + new Vector3(transform.localScale.x * 2, transform.localScale.y);
@@ -179,7 +180,8 @@ public class J1 : Boss
         at.delta = 10 * SysManager.difficulty;
         at.force *= new Vector2(200, 100);
         fx.transform.localScale = new Vector2(-1, 1);
-        if (transform.localScale.x > 0) { 
+        if (transform.localScale.x > 0)
+        {
             at.face = 1;
         }
         else
@@ -241,7 +243,8 @@ public class J1 : Boss
     protected override void OnZero()
     {
         base.OnZero();
-        if (ev) { 
+        if (ev)
+        {
             ev.afterSth(0);
             ev = null;
         }

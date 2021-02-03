@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StairsEv : MapEv
 {
@@ -9,7 +7,7 @@ public class StairsEv : MapEv
         if (p.FLAGS[(int)BaseSet.Flags.STAGE1] == 1)
         {
             p.FLAGS[(int)BaseSet.Flags.STAGE1] = 2;
-            tm.Dialog_Start(23,this);
+            tm.Dialog_Start(23, this);
         }
     }
 

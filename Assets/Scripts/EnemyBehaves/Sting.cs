@@ -1,13 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Sting : Enemy
+﻿public class Sting : Enemy
 {
     //날아다니는 적, 하드 : 지형을 무시함
     void Update()
     {
-        
+
     }
 
     protected override void St()

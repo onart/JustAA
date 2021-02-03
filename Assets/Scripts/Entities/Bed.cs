@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bed : Entity
 {
@@ -13,7 +11,7 @@ public class Bed : Entity
         }
         else
         {
-            tm.Dialog_Start(3, this);            
+            tm.Dialog_Start(3, this);
             p.HpChange(p.MHP);
         }
     }

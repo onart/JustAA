@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Fade1 : MonoBehaviour
@@ -22,9 +20,10 @@ public class Fade1 : MonoBehaviour
         br += 0.02f;
         if (br <= 1) im.color = new Color(br, br, br);
         else if (br <= 2) im.color = new Color(2 - br, 2 - br, 2 - br);
-        else {
+        else
+        {
             title.SetActive(true);
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 }

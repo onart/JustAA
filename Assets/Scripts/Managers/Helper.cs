@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 //타이틀에서 시작을 눌렀을 때 등 캐릭터를 새로 만들어내는 요소.
 public class Helper : MonoBehaviour
@@ -10,8 +8,9 @@ public class Helper : MonoBehaviour
     DataFiller df;
     void Awake()
     {
-        df = FindObjectOfType<DataFiller>();        
-        if (!FindObjectOfType<Maintainable>()) {
+        df = FindObjectOfType<DataFiller>();
+        if (!FindObjectOfType<Maintainable>())
+        {
             if (df.caller == -1)
             {
                 //이러한 구조 때문에 첫 맵에는 절대 일반 시작 포인트와 USB를 같이 두지 말 것. 이러면 USB에서 시작할 수도 있음
@@ -19,7 +18,7 @@ public class Helper : MonoBehaviour
                 Player p = g.GetComponentInChildren<Player>();
                 p.transform.position = transform.position;
             }
-            else if (df.caller == caller) 
+            else if (df.caller == caller)
             {
                 g = Instantiate(g);
                 Player p = g.GetComponentInChildren<Player>();

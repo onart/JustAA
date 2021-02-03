@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
 //대화창 관련 : 캐릭터 리스트, 표정 리스트
 //대화 리스트
@@ -16,7 +14,7 @@ public static class BaseSet
     /*Exprs: 대화상자에서 표정을 지칭하는 데에 쓰임
      FACECOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
     */
-    public enum Exprs { NORM=0, SMILE, CRY, ANGRY, SURPRISED, FACECOUNT };
+    public enum Exprs { NORM = 0, SMILE, CRY, ANGRY, SURPRISED, FACECOUNT };
 
     //대사 리스트. 여기에 필요한 걸 추가하도록 하자..
     public static (List<(Chars, Exprs, string)>, int)[] talkData = {    //Chars : 캐릭터, Exprs, 표정, string : 내용, int : 대화 끝에 선택지 번호(0번은 선택지 없음)
@@ -312,8 +310,9 @@ public static class BaseSet
         new Options(6,"대시 공격(40xp)\n박치기(1000xp)\n붕붕이(2000xp)\n됐고 나가요, 이 대머리 아저씨야.\n체력을 강화한다(500xp)\n필요 없다",3.5f),
     };
 
-    public enum Flags {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 배포 후에는 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.
-        MYBED=0,                    //0번. 침대에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
+    public enum Flags
+    {             //이벤트 플래그에 쉽게 접근시키기 위한 열거형. 이건 배포 후에는 절대 순서 바꾸지 말자. 번호도 주석에 적어 두겠다.
+        MYBED = 0,                    //0번. 침대에 말을 처음 걸었는가?  0: 말을 건 적 없음 / 1: 말을 건 적 있음(완)
         OUTEXP,                     //1번. 방 밖으로 나가 보았는가?    0: 아니 / 1: 나갔는데 드론을 안 잡음 / 2: 나가서 드론을 잡음 / 3: 나가서 드론 잡고 들어감 / 4: 관장과 첫 대화를 마침(완)
         SKILLS,                     //2번. 어떤 스킬을 배웠는가?       2^0자리: 대시공격, 2^1자리: 박치기 / 2^2자리: 공중대시 / 2^3자리: 공중회전공격, 추가 가능
         STAGE1,                     //3번. 0.5테마와 관련된 플래그     0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 6-1구역 입장해봄 / 4: 6-2구역 입장해봄 / 5: 6-5구역 입장해봄 / 6: 0.5스테이지 클리어
@@ -352,6 +351,6 @@ public static class BaseSet
     };
 
     public static int[] cutTexts = { //컷씬 이미지 대응 대사 번호
-        38, 
-    }; 
+        38,
+    };
 }

@@ -7,7 +7,7 @@
 3. 애니메이션 이벤트를 활용할 것: 인수는 0~1개만 가능
  */
 public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므로 상태머신 전이기 없음. 고정적으로 패턴을 반복하는 애니메이션형과, 일반 적과 같은 형식이나 더 화려한 형태로 나뉨
-{    
+{
     protected int maxHp, hp, exp;
     protected Transform p;              //플레이어 포착 시 그 위치를 파악하게 됨
     protected Rigidbody2D rb2d;
@@ -25,7 +25,7 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
     float alpha;                          //자신의 투명도
 
     void Start()
-    {        
+    {
         if (dmgTxt == null)
         {
             dmgTxt = Resources.Load<GameObject>("Prefabs/dmgTxt");

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 public class HpBar : MonoBehaviour
 {
     public Player p;
@@ -9,9 +9,10 @@ public class HpBar : MonoBehaviour
 
     void Start()
     {
-        foreach(var b in GetComponentsInChildren<Image>())
+        foreach (var b in GetComponentsInChildren<Image>())
         {
-            if (b.name == "HP") { 
+            if (b.name == "HP")
+            {
                 bar = b;
                 break;
             }

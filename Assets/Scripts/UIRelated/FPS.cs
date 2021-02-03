@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 public class FPS : MonoBehaviour
 {
     float deltaTime = 0.0f;
@@ -11,7 +10,8 @@ public class FPS : MonoBehaviour
 
     void OnGUI()
     {
-        if (Time.timeScale != 0) {
+        if (Time.timeScale != 0)
+        {
             int w = Screen.width, h = Screen.height;
 
             GUIStyle style = new GUIStyle();

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FoeHp : MonoBehaviour
 {
@@ -25,7 +23,8 @@ public class FoeHp : MonoBehaviour
         {
             sr.color = new Color(1, 1, 1, alphaTime * 0.03f);
         }
-        else {
+        else
+        {
             sr.color = Color.white;     //alphaTime이 30 이상인 경우
         }
     }

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class TalkManager : MonoBehaviour
 {
@@ -45,7 +45,7 @@ public class TalkManager : MonoBehaviour
                     if (++selection > opcount - 1) selection = 0;
                 }
                 RenderArrow();
-                if (Input.GetKeyDown(SysManager.keymap["상호작용"])) 
+                if (Input.GetKeyDown(SysManager.keymap["상호작용"]))
                 {
                     SelectOff();
                 }
@@ -56,7 +56,7 @@ public class TalkManager : MonoBehaviour
     void RenderArrow()
     {
         arrow.text = "";
-        for (int i = 0; i < opcount; i++) 
+        for (int i = 0; i < opcount; i++)
         {
             if (i == selection) arrow.text += " >";
             else arrow.text += "\n";
@@ -114,12 +114,13 @@ public class TalkManager : MonoBehaviour
             en.dialog = index;
             idx = index;
             wait = 1;
-            Dialog_Go();            
+            Dialog_Go();
         }
     }
     public void Dialog_Go() //인자 : 위의 talkData의 리스트.
     {
-        if (dBox.ended) {
+        if (dBox.ended)
+        {
             state++;
             var temp1 = BaseSet.talkData[idx];
             var temp2 = temp1.Item1[state];

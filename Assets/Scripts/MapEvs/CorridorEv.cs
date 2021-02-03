@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CorridorEv : MapEv         //Corridor 맵의 비사물 이벤트를 정의
 {
@@ -16,7 +14,7 @@ public class CorridorEv : MapEv         //Corridor 맵의 비사물 이벤트를
             p.FLAGS[(int)BaseSet.Flags.OUTEXP] = 1;
             dr1.setResponse(6);
             dr2.setResponse(6);
-            tm.Dialog_Start(5,this);
+            tm.Dialog_Start(5, this);
         }
     }
 
@@ -30,7 +28,7 @@ public class CorridorEv : MapEv         //Corridor 맵의 비사물 이벤트를
             }
             gameObject.SetActive(false);
         }
-        else if (mob == null) 
+        else if (mob == null)
         {
             p.FLAGS[(int)BaseSet.Flags.OUTEXP] = 2;
         }

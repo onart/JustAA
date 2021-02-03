@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class Player : MonoBehaviour
 {
@@ -70,13 +67,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         Checker();
-        if (!SysManager.forbid && hp > 0) 
+        if (!SysManager.forbid && hp > 0)
         {
             if (frz)
             {
                 //일단 조작만 봉인
             }
-            else {
+            else
+            {
                 //테스트 코드
                 if (Input.GetKeyDown(KeyCode.Backslash))
                 {
@@ -94,7 +92,7 @@ public class Player : MonoBehaviour
     {
         float lr = Input.GetAxis("Horizontal");
         anim.SetFloat("LR", Fabs(lr));
-        if (!attking && !anim.GetBool("SIT")) 
+        if (!attking && !anim.GetBool("SIT"))
         {
             if (reserved_vx > 4 || reserved_vx < -4)
             {
@@ -125,17 +123,17 @@ public class Player : MonoBehaviour
             reserved_vy = 0;
             jumphold = 62;  //최대 높이에 도달 못한 상태로 키다운하면서 떨어진 후 점프할 때 최대 높이에 도달 못하는 문제 수정
         }
-        else if (jumphold > 0 && Input.GetKey(SysManager.keymap["점프"])) 
+        else if (jumphold > 0 && Input.GetKey(SysManager.keymap["점프"]))
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y + Time.deltaTime * jumphold * 0.12f);
             jumphold -= (60 * Time.deltaTime);  //여긴 이렇게 하는 게 맞음. 매 순간마다 크게 바뀌는 경우를 상정하면 나머지와 달리 영향이 큼
         }
-        if (Input.GetKeyUp(SysManager.keymap["점프"]) && !onground) 
+        if (Input.GetKeyUp(SysManager.keymap["점프"]) && !onground)
         {
             jumphold = 0;
         }
         //--------------------------------------------
-        if (rb2d.velocity.y < downlim) 
+        if (rb2d.velocity.y < downlim)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, downlim);
         }
@@ -144,7 +142,7 @@ public class Player : MonoBehaviour
     void Sit()
     {
         //앉기       
-        if (Input.GetKey(SysManager.keymap["앉기"]) && onground && Time.timeScale > 0) 
+        if (Input.GetKey(SysManager.keymap["앉기"]) && onground && Time.timeScale > 0)
         {
             anim.SetBool("SIT", true);
         }
@@ -205,12 +203,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void GetHit(int dmg, int down) 
+    public void GetHit(int dmg, int down)
     {
         //적의 공격은 적 충돌에서 이 함수를 불러서 사용, 
         //down 0은 피격 모션 없음, down 1은 피격모션만 있음, down 2는 누움.누운 상태에서는 콜라이더 숨김
         HpChange(-dmg);
-        if (down != 0) {
+        if (down != 0)
+        {
             anim.SetTrigger("HIT");
             anim.SetInteger("OVR", 0);
             kdown = down;
@@ -223,7 +222,8 @@ public class Player : MonoBehaviour
     public void Hold()                 //맞은 후 경직.
     {
         //if (!onground) return;
-        if (kdown == 2)  {            
+        if (kdown == 2)
+        {
             anim.SetInteger("OVR", 2);
             if (hp > 0) Invoke("StandUp", 0.5f);
         }
@@ -248,7 +248,8 @@ public class Player : MonoBehaviour
 
     void Checker()
     {
-        if (MAXHP != 24 - mhpCheck) { 
+        if (MAXHP != 24 - mhpCheck)
+        {
             MAXHP = 10;
             mhpCheck = 24 - MAXHP;
         }

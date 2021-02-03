@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Charger : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class Charger : MonoBehaviour
     Rigidbody2D rb2d;
     SpriteRenderer sr;
 
-    float[] hold= new float[CHARGES];
+    float[] hold = new float[CHARGES];
 
     string[] keys = { "공격", "특수1" };
     //각각 박치기, 피하기
@@ -27,7 +25,7 @@ public class Charger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < CHARGES; i++)
+        for (int i = 0; i < CHARGES; i++)
         {
             holdFor(i);
         }
@@ -57,7 +55,7 @@ public class Charger : MonoBehaviour
             if (hold[k] >= 1)
             {
                 if (k == 0) anim.SetInteger("COMBO", 21);
-                else if (k == 1) { anim.SetTrigger("RUSH"); rb2d.MovePosition(rb2d.position + Vector2.right * Input.GetAxisRaw("Horizontal"));}
+                else if (k == 1) { anim.SetTrigger("RUSH"); rb2d.MovePosition(rb2d.position + Vector2.right * Input.GetAxisRaw("Horizontal")); }
             }
             hold[k] = 0;
             sr.color = Color.white;

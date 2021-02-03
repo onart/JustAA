@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class VisualSave : MonoBehaviour
@@ -9,7 +7,8 @@ public class VisualSave : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetInt(name, 1) == 0) {
+        if (PlayerPrefs.GetInt(name, 1) == 0)
+        {
             gameObject.SetActive(false);
             sw.isOn = false;
         }

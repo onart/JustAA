@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AudPlayer : MonoBehaviour  //애니메이터와 연계됨. 변수를 변경하는 즉시 오디오 소스를 1회 플레이
 {

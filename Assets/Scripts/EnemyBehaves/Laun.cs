@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Laun : Enemy
 {
@@ -99,7 +97,8 @@ public class Laun : Enemy
     void setAngle1(float ang)   //팔 하나 각도
     {
         ang += 5;
-        if (transform.localScale.x > 0) { 
+        if (transform.localScale.x > 0)
+        {
             ang += 170;
             arm1.transform.localRotation = Quaternion.AngleAxis(180 + ang - 34.5f, Vector3.forward);
         }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Master : Entity
 {
@@ -100,18 +98,21 @@ public class Master : Entity
 
     public override void ObjAct()
     {
-        if (p.transform.position.x < transform.position.x) { 
+        if (p.transform.position.x < transform.position.x)
+        {
             transform.localScale = new Vector2(-0.3f, 0.3f);
             p.transform.localScale = new Vector2(0.3f, 0.3f);
         }
-        else { 
+        else
+        {
             transform.localScale = new Vector2(0.3f, 0.3f);
             p.transform.localScale = new Vector2(-0.3f, 0.3f);
         }
-        if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 4) {
+        if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 4)
+        {
             StartCoroutine(D_Start(Random.Range(8, 11)));
         }
-        else if(p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 3)
+        else if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 3)
         {
             StartCoroutine(D_Start(4));
             p.FLAGS[(int)BaseSet.Flags.OUTEXP] = 4;
@@ -128,7 +129,7 @@ public class Master : Entity
     }
 
     public override void Up()
-    {       
+    {
     }
 
     void Disappear()    //이벤트를 갖추지 않으면 관장이 나타나지 않음

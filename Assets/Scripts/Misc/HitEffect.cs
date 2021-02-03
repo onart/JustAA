@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HitEffect : MonoBehaviour
 {
@@ -10,7 +8,8 @@ public class HitEffect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Enemy") || col.gameObject.tag == "plat") {
+        if (col.gameObject.layer == LayerMask.NameToLayer("Enemy") || col.gameObject.tag == "plat")
+        {
             Vector2 v2 = cl.offset;
             v2.x *= pt.localScale.x;
             v2.y *= 0.3f;

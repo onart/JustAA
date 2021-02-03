@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.IO;
+﻿using UnityEngine;
 
 public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠깐 이동하여 데이터를 불어넣음
 {
@@ -25,7 +22,7 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
 
     public void Fill()
     {
-        Invoke("Datafill", 0.02f);        
+        Invoke("Datafill", 0.02f);
     }
 
     public void NewFill()
@@ -40,13 +37,14 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
         {
             Invoke("Datafill", 0.02f);
         }
-        else {
+        else
+        {
             SysManager.difficulty = diff;
             SysManager.cbr = 24 - diff;
             p.HP = hp;
             p.MHP = mhp;
             p.mhpCheck = 24 - mhp;
-            p.exp = exp;            
+            p.exp = exp;
             for (int i = 0; i < (int)BaseSet.Flags.FLAGCOUNT; i++)
             {
                 p.FLAGS[i] = pFlag[i];      //이벤트 플래그 불러오기
@@ -70,6 +68,6 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
             load_complete = true;
             Destroy(gameObject);
         }
-    }    
+    }
 
 }

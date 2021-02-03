@@ -11,7 +11,8 @@
         horizontal = hr;
     }
 
-    public int Number{
+    public int Number
+    {
         get { return number; }
     }
     public string Body

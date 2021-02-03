@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class KeyConfig : MonoBehaviour
 {
@@ -21,11 +19,11 @@ public class KeyConfig : MonoBehaviour
     {
         selected = -1;
         int sz = labels.Length;
-        for (int ii = 0; ii < sz; ii++) 
+        for (int ii = 0; ii < sz; ii++)
         {
             labels[ii].SetText(SysManager.keys[ii] + ": " + SysManager.keymap[SysManager.keys[ii]]);
         }
-        
+
     }
 
     // Update is called once per frame
@@ -35,12 +33,13 @@ public class KeyConfig : MonoBehaviour
         {
             if (Input.anyKeyDown)
             {
-                if (Input.inputString.Length != 0)  {
-                    SysManager.DictUpdate(SysManager.keys[selected], (KeyCode)(Input.inputString[0]));                    
+                if (Input.inputString.Length != 0)
+                {
+                    SysManager.DictUpdate(SysManager.keys[selected], (KeyCode)(Input.inputString[0]));
                 }
                 else
                 {//사실 이걸로 해도 최적화에는 큰 영향이 없긴 한데 아 몰라
-                    foreach(var k in klist)
+                    foreach (var k in klist)
                     {
                         if (Input.GetKeyDown(k))
                         {
@@ -77,7 +76,7 @@ public class KeyConfig : MonoBehaviour
         var p = FindObjectOfType<Player>();
         int i = p.FLAGS[(int)BaseSet.Flags.SKILLS];
         int j = 0;
-        while (i != 0) 
+        while (i != 0)
         {
             if (i % 2 == 1) skills.text += skillNames[j];
             i >>= 1;

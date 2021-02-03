@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Watcher : MonoBehaviour    //플레이어를 해바라기처럼 봄
 {
@@ -8,7 +6,7 @@ public class Watcher : MonoBehaviour    //플레이어를 해바라기처럼 봄
     Transform follow;
 
     void Start()
-    {       
+    {
         follow = FindObjectOfType<Player>().transform;
         d0 *= Mathf.Deg2Rad;
     }

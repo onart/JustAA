@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Fade2 : MonoBehaviour      //문을 열면 페이드 아웃->이동->페이드 인을 수행. 이것은 오직 문만을 위한 클래스임
@@ -11,7 +9,8 @@ public class Fade2 : MonoBehaviour      //문을 열면 페이드 아웃->이동
 
     Door dr;
 
-    public Door DOOR {
+    public Door DOOR
+    {
         set { dr = value; }
     }
     void Start()
@@ -36,7 +35,7 @@ public class Fade2 : MonoBehaviour      //문을 열면 페이드 아웃->이동
         else
         {
             br = 0;
-            gameObject.SetActive(false);     
+            gameObject.SetActive(false);
         }
-     }
+    }
 }

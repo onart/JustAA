@@ -10,7 +10,8 @@ public class TargetMe : MonoBehaviour
     }
     void Find()
     {
-        if (!vc.Follow) { 
+        if (!vc.Follow)
+        {
             vc.Follow = FindObjectOfType<Player>().transform;
             Invoke("Find", 0.02f);
         }

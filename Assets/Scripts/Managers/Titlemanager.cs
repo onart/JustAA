@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.IO;
 using TMPro;
-using System.IO;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Titlemanager : MonoBehaviour
 {
@@ -17,7 +17,8 @@ public class Titlemanager : MonoBehaviour
 
     void DisplayData2()
     {
-        if (df.diff == 0) { 
+        if (df.diff == 0)
+        {
             dataDisp.SetText("데이터가 손상되었습니다. 데이터를 삭제해 주세요.");
             return;
         }
@@ -30,7 +31,8 @@ public class Titlemanager : MonoBehaviour
         mgn -= (df.map[0] - 'A');
         mgn -= df.mhp;
         int down = 2;
-        foreach (int flag in df.PF) {
+        foreach (int flag in df.PF)
+        {
             down += flag;
         }
         float candid = Mathf.Log((float)nanido, down);
@@ -81,10 +83,11 @@ public class Titlemanager : MonoBehaviour
         reader.Close();
     }
 
-    private void DecodeFlag(string s) { //상대적으로 복잡한 스트링 형태의 플래그를 정수형 배열로 해독
+    private void DecodeFlag(string s)
+    { //상대적으로 복잡한 스트링 형태의 플래그를 정수형 배열로 해독
         string temp = "";
         int idx = -1;
-        foreach(var c in s)
+        foreach (var c in s)
         {
             if (c != ',') temp += c;
             else
@@ -99,7 +102,8 @@ public class Titlemanager : MonoBehaviour
     private void Start()
     {
         LoadBin();
-        if (nanido != -1) {
+        if (nanido != -1)
+        {
             DecodeFlag(flags);
             df.diff = Validity();
         }
@@ -132,7 +136,8 @@ public class Titlemanager : MonoBehaviour
             c--;
             counts.text = c.ToString();
         }
-        else {
+        else
+        {
             counts.text = "5";
             counts.GetComponentInParent<Button>().gameObject.SetActive(false);
             BinaryWriter eraser = new BinaryWriter(File.Open("save.onladv", FileMode.Create));
@@ -144,9 +149,10 @@ public class Titlemanager : MonoBehaviour
 
     public void Load()
     {
-        if (nanido != -1) 
+        if (nanido != -1)
         {
-            if (df.diff == 0) {                                
+            if (df.diff == 0)
+            {
                 return;
             }
             //데이터를 가지고, 나는 사라지고 누군가한테는 전달해야 함. 세이브포인트 씬으로 이동
@@ -154,7 +160,7 @@ public class Titlemanager : MonoBehaviour
             Scenemover.MoveScene(df.map);
         }
         else
-        {           
+        {
             gogo.text = "난이도를 선택하세요.";
             nanedo.SetActive(true);
         }
@@ -170,6 +176,6 @@ public class Titlemanager : MonoBehaviour
 
     public void Quit()
     {
-        Application.Quit();        
+        Application.Quit();
     }
 }

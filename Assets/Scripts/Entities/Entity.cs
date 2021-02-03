@@ -1,10 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Entity : MonoBehaviour
 {
-    static private GameObject space;
+    private static GameObject space;
     private GameObject spc;   //이건 상호작용 가능 시 'space'를 띄우기 위함임
     protected Vector3 spacepos;      //'space'를 띄우는 위치
 
@@ -32,11 +31,12 @@ public abstract class Entity : MonoBehaviour
         if (cooltime > 0) { cooltime--; }
         else if (hit.collider != null)
         {
-            if (spc == null) { 
+            if (spc == null)
+            {
                 spc = Instantiate(space);
-                spc.transform.position = this.transform.position + spacepos;                
+                spc.transform.position = this.transform.position + spacepos;
             }
-            if (!SysManager.forbid && Input.GetKeyDown(SysManager.keymap["상호작용"]) && p.gameObject.GetComponent<Rigidbody2D>().velocity == Vector2.zero) 
+            if (!SysManager.forbid && Input.GetKeyDown(SysManager.keymap["상호작용"]) && p.gameObject.GetComponent<Rigidbody2D>().velocity == Vector2.zero)
             {
                 ObjAct();
             }

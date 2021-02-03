@@ -1,13 +1,13 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveLoad : MonoBehaviour
 {
     //저장 위치는 레지스트리 편집기->HKEY_CURRENT_USER->SOFTWARE->UNITY->UNITYEDITOR->회사이름->게임이름
     //암호화 등 치트방지는 나중에 추가
-    
+
     public Player pl;
     string mapName;
 
@@ -52,7 +52,7 @@ public class SaveLoad : MonoBehaviour
                 writer.Write(pl.MHP);
                 return;
             case 'ㅍ':
-                foreach(int flag in pl.FLAGS)
+                foreach (int flag in pl.FLAGS)
                 {
                     writer.Write(flag);
                 }
@@ -67,7 +67,7 @@ public class SaveLoad : MonoBehaviour
                 foreach (int flag in pl.FLAGS)
                 {
                     dff += flag;
-                }                
+                }
                 double diff = Mathf.Pow(dff, 1 + (float)SysManager.difficulty / pt);
                 writer.Write(diff);
                 return;
@@ -82,10 +82,10 @@ public class SaveLoad : MonoBehaviour
                 return;
         }
     }
-    
-    public static (char,string) PartRead(BinaryReader reader) //현재 8회 부르면 EOF
+
+    public static (char, string) PartRead(BinaryReader reader) //현재 8회 부르면 EOF
     {
-        if (!(reader.PeekChar() > 0)) return (' ', null);   
+        if (!(reader.PeekChar() > 0)) return (' ', null);
         //비어 있는 경우 뭐 비어 있는 거지(이건 세이브 파일이 없거나/저장 요소가 새로 추가되었을 때를 위한 처리)
         char c = reader.ReadChar();
         switch (c)
@@ -106,7 +106,8 @@ public class SaveLoad : MonoBehaviour
             case 'ㅍ':
                 string ev = "";
                 int tempFlag = 0;
-                while (tempFlag != -1) {
+                while (tempFlag != -1)
+                {
                     ev += tempFlag + ",";
                     tempFlag = reader.ReadInt32();
                 }

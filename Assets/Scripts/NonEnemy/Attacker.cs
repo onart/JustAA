@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Attacker : HPChanger
 {
-    public enum Judg { 약=0, 중, 강 }; // 약: 피격모션 없음, 중: 피격모션만 있음, 강: 쓰러짐
+    public enum Judg { 약 = 0, 중, 강 }; // 약: 피격모션 없음, 중: 피격모션만 있음, 강: 쓰러짐
     public Vector2 force;
     public int face = 1;    //좌측을 본다/우측을 본다.
     //이것(Attacker 객체)을 가지고 있는 물체가 업데이트 함수를 통해 force를 경우에 따라 조정할 것.

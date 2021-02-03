@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Downward : Entity  //버리는 스크립트, 하지만 문의 다용 예시로 잠시 남겨둘 예정
 {
@@ -8,11 +6,11 @@ public class Downward : Entity  //버리는 스크립트, 하지만 문의 다�
 
     protected override void OnRecieve()
     {
-        if ((dialog == 28 || dialog == 29) && selection == 0) 
+        if ((dialog == 28 || dialog == 29) && selection == 0)
         {
             //10층 복도로 이동
             p.FLAGS[(int)BaseSet.Flags.STAGE1] = 4;
-            dr.dynamicUse("10Corridor","virtual");
+            dr.dynamicUse("10Corridor", "virtual");
         }
     }
 

@@ -25,7 +25,8 @@ public class USB : Entity
     }
     protected override void OnRecieve()
     {
-        if (selection == 0) {
+        if (selection == 0)
+        {
             sl.Save(gameObject.scene, call);
             StartCoroutine(D_Start(1));
         }

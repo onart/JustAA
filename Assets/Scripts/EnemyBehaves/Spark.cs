@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 // 병진이동만을 하며, 하드에서는 속도가 빨라짐(급가속을 일정 쿨타임으로 사용)

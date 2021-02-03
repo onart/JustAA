@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 //매니저의 우두머리격 존재로, 겹치는 부분이 있으면 여기서 허락을 받도록 할 것
 public class SysManager : MonoBehaviour
@@ -50,7 +48,7 @@ public class SysManager : MonoBehaviour
     void SettimeScale()
     {
         if (!menuon && !dialogUI.activeSelf) { Time.timeScale = 1; forbid = false; }
-        else { Time.timeScale = 0; forbid = true; }        
+        else { Time.timeScale = 0; forbid = true; }
     }
 
     public void GoBack()    //"타이틀로"버튼에서만 사용됨
@@ -60,7 +58,7 @@ public class SysManager : MonoBehaviour
 
     public static void KeyMapSave()                    //키맵 저장.
     {
-        foreach(var c in keymap)
+        foreach (var c in keymap)
         {
             PlayerPrefs.SetInt(c.Key, (int)c.Value);
         }
@@ -74,7 +72,7 @@ public class SysManager : MonoBehaviour
         DictUpdate("메뉴", KeyCode.Escape);
         foreach (var c in keys)
         {
-            if(PlayerPrefs.HasKey(c)) DictUpdate(c, (KeyCode)PlayerPrefs.GetInt(c));
+            if (PlayerPrefs.HasKey(c)) DictUpdate(c, (KeyCode)PlayerPrefs.GetInt(c));
             //업데이트로 키 이름이 바뀌지 않아야 함. 하지만 혹시 모르니
         }
         SetDefaultKeyMap();                     //업데이트로 새로운 키가 추가될 수 있으므로
@@ -111,7 +109,8 @@ public class SysManager : MonoBehaviour
         }
         foreach (var v in keymap.Values)    //(누르는)키 겹침 허용 x
         {
-            if (value == v) {
+            if (value == v)
+            {
                 keymap.Add(key, KeyCode.None);
                 return;
             }

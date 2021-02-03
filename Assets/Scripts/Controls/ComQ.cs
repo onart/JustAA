@@ -61,7 +61,7 @@ public class ComQ : MonoBehaviour
     void UpdateVisual()
     {
         var t = q.ToArray();
-        for(int i = 0; i < 6; i++)
+        for (int i = 0; i < 6; i++)
         {
             visualQ[i].sprite = entry[(int)t[i]];
         }
@@ -91,9 +91,9 @@ public class ComQ : MonoBehaviour
     {
         if (size > 6) return false;
         int i = 0;
-        foreach(Candid c in command)
+        foreach (Candid c in command)
         {
-            if (q.ToArray()[6 - size + i] != c) 
+            if (q.ToArray()[6 - size + i] != c)
             {
                 return false;
             }
@@ -102,12 +102,12 @@ public class ComQ : MonoBehaviour
 
         return true;
     }
-    
+
     void QAct()
     {
-        if (SkillKnow(3) && !p.onground && (QRead(AIRSP_R, 4) || QRead(AIRSP_L, 4))) 
+        if (SkillKnow(3) && !p.onground && (QRead(AIRSP_R, 4) || QRead(AIRSP_L, 4)))
         { anim.SetInteger("COMBO", 11); }   //회전 중 위치를 고정할지 아닐지는 미정
-        else if(SkillKnow(0) && p.onground && !anim.GetBool("SIT") && (QRead(L_DAT,4) || QRead(R_DAT, 4)))
+        else if (SkillKnow(0) && p.onground && !anim.GetBool("SIT") && (QRead(L_DAT, 4) || QRead(R_DAT, 4)))
         { anim.SetInteger("COMBO", 11); }
         else if (p.onground && !anim.GetBool("SIT") && (QRead(L_RUSH, 2) || QRead(R_RUSH, 2)))
         { anim.SetTrigger("RUSH"); rb2d.MovePosition(rb2d.position + Vector2.right * Input.GetAxisRaw("Horizontal")); q.Enqueue(Candid.NONE); q.Dequeue(); }

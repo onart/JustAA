@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-//하나의 말만 하기 위한 객체는 이것을 붙임(ex:설명자)
+﻿//하나의 말만 하기 위한 객체는 이것을 붙임(ex:설명자)
 public class Parrot : Entity
 {
     public int d_no;

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Healer : HPChanger
+﻿public class Healer : HPChanger
 {
     protected override void Act()
     {

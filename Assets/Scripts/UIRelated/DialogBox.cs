@@ -1,6 +1,6 @@
-﻿using UnityEngine.UI;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class DialogBox : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class DialogBox : MonoBehaviour
     char[] con;
     int txt, unitfrm;    //현재 몇번째 글자인지, 글자 출력 속도 조정용 변수
 
-    public Sprite[] face_list = new Sprite[(int)BaseSet.Chars.CHARCOUNT * (int)BaseSet.Exprs.FACECOUNT];    
+    public Sprite[] face_list = new Sprite[(int)BaseSet.Chars.CHARCOUNT * (int)BaseSet.Exprs.FACECOUNT];
     private void Awake()
     {
         aus = GetComponent<AudioSource>();
@@ -47,7 +47,8 @@ public class DialogBox : MonoBehaviour
             face.color = Color.clear;
             char_name.text = BaseSet.names[(int)c];
         }
-        else {                                  //포트레이트와 이름이 존재하는 경우.
+        else
+        {                                  //포트레이트와 이름이 존재하는 경우.
             int ch = (int)c;
             int ex = (int)e;
             face.color = Color.white;

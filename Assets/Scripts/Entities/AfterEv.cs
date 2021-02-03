@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class AfterEv: Entity
+﻿public class AfterEv : Entity
 {
     //flg가 condition 이상 or 이하가 되면 오브젝트 파괴
     public BaseSet.Flags flg;

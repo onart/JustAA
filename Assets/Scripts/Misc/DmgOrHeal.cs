@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
 
 public class DmgOrHeal : MonoBehaviour
 {
@@ -17,7 +15,8 @@ public class DmgOrHeal : MonoBehaviour
     void Update()
     {
         alpha -= 0.02f;
-        if (alpha > 0) { 
+        if (alpha > 0)
+        {
             dmgTxt.color = new Color(1, 1, 1, alpha);
             transform.position = new Vector2(transform.position.x, transform.position.y + alpha / 40);
         }

@@ -2,7 +2,7 @@
 
 public abstract class Enemy : MonoBehaviour
 {
-    protected enum state {SLEEP, FREE, HOST};
+    protected enum state { SLEEP, FREE, HOST };
     /*
      * 휴면 : update을 포함하여 아무것도 하지 않음. 카메라 안에 들어오면 자유 모드로
      * 자유 : 자연스러운 움직임을 하도록 노력함. 카메라 밖으로 나가면 휴면 모드로, 트리거를 건드리면 적대 모드로(cancelInvoke)
@@ -42,7 +42,7 @@ public abstract class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         fh = GetComponentInChildren<FoeHp>();
         alpha = 1;
-        St();        
+        St();
     }
 
     protected void Act()
@@ -61,7 +61,8 @@ public abstract class Enemy : MonoBehaviour
                 Act();
             }
             st = state.HOST;
-            if (p == null) { 
+            if (p == null)
+            {
                 p = col.gameObject.GetComponent<Player>().transform;
                 prb2d = col.gameObject.GetComponent<Rigidbody2D>();
             }
@@ -78,7 +79,8 @@ public abstract class Enemy : MonoBehaviour
 
     private void OnBecameVisible()                      //상태머신 전이기
     {
-        if (st == state.SLEEP) {
+        if (st == state.SLEEP)
+        {
             st = state.FREE;
             Act();
         }
@@ -86,7 +88,8 @@ public abstract class Enemy : MonoBehaviour
 
     private void OnBecameInvisible()                    //상태머신 전이기
     {
-        if (st == state.FREE) {
+        if (st == state.FREE)
+        {
             st = state.SLEEP;
             CancelInvoke("Act");
         }
@@ -108,7 +111,8 @@ public abstract class Enemy : MonoBehaviour
         }
         hp += delta;
         if (hp > maxHp) hp = maxHp;
-        else if (hp <= 0) { 
+        else if (hp <= 0)
+        {
             hp = 0;
             GetComponent<Collider2D>().enabled = false;
             p.gameObject.GetComponent<Player>().GainExp(exp);
@@ -116,7 +120,7 @@ public abstract class Enemy : MonoBehaviour
             OnZero();
         }
     }
-    
+
     public void GetHit(int delta, Vector2 force)
     {
         HPChange(-delta);
@@ -161,7 +165,8 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void OnZero() {    //체력 0일 때의 동작을 정의
+    protected virtual void OnZero()
+    {    //체력 0일 때의 동작을 정의
         st = state.SLEEP;
         Destroy(at);
         alpha -= 0.02f;

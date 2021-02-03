@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MyAttacker : MonoBehaviour
 {
@@ -23,7 +21,7 @@ public class MyAttacker : MonoBehaviour
         {
             var plat = col.gameObject.GetComponent<Rigidbody2D>();
             if (p.localScale.x < 0) force.x = -force.x;
-            plat.AddForce(force*250);
+            plat.AddForce(force * 250);
         }
     }
 }

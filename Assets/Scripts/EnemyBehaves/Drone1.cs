@@ -9,9 +9,10 @@ public class Drone1 : Enemy
     {
         if (st == state.SLEEP)
         {
-            
+
         }
-        else {            
+        else
+        {
             if (sw == 0)    //이동 or 가만히 있을 때.
             {
                 y2 += 0.01f;
@@ -34,7 +35,7 @@ public class Drone1 : Enemy
                     }
                 }
             }
-        }        
+        }
     }
 
     void coolDown()
@@ -44,11 +45,11 @@ public class Drone1 : Enemy
 
     void Facing()
     {
-        if (transform.localScale.x > 0 && p.position.x < transform.position.x) 
+        if (transform.localScale.x > 0 && p.position.x < transform.position.x)
         {
             FaceBack();
         }
-        else if(transform.localScale.x < 0 && p.position.x > transform.position.x)
+        else if (transform.localScale.x < 0 && p.position.x > transform.position.x)
         {
             FaceBack();
         }
@@ -68,7 +69,7 @@ public class Drone1 : Enemy
 
     public void Rush()
     {
-        rb2d.velocity = new Vector2(transform.localScale.x * 10, 0);       
+        rb2d.velocity = new Vector2(transform.localScale.x * 10, 0);
     }
 
     protected override void Move()
@@ -119,5 +120,5 @@ public class Drone1 : Enemy
             }
         }
     }
-    
+
 }

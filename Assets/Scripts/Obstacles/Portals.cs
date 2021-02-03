@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Portals : MonoBehaviour
+public class Portals : HPChanger
 {
     public Transform targetPos;
 
-    private void OnTriggerEnter2D(Collider2D col)
+    protected override void Act()
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            col.gameObject.transform.position = targetPos.position;
-            var g = col.gameObject.GetComponent<Rigidbody2D>();
-            g.velocity = Vector2.zero;
-            var p = col.gameObject.GetComponent<Player>();            
-            p.HpChange(-1 * (10 << SysManager.difficulty));
-            p.reserveVx(0);
-            p.reserveVy(0);
-        }
+        p.transform.position = targetPos.position;
+        var g = p.gameObject.GetComponent<Rigidbody2D>();
+        g.velocity = Vector2.zero;
+        var dam = delta << SysManager.difficulty;
+        p.HpChange(-dam);
+        p.reserveVx(0);
+        p.reserveVy(0);
     }
 }

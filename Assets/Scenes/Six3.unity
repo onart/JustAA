@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac84c00a4b8a24db726e098e86bfe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delta: 10
   targetPos: {fileID: 1011549117}
 --- !u!61 &299961858
 BoxCollider2D:
@@ -5603,6 +5604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac84c00a4b8a24db726e098e86bfe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delta: 10
   targetPos: {fileID: 259267784}
 --- !u!61 &1633512615
 BoxCollider2D:

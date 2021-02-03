@@ -299,7 +299,7 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //44번 대화 : 어려움 한정 동굴 도움말
-            (Chars.CHARCOUNT, Exprs.NORM, "어려움을 플레이 중이라면, 5초에 한 번 진동이 있을 겁니다. 그 때 지상에 붙어 있다면 살짝 중심을 잃으니 주의하세요."),
+            (Chars.CHARCOUNT, Exprs.NORM, "어려움을 플레이 중이라면, 3초에 한 번 진동이 있을 겁니다. 그 때 지상에 붙어 있다면 중심을 잃으니 주의하세요."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };
@@ -342,6 +342,7 @@ public static class BaseSet
         { "CaveFront","바다동굴 앞" },
         { "Container","바다동굴 근처 컨테이너" },
         { "Cave1","바다동굴1" },
+        { "Cave2","바다동굴2" },
         { "CutScene","" },
         { "Nowhere","테스트 방" },
     };

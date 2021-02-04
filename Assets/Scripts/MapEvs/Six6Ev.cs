@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Six6Ev : MapEv
 {
@@ -56,22 +57,18 @@ public class Six6Ev : MapEv
     void getFollow()
     {
         Destroy(cc.gameObject);
+        StartCoroutine(nameof(shake));
         shake();
     }
 
-    void shake()
+    IEnumerator shake()
     {
-        if (sh < 10)
+        for(int i = 0; i < 10; i++)
         {
-            sh++;
-            cv.transform.position += Mathf.Pow(-1, sh) * Vector3.left / 2;
-            Invoke(nameof(shake), 0.03f);
+            cv.transform.position += Mathf.Pow(-1, i) * Vector3.left / 2;
+            yield return new WaitForSeconds(0.03f);
         }
-        else
-        {
-            cooltime = 0;
-            tm.Dialog_Start(37, this);
-            return;
-        }
+        cooltime = 0;
+        tm.Dialog_Start(37, this);
     }
 }

@@ -7,7 +7,11 @@ public class CaveShaker : MonoBehaviour
     Player p;
     Transform gauge;
     float scale = 1;
-    // Start is called before the first frame update
+    public Cinemachine.CinemachineVirtualCamera cc;
+    public Camera cv;
+
+    public Cinemachine.CinemachineImpulseSource imsr;
+
     void Start()
     {
         p = FindObjectOfType<Player>();
@@ -32,11 +36,16 @@ public class CaveShaker : MonoBehaviour
 
     void shake()
     {
-        //카메라 흔들+효과음
+        camShake();
         if (p.onground)
         {
             p.rb2d.AddForce(new Vector2(0, 200));
             p.GetHit(0, 2);
         }
+    }
+
+    void camShake()
+    {
+        imsr.GenerateImpulse();
     }
 }

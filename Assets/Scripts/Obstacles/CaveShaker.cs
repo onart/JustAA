@@ -7,9 +7,6 @@ public class CaveShaker : MonoBehaviour
     Player p;
     Transform gauge;
     float scale = 1;
-    public Cinemachine.CinemachineVirtualCamera cc;
-    public Camera cv;
-
     public Cinemachine.CinemachineImpulseSource imsr;
 
     void Start()
@@ -46,6 +43,7 @@ public class CaveShaker : MonoBehaviour
 
     void camShake()
     {
+        //효과음
         imsr.GenerateImpulse();
     }
 }

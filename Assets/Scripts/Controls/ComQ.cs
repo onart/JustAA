@@ -122,6 +122,6 @@ public class ComQ : MonoBehaviour
 
     bool SkillKnow(int skill)   //고급 스킬을 배웠는지
     {
-        return (p.FLAGS[(int)BaseSet.Flags.SKILLS] >> skill) % 2 == 1;
+        return ((p.FLAGS[(int)BaseSet.Flags.SKILLS] >> skill) & 1) == 1;
     }
 }

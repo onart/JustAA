@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Fade2 : MonoBehaviour      //문을 열면 페이드 아웃->이동->페이드 인을 수행. 이것은 오직 문만을 위한 클래스임
@@ -21,6 +22,32 @@ public class Fade2 : MonoBehaviour      //문을 열면 페이드 아웃->이동
         im = GetComponent<Image>();
     }
 
+    IEnumerator fio()
+    {
+        for (br = 0; br < 1; br += 0.05f)
+        {
+            im.color = new Color(0, 0, 0, br);
+            yield return new WaitForSeconds(0.025f);
+        }
+        im.color = Color.black;
+        dr.DoorOpen();
+        FindObjectOfType<Player>().onground = false;
+        for (; br > 0; br -= 0.05f)
+        {
+            im.color = new Color(0, 0, 0, br);
+            yield return new WaitForSeconds(0.025f);
+        }
+        im.color = Color.clear;
+        gameObject.SetActive(false);
+    }
+
+    public void f2()
+    {
+        StartCoroutine(nameof(fio));
+    }
+
+
+
     void Update()
     {
         if (gamestart)
@@ -28,14 +55,6 @@ public class Fade2 : MonoBehaviour      //문을 열면 페이드 아웃->이동
             gameObject.SetActive(false);
             gamestart = false;
         }
-        br += 0.02f;
-        if (br < 1) im.color = new Color(0, 0, 0, br);
-        else if (br <= 1.02) { im.color = new Color(0, 0, 0, 1); dr.DoorOpen(); FindObjectOfType<Player>().onground = false; }
-        else if (br < 2) im.color = new Color(0, 0, 0, 2 - br);
-        else
-        {
-            br = 0;
-            gameObject.SetActive(false);
-        }
     }
+
 }

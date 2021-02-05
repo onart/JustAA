@@ -25,6 +25,7 @@ public class Door : Entity
             p.doorname = connectedDoor;
             fio.gameObject.SetActive(true);
             fio.DOOR = this;
+            fio.f2();
         }
         else
         {
@@ -70,6 +71,7 @@ public class Door : Entity
         p.doorname = connectedDoor;
         fio.gameObject.SetActive(true);
         fio.DOOR = this;
+        fio.f2();
     }
 
 }

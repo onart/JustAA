@@ -27,7 +27,7 @@ public class Fade2 : MonoBehaviour      //문을 열면 페이드 아웃->이동
         for (br = 0; br < 1; br += 0.05f)
         {
             im.color = new Color(0, 0, 0, br);
-            yield return new WaitForSeconds(0.025f);
+            yield return new WaitForSecondsRealtime(0.025f);
         }
         im.color = Color.black;
         dr.DoorOpen();
@@ -35,7 +35,7 @@ public class Fade2 : MonoBehaviour      //문을 열면 페이드 아웃->이동
         for (; br > 0; br -= 0.05f)
         {
             im.color = new Color(0, 0, 0, br);
-            yield return new WaitForSeconds(0.025f);
+            yield return new WaitForSecondsRealtime(0.025f);
         }
         im.color = Color.clear;
         gameObject.SetActive(false);

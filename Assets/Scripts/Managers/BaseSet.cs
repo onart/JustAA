@@ -229,7 +229,7 @@ public static class BaseSet
             (Chars.J1, Exprs.NORM, "안녕하세요? 마사지 서비스를 받으러 오신 분인가요?"),
             (Chars.ONL, Exprs.SURPRISED, "...??!! 손에 저런 걸 들고 마사지를 한다고?"),
             (Chars.J1, Exprs.NORM, "그럼 바로 시작하겠습니다!"),
-            (Chars.ONL, Exprs.ANGRY, "들어온다! 정신 똑바로 차리고!"),
+            (Chars.ONL, Exprs.ANGRY, "들어온다! 정신 똑바로 차리자!"),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //36번 대화 : 중간보스 클리어 후 대사

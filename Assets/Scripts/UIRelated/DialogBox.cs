@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,6 @@ public class DialogBox : MonoBehaviour
     AudioSource aus;
     TextMeshProUGUI char_name, content;
     char[] con;
-    int txt, unitfrm;    //현재 몇번째 글자인지, 글자 출력 속도 조정용 변수
 
     public Sprite[] face_list = new Sprite[(int)BaseSet.Chars.CHARCOUNT * (int)BaseSet.Exprs.FACECOUNT];
     private void Awake()
@@ -28,16 +28,17 @@ public class DialogBox : MonoBehaviour
      InitBox(캐릭터, 표정, 대사);로 대화상자 내용만 바꿈.
     */
 
-    private void Update()       //글자마다 따로 출력
+    IEnumerator printBox()
     {
-        if (!ended && !SysManager.menuon && unitfrm % 2 == 0)     // % 오른쪽 숫자만큼 느려짐.
+        foreach (char lt in con)
         {
-            content.text += con[txt];
-            if (!con[txt].Equals(' ')) aus.Play();       //공백에선 타이핑 소리 출력 안 함
-            txt++;
-            if (txt == con.Length) ended = true;
+            while (SysManager.menuon) yield return new WaitForSecondsRealtime(0.02f);
+            content.text += lt;
+            if (!lt.Equals(' ')) aus.Play();
+            yield return new WaitForSecondsRealtime(0.02f);
+            if (ended) break;
         }
-        unitfrm++;
+        ended = true;
     }
 
     public void InitBox(BaseSet.Chars c, BaseSet.Exprs e, string cont)
@@ -56,16 +57,16 @@ public class DialogBox : MonoBehaviour
             char_name.text = BaseSet.names[ch];
         }
         content.text = "";
-        txt = 0;
-        unitfrm = 0;
         ended = false;
         con = cont.ToCharArray();
         contin.SetText("(" + SysManager.keymap["상호작용"] + "키로 계속)");
+        StartCoroutine(printBox());
     }
 
     public void InstantInitBox(string cont)
     {
-        //출력 중 한 번 더 누르면 동시출력
+        //출력 중 한 번 더 누르면 전체출력
+        StopCoroutine(printBox());
         ended = true;
         content.text = cont;
     }

@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: 1fe030bdcb887fb449b2c2a60d9b2d3b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 179438447940120126
+    second: GE_IDLE
+  - first:
+      213: 6970806171520108081
+    second: GE_WALK1
+  - first:
+      213: -6675785341572673678
+    second: GE_WALK2
+  - first:
+      213: -2669857421422745237
+    second: GE_WALK3
+  - first:
+      213: 1748940622105537356
+    second: GE_WALK4
+  - first:
+      213: 1622109186088652057
+    second: GE_PINCH1
+  - first:
+      213: -3250872799148878046
+    second: GE_PINCH2
+  - first:
+      213: 1523593135502315415
+    second: GE_PINCH3
+  - first:
+      213: -1887244294481121514
+    second: GE_HIT1
+  - first:
+      213: 6890320819153885892
+    second: GE_HAMMER
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GE_IDLE
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 594
+        width: 288
+        height: 175
+      alignment: 9
+      pivot: {x: 0.52026296, y: 0.5637148}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ea484515e7d7200800000000000000
+      internalID: 179438447940120126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GE_WALK1
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 607
+        width: 288
+        height: 169
+      alignment: 9
+      pivot: {x: 0.5243153, y: 0.5636619}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1368e83b7474db060800000000000000
+      internalID: 6970806171520108081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GE_WALK2
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 594
+        width: 300
+        height: 178
+      alignment: 9
+      pivot: {x: 0.5466856, y: 0.5655696}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f0dc60a98da53a0800000000000000
+      internalID: -6675785341572673678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GE_WALK3
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 603
+        width: 320
+        height: 172
+      alignment: 9
+      pivot: {x: 0.5255314, y: 0.5678569}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69282b12d2c2fad0800000000000000
+      internalID: -2669857421422745237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GE_WALK4
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 607
+        width: 301
+        height: 179
+      alignment: 9
+      pivot: {x: 0.5465303, y: 0.53260165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4be9d1ca3c754810800000000000000
+      internalID: 1748940622105537356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GE_PINCH1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 303
+        width: 338
+        height: 178
+      alignment: 9
+      pivot: {x: 0.6001387, y: 0.5196708}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d46bfd5b3e28610800000000000000
+      internalID: 1622109186088652057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GE_PINCH2
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 278
+        width: 344
+        height: 181
+      alignment: 9
+      pivot: {x: 0.5848209, y: 0.545138}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22750ccb96492e2d0800000000000000
+      internalID: -3250872799148878046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GE_PINCH3
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 265
+        width: 346
+        height: 184
+      alignment: 9
+      pivot: {x: 0.59107715, y: 0.5380589}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79fc6d762e3e42510800000000000000
+      internalID: 1523593135502315415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GE_HIT1
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 250
+        width: 256
+        height: 173
+      alignment: 9
+      pivot: {x: 0.47264576, y: 0.5607182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61fe11f20592fc5e0800000000000000
+      internalID: -1887244294481121514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GE_HAMMER
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 167
+        width: 280
+        height: 322
+      alignment: 9
+      pivot: {x: 0.52501047, y: 0.30789423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca552e47465f9f50800000000000000
+      internalID: 6890320819153885892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

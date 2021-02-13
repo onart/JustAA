@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -117,7 +118,7 @@ public abstract class Enemy : MonoBehaviour
             GetComponent<Collider2D>().enabled = false;
             p.gameObject.GetComponent<Player>().GainExp(exp);
             at.enabled = false;
-            OnZero();
+            StartCoroutine(OnZero());
         }
     }
 
@@ -165,17 +166,17 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
-    protected virtual void OnZero()
+    protected virtual IEnumerator OnZero()
     {    //체력 0일 때의 동작을 정의
         st = state.SLEEP;
         Destroy(at);
-        alpha -= 0.02f;
-        sr.color = new Color(1, 1, 1, alpha);
-        if (alpha <= 0)
+        while (alpha > 0)
         {
-            Destroy(gameObject);
+            alpha -= 0.02f;
+            sr.color = new Color(1, 1, 1, alpha);
+            yield return new WaitForSeconds(0.02f);
         }
-        Invoke("OnZero", 0.02f);
+        Destroy(gameObject);
     }
 
     protected abstract void St();           //파생 클래스에서 Start에 더 들어갈 것을 정의

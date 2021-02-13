@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 
 // 병진이동만을 하며, 하드에서는 속도가 빨라짐(급가속을 일정 쿨타임으로 사용)
@@ -68,17 +69,16 @@ public class Spark : Enemy
         }
     }
 
-    protected override void OnZero()
+    protected override IEnumerator OnZero()
     {
         youpok = true;
         st = state.SLEEP;
         //2초 후 나머지 모두 비활성화하고 유폭
-        sr.color = new Color(1, 1 - red, 1 - red);
-        if (red < 1)
+        while (red < 1)
         {
             red += 0.1f;
-            Invoke("OnZero", 0.2f);
-            return;
+            sr.color = new Color(1, 1 - red, 1 - red);
+            yield return new WaitForSeconds(0.2f);
         }
         var bls = Instantiate(blast);
         bls.transform.position = p.position;

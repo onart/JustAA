@@ -20,7 +20,7 @@ public class CaveShaker : MonoBehaviour
     {
         while (true)
         {
-            if (scale > 0) scale -= .01f;
+            if (scale > 0) scale -= .004f * (1 << SysManager.difficulty);
             else if (scale <= 0)
             {
                 shake();

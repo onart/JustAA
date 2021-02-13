@@ -131,7 +131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 112180734}
   - component: {fileID: 112180733}
-  - component: {fileID: 112180732}
   - component: {fileID: 112180731}
   m_Layer: 0
   m_Name: exp
@@ -154,20 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: 0
   d_no: 44
---- !u!114 &112180732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112180730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b54f257a60fd29499b48932e71c64a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diff: 3
-  un: 0
 --- !u!212 &112180733
 SpriteRenderer:
   m_ObjectHideFlags: 0

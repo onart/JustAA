@@ -286,7 +286,7 @@ public static class BaseSet
             (Chars.EUN, Exprs.NORM, "이 동굴은 꽤 크지만 외길이야. 오른쪽으로 쭉 가다 보면 막힌 곳이 있는데, 거기에 뱀이 있지."),
             (Chars.EUN, Exprs.NORM, "그리고 그쪽도 물가야. 얼어 있지만.. 그걸 깨면 문제가 해결될 거야."),
             (Chars.ONL, Exprs.NORM, "달리 조심할 건 뱀 말고는 없는 건가요?"),
-            (Chars.EUN, Exprs.NORM, "아, 말이 나와서 기억났는데, 여기 사는 게랑 소라게가 사람보다 커."),
+            (Chars.EUN, Exprs.NORM, "아, 말이 나와서 기억났는데, 여기 사는 게들이 사람만큼 커."),
             (Chars.EUN, Exprs.NORM, "그리고 골짜기가 깊으니 발조심하고."),
             (Chars.ONL, Exprs.CRY, "네."),
             (Chars.END, Exprs.NORM, "")
@@ -296,8 +296,8 @@ public static class BaseSet
             (Chars.EUN, Exprs.CRY, "가정이 있는 몸이라서.."),
             (Chars.END, Exprs.NORM, "")
         },0),
-        (new List<(Chars, Exprs, string)>{   //44번 대화 : 어려움 한정 동굴 도움말
-            (Chars.CHARCOUNT, Exprs.NORM, "어려움을 플레이 중이라면, 3초에 한 번 진동이 있을 겁니다. 그 때 지상에 붙어 있다면 중심을 잃으니 주의하세요."),
+        (new List<(Chars, Exprs, string)>{   //44번 대화 : 동굴 도움말
+            (Chars.CHARCOUNT, Exprs.NORM, "다음 맵부터는 일정 주기로 진동이 있을 겁니다. 그 때 지면에 붙어 있다면 중심을 잃으니 조심하세요."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };

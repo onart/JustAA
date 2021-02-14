@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class J1 : Boss
 {
@@ -240,13 +241,21 @@ public class J1 : Boss
         busy = false;
     }
 
-    protected override void OnZero()
+    protected override IEnumerator OnZero()
     {
-        base.OnZero();
+        float alpha = 1;
         if (ev)
         {
             ev.afterSth(0);
             ev = null;
         }
+        Destroy(at);
+        while (alpha > 0)
+        {
+            alpha -= 0.02f;
+            sr.color = new Color(1, 1, 1, alpha);
+            yield return new WaitForSeconds(0.02f);
+        }
+        Destroy(gameObject);
     }
 }

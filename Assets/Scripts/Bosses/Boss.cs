@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 /*
  보스 스크립트 특성
@@ -22,7 +23,6 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
     private static GameObject dmgTxt;     //맞을 때 출력할 텍스트 prefab
     private GameObject dmgTxtInst;        //dmgTxt의 인스턴스
     public DmgOrHeal doH;                 //텍스트 내용 설정자
-    float alpha;                          //자신의 투명도
 
     void Start()
     {
@@ -35,7 +35,6 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
         anim = GetComponent<Animator>();
         p = FindObjectOfType<Player>().transform;
         prb2d = p.GetComponent<Rigidbody2D>();
-        alpha = 1;
         St();
         bossBar.SetMax(maxHp);
     }
@@ -64,7 +63,7 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
             p.gameObject.GetComponent<Player>().GainExp(exp);
             if (at) at.enabled = false;
             CancelInvoke();
-            OnZero();
+            StartCoroutine(OnZero());
         }
     }
 
@@ -104,16 +103,17 @@ public abstract class Boss : MonoBehaviour  //보스는 상시 적대적이므�
         }
     }
 
-    protected virtual void OnZero()
-    {    //체력 0일 때의 동작을 정의
+    protected virtual IEnumerator OnZero()
+    {
+        float alpha = 1;
         Destroy(at);
-        alpha -= 0.02f;
-        sr.color = new Color(1, 1, 1, alpha);
-        if (alpha <= 0)
+        while (alpha > 0)
         {
-            Destroy(gameObject);
+            alpha -= 0.02f;
+            sr.color = new Color(1, 1, 1, alpha);
+            yield return new WaitForSeconds(0.02f);
         }
-        Invoke("OnZero", 0.02f);
+        Destroy(gameObject);
     }
 
     protected abstract void St();           //파생 클래스에서 Start에 더 들어갈 것을 정의

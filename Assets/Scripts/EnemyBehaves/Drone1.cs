@@ -43,18 +43,6 @@ public class Drone1 : Enemy
         cool = true;
     }
 
-    void Facing()
-    {
-        if (transform.localScale.x > 0 && p.position.x < transform.position.x)
-        {
-            FaceBack();
-        }
-        else if (transform.localScale.x < 0 && p.position.x > transform.position.x)
-        {
-            FaceBack();
-        }
-    }
-
     protected override void St()
     {
         exp = 40;

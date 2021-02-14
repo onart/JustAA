@@ -21,7 +21,7 @@ TagManager:
   - Enemy
   - Ev
   - Foot
-  - EnemyBody
+  - MobConfine
   - proj1
   - Foreground
   - 

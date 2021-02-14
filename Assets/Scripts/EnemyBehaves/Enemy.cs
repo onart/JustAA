@@ -46,7 +46,7 @@ public abstract class Enemy : MonoBehaviour
         St();
     }
 
-    protected void Act()
+    protected void Act()    //이동담당
     {
         Move();
         Invoke("Act", actTime);
@@ -163,6 +163,17 @@ public abstract class Enemy : MonoBehaviour
         else
         {
             at.face = -1;
+        }
+    }
+    protected void Facing()   //플레이어 바라보기. 기본 스프라이트가 오른쪽 보고 있는 기준.
+    {
+        if (transform.localScale.x > 0 && p.position.x < transform.position.x)
+        {
+            FaceBack();
+        }
+        else if (transform.localScale.x < 0 && p.position.x > transform.position.x)
+        {
+            FaceBack();
         }
     }
 

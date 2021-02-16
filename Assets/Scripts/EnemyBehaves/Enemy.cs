@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour
     protected float rage;               //파생 클래스에서 반드시 지정하도록 하자
 
     protected int maxHp, hp, exp;       //적의 체력. 적 역시 언젠가는 회복하지 않을까?라는 생각에 maxHp도 추가, exp는 쓰러뜨리면 주는 경험치(재화)
-    protected Transform p;              //플레이어 포착 시 그 위치를 파악하게 됨
+    protected Transform p;              //플레이어 포착 시 그 위치를 이용하게 됨
     protected Rigidbody2D rb2d;
     protected Rigidbody2D prb2d;        //플레이어의 2d강체
     protected Animator anim;
@@ -34,6 +34,7 @@ public abstract class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!p) p = FindObjectOfType<Player>().transform;
         if (dmgTxt == null)
         {
             dmgTxt = Resources.Load<GameObject>("Prefabs/dmgTxt");

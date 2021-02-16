@@ -17,7 +17,6 @@ public class Attacker : HPChanger
             p.GetHit(delta, (int)down);
             force.x *= face;
             p.rb2d.AddForce(force);
-            print(force);
         }
     }
 }

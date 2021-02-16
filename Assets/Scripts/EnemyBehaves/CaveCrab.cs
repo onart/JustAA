@@ -33,12 +33,19 @@ public class CaveCrab : Enemy
                 FaceBack(); //기본 스프라이트가 왼쪽을 보게 만들어버린 경우 Facing 뒤에 이걸 붙이기
                 float diff = p.position.x - transform.position.x;
                 if (Mathf.Abs(diff) < 0.5f) {
-                    anim.SetBool("WALK", false);
-                    anim.SetTrigger("PINCH");
                     actTime = 1000;
+                    if (p.position.y > transform.position.y + 0.5f)
+                    {
+                        anim.SetTrigger("HIT");
+                    }
+                    else
+                    {
+                        anim.SetBool("WALK", false);
+                        anim.SetTrigger("PINCH");
+                    }
                 }
-                else { 
-                    setVX(Mathf.Clamp(diff, -2, 2)); 
+                else {
+                    setVX(Mathf.Clamp(diff * 2, -2, 2));
                     anim.SetBool("WALK", true); 
                 }
                 break;
@@ -49,8 +56,8 @@ public class CaveCrab : Enemy
 
     protected override void St()
     {
-        exp = 40;
-        maxHp = 1 + 25 * SysManager.difficulty;
+        exp = 50;
+        maxHp = 1 + 20 * SysManager.difficulty;
         hp = maxHp;
         at.face = 1;
         actTime = ACTTIME;
@@ -62,5 +69,18 @@ public class CaveCrab : Enemy
         base.GetHit(delta, force);
         Facing();
         FaceBack();
+        actTime = 1000;
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.collider.gameObject.layer == LayerMask.NameToLayer("Foot"))
+        {
+            if (p.position.y - transform.position.y > 0.3f)
+            {
+                if (actTime == ACTTIME) anim.SetTrigger("STEP");
+                HPChange(-3);
+            }
+        }
     }
 }

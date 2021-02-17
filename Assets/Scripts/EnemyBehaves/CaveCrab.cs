@@ -57,7 +57,7 @@ public class CaveCrab : Enemy
     protected override void St()
     {
         exp = 50;
-        maxHp = 1 + 20 * SysManager.difficulty;
+        maxHp = 1 + 12 * SysManager.difficulty;
         hp = maxHp;
         at.face = 1;
         actTime = ACTTIME;
@@ -79,7 +79,7 @@ public class CaveCrab : Enemy
             if (p.position.y - transform.position.y > 0.3f)
             {
                 if (actTime == ACTTIME) anim.SetTrigger("STEP");
-                HPChange(-3);
+                HPChange(-5);
             }
         }
     }

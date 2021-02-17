@@ -300,6 +300,10 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "다음 맵부터는 일정 주기로 진동이 있을 겁니다. 그 때 지면에 붙어 있다면 중심을 잃으니 조심하세요."),
             (Chars.END, Exprs.NORM, "")
         },0),
+        (new List<(Chars, Exprs, string)>{   //45번 대화 : 동굴 도움말2(어려움 전용)
+            (Chars.CHARCOUNT, Exprs.NORM, "어려움 모드에서는 게를 일정 수 이상 퇴치해야 지나갈 수 있습니다."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
     };
 
     //선택지 리스트. 필요시 텍스트 크기도 지정해 주자..

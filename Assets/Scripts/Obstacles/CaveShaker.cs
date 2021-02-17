@@ -7,13 +7,16 @@ public class CaveShaker : MonoBehaviour
     Player p;
     Transform gauge;
     float scale = 1;
+    CaveCrab[] crabs;
     public Cinemachine.CinemachineImpulseSource imsr;
+    int crabForce = 7000 * SysManager.difficulty;
 
     void Start()
     {
         p = FindObjectOfType<Player>();
         gauge = GetComponent<Image>().transform;
         StartCoroutine(nameof(Act));
+        crabs = FindObjectsOfType<CaveCrab>();
     }
 
     IEnumerator Act()
@@ -38,6 +41,10 @@ public class CaveShaker : MonoBehaviour
         {
             p.rb2d.AddForce(new Vector2(0, 200));
             p.GetHit(0, 2);
+        }
+        foreach(var cr in crabs)
+        {
+            if (cr) cr.GetHit(0, new Vector2(0, crabForce));
         }
     }
 

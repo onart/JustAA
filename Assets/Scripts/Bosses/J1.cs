@@ -27,7 +27,7 @@ public class J1 : Boss
         body = GetComponent<Collider2D>();
         mapMask = 1 << LayerMask.NameToLayer("Map");
         hand = 2;
-        exp = 6000;
+        exp = 1000;
     }
 
     void Update()

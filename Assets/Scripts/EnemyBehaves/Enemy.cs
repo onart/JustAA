@@ -44,7 +44,8 @@ public abstract class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         fh = GetComponentInChildren<FoeHp>();
         alpha = 1;
-        St();
+        if (DataFiller.load_complete) St();
+        else Invoke(nameof(St), 0.1f);
     }
 
     protected void Act()    //이동담당

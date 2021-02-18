@@ -139,7 +139,7 @@ public class Master : Entity
 
     void HpStr()        //캐릭터 체력 강화
     {
-        p.MHP++;
-        p.mhpCheck--;
+        p.MHP += 10;
+        p.mhpCheck -= 10;
     }
 }

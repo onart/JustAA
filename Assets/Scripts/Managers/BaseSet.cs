@@ -155,7 +155,7 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //24번 대화 : 체력을 강화한다
-            (Chars.MASTER, Exprs.NORM, "상황이 많이 어려운 모양이군. 500XP로 체력 1을 올릴 수 있네."),
+            (Chars.MASTER, Exprs.NORM, "상황이 많이 어려운 모양이군. 500XP로 체력 10을 올릴 수 있네."),
             (Chars.MASTER, Exprs.NORM, "기술적으로 한꺼번에 여러 번 강화하게 하는 건 쉽지만, 굳이 지원하지는 않겠네. 적은 체력으로 클리어를 노려보게나."),
             (Chars.MASTER, Exprs.NORM, "체력을 강화하겠는가?"),
             (Chars.END, Exprs.NORM, "")
@@ -294,14 +294,16 @@ public static class BaseSet
         (new List<(Chars, Exprs, string)>{   //43번 대화 : 동굴에서 은이한테 말 걸 때
             (Chars.ONL, Exprs.SMILE, "같이 가실래요?"),
             (Chars.EUN, Exprs.CRY, "가정이 있는 몸이라서.."),
+            (Chars.EUN, Exprs.NORM, "하지만 난 수영을 잘 하니 골짜기로 떨어졌을 때만큼은 바로 가서 구해줄 수 있어."),
+            (Chars.CHARCOUNT, Exprs.NORM, "이번 스테이지에서는 낙하 피해가 반으로 감소합니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //44번 대화 : 동굴 도움말
             (Chars.CHARCOUNT, Exprs.NORM, "다음 맵부터는 일정 주기로 진동이 있을 겁니다. 그 때 지면에 붙어 있다면 중심을 잃으니 조심하세요."),
             (Chars.END, Exprs.NORM, "")
         },0),
-        (new List<(Chars, Exprs, string)>{   //45번 대화 : 동굴 도움말2(어려움 전용)
-            (Chars.CHARCOUNT, Exprs.NORM, "어려움 모드에서는 게를 일정 수 이상 퇴치해야 지나갈 수 있습니다."),
+        (new List<(Chars, Exprs, string)>{   //45번 대화 : 동굴 도움말2
+            (Chars.CHARCOUNT, Exprs.NORM, "보통 이상 난이도에서는 게를 일정 수 이상 퇴치해야 지나갈 수 있습니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };

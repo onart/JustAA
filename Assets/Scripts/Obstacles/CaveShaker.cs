@@ -9,7 +9,7 @@ public class CaveShaker : MonoBehaviour
     float scale = 1;
     CaveCrab[] crabs;
     public Cinemachine.CinemachineImpulseSource imsr;
-    int crabForce = 7000 * SysManager.difficulty;
+    readonly int crabForce = 10000 + 2000 * SysManager.difficulty;
 
     void Start()
     {
@@ -23,7 +23,7 @@ public class CaveShaker : MonoBehaviour
     {
         while (true)
         {
-            if (scale > 0) scale -= .004f * (1 << SysManager.difficulty);
+            if (scale > 0) scale -= .006f * SysManager.difficulty;
             else if (scale <= 0)
             {
                 shake();

@@ -2,7 +2,7 @@
 
 public class CaveCrab : Enemy
 {
-    readonly float ACTTIME = 0.5f / SysManager.difficulty;
+    float ACTTIME;
     // Update is called once per frame
     public void actRestart()
     {
@@ -10,7 +10,7 @@ public class CaveCrab : Enemy
         {
             actTime = ACTTIME;
             CancelInvoke("Act");
-            Invoke(nameof(Act), ACTTIME);
+            Invoke(nameof(Act), actTime);
         }
     }
 
@@ -56,11 +56,12 @@ public class CaveCrab : Enemy
 
     protected override void St()
     {
+        ACTTIME = 0.5f / SysManager.difficulty;
+        actTime = ACTTIME;
         exp = 50;
         maxHp = 1 + 12 * SysManager.difficulty;
         hp = maxHp;
         at.face = 1;
-        actTime = ACTTIME;
         rage = 5;
     }
 
@@ -76,7 +77,7 @@ public class CaveCrab : Enemy
     {
         if (col.collider.gameObject.layer == LayerMask.NameToLayer("Foot"))
         {
-            if (p.position.y - transform.position.y > 0.3f)
+            if (p.position.y - transform.position.y > 0.2f)
             {
                 if (actTime == ACTTIME) anim.SetTrigger("STEP");
                 HPChange(-5);

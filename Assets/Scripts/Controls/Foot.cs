@@ -17,7 +17,7 @@ public class Foot : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D col)
     {
-        //if (!p.onground && (col.gameObject.layer == LayerMask.NameToLayer("Map") || col.gameObject.layer == LayerMask.NameToLayer("EnemyBody"))) {
+        //if (!p.onground && (col.collider.gameObject.layer == LayerMask.NameToLayer("Map") || col.gameObject.layer == LayerMask.NameToLayer("EnemyBody"))) {
         if (!p.onground && foot.IsTouchingLayers(footMask))
         {
             p.onground = true;

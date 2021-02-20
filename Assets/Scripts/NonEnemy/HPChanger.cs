@@ -13,5 +13,14 @@ public abstract class HPChanger : MonoBehaviour  //체력을 회복시키거나 
         }
     }
 
+    protected void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            if (!p) p = col.gameObject.GetComponent<Player>();
+            Act();
+        }
+    }
+
     protected abstract void Act();
 }

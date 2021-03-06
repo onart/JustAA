@@ -46,7 +46,7 @@ public class Stone : Attacker
     IEnumerator Done()
     {
         var im = GetComponent<SpriteRenderer>();
-        for(float i = 1; i > 0; i -= 0.05f)
+        for (float i = 1; i > 0; i -= 0.05f)
         {
             im.color = new Color(1, 1, 1, i);
             yield return new WaitForSeconds(0.03f);

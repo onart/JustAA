@@ -306,6 +306,11 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "보통 이상 난이도에서는 게를 일정 수 이상 퇴치해야 지나갈 수 있습니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
+        (new List<(Chars, Exprs, string)>{   //46번 대화 : 동굴 도움말3
+            (Chars.CHARCOUNT, Exprs.NORM, "이곳의 붉은 광선은 해가 되지 않는 낙석 경고 표시입니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "추가로 떨어지는 돌은 타이밍을 잘 맞춰 공격하여 없앨 수 있습니다."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
     };
 
     //선택지 리스트. 필요시 텍스트 크기도 지정해 주자..

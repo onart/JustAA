@@ -63,7 +63,7 @@ public class Six6Ev : MapEv
 
     IEnumerator shake()
     {
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             cv.transform.position += Mathf.Pow(-1, i) * Vector3.left / 2;
             yield return new WaitForSeconds(0.03f);

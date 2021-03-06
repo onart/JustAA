@@ -32,7 +32,8 @@ public class CaveCrab : Enemy
                 Facing();
                 FaceBack(); //기본 스프라이트가 왼쪽을 보게 만들어버린 경우 Facing 뒤에 이걸 붙이기
                 float diff = p.position.x - transform.position.x;
-                if (Mathf.Abs(diff) < 0.5f) {
+                if (Mathf.Abs(diff) < 0.5f)
+                {
                     actTime = 1000;
                     if (p.position.y > transform.position.y + 0.5f)
                     {
@@ -44,9 +45,10 @@ public class CaveCrab : Enemy
                         anim.SetTrigger("PINCH");
                     }
                 }
-                else {
+                else
+                {
                     setVX(Mathf.Clamp(diff * 2, -2, 2));
-                    anim.SetBool("WALK", true); 
+                    anim.SetBool("WALK", true);
                 }
                 break;
             default:

@@ -225,7 +225,8 @@ public class Player : MonoBehaviour
         if (kdown == 2)
         {
             anim.SetInteger("OVR", 2);
-            if (hp > 0 && onground) {
+            if (hp > 0 && onground)
+            {
                 Invoke(nameof(StandUp), 0.5f);
             }
         }

@@ -608,7 +608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog: 0
   flag: 6
-  flag_to: 3
+  flag_to: 4
   dial_no: 42
 --- !u!4 &931769205
 Transform:

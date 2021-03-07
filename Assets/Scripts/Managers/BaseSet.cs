@@ -307,8 +307,33 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //46번 대화 : 동굴 도움말3
-            (Chars.CHARCOUNT, Exprs.NORM, "이곳의 붉은 광선은 해가 되지 않는 낙석 경고 표시입니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "이곳의 붉은 광선은 피해를 주지 않는, 낙석 경고 표시입니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "추가로 떨어지는 돌은 타이밍을 잘 맞춰 공격하여 없앨 수 있습니다."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //47번 대화 : 동굴 도움말4
+            (Chars.CHARCOUNT, Exprs.NORM, "방금 동굴 3에서 올라가는 길에 가 보셨나요? 그곳엔 보스 도움말이 있답니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "참고로 '어려움'을 플레이 중이시라면, 거기에 체력 회복이 있으니 필요하면 가면 됩니다."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //48번 대화 : 뱀굴 전맵
+            (Chars.ONL, Exprs.SURPRISED, "야.. 엄청 험하네 진짜."),
+            (Chars.ONL, Exprs.NORM, ".........이걸 뭐라 할까..."),
+            (Chars.ONL, Exprs.CRY, "슬슬 한기가 느껴지는데 곧 뱀을 만나겠구나.."),
+            (Chars.ONL, Exprs.CRY, "..설마 동굴을 흔들 정도의 뱀이랑 싸우기라도 하겠어?"),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //49번 대화 : 보스1 도움말
+            (Chars.CHARCOUNT, Exprs.NORM, "이번 보스는 바다뱀이긴 한데, 싸워서 이길 수는 없습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "대신 얼음벽을 깨부수고 탈출해야 합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "바다뱀은 기본적으로 고정된 위치에 있으며, 4개의 행동을 순서대로 반복합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "먼저 주인공을 보고 삼키려 듭니다. 경고 표시를 잘 보고 제때 점프하세요."),
+            (Chars.CHARCOUNT, Exprs.NORM, "그 다음에는 꼬리를 횡으로 휘두릅니다. 이때 낙석과 진동에도 주의하세요. 어려움은 게도 떨어집니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "모든 돌이 떨어지면 꼬리로 아래로 내리칩니다. 돌에 붙어 앉아서 방어에 성공하면 뱀이 돌을 찍고 당황합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "3번째 패턴을 방어에 성공했다면 얼음벽 쪽을 향해 돌진합니다. 피하면 얼음벽 파괴를 앞당길 수 있습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "그 외의 경우, 똬리를 틉니다. 이 공격은 피할 수 없으며, 좌/우/공격/점프 버튼을 연타하여 빠져나올 수 있습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "똬리틀기에 당하면 지속적으로 피해를 입습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, ""),
             (Chars.END, Exprs.NORM, "")
         },0),
     };
@@ -329,7 +354,7 @@ public static class BaseSet
         STAGE1,                     //3번. 0.5테마와 관련된 플래그     0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 6-1구역 입장해봄 / 4: 6-2구역 입장해봄 / 5: 6-5구역 입장해봄 / 6: 0.5스테이지 클리어
         TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
         KEYS,                       //5번. 아이템을 말한다.            2^0자리: 
-        STAGE2,                     //6번. 1테마와 관련된 플래그       0: 처음 / 1: 첫 대화를 종료함 / 2: 집 밖으로 나가 봄 / 
+        STAGE2,                     //6번. 1테마와 관련된 플래그       0: 처음 / 1: 첫 대화를 종료함 / 2: 집 밖으로 나가 봄 / 3: 동굴 입장 / 4: 뱀 전 맵 입장
         STAGE3,                     //7번. 2테마와 관련된 플래그       0: 처음
         STAGE4,                     //8번. 3테마와 관련된 플래그       0: 처음
         STAGE5,                     //9번. 4테마와 관련된 플래그       0: 처음
@@ -355,6 +380,8 @@ public static class BaseSet
         { "Cave2","<color=white>바다동굴2</color>" },
         { "Cave3","<color=white>바다동굴3</color>" },
         { "Cave4","<color=white>바다동굴4</color>" },
+        { "Cave5","<color=white>바다동굴5</color>" },
+        { "Cave6","<color=white>뱀방</color>" },
         { "CutScene","" },
         { "Nowhere","테스트 방" },
     };

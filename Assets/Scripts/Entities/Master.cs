@@ -66,7 +66,7 @@ public class Master : Entity
 
     bool LearnCheck(int skill)   //이미 배운 기술인지 체크
     {
-        return (p.FLAGS[(int)BaseSet.Flags.SKILLS] >> skill) % 2 == 1;
+        return ((p.FLAGS[(int)BaseSet.Flags.SKILLS] >> skill) & 1) == 1;
     }
 
     void CostCheck(int skill, int cost)    //충분한 경험치 있는지 체크
@@ -110,7 +110,12 @@ public class Master : Entity
         }
         if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 4)
         {
-            StartCoroutine(D_Start(Random.Range(8, 11)));
+            var exc = new System.Collections.Generic.List<int>();
+            for(int i = 0; i < 32; i++)
+            {
+                if (LearnCheck(i)) exc.Add(i);
+            }
+            StartCoroutine(D_Start(Random.Range(8, 11), exc));
         }
         else if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 3)
         {

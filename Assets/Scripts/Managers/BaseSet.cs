@@ -84,7 +84,7 @@ public static class BaseSet
             (Chars.ONL, Exprs.CRY, "귀찮아..."),
             (Chars.END, Exprs.NORM, "")
         },0),
-        (new List<(Chars, Exprs, string)>{   //13번 대화 : 배운 기술
+        (new List<(Chars, Exprs, string)>{   //13번 대화 : 배운 기술: 현재 더미 대사
             (Chars.MASTER, Exprs.NORM, "이미 배운 기술이군. 메뉴를 열면 사용 방법을 확인할 수 있네."),
             (Chars.END, Exprs.NORM, "")
         },0),

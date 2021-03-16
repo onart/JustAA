@@ -61,7 +61,7 @@ public class TalkManager : MonoBehaviour
         int itr = 0;
         arrow.text = "";
         int num = op.Number;
-        for (int i = 0; itr < num; i = op.down1(i), itr++)
+        for (int i = op.down1(-1); itr < num; i = op.down1(i), itr++)
         {
             if (i == selection) arrow.text += " >";
             else arrow.text += "\n";
@@ -85,7 +85,7 @@ public class TalkManager : MonoBehaviour
         else { v2 = Vector2.zero; }
         options.rectTransform.localScale = v2;
         arrow.rectTransform.localScale = v2;
-        selection = 0;
+        selection = op.down1(-1);
     }
 
     void SelectOff()

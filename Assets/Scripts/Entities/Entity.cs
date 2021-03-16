@@ -44,11 +44,12 @@ public abstract class Entity : MonoBehaviour
         else { Destroy(spc); }
     }
 
-    protected IEnumerator D_Start(int i)    //선택지 뒤에 대사가 이어붙은 경우 등에 대하여 이것을 사용한다. 이외의 경우는 tm.Dialog_Start
+    protected IEnumerator D_Start(int i, System.Collections.Generic.List<int> exc = null)    //선택지 뒤에 대사가 이어붙은 경우 등에 대하여 이것을 사용한다. 이외의 경우는 tm.Dialog_Start
     {
         yield return new WaitForSeconds(0.1f);
         cooltime = 0;
-        tm.Dialog_Start(i, this);
+        if (exc == null) tm.Dialog_Start(i, this);
+        else tm.Dialog_Start(i, this, exc);
     }
 
     public void Recieve(int i)

@@ -7,9 +7,11 @@ public class Stone : Attacker
     int StoneMask = 0;
     public Collider2D poly;
     public CircleCollider2D trig;
+    int p_layer;
 
     private void Start()
     {
+        p_layer = LayerMask.NameToLayer("Player");
         StoneMask += 1 << LayerMask.NameToLayer("Map");
         StoneMask += 1 << LayerMask.NameToLayer("Enemy");
         StoneMask += 1 << LayerMask.NameToLayer("Foreground");
@@ -20,7 +22,10 @@ public class Stone : Attacker
     {
         if (poly.IsTouchingLayers(StoneMask))
         {
-            if (poly.IsTouchingLayers(1 << LayerMask.NameToLayer("Player"))) Act();
+            if (col.collider.gameObject.layer == p_layer) {
+                if (!p) p = col.gameObject.GetComponent<Player>();
+                Act();
+            }
             if (poly.enabled)
             {
                 poly.enabled = false;

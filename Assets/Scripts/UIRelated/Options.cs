@@ -21,8 +21,9 @@ public class Options
         exc = new List<int>(idx);
     }
 
-    public int down1(int cur)
+    public int down1(int cur)   //무한루프 주의: exc가 전체집합과 동일한 경우
     {
+        if (Number == 0) return 0;
         while (exc.Contains(++cur)) ;
         if (cur >= number)
         {
@@ -34,8 +35,9 @@ public class Options
         }
     }
 
-    public int up1(int cur)
+    public int up1(int cur)   //무한루프 주의: exc가 전체집합과 동일한 경우
     {
+        if (Number == 0) return 0;
         while (exc.Contains(--cur)) ;
         if (cur < 0)
         {

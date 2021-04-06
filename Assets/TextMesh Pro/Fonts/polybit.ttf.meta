@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: d76021475ff306840ab618468d65bf72
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: polybit
+  fontNames:
+  - polybit
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ba6b45ef7fe74d44790e7ace09b2b285, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

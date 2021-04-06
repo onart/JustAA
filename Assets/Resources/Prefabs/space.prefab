@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9053720155957744687}
   - component: {fileID: 4827917061953887216}
   m_Layer: 0
-  m_Name: TMP SubMesh [numsil SDF Material + numsil_ascii Atlas]
+  m_Name: TMP SubMesh [numsil_jamo Material + numsil_ascii Atlas]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

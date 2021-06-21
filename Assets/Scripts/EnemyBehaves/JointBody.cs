@@ -7,7 +7,7 @@ public class JointBody : MonoBehaviour
     public Rigidbody2D rb2d;
     HingeJoint2D hj2d;
 
-    private void Start()
+    private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         hj2d = GetComponent<HingeJoint2D>();
@@ -15,7 +15,7 @@ public class JointBody : MonoBehaviour
 
     public void setTail(JointBody jb)
     {
-        hj2d.connectedBody = jb.rb2d;
+        if (hj2d) hj2d.connectedBody = jb.rb2d;
     }
 
     public void setAngleLim(float min, float max)

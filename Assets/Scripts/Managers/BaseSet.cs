@@ -253,23 +253,21 @@ public static class BaseSet
         (new List<(Chars, Exprs, string)>{   //40번 대화 : 테마1 시작
             (Chars.ONL, Exprs.CRY, "으..."),
             (Chars.EUN, Exprs.SMILE, "일어났구나!"),
-            (Chars.ONL, Exprs.CRY, "여기가.. 어디죠?"),
+            (Chars.ONL, Exprs.CRY, "여기는 어디죠?"),
             (Chars.EUN, Exprs.SMILE, "내 집이야. 저어기 상가 건물 위쪽이 터져서 여기까지 날아왔길래 조사해 보니 네가 있더라고."),
-            (Chars.ONL, Exprs.NORM, "후.. 아무튼 감사합니다."),
+            (Chars.ONL, Exprs.NORM, "후.. 감사합니다."),
             (Chars.EUN, Exprs.NORM, "그쪽에 살고 있었다면 당장 돌아갈 곳이 없을 텐데, 날 도와주기로 하면 여기를 마음대로 쓰게 해 줄게."),
             (Chars.ONL, Exprs.SMILE, "(오! 이렇게 잘 생긴 사람이랑 같이 사는 건가? 내 인생에도 드디어 봄날이..)"),
-            (Chars.EUN, Exprs.NORM, "유감이지만 내 애가 둘이야. 기러기 아빠라서 딱히 다른 사람이 올 일은 없을 거지만."),
+            (Chars.EUN, Exprs.NORM, "유감이지만 내 애가 둘이야. 기러기 아빠거든."),
             (Chars.ONL, Exprs.ANGRY, "..멋대로 생각을 읽지 말아줄래요?"),
             (Chars.ONL, Exprs.NORM, "아무튼, 도움이 필요한 게 있다고요?"),
-            (Chars.EUN, Exprs.NORM, "그래. 이 앞 바다동굴에 거대한 뱀이 살고 있는데, 날아온 건물 때문에 먹이 유입이 줄어든 모양이야."),
+            (Chars.EUN, Exprs.NORM, "그래. 이 앞 바다동굴에 거대한 뱀이 살고 있는데, 뭔가 막혔는지 먹이 유입이 줄어든 모양이야."),
             (Chars.EUN, Exprs.NORM, "그래서 가끔씩 슬금슬금 기어나오고 있어. 지금 겨울이라 사람이 거의 없어서 다행인데 날이 풀리기 전에 대책이 필요하거든."),
             (Chars.ONL, Exprs.SURPRISED, "설마 그걸 퇴치하라는?"),
-            (Chars.EUN, Exprs.NORM, "그건 안 돼. 국가에서 보호되고 있거든. 다행히 밖에 나와서 사람을 발견하는 일만 없으면 온순한 편이야."),
-            (Chars.ONL, Exprs.SURPRISED, "그럼 밥이라도 주러 가나요?"),
-            (Chars.EUN, Exprs.NORM, "결론부터 말하면.. 그게 떨어진 부분 근처가 얼어 있단다. 그걸 깨고 원인을 찾아 없애야 해."),
+            (Chars.EUN, Exprs.NORM, "그건 안 돼. 국가에서 보호되고 있거든."),
+            (Chars.ONL, Exprs.SURPRISED, "그럼 먹이 주러 가나요?"),
+            (Chars.EUN, Exprs.NORM, "그게 엄청나게 큰데 겨울잠도 안 자. 아마 어지간한 정도로는 어림도 없을 거야. 그보다는 어떤 식으로든 유입을 만드는 게 맞는 것 같다."),
             (Chars.ONL, Exprs.NORM, "그리 어렵게 들리지는 않네요."),
-            (Chars.EUN, Exprs.CRY, "그것이.. 얼음이 상당히 두꺼운데 깨는 동안에 뱀한테 발견되면 위험해. 뱀 주제에 겨울잠은 왜 안 자나.."),
-            (Chars.ONL, Exprs.NORM, "음.."),
             (Chars.EUN, Exprs.NORM, "자세한 설명은 현장에서 해 줄게. 오른쪽으로 쭉 가면 바다동굴이 나오거든. 천천히 쉬다 와. 나는 가서 기다리고 있을게."),
             (Chars.EUN, Exprs.NORM, "어차피 여기는 절벽 아래라서 나가려면 동굴을 지나가야 해."),
             (Chars.ONL, Exprs.NORM, "알았어요. 조금만 쉬었다가 갈게요."),
@@ -277,18 +275,18 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //41번 대화 : 컨테이너 밖에서
-            (Chars.ONL, Exprs.NORM, "가만 생각해 보면 이 일을 꾸민 범인은 관리실 그놈 같아.. 가만 안 두겠어."),
+            (Chars.ONL, Exprs.NORM, "가만 생각해 보면 이 일을 꾸민 범인은 관리실 걔 같아.. 돌아가면 가만 안 두겠어."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //42번 대화 : 동굴 첫 입장
             (Chars.EUN, Exprs.NORM, "왔구나. 준비는 된 거겠지?"),
             (Chars.ONL, Exprs.NORM, "네."),
             (Chars.EUN, Exprs.NORM, "이 동굴은 꽤 크지만 외길이야. 오른쪽으로 쭉 가다 보면 막힌 곳이 있는데, 거기에 뱀이 있지."),
-            (Chars.EUN, Exprs.NORM, "그리고 그쪽도 물가야. 얼어 있지만.. 그걸 깨면 문제가 해결될 거야."),
+            (Chars.EUN, Exprs.NORM, "그리고 그쪽도 물과 연결이 돼 있어. 지금은 아닌 모양이니 잘 보고 어떤 식이든 길을 만들면 되겠지."),
             (Chars.ONL, Exprs.NORM, "달리 조심할 건 뱀 말고는 없는 건가요?"),
             (Chars.EUN, Exprs.NORM, "아, 말이 나와서 기억났는데, 여기 사는 게들이 사람만큼 커."),
             (Chars.EUN, Exprs.NORM, "그리고 골짜기가 깊으니 발조심하고."),
-            (Chars.ONL, Exprs.CRY, "네."),
+            (Chars.ONL, Exprs.CRY, "하."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //43번 대화 : 동굴에서 은이한테 말 걸 때
@@ -313,27 +311,39 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //47번 대화 : 동굴 도움말4
             (Chars.CHARCOUNT, Exprs.NORM, "방금 동굴 3에서 올라가는 길에 가 보셨나요? 그곳엔 보스 도움말이 있답니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "참고로 '어려움'을 플레이 중이시라면, 거기에 체력 회복이 있으니 필요하면 가면 됩니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "참고로 '어려움'을 플레이 중이시라면, 거기에 체력 회복이 있으니 필요하다면 가면 됩니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //48번 대화 : 뱀굴 전맵
-            (Chars.ONL, Exprs.SURPRISED, "야.. 엄청 험하네 진짜."),
-            (Chars.ONL, Exprs.NORM, ".........이걸 뭐라 할까..."),
-            (Chars.ONL, Exprs.CRY, "슬슬 한기가 느껴지는데 곧 뱀을 만나겠구나.."),
+            (Chars.ONL, Exprs.SURPRISED, "야.. 엄청 험하네."),
+            (Chars.ONL, Exprs.NORM, "슬슬 한기가 느껴지는데 곧 얼어 있는 부분이 나오려나."),
             (Chars.ONL, Exprs.CRY, "..설마 동굴을 흔들 정도의 뱀이랑 싸우기라도 하겠어?"),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //49번 대화 : 보스1 도움말
-            (Chars.CHARCOUNT, Exprs.NORM, "이번 보스는 바다뱀이긴 한데, 싸워서 이길 수는 없습니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "대신 얼음벽을 깨부수고 탈출해야 합니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "바다뱀은 기본적으로 고정된 위치에 있으며, 4개의 행동을 순서대로 반복합니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "먼저 주인공을 보고 삼키려 듭니다. 경고 표시를 잘 보고 제때 점프하세요."),
-            (Chars.CHARCOUNT, Exprs.NORM, "그 다음에는 꼬리를 횡으로 휘두릅니다. 이때 낙석과 진동에도 주의하세요. 어려움은 게도 떨어집니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "모든 돌이 떨어지면 꼬리로 아래로 내리칩니다. 돌에 붙어 앉아서 방어에 성공하면 뱀이 돌을 찍고 당황합니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "3번째 패턴을 방어에 성공했다면 얼음벽 쪽을 향해 돌진합니다. 피하면 얼음벽 파괴를 앞당길 수 있습니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "그 외의 경우, 똬리를 틉니다. 이 공격은 피할 수 없으며, 좌/우/공격/점프 버튼을 연타하여 빠져나올 수 있습니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "똬리틀기에 당하면 지속적으로 피해를 입습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "이번 보스는 바다뱀이긴 하지만, 싸워서 이길 수는 없습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "대신 유리벽을 깨부수고 탈출해야 합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "바다뱀은 기본적으로 고정된 위치에 있으며, 다음 3개 중 하나의 행동을 취합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "1. 주인공을 보고 삼키려 듭니다. 경고 표시를 잘 보고 빠르게 이동하세요."),
+            (Chars.CHARCOUNT, Exprs.NORM, "2. 몸으로 바닥을 내리칩니다. 앞 맵에서 보신 경고용 광선 없이 돌이 떨어집니다. 게가 떨어질 수도 있으며 난이도에 따라 그 수가 다릅니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "3. 침을 뱉습니다. 피하기 어렵고 아프지만 방어가 가능합니다. 붕붕이를 배웠다면 쉽게 대처할 수 있습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "뱀에게 일정량의 피해를 주었다면 딜레이 없이 바닥에 붙어서 반대편으로 빠르게 이동합니다. 이때 피하지 못하면 원래 위치로 돌아갑니다. 게를 만나면 먹어서 체력을 회복합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "그러나 피하면 유리벽에 부딪쳐 한 겹이 깨집니다. 유리벽은 한 겹에 200타를 쳐야 부서지므로, 이를 잘 활용하는 것이 좋습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "난이도가 높을수록, 벽이 얇아질수록 공격이 빨라집니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "벽이 모두 깨지면 바로 그쪽으로 달리세요."),
             (Chars.CHARCOUNT, Exprs.NORM, ""),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //50번 대화 : 뱀굴 맵, 전투 전 대사 1
+            (Chars.ONL, Exprs.NORM, "저거 파이썬 로고도 아니고 뱀이 샛노랗네."),
+            (Chars.ONL, Exprs.NORM, "어, 저건 내가 아까 있던 건물 조각인가?"),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //51번 대화 : 뱀굴 맵, 전투 전 대사 2
+             (Chars.ONL, Exprs.SURPRISED, "아앗!!"),
+            (Chars.ONL, Exprs.CRY, "눈이 뒤집힌 것 같은데.."),
+            (Chars.ONL, Exprs.NORM, "눈물 흘릴 때가 아니야.. 저 위로는 못 돌아갈 것 같으니까 어떻게든 살아남으려면"),
+            (Chars.ONL, Exprs.NORM, "저걸 때려잡거나, 강화유리를 깨서 물로 들어가거나.."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };

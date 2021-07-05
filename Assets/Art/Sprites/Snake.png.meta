@@ -208,8 +208,8 @@ TextureImporter:
         y: 178
         width: 171
         height: 185
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.9766442, y: 0.7288251}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: SN_HEAD3
       rect:
         serializedVersion: 2
-        x: 52
+        x: 53
         y: 50
         width: 171
         height: 105
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.96925443, y: 0.5782268}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

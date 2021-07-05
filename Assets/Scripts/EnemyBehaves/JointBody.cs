@@ -9,6 +9,7 @@ public class JointBody : MonoBehaviour
 
     private void Awake()
     {
+        sr = GetComponent<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         hj2d = GetComponent<HingeJoint2D>();
     }
@@ -29,7 +30,6 @@ public class JointBody : MonoBehaviour
 
     public void setSp(int idx)
     {
-        if (idx < 0) return;
         try {
             sr.sprite = sprites[idx];
         }

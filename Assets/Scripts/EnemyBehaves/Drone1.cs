@@ -45,6 +45,7 @@ public class Drone1 : Enemy
 
     protected override void St()
     {
+        base.St();
         exp = 40;
         y0 = transform.position.y;
         maxHp = 10 + 10 * SysManager.difficulty;

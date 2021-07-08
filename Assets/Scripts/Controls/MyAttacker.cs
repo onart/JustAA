@@ -13,11 +13,13 @@ public class MyAttacker : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             if (p.localScale.x < 0) force.x = -force.x;
-            var en = col.gameObject.GetComponent<Enemy>();
+            Instantiate(BaseSet.hitEffect).transform.position = col.ClosestPoint(p.position + Vector3.up / 2);
+
+            var en = col.GetComponent<BaseHzd>();
             if (en) en.GetHit(delta, force * 100);
-            else col.gameObject.GetComponent<Boss>().GetHit(delta, force * 100);
+            else col.GetComponentInParent<BaseHzd>().GetHit(delta, force * 100);
         }
-        else if (col.gameObject.tag == "plat")
+        else if (col.CompareTag("plat"))
         {
             var plat = col.gameObject.GetComponent<Rigidbody2D>();
             if (p.localScale.x < 0) force.x = -force.x;

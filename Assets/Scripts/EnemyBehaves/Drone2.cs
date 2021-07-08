@@ -14,6 +14,7 @@
 
     protected override void St()
     {
+        base.St();
         exp = 40;
         maxHp = (int)(40 * (SysManager.difficulty / 2.0f));
         hp = maxHp;

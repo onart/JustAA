@@ -124,7 +124,7 @@ public class SysManager : MonoBehaviour
         {
             print("조작 발생!!");
             difficulty = 24 - cbr;
-            //Scenemover.MoveScene("GameOver"); 이유 없이 떠서 테스트에 방해되기도 하니 보류
+            //Scenemover.MoveScene("GameOver"); //이유 없이 떠서 테스트에 방해되기도 하니 보류
         }
     }
 

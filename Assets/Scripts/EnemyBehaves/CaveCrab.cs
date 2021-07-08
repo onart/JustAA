@@ -58,6 +58,7 @@ public class CaveCrab : Enemy
 
     protected override void St()
     {
+        base.St();
         ACTTIME = 0.5f / SysManager.difficulty;
         actTime = ACTTIME;
         exp = 50;

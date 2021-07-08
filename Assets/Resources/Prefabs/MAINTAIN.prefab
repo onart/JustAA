@@ -7759,7 +7759,6 @@ GameObject:
   - component: {fileID: 7371982952625232686}
   - component: {fileID: 7371982952625232685}
   - component: {fileID: 7371982952625232684}
-  - component: {fileID: 7371982952625232687}
   - component: {fileID: 7848336359377523946}
   m_Layer: 10
   m_Name: AtkTrigger
@@ -7897,23 +7896,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7371982952625232687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4696901876250704883, guid: 502e4b654e8c35140b891497df2f57ce,
-    type: 3}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7371982952625232681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6a700efa1829a5419d87d627804af05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitPrefab: {fileID: 3718013537599983620, guid: 5e126a47d516dcd47970fc6ef736dc13,
-    type: 3}
-  pt: {fileID: 7371982951891465811}
-  cl: {fileID: 7371982952625232685}
 --- !u!114 &7848336359377523946
 MonoBehaviour:
   m_ObjectHideFlags: 0

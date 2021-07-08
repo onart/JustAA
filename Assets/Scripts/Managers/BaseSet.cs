@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 //대화창 관련 : 캐릭터 리스트, 표정 리스트
 //대화 리스트
 //
 public static class BaseSet
 {
+    /*공통 사용 요소*/
+    public static GameObject dmgTxt = Resources.Load<GameObject>("Prefabs/dmgTxt");
+    public static GameObject hitEffect = Resources.Load<GameObject>("Prefabs/HIT");
     /*Chars: 대화상자에서 캐릭터를 지칭하는 데에 쓰임
      END는 대화의 끝을 나타낼 때 쓰이며
      CHARCOUNT는 캐릭터 수를 나타내므로 오른쪽 끝에 고정할 것
@@ -335,7 +339,7 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //50번 대화 : 뱀굴 맵, 전투 전 대사 1
-            (Chars.ONL, Exprs.NORM, "저거 파이썬 로고도 아니고 뱀이 샛노랗네."),
+            (Chars.ONL, Exprs.NORM, "저거 파이썬 로고도 아니고 뱀이 샛노랗네. 나도 그렇긴 하지만 어떻게 저렇게나 대충 생겼지?"),
             (Chars.ONL, Exprs.NORM, "어, 저건 내가 아까 있던 건물 조각인가?"),
             (Chars.END, Exprs.NORM, "")
         },0),

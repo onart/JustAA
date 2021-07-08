@@ -23,8 +23,6 @@ public class Player : MonoBehaviour
     Animator anim;
     SpriteRenderer sr;
 
-    private GameObject dmgTxt, dmgTxtInst;  //대미지 텍스트의 prefab이랑 인스턴스
-    private DmgOrHeal doH;
 
     public int[] FLAGS
     {
@@ -51,7 +49,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         expe = 0;
-        dmgTxt = Resources.Load<GameObject>("Prefabs/dmgTxt");
         attking = false;
         doorname = "";
         rb2d = GetComponent<Rigidbody2D>();
@@ -181,16 +178,15 @@ public class Player : MonoBehaviour
     {
         if (delta == 0) return;
         hp += delta;
-        dmgTxtInst = Instantiate(dmgTxt);
+        var dmgTxtInst = Instantiate(BaseSet.dmgTxt);
         dmgTxtInst.transform.position = transform.position;
-        doH = dmgTxtInst.GetComponent<DmgOrHeal>();
         if (delta < 0)
         {
-            doH.SetText((-delta).ToString(), Color.red);
+            dmgTxtInst.GetComponent<DmgOrHeal>().SetText((-delta).ToString(), Color.red);
         }
         else
         {
-            doH.SetText(delta.ToString(), Color.green);
+            dmgTxtInst.GetComponent<DmgOrHeal>().SetText(delta.ToString(), Color.green);
         }
 
         if (hp > MAXHP) hp = MAXHP;
@@ -242,10 +238,9 @@ public class Player : MonoBehaviour
         expe += delta;
         if (delta > 0)
         {
-            dmgTxtInst = Instantiate(dmgTxt);
+            var dmgTxtInst = Instantiate(BaseSet.dmgTxt);
             dmgTxtInst.transform.position = transform.position;
-            doH = dmgTxtInst.GetComponent<DmgOrHeal>();
-            doH.SetText("+" + delta.ToString(), Color.yellow, 2);
+            dmgTxtInst.GetComponent<DmgOrHeal>().SetText("+" + delta.ToString(), Color.yellow, 2);
         }
     }
 

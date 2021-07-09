@@ -16,11 +16,11 @@ public class CaveShaker : MonoBehaviour
 
     void Start()
     {
-        p = FindObjectOfType<Player>();
-        gauge = GetComponent<Image>().transform;
-        crabs = FindObjectsOfType<CaveCrab>();
         if (DataFiller.load_complete)
         {
+            p = FindObjectOfType<Player>();
+            gauge = GetComponent<Image>().transform;
+            crabs = FindObjectsOfType<CaveCrab>();
             dsc = .006f * SysManager.difficulty * coef;
             StartCoroutine(nameof(Act));
         }

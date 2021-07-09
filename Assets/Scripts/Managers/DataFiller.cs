@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠깐 이동하여 데이터를 불어넣음
 {
@@ -22,52 +23,46 @@ public class DataFiller : MonoBehaviour //데이터의 덩어리로, 씬에 잠�
 
     public void Fill()
     {
-        Invoke("Datafill", 0.02f);
+        StartCoroutine(Datafill());
     }
 
     public void NewFill()
     {
-        Invoke("Sys", 0.02f);
+        StartCoroutine(Sys());
     }
 
-    void Datafill()
+    IEnumerator Datafill()
     {
-        var p = FindObjectOfType<Player>();
-        if (p == null)  //혹시 렉걸려서 못찾으면 다 망가지므로 취한 조치
+        Player p = null;
+        while (!p)
         {
-            Invoke("Datafill", 0.02f);
+            p = FindObjectOfType<Player>();
+            yield return new WaitForEndOfFrame();
         }
-        else
+        SysManager.difficulty = diff;
+        SysManager.cbr = 24 - diff;
+        p.HP = hp;
+        p.MHP = mhp;
+        p.mhpCheck = 24 - mhp;
+        p.exp = exp;
+        load_complete = true;
+        Destroy(gameObject);
+        for (int i = 0; i < (int)BaseSet.Flags.FLAGCOUNT; i++)
         {
-            SysManager.difficulty = diff;
-            SysManager.cbr = 24 - diff;
-            p.HP = hp;
-            p.MHP = mhp;
-            p.mhpCheck = 24 - mhp;
-            p.exp = exp;
-            for (int i = 0; i < (int)BaseSet.Flags.FLAGCOUNT; i++)
-            {
-                p.FLAGS[i] = pFlag[i];      //이벤트 플래그 불러오기
-            }
-            load_complete = true;
-            Destroy(gameObject);
+            p.FLAGS[i] = pFlag[i];      //이벤트 플래그 불러오기
         }
     }
 
-    private void Sys()
+    IEnumerator Sys()
     {
-        var s = FindObjectOfType<SysManager>();
-        if (s == null)
+        while (!FindObjectOfType<SysManager>())
         {
-            Invoke("Sys", 0.02f);
+            yield return new WaitForEndOfFrame();
         }
-        else
-        {
-            SysManager.difficulty = diff;
-            SysManager.cbr = 24 - diff;
-            load_complete = true;
-            Destroy(gameObject);
-        }
+        SysManager.difficulty = diff;
+        SysManager.cbr = 24 - diff;
+        load_complete = true;
+        Destroy(gameObject);
     }
 
 }

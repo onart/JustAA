@@ -12,6 +12,8 @@ public class Python : Boss
     bool busy;
     public GameObject warnRay;
 
+    public Cinemachine.CinemachineImpulseSource imsr;
+
     protected override void St()
     {
         busy = false;
@@ -38,12 +40,12 @@ public class Python : Boss
         float dy = tf.position.y - joints[0].transform.position.y;
         relDeg = Mathf.Atan(dy / dx) * Mathf.Rad2Deg;
         if (dx > 0) joints[0].rb2d.MoveRotation(0);
-        else joints[0].rb2d.MoveRotation(Mathf.Clamp(relDeg, -60, 60));
+        else joints[0].rb2d.MoveRotation(Mathf.Clamp(relDeg, -90, 90));
         if (!busy)
         {
             joints[0].rb2d.MovePosition((head0 + joints[0].rb2d.position * 19) / 20);
             if (Input.GetKeyDown(KeyCode.A)) StartCoroutine(Snipe(dx, dy));
-            if (Input.GetKeyDown(KeyCode.C)) { hp = 0; print("over"); }
+            if (Input.GetKeyDown(KeyCode.C)) { StartCoroutine(Shake()); }
         }
     }
 
@@ -64,19 +66,23 @@ public class Python : Boss
         j0.rb2d.MovePosition(rh);
         j0.setSp(0);
         yield return new WaitForSeconds(1f);
-        /*
-        Vector2 h1 = j0.transform.position;
-        for (int i = 1; i <= 30; i++)
-        {
-            j0.rb2d.MovePosition((head0 * i + h1 * (30 - i)) / 30);
-            yield return new WaitForSeconds(0.01f);
-        }*/
         busy = false;
     }
 
     public IEnumerator Shake()
     {
-        yield return new WaitForSeconds(1.0f);
+        busy = true;
+        var tail = joints[14].rb2d;
+        tail.MoveRotation(80);
+        yield return new WaitForSeconds(0.3f);
+        tail.AddTorque(-10000);
+        yield return new WaitForSeconds(0.2f);
+        imsr.GenerateImpulse();
+        if (po.onground) { 
+            po.GetHit(0, 2);
+            prb2d.AddForce(Vector2.up * 200);
+        }
+        busy = false;
     }
 
     public IEnumerator Spit()
@@ -95,6 +101,7 @@ public class Python : Boss
         {
             joints[i].rb2d.constraints = RigidbodyConstraints2D.None;
         }
+        joints[12].rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     protected override IEnumerator OnZero()

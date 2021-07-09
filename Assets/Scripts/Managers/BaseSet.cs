@@ -331,8 +331,8 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "1. 주인공을 보고 삼키려 듭니다. 경고 표시를 잘 보고 빠르게 이동하세요."),
             (Chars.CHARCOUNT, Exprs.NORM, "2. 몸으로 바닥을 내리칩니다. 앞 맵에서 보신 경고용 광선 없이 돌이 떨어집니다. 게가 떨어질 수도 있으며 난이도에 따라 그 수가 다릅니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "3. 침을 뱉습니다. 피하기 어렵고 아프지만 방어가 가능합니다. 붕붕이를 배웠다면 쉽게 대처할 수 있습니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "뱀에게 일정량의 피해를 주었다면 딜레이 없이 바닥에 붙어서 반대편으로 빠르게 이동합니다. 이때 피하지 못하면 원래 위치로 돌아갑니다. 게를 만나면 먹어서 체력을 회복합니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "그러나 피하면 유리벽에 부딪쳐 한 겹이 깨집니다. 유리벽은 한 겹에 200타를 쳐야 부서지므로, 이를 잘 활용하는 것이 좋습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "뱀에게 200의 피해를 주었다면 딜레이 없이 몸이 붉어진 채로 1번 패턴을 사용합니다. 맞으면 난이도에 관계 없이 게임 오버입니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "이때 돌진 위치는 고정이며, 피하면 유리벽에 부딪쳐 한 겹이 깨집니다. 유리벽은 한 겹에 100타를 쳐야 부서지므로, 이를 잘 활용하는 것이 좋습니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "난이도가 높을수록, 벽이 얇아질수록 공격이 빨라집니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "벽이 모두 깨지면 바로 그쪽으로 달리세요."),
             (Chars.CHARCOUNT, Exprs.NORM, ""),
@@ -344,9 +344,9 @@ public static class BaseSet
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //51번 대화 : 뱀굴 맵, 전투 전 대사 2
-             (Chars.ONL, Exprs.SURPRISED, "아앗!!"),
+             (Chars.ONL, Exprs.SURPRISED, "오!!"),
             (Chars.ONL, Exprs.CRY, "눈이 뒤집힌 것 같은데.."),
-            (Chars.ONL, Exprs.NORM, "눈물 흘릴 때가 아니야.. 저 위로는 못 돌아갈 것 같으니까 어떻게든 살아남으려면"),
+            (Chars.ONL, Exprs.NORM, "눈물 흘릴 때가 아니야.. 저 위로는 못 돌아갈 것 같으니까, 살아남으려면"),
             (Chars.ONL, Exprs.NORM, "저걸 때려잡거나, 강화유리를 깨서 물로 들어가거나.."),
             (Chars.END, Exprs.NORM, "")
         },0),
@@ -368,7 +368,7 @@ public static class BaseSet
         STAGE1,                     //3번. 0.5테마와 관련된 플래그     0: 처음 / 1: 노을과 연락함 / 2: 12층에서 계단으로 내려가봄. / 3: 6-1구역 입장해봄 / 4: 6-2구역 입장해봄 / 5: 6-5구역 입장해봄 / 6: 0.5스테이지 클리어
         TUTORIAL,                   //4번. 튜토리얼인데 별 건 없다.    0: 처음. Esc를 눌러 조작설정을 보라고 안내하자. 1: 이미 봤다. 안내하지 말자.
         KEYS,                       //5번. 아이템을 말한다.            2^0자리: 
-        STAGE2,                     //6번. 1테마와 관련된 플래그       0: 처음 / 1: 첫 대화를 종료함 / 2: 집 밖으로 나가 봄 / 3: 동굴 입장 / 4: 뱀 전 맵 입장
+        STAGE2,                     //6번. 1테마와 관련된 플래그       0: 처음 / 1: 첫 대화를 종료함 / 2: 집 밖으로 나가 봄 / 3: 동굴 입장 / 4: 뱀 전 맵 입장 / 5: 뱀전 클리어
         STAGE3,                     //7번. 2테마와 관련된 플래그       0: 처음
         STAGE4,                     //8번. 3테마와 관련된 플래그       0: 처음
         STAGE5,                     //9번. 4테마와 관련된 플래그       0: 처음

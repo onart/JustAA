@@ -11,6 +11,7 @@ public class Python : Boss
     int rayMask;
     bool busy;
     public GameObject warnRay;
+    public GameObject crab, stone;
 
     public Cinemachine.CinemachineImpulseSource imsr;
 
@@ -49,7 +50,7 @@ public class Python : Boss
         }
     }
 
-    public IEnumerator Snipe(float dx, float dy)
+    IEnumerator Snipe(float dx, float dy)
     {
         dy += 0.5f;
         busy = true;
@@ -64,8 +65,10 @@ public class Python : Boss
         ray.transform.localScale = new Vector2(-5, 10);
         yield return new WaitForSeconds(1.0f / SysManager.difficulty);
         j0.rb2d.MovePosition(rh);
+        at.enabled = true;
         j0.setSp(0);
         yield return new WaitForSeconds(1f);
+        at.enabled = false;
         busy = false;
     }
 
@@ -78,14 +81,37 @@ public class Python : Boss
         tail.AddTorque(-10000);
         yield return new WaitForSeconds(0.2f);
         imsr.GenerateImpulse();
-        if (po.onground) { 
-            po.GetHit(0, 2);
+        if (Player.inst.onground) {
+            Player.inst.GetHit(0, 2);
             prb2d.AddForce(Vector2.up * 200);
         }
+        FallDown();
         busy = false;
     }
 
-    public IEnumerator Spit()
+    void FallDown()
+    {
+        for(int i = 0; i < SysManager.difficulty * 5; i++)
+        {
+            var x = Random.Range(-5.5f, 3.5f);
+            var v0 = Random.Range(-SysManager.difficulty * 2, 0f);
+            var st = Instantiate(stone);
+            st.transform.localScale = Vector2.one * Random.Range(0.15f, 0.3f);
+            st.transform.position = new Vector2(x, -2.5f);
+            st.GetComponent<Rigidbody2D>().velocity = new Vector2(0, v0);
+        }
+        for (int i = 0; i < SysManager.difficulty; i++)
+        {
+            if (Random.Range(0, 10) >= SysManager.difficulty) continue;
+            var x = Random.Range(-5.5f, -1.5f);
+            var v0 = Random.Range(-SysManager.difficulty, 0f);
+            var st = Instantiate(crab);
+            st.transform.position = new Vector2(x, -2.5f);
+            st.GetComponent<Rigidbody2D>().velocity = new Vector2(0, v0);
+        }
+    }
+
+    IEnumerator Spit()
     {
         yield return new WaitForSeconds(1.0f);
     }

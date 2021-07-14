@@ -23,7 +23,6 @@ public class Stone : Attacker
         if (poly.IsTouchingLayers(StoneMask))
         {
             if (col.collider.gameObject.layer == p_layer) {
-                if (!p) p = col.gameObject.GetComponent<Player>();
                 Act();
             }
             if (poly.enabled)

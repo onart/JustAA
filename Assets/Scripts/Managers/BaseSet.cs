@@ -320,7 +320,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //48번 대화 : 뱀굴 전맵
             (Chars.ONL, Exprs.SURPRISED, "야.. 엄청 험하네."),
-            (Chars.ONL, Exprs.NORM, "슬슬 한기가 느껴지는데 곧 얼어 있는 부분이 나오려나."),
+            (Chars.ONL, Exprs.NORM, "여기 오니까 거짓말 같이 잠잠해졌군."),
             (Chars.ONL, Exprs.CRY, "..설마 동굴을 흔들 정도의 뱀이랑 싸우기라도 하겠어?"),
             (Chars.END, Exprs.NORM, "")
         },0),

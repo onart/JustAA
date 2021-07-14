@@ -11,12 +11,12 @@ public class Attacker : HPChanger
 
     protected override void Act()
     {
-        if (p == null) return;
+        if (Player.inst == null) return;
         else
         {
-            p.GetHit(delta, (int)down);
+            Player.inst.GetHit(delta, (int)down);
             force.x *= face;
-            p.rb2d.AddForce(force);
+            Player.inst.rb2d.AddForce(force);
         }
     }
 }

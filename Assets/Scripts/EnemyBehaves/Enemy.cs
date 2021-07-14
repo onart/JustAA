@@ -23,8 +23,11 @@ public abstract class Enemy : BaseHzd
     // Start is called before the first frame update
     protected override void St()
     {
-        while (!DataFiller.load_complete) ;
-        fh = GetComponentInChildren<FoeHp>();
+        if (!DataFiller.load_complete) {
+            Invoke(nameof(St), 0.03f);
+            return;
+        };
+        if (!fh) fh = GetComponentInChildren<FoeHp>();
         alpha = 1;
     }
 
@@ -96,8 +99,8 @@ public abstract class Enemy : BaseHzd
 
     protected override IEnumerator OnZero()
     {
-        //GetComponent<Collider2D>().enabled = false;
-        po.GainExp(exp);
+        GetComponent<Collider2D>().enabled = false;
+        Player.inst.GainExp(exp);
         at.enabled = false;
         st = state.SLEEP;
         Destroy(at);

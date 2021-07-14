@@ -6,12 +6,12 @@ public class Portals : HPChanger
 
     protected override void Act()
     {
-        p.transform.position = targetPos.position;
-        var g = p.gameObject.GetComponent<Rigidbody2D>();
+        Player.inst.transform.position = targetPos.position;
+        var g = Player.inst.gameObject.GetComponent<Rigidbody2D>();
         g.velocity = Vector2.zero;
         var dam = delta << SysManager.difficulty;
-        p.HpChange(-dam);
-        p.reserveVx(0);
-        p.reserveVy(0);
+        Player.inst.HpChange(-dam);
+        Player.inst.reserveVx(0);
+        Player.inst.reserveVy(0);
     }
 }

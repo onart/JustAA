@@ -13,7 +13,7 @@ public class Six1Ev : MapEv
     {
         if (!DataFiller.load_complete)
         {
-            Invoke("Re", 0.1f);
+            Invoke(nameof(Re), 0.1f);
         }
         else if (p.FLAGS[(int)flag] < flag_to)
         {

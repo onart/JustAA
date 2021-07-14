@@ -2,6 +2,8 @@
 
 public class Player : MonoBehaviour
 {
+    public static Player inst;
+
     const float speed = 4;
     const float downlim = -10;
 
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        inst = this;
         expe = 0;
         attking = false;
         doorname = "";

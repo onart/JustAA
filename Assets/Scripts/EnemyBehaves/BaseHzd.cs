@@ -5,11 +5,10 @@ using UnityEngine;
 public abstract class BaseHzd : MonoBehaviour
 {
     static protected Transform p;       //플레이어 위치
-    protected Rigidbody2D prb2d;        //플레이어의 2d강체
+    static protected Rigidbody2D prb2d;        //플레이어의 2d강체
 
     public Attacker at;
 
-    protected Player po;
     protected int maxHp, hp, exp;       //적의 체력. 적 역시 언젠가는 회복하지 않을까?라는 생각에 maxHp도 추가, exp는 쓰러뜨리면 주는 경험치(재화)
     protected Animator anim;
     protected SpriteRenderer sr;
@@ -21,9 +20,8 @@ public abstract class BaseHzd : MonoBehaviour
     {
         if (p == null)
         {
-            po = FindObjectOfType<Player>();
-            p = po.transform;
-            prb2d = po.GetComponent<Rigidbody2D>();
+            p = Player.inst.transform;
+            prb2d = Player.inst.rb2d;
         }
         rb2d = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();

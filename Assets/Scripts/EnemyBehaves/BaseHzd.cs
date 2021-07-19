@@ -14,6 +14,7 @@ public abstract class BaseHzd : MonoBehaviour
     protected SpriteRenderer sr;
     protected Rigidbody2D rb2d;         //자신의 2d강체
     protected Transform dmgPos;
+    protected float dx, dy, relDeg;
 
     // Start is called before the first frame update
     void Start()
@@ -89,6 +90,14 @@ public abstract class BaseHzd : MonoBehaviour
             hp = 0;
             StartCoroutine(OnZero());
         }
+    }
+
+    protected void Seek(Transform t = null)
+    {
+        if (t == null) t = transform;
+        dx = p.position.x - t.position.x;
+        dy = p.position.y - t.position.y + 0.5f;
+        relDeg = Mathf.Atan(dy / dx) * Mathf.Rad2Deg;
     }
 
     public abstract void GetHit(int delta, Vector2 force);

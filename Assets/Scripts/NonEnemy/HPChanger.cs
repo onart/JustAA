@@ -10,8 +10,8 @@ public abstract class HPChanger : MonoBehaviour  //체력을 회복시키거나 
     {
         if (enabled && col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            if (Time.time - lastH > cooldown) {
-                lastH = Time.time;
+            if (Time.time > lastH) {
+                lastH = Time.time + cooldown;
                 Act();
             }
         }
@@ -21,9 +21,9 @@ public abstract class HPChanger : MonoBehaviour  //체력을 회복시키거나 
     {
         if (enabled && col.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            if (Time.time - lastH > cooldown)
+            if (Time.time > lastH)
             {
-                lastH = Time.time;
+                lastH = Time.time + cooldown;
                 Act();
             }
         }

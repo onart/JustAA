@@ -17,7 +17,10 @@ public class MyAttacker : MonoBehaviour
 
             var en = col.GetComponent<BaseHzd>();
             if (en) en.GetHit(delta, force * 100);
-            else col.GetComponentInParent<BaseHzd>().GetHit(delta, force * 100);
+            else {
+                en = col.GetComponentInParent<BaseHzd>();
+                if (en) en.GetHit(delta, force * 100);
+            }
         }
         else if (col.CompareTag("plat"))
         {

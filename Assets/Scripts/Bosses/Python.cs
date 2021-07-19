@@ -5,22 +5,23 @@ public class Python : Boss
 {
     JointBody[] joints;
     public float hi, lo; // 공통 각도제한(max, min 순서)
-    Transform tf;
-    Vector2 head0;
-    float relDeg;
+
+    float delay;
+    Vector2 head0, dest;
     int rayMask;
     bool busy;
     public GameObject warnRay;
-    public GameObject crab, stone;
+    public GameObject crab, stone, gliq;
 
     public Cinemachine.CinemachineImpulseSource imsr;
 
     protected override void St()
     {
         busy = false;
-
+        delay = 9 / SysManager.difficulty;
         maxHp = 100000000;
         hp = maxHp;
+        at.enabled = false;
         exp = 0;
         base.St();
         rayMask = 1 << LayerMask.NameToLayer("Map");
@@ -31,31 +32,64 @@ public class Python : Boss
             joints[i].setTail(joints[i + 1]);
             joints[i].setAngleLim(lo, hi);
         }
-        tf = FindObjectOfType<Player>().transform;
         head0 = joints[0].transform.position;
+        dest = head0;
+        Invoke(nameof(Act), delay);
     }
 
     private void Update()
     {
-        float dx = tf.position.x - joints[0].transform.position.x;
-        float dy = tf.position.y - joints[0].transform.position.y;
-        relDeg = Mathf.Atan(dy / dx) * Mathf.Rad2Deg;
-        if (dx > 0) joints[0].rb2d.MoveRotation(0);
-        else joints[0].rb2d.MoveRotation(Mathf.Clamp(relDeg, -90, 90));
+        if (dest.magnitude != 0)
+        {
+            joints[0].rb2d.MovePosition((dest + joints[0].rb2d.position * 19) / 20);
+        }
         if (!busy)
         {
-            joints[0].rb2d.MovePosition((head0 + joints[0].rb2d.position * 19) / 20);
+            Seek(joints[0].transform);
+            if (dx > 0) joints[0].rb2d.MoveRotation(0);
+            else joints[0].rb2d.MoveRotation(Mathf.Clamp(relDeg, -70, 70));
+            /*
             if (Input.GetKeyDown(KeyCode.A)) StartCoroutine(Snipe(dx, dy));
             if (Input.GetKeyDown(KeyCode.C)) { StartCoroutine(Shake()); }
+            if (Input.GetKeyDown(KeyCode.B)) { StartCoroutine(Spit()); }*/
         }
     }
 
-    IEnumerator Snipe(float dx, float dy)
+    void Act()
     {
-        dy += 0.5f;
+        if(!busy)
+        {
+            if (relDeg > 0 && relDeg < 60)
+            {
+                switch (Random.Range(0, 10))
+                {
+                    case 0:
+                    case 1:
+                        StartCoroutine(Shake());
+                        break;
+                    case 2:
+                    case 3:
+                        StartCoroutine(Spit());
+                        break;
+                    default:
+                        StartCoroutine(Snipe());
+                        break;
+                }
+            }
+            else
+            {
+                StartCoroutine(Shake());
+            }
+        }
+        Invoke(nameof(Act), delay);
+    }
+
+    IEnumerator Snipe()
+    {        
+        dest = Vector2.zero;
         busy = true;
         var j0 = joints[0];
-        j0.rb2d.constraints = RigidbodyConstraints2D.None;
+        j0.rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         var rh = Physics2D.Raycast(joints[0].transform.position, new Vector2(dx, dy), float.PositiveInfinity, rayMask).point;
         j0.setSp(1);
         var ray = Instantiate(warnRay);
@@ -63,13 +97,16 @@ public class Python : Boss
         ray.transform.localPosition = j0.transform.position;
         ray.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Atan(dy / dx) * Mathf.Rad2Deg);
         ray.transform.localScale = new Vector2(-5, 10);
-        yield return new WaitForSeconds(1.0f / SysManager.difficulty);
-        j0.rb2d.MovePosition(rh);
+        yield return new WaitForSeconds(0.5f / SysManager.difficulty);
+        //j0.rb2d.MovePosition(rh);
+        j0.rb2d.velocity = (rh - j0.rb2d.position) * 50;
         at.enabled = true;
         j0.setSp(0);
         yield return new WaitForSeconds(1f);
         at.enabled = false;
         busy = false;
+        j0.rb2d.constraints = RigidbodyConstraints2D.None;
+        dest = head0;
     }
 
     public IEnumerator Shake()
@@ -82,7 +119,7 @@ public class Python : Boss
         yield return new WaitForSeconds(0.2f);
         imsr.GenerateImpulse();
         if (Player.inst.onground) {
-            Player.inst.GetHit(0, 2);
+            Player.inst.GetHit(9 * SysManager.difficulty, 2);
             prb2d.AddForce(Vector2.up * 200);
         }
         FallDown();
@@ -113,7 +150,23 @@ public class Python : Boss
 
     IEnumerator Spit()
     {
-        yield return new WaitForSeconds(1.0f);
+        busy = true;
+        dest = new Vector2(0.6f, -5);
+        var j0 = joints[0];
+        j0.rb2d.MoveRotation(-30);        
+        j0.setSp(1);
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < SysManager.difficulty * 3; i++)
+        {
+            var g = Instantiate(gliq);
+            g.transform.position = j0.transform.position;
+            g.transform.localScale = Vector2.one * Random.Range(0.5f, 1);
+            g.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-8, -1), Random.Range(1.5f, 4.0f));
+        }
+        j0.setSp(0);
+        j0.rb2d.constraints = RigidbodyConstraints2D.None;
+        busy = false;
+        dest = head0;
     }
 
     public IEnumerator still(float time)
@@ -132,7 +185,35 @@ public class Python : Boss
 
     protected override IEnumerator OnZero()
     {
-        HPChange(0b100000000);
-        yield return 0;
+        HPChange(0x1000000);
+        yield break;
+    }
+
+    protected override void HPChange(int delta)
+    {
+        base.HPChange(delta);
+        switch ((maxHp - hp) / 200)
+        {
+            case 1:
+                if (delay == 9 / SysManager.difficulty) {
+                    delay = 6 / SysManager.difficulty;
+                    //StartCoroutine(Snipe()); 고정각/즉발로 추가
+                }
+                break;
+            case 2:
+                if (delay == 6 / SysManager.difficulty) {
+                    delay = 4 / SysManager.difficulty;
+                    //StartCoroutine(Snipe()); 고정각/즉발로 추가
+                }
+                break;
+            case 3:
+                if (delay == 4 / SysManager.difficulty) {
+                    delay = 3 / SysManager.difficulty;
+                    //StartCoroutine(Snipe()); 고정각/즉발로 추가
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

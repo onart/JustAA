@@ -19,7 +19,8 @@ public class PyHead : MonoBehaviour
     {
         if (Time.time > tp && col.collider.gameObject.layer == lay)
         {
-            tp = Time.time + 3;
+            tp = Time.time + 1;
+            bdy.at.enabled = false;
             StartCoroutine(bdy.still(0.5f));
         }
     }

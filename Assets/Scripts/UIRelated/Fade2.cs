@@ -30,6 +30,7 @@ public class Fade2 : MonoBehaviour      //문을 열면 페이드 아웃->이동
             yield return new WaitForSecondsRealtime(0.025f);
         }
         im.color = Color.black;
+        System.GC.Collect();
         dr.DoorOpen();
         FindObjectOfType<Player>().onground = false;
         for (; br > 0; br -= 0.05f)

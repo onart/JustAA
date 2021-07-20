@@ -3330,7 +3330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delta: 40
-  cooldown: 2
+  cooldown: 1.2
   force: {x: 0, y: 0}
   face: 1
   down: 2
@@ -5326,7 +5326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bac84c00a4b8a24db726e098e86bfe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delta: 10
+  delta: 8
   cooldown: 0
   targetPos: {fileID: 1670840343}
 --- !u!61 &1670840342

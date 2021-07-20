@@ -15,6 +15,7 @@ public class Beamz : MonoBehaviour
         mask += (1 << LayerMask.NameToLayer("Map"));
         mask += (1 << LayerMask.NameToLayer("Player"));
         mask += (1 << LayerMask.NameToLayer("Foreground"));
+        mask += (1 << LayerMask.NameToLayer("Enemy"));
     }
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class Beamz : MonoBehaviour
     void RenderRay()
     {
         destination = Physics2D.Raycast(transform.position, dir, float.PositiveInfinity, mask);
-        laser.transform.localScale = new Vector2(destination.distance / 3, laser.transform.localScale.y);
+        laser.transform.localScale = new Vector2(destination.distance / 2.8f, laser.transform.localScale.y);
     }
 
     void angle2vector()

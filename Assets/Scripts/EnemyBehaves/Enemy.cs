@@ -103,7 +103,6 @@ public abstract class Enemy : BaseHzd
         Player.inst.GainExp(exp);
         at.enabled = false;
         st = state.SLEEP;
-        Destroy(at);
         while (alpha > 0)
         {
             alpha -= 0.02f;

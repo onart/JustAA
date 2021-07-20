@@ -34,7 +34,8 @@ public class Python : Boss
         }
         head0 = joints[0].transform.position;
         dest = head0;
-        Invoke(nameof(Act), delay);
+        sr = joints[0].GetComponent<SpriteRenderer>();
+        //Invoke(nameof(Act), delay);
     }
 
     private void Update()
@@ -48,10 +49,7 @@ public class Python : Boss
             Seek(joints[0].transform);
             if (dx > 0) joints[0].rb2d.MoveRotation(0);
             else joints[0].rb2d.MoveRotation(Mathf.Clamp(relDeg, -70, 70));
-            /*
-            if (Input.GetKeyDown(KeyCode.A)) StartCoroutine(Snipe(dx, dy));
-            if (Input.GetKeyDown(KeyCode.C)) { StartCoroutine(Shake()); }
-            if (Input.GetKeyDown(KeyCode.B)) { StartCoroutine(Spit()); }*/
+            if (Input.GetKeyDown(KeyCode.A)) StartCoroutine(Snipe());
         }
     }
 
@@ -84,23 +82,47 @@ public class Python : Boss
         Invoke(nameof(Act), delay);
     }
 
-    IEnumerator Snipe()
-    {        
-        dest = Vector2.zero;
-        busy = true;
+    void semiSnipe() {
         var j0 = joints[0];
-        j0.rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         var rh = Physics2D.Raycast(joints[0].transform.position, new Vector2(dx, dy), float.PositiveInfinity, rayMask).point;
+        j0.rb2d.MovePosition((j0.rb2d.position * 6 + rh) / 7);
+    }
+
+    IEnumerator Snipe(bool fix = false)
+    {
+        dest = Vector2.zero;
+        var j0 = joints[0];
+        Vector2 rh;
+        busy = true;
+        if (!fix && SysManager.difficulty == 3)
+        {
+            semiSnipe();
+            yield return new WaitForSeconds(0.12f);
+            j0.rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
+            j0.setSp(1);
+            yield return new WaitForSeconds(0.2f);
+            Seek(j0.transform);
+        }
         j0.setSp(1);
-        var ray = Instantiate(warnRay);
-        ray.GetComponent<WarnRay>().t = 1.0f / SysManager.difficulty;
-        ray.transform.localPosition = j0.transform.position;
-        ray.transform.localRotation = Quaternion.Euler(0, 0, Mathf.Atan(dy / dx) * Mathf.Rad2Deg);
-        ray.transform.localScale = new Vector2(-5, 10);
-        yield return new WaitForSeconds(0.5f / SysManager.difficulty);
+        if (!fix)
+        {
+            j0.rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+            rh = Physics2D.Raycast(joints[0].transform.position, new Vector2(dx, dy), float.PositiveInfinity, rayMask).point;
+            var ray = Instantiate(warnRay);
+            ray.GetComponent<WarnRay>().t = 1.0f / SysManager.difficulty;
+            ray.transform.localPosition = j0.transform.position;
+            ray.transform.localRotation = Quaternion.Euler(0, 0, relDeg);
+            ray.transform.localScale = new Vector2(-5, 10);
+            yield return new WaitForSeconds(0.5f / SysManager.difficulty);
+        }
+        else
+        {
+            rh = Physics2D.Raycast(joints[0].transform.position, new Vector2(-14, -9), float.PositiveInfinity, rayMask).point;
+            yield return new WaitForSeconds(0.2f / SysManager.difficulty);
+        }
         //j0.rb2d.MovePosition(rh);
-        j0.rb2d.velocity = (rh - j0.rb2d.position) * 50;
         at.enabled = true;
+        j0.rb2d.velocity = (rh - j0.rb2d.position) * 50;
         j0.setSp(0);
         yield return new WaitForSeconds(1f);
         at.enabled = false;
@@ -118,6 +140,10 @@ public class Python : Boss
         tail.AddTorque(-10000);
         yield return new WaitForSeconds(0.2f);
         imsr.GenerateImpulse();
+        foreach (var cr in FindObjectsOfType<CaveCrab>())
+        {
+            if (cr) cr.GetHit(10, new Vector2(0, 10000));
+        }
         if (Player.inst.onground) {
             Player.inst.GetHit(9 * SysManager.difficulty, 2);
             prb2d.AddForce(Vector2.up * 200);
@@ -139,13 +165,16 @@ public class Python : Boss
         }
         for (int i = 0; i < SysManager.difficulty; i++)
         {
-            if (Random.Range(0, 10) >= SysManager.difficulty) continue;
+            if (Random.Range(0, 20) >= SysManager.difficulty) continue;
             var x = Random.Range(-5.5f, -1.5f);
             var v0 = Random.Range(-SysManager.difficulty, 0f);
             var st = Instantiate(crab);
             st.transform.position = new Vector2(x, -2.5f);
             st.GetComponent<Rigidbody2D>().velocity = new Vector2(0, v0);
         }
+        var cr = Instantiate(crab);
+        cr.transform.position = new Vector2(Random.Range(-5.5f, -1.5f), -2.5f);
+        cr.GetComponent<Rigidbody2D>().velocity = new Vector2(0, Random.Range(-SysManager.difficulty, 0f));
     }
 
     IEnumerator Spit()
@@ -192,24 +221,25 @@ public class Python : Boss
     protected override void HPChange(int delta)
     {
         base.HPChange(delta);
+        sr.color = Color.Lerp(Color.white, Color.red, (maxHp - hp) % 200 / 200f);
         switch ((maxHp - hp) / 200)
         {
             case 1:
                 if (delay == 9 / SysManager.difficulty) {
                     delay = 6 / SysManager.difficulty;
-                    //StartCoroutine(Snipe()); 고정각/즉발로 추가
+                    StartCoroutine(Snipe(true));
                 }
                 break;
             case 2:
                 if (delay == 6 / SysManager.difficulty) {
                     delay = 4 / SysManager.difficulty;
-                    //StartCoroutine(Snipe()); 고정각/즉발로 추가
+                    StartCoroutine(Snipe(true));
                 }
                 break;
             case 3:
                 if (delay == 4 / SysManager.difficulty) {
                     delay = 3 / SysManager.difficulty;
-                    //StartCoroutine(Snipe()); 고정각/즉발로 추가
+                    StartCoroutine(Snipe(true));
                 }
                 break;
             default:

@@ -330,13 +330,12 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "바다뱀은 기본적으로 고정된 위치에 있으며, 다음 3개 중 하나의 행동을 취합니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "1. 머리가 빠르게 주인공을 보고 돌진합니다. 경고 표시를 잘 보고 빠르게 이동하세요."),
             (Chars.CHARCOUNT, Exprs.NORM, "2. 꼬리로 바닥을 내리칩니다. 바닥에 붙어 있다면 피해를 입으며 떠오르고, 앞 맵에서 보신 경고용 광선 없이 돌이 떨어집니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "게가 떨어질 수도 있으며 난이도에 따라 그 수가 다릅니다. 안쪽에 파고든 경우 반드시 이것을 사용합니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "3. 침을 뱉습니다. 방어가 가능합니다. 붕붕이를 배웠다면 쉽게 대처할 수 있습니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "뱀에게 200의 피해를 주었다면 딜레이 없이 몸이 붉어진 채로 1번 패턴을 사용합니다. 맞으면 난이도에 관계 없이 게임 오버입니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "이때 돌진 위치는 고정이며, 피하면 유리벽에 부딪쳐 한 겹이 깨집니다. 유리벽은 한 겹에 100타를 쳐야 부서지므로, 이를 잘 활용하는 것이 좋습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "게가 떨어질 수도 있으며 난이도에 따라 더 잘 나오지만, 반드시 한 마리는 등장합니다. 주인공이 안쪽에 파고든 경우 반드시 이것을 사용합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "3. 더러운 액체를 뱉습니다. 쳐내는 식으로 방어가 가능하므로 붕붕이를 배웠다면 쉽게 대처할 수 있습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "뱀에게 200의 피해를 주었다면 훨씬 짧은 딜레이로 1번 패턴을 사용합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "이때 돌진 위치는 고정이며, 유리벽에 부딪쳐 한 겹이 깨집니다. 유리벽은 한 겹에 200타를 쳐야 부서지므로, 이를 잘 활용하는 것이 좋습니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "난이도가 높을수록, 벽이 얇아질수록 공격이 빨라집니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "벽이 모두 깨지면 바로 그쪽으로 달리세요."),
-            (Chars.CHARCOUNT, Exprs.NORM, ""),
             (Chars.END, Exprs.NORM, "")
         },0),
         (new List<(Chars, Exprs, string)>{   //50번 대화 : 뱀굴 맵, 전투 전 대사 1
@@ -396,7 +395,7 @@ public static class BaseSet
         { "Cave3","<color=white>바다동굴3</color>" },
         { "Cave4","<color=white>바다동굴4</color>" },
         { "Cave5","<color=white>바다동굴5</color>" },
-        { "Cave6","<color=white>뱀방</color>" },
+        { "Cave6","<color=white>바다동굴6</color>" },
         { "CutScene","" },
         { "Nowhere","테스트 방" },
     };

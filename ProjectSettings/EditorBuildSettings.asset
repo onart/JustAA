@@ -15,66 +15,66 @@ EditorBuildSettings:
     path: Assets/Scenes/GameOver.unity
     guid: 4a5b70c6c71adac44b2415ecdf59a59e
   - enabled: 1
-    path: Assets/Scenes/12Corridor.unity
+    path: Assets/Scenes/Theme1/12Corridor.unity
     guid: 1494268892d75ce4ca6363c6044e5140
   - enabled: 1
-    path: Assets/Scenes/MyRoom.unity
+    path: Assets/Scenes/Theme1/MyRoom.unity
     guid: 38754880ec33c98458d63e00cd7e8eb8
   - enabled: 1
-    path: Assets/Scenes/Stairs.unity
+    path: Assets/Scenes/Theme1/Stairs.unity
     guid: b37817dcd88437e4fbe10512f08335e0
   - enabled: 1
-    path: Assets/Scenes/11Corridor.unity
+    path: Assets/Scenes/Theme1/11Corridor.unity
     guid: d2bcc51534807964298216983a79dce5
   - enabled: 1
-    path: Assets/Scenes/Six_1.unity
+    path: Assets/Scenes/Theme1/Six_1.unity
     guid: a1f07b72ba2d79948bd333e3d88250d7
   - enabled: 1
-    path: Assets/Scenes/Six1.unity
+    path: Assets/Scenes/Theme1/Six1.unity
     guid: 4a167370814fbdb4c8145572e73bf67b
   - enabled: 1
-    path: Assets/Scenes/Six2.unity
+    path: Assets/Scenes/Theme1/Six2.unity
     guid: 8017e858556c0c3468b18479dabb3937
   - enabled: 1
-    path: Assets/Scenes/Six3.unity
+    path: Assets/Scenes/Theme1/Six3.unity
     guid: 3b3406c0d864d014ea1dc4d0c9be25fc
   - enabled: 1
-    path: Assets/Scenes/Six4.unity
+    path: Assets/Scenes/Theme1/Six4.unity
     guid: 073c850797fbe114a9e25e2d0b789a9b
   - enabled: 1
-    path: Assets/Scenes/Six5.unity
+    path: Assets/Scenes/Theme1/Six5.unity
     guid: 9696b3b4cda5cc643b98c947101ebf86
   - enabled: 1
-    path: Assets/Scenes/Six6.unity
+    path: Assets/Scenes/Theme1/Six6.unity
     guid: 8a6481a601ba47a46af4ca4d3579ae70
   - enabled: 1
-    path: Assets/Scenes/Container.unity
+    path: Assets/Scenes/Theme2/Container.unity
     guid: 6efb047b3df77a642a844535290ad2bd
   - enabled: 1
-    path: Assets/Scenes/Beach.unity
+    path: Assets/Scenes/Theme2/Beach.unity
     guid: bfc468c19b392574e98b40fd54329b10
   - enabled: 1
-    path: Assets/Scenes/CaveFront.unity
+    path: Assets/Scenes/Theme2/CaveFront.unity
     guid: f312fd5ad4686174abdca053c258c5ab
   - enabled: 1
     path: Assets/Scenes/Nowhere.unity
     guid: 2600632a1fded774291e6e7f1ad44f17
   - enabled: 1
-    path: Assets/Scenes/Cave1.unity
+    path: Assets/Scenes/Theme2/Cave1.unity
     guid: 3c91e9b81b9acfa4982aa98bc8ac6f50
   - enabled: 1
-    path: Assets/Scenes/Cave2.unity
+    path: Assets/Scenes/Theme2/Cave2.unity
     guid: 6b787e514f6f86349b8bfc54d93c63bf
   - enabled: 1
-    path: Assets/Scenes/Cave3.unity
+    path: Assets/Scenes/Theme2/Cave3.unity
     guid: a7c50986db06be44fb99f4d796c299ae
   - enabled: 1
-    path: Assets/Scenes/Cave4.unity
+    path: Assets/Scenes/Theme2/Cave4.unity
     guid: c7218e0a0f162584da3a265020375e09
   - enabled: 1
-    path: Assets/Scenes/Cave5.unity
+    path: Assets/Scenes/Theme2/Cave5.unity
     guid: 2ac2ae86548ad744eb7a056fcf669cf2
   - enabled: 1
-    path: Assets/Scenes/Cave6.unity
+    path: Assets/Scenes/Theme2/Cave6.unity
     guid: 3ed4f44a8c011024998a63aae6bcc6e2
   m_configObjects: {}

@@ -4,15 +4,16 @@ public class Beamz : MonoBehaviour
 {
     int mask = 0;
 
+    public int range;
     public GameObject laser;
     public bool isRotating;     //제작자가 미리 정해두기. 회전 시 Update()에 angle2vector가 들어감
-    RaycastHit2D destination;
+    float destination;
     Vector2 dir;
 
     void Start()
     {
         angle2vector();
-        mask += (1 << LayerMask.NameToLayer("Map"));
+        if (range == 0) mask += (1 << LayerMask.NameToLayer("Map"));
         mask += (1 << LayerMask.NameToLayer("Player"));
         mask += (1 << LayerMask.NameToLayer("Foreground"));
         mask += (1 << LayerMask.NameToLayer("Enemy"));
@@ -27,8 +28,9 @@ public class Beamz : MonoBehaviour
 
     void RenderRay()
     {
-        destination = Physics2D.Raycast(transform.position, dir, float.PositiveInfinity, mask);
-        laser.transform.localScale = new Vector2(destination.distance / 2.8f, laser.transform.localScale.y);
+        destination = Physics2D.Raycast(transform.position, dir, float.PositiveInfinity, mask).distance;
+        if (destination == 0) destination = range;
+        laser.transform.localScale = new Vector2(destination / 2.8f, laser.transform.localScale.y);
     }
 
     void angle2vector()

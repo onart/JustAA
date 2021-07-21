@@ -35,7 +35,7 @@ public class Python : Boss
         head0 = joints[0].transform.position;
         dest = head0;
         sr = joints[0].GetComponent<SpriteRenderer>();
-        //Invoke(nameof(Act), delay);
+        Invoke(nameof(Act), delay);
     }
 
     private void Update()
@@ -49,7 +49,6 @@ public class Python : Boss
             Seek(joints[0].transform);
             if (dx > 0) joints[0].rb2d.MoveRotation(0);
             else joints[0].rb2d.MoveRotation(Mathf.Clamp(relDeg, -70, 70));
-            if (Input.GetKeyDown(KeyCode.A)) StartCoroutine(Snipe());
         }
     }
 
@@ -117,12 +116,12 @@ public class Python : Boss
         }
         else
         {
-            rh = Physics2D.Raycast(joints[0].transform.position, new Vector2(-14, -9), float.PositiveInfinity, rayMask).point;
+            rh = Physics2D.Raycast(joints[0].transform.position, new Vector2(-18, -9), float.PositiveInfinity, rayMask).point;
             yield return new WaitForSeconds(0.2f / SysManager.difficulty);
         }
         //j0.rb2d.MovePosition(rh);
         at.enabled = true;
-        j0.rb2d.velocity = (rh - j0.rb2d.position) * 50;
+        j0.rb2d.velocity = (rh - j0.rb2d.position) * 20;
         j0.setSp(0);
         yield return new WaitForSeconds(1f);
         at.enabled = false;
@@ -156,7 +155,7 @@ public class Python : Boss
     {
         for(int i = 0; i < SysManager.difficulty * 5; i++)
         {
-            var x = Random.Range(-5.5f, 3.5f);
+            var x = Random.Range(-9.5f, 3.5f);
             var v0 = Random.Range(-SysManager.difficulty * 2, 0f);
             var st = Instantiate(stone);
             st.transform.localScale = Vector2.one * Random.Range(0.15f, 0.3f);
@@ -166,7 +165,7 @@ public class Python : Boss
         for (int i = 0; i < SysManager.difficulty; i++)
         {
             if (Random.Range(0, 20) >= SysManager.difficulty) continue;
-            var x = Random.Range(-5.5f, -1.5f);
+            var x = Random.Range(-9.5f, -1.5f);
             var v0 = Random.Range(-SysManager.difficulty, 0f);
             var st = Instantiate(crab);
             st.transform.position = new Vector2(x, -2.5f);

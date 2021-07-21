@@ -85,9 +85,12 @@ public abstract class Enemy : BaseHzd
     {
         HPChange(-delta);
         rb2d.AddForce(force);
-        fh.gameObject.SetActive(true);
-        fh.transform.localScale = new Vector2((float)hp / maxHp / 2, 0.5f);
-        fh.alphaTime = 60;
+        if (fh)
+        {
+            fh.gameObject.SetActive(true);
+            fh.transform.localScale = new Vector2((float)hp / maxHp / 2, 0.5f);
+            fh.alphaTime = 60;
+        }
         if (sw == 0) { anim.SetTrigger("HIT"); }
     }
 

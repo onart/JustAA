@@ -5,29 +5,33 @@ using UnityEngine;
 public class Cave6Laser : MonoBehaviour
 {
     public Transform[] beamp;
-    float angle, lim;
+    float phase, lim;
+    float delta;
     // Start is called before the first frame update
     void Start()
     {
-        angle = 0;
-        lim = 90;
+        phase = 0;
+        lim = 360;
+        delta = 0.001f;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (SysManager.forbid) return;
-        angle += 0.002f;
-        int baseA = 0;
+        phase += delta;
+        if (phase >= 1 || phase <= 0) delta = -delta;
+        float baseA = 0;
         foreach(var b in beamp)
         {
-            b.rotation = Quaternion.Euler(0, 0, baseA + lim * Mathf.Sin(angle));
+            b.rotation = Quaternion.Euler(0, 0, baseA + Mathf.Lerp(0, lim, phase));
             baseA += 90;
         }
     }
 
-    public void changeLim(int lim)
+    public void changeLim(float lim)
     {
         this.lim = lim;
+        phase *= (this.lim / lim);
     }
 }

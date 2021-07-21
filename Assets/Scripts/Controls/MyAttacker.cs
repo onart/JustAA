@@ -24,9 +24,7 @@ public class MyAttacker : MonoBehaviour
         }
         else if (col.CompareTag("plat"))
         {
-            var plat = col.gameObject.GetComponent<Rigidbody2D>();
-            if (p.localScale.x < 0) force.x = -force.x;
-            plat.AddForce(force * 250);
+            col.GetComponent<Hitable>().Act(force * 250);
         }
     }
 }

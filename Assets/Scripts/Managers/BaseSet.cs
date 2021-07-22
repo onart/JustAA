@@ -315,6 +315,7 @@ public static class BaseSet
         },0),
         (new List<(Chars, Exprs, string)>{   //47번 대화 : 동굴 도움말4
             (Chars.CHARCOUNT, Exprs.NORM, "방금 동굴 3에서 올라가는 길에 가 보셨나요? 그곳엔 보스 도움말이 있답니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "그와는 별개로, 보스의 뒤쪽으로 어렵지 않게 이동할 수 있지만 실제로 갈 수는 없기 때문에 주의하세요."),
             (Chars.CHARCOUNT, Exprs.NORM, "참고로 '어려움'을 플레이 중이시라면, 거기에 체력 회복이 있으니 필요하다면 가면 됩니다."),
             (Chars.END, Exprs.NORM, "")
         },0),
@@ -332,9 +333,10 @@ public static class BaseSet
             (Chars.CHARCOUNT, Exprs.NORM, "2. 꼬리로 바닥을 내리칩니다. 바닥에 붙어 있다면 피해를 입으며 떠오르고, 앞 맵에서 보신 경고용 광선 없이 돌이 떨어집니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "게가 떨어질 수도 있으며 난이도에 따라 더 잘 나오지만, 반드시 한 마리는 등장합니다. 주인공이 안쪽에 파고든 경우 반드시 이것을 사용합니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "3. 더러운 액체를 뱉습니다. 쳐내는 식으로 방어가 가능하므로 붕붕이를 배웠다면 쉽게 대처할 수 있습니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "뱀에게 200의 피해를 주었다면 훨씬 짧은 딜레이로 1번 패턴을 사용합니다."),
-            (Chars.CHARCOUNT, Exprs.NORM, "이때 돌진 위치는 고정이며, 유리벽에 부딪쳐 한 겹이 깨집니다. 유리벽은 한 겹에 200타를 쳐야 부서지므로, 이를 잘 활용하는 것이 좋습니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "뱀에게 150의 피해를 주었다면 훨씬 짧은 딜레이로 1번 패턴을 사용합니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "이때 돌진 위치는 고정이며, 유리벽에 부딪쳐 한 겹이 깨집니다. 유리벽을 직접 치는 경우 120타를 쳐야 부서지므로, 이를 잘 활용하는 것이 좋습니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "난이도가 높을수록, 벽이 얇아질수록 공격이 빨라집니다."),
+            (Chars.CHARCOUNT, Exprs.NORM, "가까이 붙으면 빠르게 공격할 수 있지만 게가 쌓여 위험할 수 있고, 멀리서 다가오는 머리만 공격한다면 상대적으로 안전하지만 느립니다."),
             (Chars.CHARCOUNT, Exprs.NORM, "벽이 모두 깨지면 바로 그쪽으로 달리세요."),
             (Chars.END, Exprs.NORM, "")
         },0),
@@ -348,6 +350,11 @@ public static class BaseSet
             (Chars.ONL, Exprs.CRY, "눈이 뒤집힌 것 같은데.."),
             (Chars.ONL, Exprs.NORM, "눈물 흘릴 때가 아니야.. 저 위로는 못 돌아갈 것 같으니까, 살아남으려면"),
             (Chars.ONL, Exprs.NORM, "저걸 때려잡거나, 강화유리를 깨서 물로 들어가거나.."),
+            (Chars.END, Exprs.NORM, "")
+        },0),
+        (new List<(Chars, Exprs, string)>{   //52번 대화 : 전투 후 대사
+            (Chars.ONL, Exprs.SURPRISED, "아니, 자기 혼자 깰 수 있는 거였으면 지금까지는 왜 밖으로 슬슬 기어나왔다는 거야?"),
+            (Chars.ONL, Exprs.SURPRISED, "가만 생각해 보면 어제부터 온 세상 것들이 날 족치려 들고 있어.."),
             (Chars.END, Exprs.NORM, "")
         },0),
     };

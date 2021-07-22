@@ -5,6 +5,7 @@ using UnityEngine;
 public class Glass : Hitable
 {
     public int hp;
+    public Python py;
     AudioSource br;
 
     void Start()
@@ -14,6 +15,7 @@ public class Glass : Hitable
 
     private void OnDestroy()
     {
+        py.shorten();
         if (br && br.isActiveAndEnabled) br.Play();
     }
 

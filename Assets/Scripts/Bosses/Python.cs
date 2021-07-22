@@ -12,6 +12,7 @@ public class Python : Boss
     bool busy;
     public GameObject warnRay;
     public GameObject crab, stone, gliq;
+    public Glass[] wall;
 
     public Cinemachine.CinemachineImpulseSource imsr;
 
@@ -128,6 +129,16 @@ public class Python : Boss
         busy = false;
         j0.rb2d.constraints = RigidbodyConstraints2D.None;
         dest = head0;
+
+        if (fix)
+        foreach(var w in wall)
+        {
+            if (w)
+            {
+                Destroy(w.gameObject);
+                break;
+            }
+        }
     }
 
     public IEnumerator Shake()
@@ -141,10 +152,10 @@ public class Python : Boss
         imsr.GenerateImpulse();
         foreach (var cr in FindObjectsOfType<CaveCrab>())
         {
-            if (cr) cr.GetHit(10, new Vector2(0, 10000));
+            if (cr) cr.GetHit(cr.restHp / 2, new Vector2(0, 10000));
         }
         if (Player.inst.onground) {
-            Player.inst.GetHit(9 * SysManager.difficulty, 2);
+            Player.inst.GetHit(6 * SysManager.difficulty, 2);
             prb2d.AddForce(Vector2.up * 200);
         }
         FallDown();
@@ -219,30 +230,29 @@ public class Python : Boss
 
     protected override void HPChange(int delta)
     {
+        const int red = 150;
+        int prev = hp;
         base.HPChange(delta);
-        sr.color = Color.Lerp(Color.white, Color.red, (maxHp - hp) % 200 / 200f);
-        switch ((maxHp - hp) / 200)
+        sr.color = Color.Lerp(Color.white, Color.red, (maxHp - hp) % red / (float)red);
+        if ((maxHp - hp) / red != (maxHp - prev) / red)
         {
-            case 1:
-                if (delay == 9 / SysManager.difficulty) {
-                    delay = 6 / SysManager.difficulty;
-                    StartCoroutine(Snipe(true));
-                }
-                break;
-            case 2:
-                if (delay == 6 / SysManager.difficulty) {
-                    delay = 4 / SysManager.difficulty;
-                    StartCoroutine(Snipe(true));
-                }
-                break;
-            case 3:
-                if (delay == 4 / SysManager.difficulty) {
-                    delay = 3 / SysManager.difficulty;
-                    StartCoroutine(Snipe(true));
-                }
-                break;
-            default:
-                break;
+            StartCoroutine(Snipe(true));
+        }
+    }
+
+    public void shorten()
+    {
+        if (delay == 9 / SysManager.difficulty)
+        {
+            delay = 6 / SysManager.difficulty;
+        }
+        else if (delay == 6 / SysManager.difficulty)
+        {
+            delay = 4 / SysManager.difficulty;
+        }
+        else if(delay == 4 / SysManager.difficulty)
+        {
+            delay = 3 / SysManager.difficulty;
         }
     }
 }

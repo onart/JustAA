@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cave5Ev : MapEv
 {
     public Python py;
+    public Door ovr;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,9 @@ public class Cave5Ev : MapEv
         {
             case 50:
                 StartCoroutine(e50to51());
+                break;
+            case 52:
+                toCut(1);
                 break;
         }
     }
@@ -34,6 +38,15 @@ public class Cave5Ev : MapEv
         {
             GetComponent<Collider2D>().enabled = false;
             StartCoroutine(D_Start(50));
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (FindObjectOfType<Glass>() == null && col.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            FindObjectOfType<Python>().StopAllCoroutines();
+            StartCoroutine(D_Start(52));
         }
     }
 }

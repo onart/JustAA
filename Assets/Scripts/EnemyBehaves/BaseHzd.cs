@@ -16,6 +16,14 @@ public abstract class BaseHzd : MonoBehaviour
     protected Transform dmgPos;
     protected float dx, dy, relDeg;
 
+    public int restHp
+    {
+        get
+        {
+            return hp;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {

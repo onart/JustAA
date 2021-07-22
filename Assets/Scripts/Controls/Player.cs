@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb2d;
 
     bool frz;       //맞은 뒤 경직은 이걸로(아마 이걸 푸는 스킬도 만들수도)
+    int nolr;       //-1: 왼쪽 봉인, +1: 오른쪽 봉인, 0: 영향x
     int hp;
     int MAXHP = 100;
     public int mhpCheck;
@@ -91,6 +92,7 @@ public class Player : MonoBehaviour
     void LRmove()
     {
         float lr = Input.GetAxis("Horizontal");
+        if (nolr * lr > 0) return;
         anim.SetFloat("LR", Fabs(lr));
         if (!attking && !anim.GetBool("SIT"))
         {
@@ -224,9 +226,10 @@ public class Player : MonoBehaviour
         if (kdown == 2)
         {
             anim.SetInteger("OVR", 2);
-            if (hp > 0 && onground)
+            if (hp > 0)
             {
-                Invoke(nameof(StandUp), 0.5f);
+                if (onground) Invoke(nameof(StandUp), 0.5f);
+                else Invoke(nameof(StandUp), 3f);
             }
         }
         else
@@ -274,5 +277,20 @@ public class Player : MonoBehaviour
     public void reserveVy(float vy) //dynaplat에서 기본적으로 이것을 사용하지 않는 것으로 결정. 이유는 직관성으로, 차이가 너무 눈에 띔
     {
         reserved_vy = vy;
+    }
+
+    private void OnCollisionStay2D(Collision2D col)
+    {
+        if (!onground)
+        {
+            var ptx = col.GetContact(0).point.x;
+            if (ptx > transform.position.x) nolr = 1;
+            else nolr = -1;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        nolr = 0;
     }
 }

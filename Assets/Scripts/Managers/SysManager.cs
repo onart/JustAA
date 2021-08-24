@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //매니저의 우두머리격 존재로, 겹치는 부분이 있으면 여기서 허락을 받도록 할 것
 public class SysManager : MonoBehaviour
 {
     Canvas cv;
+    public Toggle fpsCheck;
+
     public GameObject menu, dialogUI, fade;
     public KeyConfig kc;                        //키설정용
     public static bool menuon = false;          //메뉴가 열려있는가
@@ -16,9 +19,30 @@ public class SysManager : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 60;   //어차피 기본 60이다. 테스트 플레이에서 180fps길래 추가함+프레임드랍 상정
+        getFrameRate();
         KeyMapLoad();
     }
+
+    void getFrameRate()
+    {
+        if (PlayerPrefs.GetInt("FPSis60", 1) == 1)
+        {
+            Application.targetFrameRate = 60;
+            fpsCheck.isOn = true;
+        }
+        else { 
+            Application.targetFrameRate = 30;
+            fpsCheck.isOn = false;
+        }
+    }
+
+    public void setFrameRate()
+    {
+        if (fpsCheck.isOn) PlayerPrefs.SetInt("FPSis60", 1);
+        else PlayerPrefs.SetInt("FPSis60", 0);
+        getFrameRate();
+    }
+
     void Update()
     {
         Checker();  //치트체커

@@ -30,7 +30,8 @@ public class SysManager : MonoBehaviour
             Application.targetFrameRate = 60;
             fpsCheck.isOn = true;
         }
-        else { 
+        else
+        {
             Application.targetFrameRate = 30;
             fpsCheck.isOn = false;
         }

@@ -17,7 +17,8 @@ public class MyAttacker : MonoBehaviour
 
             var en = col.GetComponent<BaseHzd>();
             if (en) en.GetHit(delta, force * 100);
-            else {
+            else
+            {
                 en = col.GetComponentInParent<BaseHzd>();
                 if (en) en.GetHit(delta, force * 100);
             }

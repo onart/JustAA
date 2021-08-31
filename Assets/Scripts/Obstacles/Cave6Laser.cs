@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Cave6Laser : MonoBehaviour
 {
@@ -22,7 +20,7 @@ public class Cave6Laser : MonoBehaviour
         phase += delta;
         if (phase >= 1 || phase <= 0) delta = -delta;
         float baseA = 0;
-        foreach(var b in beamp)
+        foreach (var b in beamp)
         {
             b.rotation = Quaternion.Euler(0, 0, baseA + Mathf.Lerp(0, lim, phase));
             baseA += 90;

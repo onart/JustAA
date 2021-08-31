@@ -30,7 +30,8 @@ public class JointBody : MonoBehaviour
 
     public void setSp(int idx)
     {
-        try {
+        try
+        {
             sr.sprite = sprites[idx];
         }
         catch (System.IndexOutOfRangeException)

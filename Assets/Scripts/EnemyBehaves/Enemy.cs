@@ -23,7 +23,8 @@ public abstract class Enemy : BaseHzd
     // Start is called before the first frame update
     protected override void St()
     {
-        if (!DataFiller.load_complete) {
+        if (!DataFiller.load_complete)
+        {
             Invoke(nameof(St), 0.03f);
             return;
         };

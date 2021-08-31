@@ -9,8 +9,9 @@ public class Python : Boss
     float delay;
     Vector2 head0, dest;
     int rayMask;
+    Transform UICenter;
     bool busy;
-    public GameObject warnRay;
+    public GameObject warnRay, sign;
     public GameObject crab, stone, gliq;
     public Glass[] wall;
 
@@ -19,6 +20,7 @@ public class Python : Boss
     protected override void St()
     {
         busy = false;
+        UICenter = FindObjectOfType<Camera>().transform;
         delay = 9 / SysManager.difficulty;
         maxHp = 100000000;
         hp = maxHp;
@@ -55,7 +57,7 @@ public class Python : Boss
 
     void Act()
     {
-        if(!busy)
+        if (!busy)
         {
             if (relDeg > 0 && relDeg < 60)
             {
@@ -82,7 +84,8 @@ public class Python : Boss
         Invoke(nameof(Act), delay);
     }
 
-    void semiSnipe() {
+    void semiSnipe()
+    {
         var j0 = joints[0];
         var rh = Physics2D.Raycast(joints[0].transform.position, new Vector2(dx, dy), float.PositiveInfinity, rayMask).point;
         j0.rb2d.MovePosition((j0.rb2d.position * 6 + rh) / 7);
@@ -131,18 +134,21 @@ public class Python : Boss
         dest = head0;
 
         if (fix)
-        foreach(var w in wall)
-        {
-            if (w)
+            foreach (var w in wall)
             {
-                Destroy(w.gameObject);
-                break;
+                if (w)
+                {
+                    Destroy(w.gameObject);
+                    break;
+                }
             }
-        }
     }
 
     public IEnumerator Shake()
     {
+        var sgn = Instantiate(sign, UICenter).GetComponent<WarnRay>();
+        sgn.t = 1f;
+        sgn.d = 0.3f;
         busy = true;
         var tail = joints[14].rb2d;
         tail.MoveRotation(80);
@@ -154,7 +160,8 @@ public class Python : Boss
         {
             if (cr) cr.GetHit(cr.restHp / 2, new Vector2(0, 10000));
         }
-        if (Player.inst.onground) {
+        if (Player.inst.onground)
+        {
             Player.inst.GetHit(6 * SysManager.difficulty, 2);
             prb2d.AddForce(Vector2.up * 200);
         }
@@ -164,7 +171,7 @@ public class Python : Boss
 
     void FallDown()
     {
-        for(int i = 0; i < SysManager.difficulty * 5; i++)
+        for (int i = 0; i < SysManager.difficulty * 5; i++)
         {
             var x = Random.Range(-9.5f, 3.5f);
             var v0 = Random.Range(-SysManager.difficulty * 2, 0f);
@@ -192,7 +199,7 @@ public class Python : Boss
         busy = true;
         dest = new Vector2(0.6f, -5);
         var j0 = joints[0];
-        j0.rb2d.MoveRotation(-30);        
+        j0.rb2d.MoveRotation(-30);
         j0.setSp(1);
         yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < SysManager.difficulty * 3; i++)
@@ -250,7 +257,7 @@ public class Python : Boss
         {
             delay = 4 / SysManager.difficulty;
         }
-        else if(delay == 4 / SysManager.difficulty)
+        else if (delay == 4 / SysManager.difficulty)
         {
             delay = 3 / SysManager.difficulty;
         }

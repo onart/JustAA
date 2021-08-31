@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Liq1 : Attacker
 {
     public Sprite[] shape;
-    
+
 
     void Start()
     {
@@ -27,7 +26,7 @@ public class Liq1 : Attacker
     IEnumerator diminish()
     {
         enabled = false;
-        for(int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; i++)
         {
             transform.localScale = Vector2.one * (8 - i) / 8;
             yield return new WaitForSeconds(0.03f);

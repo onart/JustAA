@@ -111,7 +111,7 @@ public class Master : Entity
         if (p.FLAGS[(int)BaseSet.Flags.OUTEXP] == 4)
         {
             var exc = new System.Collections.Generic.List<int>();
-            for(int i = 0; i < 32; i++)
+            for (int i = 0; i < 32; i++)
             {
                 if (LearnCheck(i)) exc.Add(i);
             }

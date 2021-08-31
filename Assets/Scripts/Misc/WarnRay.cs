@@ -1,10 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WarnRay : MonoBehaviour
 {
-    public float t;  //잔존 시간
+    public float t, d;  //잔존 시간, 수축 시간(<t)
     void Start()
     {
         StartCoroutine(thinner());
@@ -12,7 +11,8 @@ public class WarnRay : MonoBehaviour
 
     IEnumerator thinner()
     {
-        for (; t > 0; t -= 0.03f)
+        yield return new WaitForSeconds(t - d);
+        for (; d > 0; d -= 0.03f)
         {
             transform.localScale = transform.localScale - new Vector3(0, transform.localScale.y / 3, 0);
             yield return new WaitForSeconds(0.03f);
